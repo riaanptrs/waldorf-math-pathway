@@ -12,6 +12,7 @@ arithmetic practice, story problems, and rhythmic number work.
 - Static website that opens from `index.html`
 - Original Grade 7 sample math exercises
 - Gentle answer checking
+- Guided worksheet-style activities with Portuguese examples, step checks, and answer keys
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
 

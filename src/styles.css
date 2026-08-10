@@ -330,6 +330,54 @@ main {
   line-height: 1.55;
 }
 
+.example-pt {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(36, 49, 43, 0.14);
+  font-family: Arial, sans-serif;
+}
+
+.guided-steps {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.guided-steps h4 {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.guided-step {
+  display: grid;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 250, 0.74);
+}
+
+.guided-step input {
+  width: min(260px, 100%);
+}
+
+.guided-step[data-state="correct"] {
+  border-color: rgba(47, 111, 69, 0.42);
+  background: rgba(47, 111, 69, 0.08);
+}
+
+.guided-step[data-state="try"] {
+  border-color: rgba(154, 102, 48, 0.34);
+  background: rgba(217, 154, 63, 0.1);
+}
+
+.step-feedback {
+  min-height: 18px;
+  color: rgba(36, 49, 43, 0.7);
+  font-family: Arial, sans-serif;
+}
+
 .answer-form,
 .auth-form {
   display: grid;

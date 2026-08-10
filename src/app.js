@@ -17,6 +17,7 @@ const prompt = document.querySelector(".exercise__prompt");
 const body = document.querySelector(".exercise__body");
 const form = document.querySelector(".answer-form");
 const answer = document.querySelector("#answer");
+const answerLabel = document.querySelector('label[for="answer"]');
 const feedback = document.querySelector(".feedback");
 const authForm = document.querySelector(".auth-form");
 const authMode = document.querySelector("#auth-mode");
@@ -69,15 +70,50 @@ function normalizeExpression(value) {
   return value.toLowerCase().replace(/\s+/g, "").replace(/\*/g, "");
 }
 
-function checkAnswer(lesson, rawValue) {
-  if (lesson.answerType === "expression") {
+function checkValue(config, rawValue) {
+  if (config.answerType === "expression") {
     const normalized = normalizeExpression(rawValue);
-    return lesson.acceptedAnswers.some((accepted) => normalizeExpression(accepted) === normalized);
+    return config.acceptedAnswers.some((accepted) => normalizeExpression(accepted) === normalized);
   }
 
   const value = Number(rawValue);
   if (Number.isNaN(value)) return false;
-  return Math.abs(value - lesson.answer) <= (lesson.tolerance ?? 0);
+  return Math.abs(value - config.answer) <= (config.tolerance ?? 0);
+}
+
+function checkAnswer(lesson, rawValue) {
+  return checkValue(lesson, rawValue);
+}
+
+function correctAnswerText(config) {
+  if (config.acceptedAnswers?.length) return config.acceptedAnswers[0];
+  return String(config.answer);
+}
+
+function evaluateGuidedSteps(lesson) {
+  if (!lesson.guidedSteps?.length) return { allCorrect: true, answers: [] };
+
+  const answers = lesson.guidedSteps.map((step, index) => {
+    const input = document.querySelector(`[data-step-index="${index}"]`);
+    const rawValue = input?.value.trim() || "";
+    const isCorrect = rawValue !== "" && checkValue(step, rawValue);
+    return { input, rawValue, isCorrect, correct: correctAnswerText(step) };
+  });
+
+  answers.forEach((result, index) => {
+    const row = result.input?.closest(".guided-step");
+    const status = row?.querySelector(".step-feedback");
+    if (!row || !status) return;
+    row.dataset.state = result.isCorrect ? "correct" : "try";
+    status.textContent = result.isCorrect
+      ? "Correto."
+      : `Revise. Resposta correta: ${answers[index].correct}`;
+  });
+
+  return {
+    allCorrect: answers.every((result) => result.isCorrect),
+    answers,
+  };
 }
 
 function getLessonProgress(lesson) {
@@ -205,6 +241,7 @@ function renderExercise(lesson) {
   feedback.dataset.state = "neutral";
   correction.hidden = true;
   correction.textContent = lesson.correction;
+  answerLabel.textContent = lesson.guidedSteps?.length ? "Final answer after the steps" : "Your answer";
   answer.value = "";
   answer.placeholder = lesson.answerType === "expression" ? "Example: 10k - 14" : "Enter a number";
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
@@ -213,10 +250,29 @@ function renderExercise(lesson) {
       <strong>Lesson focus</strong>
       <p>${lesson.teacherAim}</p>
       <small>${lesson.sourceFocus}</small>
+      ${lesson.examplePt ? `<div class="example-pt"><strong>Como fazer</strong><p>${lesson.examplePt}</p></div>` : ""}
     </div>
     <ol>
       ${lesson.rhythm.map((step) => `<li>${step}</li>`).join("")}
     </ol>
+    ${
+      lesson.guidedSteps?.length
+        ? `<div class="guided-steps">
+            <h4>Mostre os passos</h4>
+            ${lesson.guidedSteps
+              .map(
+                (step, index) => `
+                  <label class="guided-step">
+                    <span>${step.label}</span>
+                    <input data-step-index="${index}" autocomplete="off" />
+                    <small class="step-feedback" aria-live="polite"></small>
+                  </label>
+                `,
+              )
+              .join("")}
+          </div>`
+        : ""
+    }
   `;
 
   document.querySelectorAll(".lesson-card").forEach((card) => {
@@ -319,10 +375,18 @@ form.addEventListener("submit", async (event) => {
   }
 
   const isCorrect = checkAnswer(activeLesson, value);
+  const stepResult = evaluateGuidedSteps(activeLesson);
+  const fullAttemptIsCorrect = isCorrect && stepResult.allCorrect;
+  const submittedValue = activeLesson.guidedSteps?.length
+    ? JSON.stringify({
+        final: value,
+        steps: stepResult.answers.map((result) => result.rawValue),
+      })
+    : value;
 
   try {
-    const savedTo = await saveLessonProgress(activeLesson, value, isCorrect);
-    if (isCorrect) {
+    const savedTo = await saveLessonProgress(activeLesson, submittedValue, fullAttemptIsCorrect);
+    if (fullAttemptIsCorrect) {
       feedback.textContent =
         savedTo === "cloud"
           ? `Correct. Saved to ${activeLearner()?.nickname}'s shared portfolio.`
@@ -332,8 +396,8 @@ form.addEventListener("submit", async (event) => {
     } else {
       feedback.textContent =
         savedTo === "cloud"
-          ? "Needs correction. Saved for review in the shared portfolio."
-          : "Needs correction. Saved on this device.";
+          ? "Needs correction. Saved for review in the shared portfolio. Check the step notes and the answer key below."
+          : "Needs correction. Saved on this device. Check the step notes and the answer key below.";
       feedback.dataset.state = "try";
       correction.hidden = false;
     }
@@ -341,7 +405,7 @@ form.addEventListener("submit", async (event) => {
   } catch (error) {
     feedback.textContent = `The answer was checked, but cloud saving failed: ${translateAuthError(error)}`;
     feedback.dataset.state = "try";
-    correction.hidden = !isCorrect;
+    correction.hidden = fullAttemptIsCorrect;
   }
 });
 
