@@ -200,6 +200,12 @@ main {
   margin-bottom: 28px;
 }
 
+.lesson-count {
+  margin: 10px 0 0;
+  color: rgba(36, 49, 43, 0.68);
+  font-family: Arial, sans-serif;
+}
+
 .practice__layout,
 .account__layout {
   display: grid;
@@ -340,6 +346,21 @@ main {
   gap: 10px;
 }
 
+.lesson-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.lesson-nav .button {
+  min-width: 120px;
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 input,
 select {
   width: min(220px, 100%);
@@ -446,6 +467,10 @@ footer {
   }
 
   .answer-form__row {
+    flex-direction: column;
+  }
+
+  .lesson-nav {
     flex-direction: column;
   }
 

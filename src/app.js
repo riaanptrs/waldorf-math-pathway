@@ -20,6 +20,9 @@ const progressList = document.querySelector(".progress-list");
 const correction = document.querySelector(".correction");
 const dbBadge = document.querySelector(".db-badge");
 const signOutButton = document.querySelector(".sign-out");
+const lessonCount = document.querySelector(".lesson-count");
+const previousButton = document.querySelector(".lesson-prev");
+const nextButton = document.querySelector(".lesson-next");
 
 const accountKey = `${sharedDbShape.accountNamespace}:accounts:${SHARED_DB_VERSION}`;
 const progressKey = `${sharedDbShape.accountNamespace}:progress:${SHARED_DB_VERSION}`;
@@ -106,6 +109,7 @@ function checkAnswer(lesson, rawValue) {
 }
 
 function renderList() {
+  lessonCount.textContent = `${lessons.length} Grade 7 activities available`;
   list.innerHTML = lessons
     .map((lesson) => {
       const progress = getLessonProgress(lesson.id);
@@ -124,6 +128,7 @@ function renderList() {
 
 function renderExercise(lesson) {
   activeLesson = lesson;
+  const lessonIndex = lessons.findIndex((item) => item.id === lesson.id);
   grade.textContent = `${lesson.grade} - ${lesson.block}`;
   title.textContent = lesson.title;
   time.textContent = lesson.time;
@@ -149,6 +154,15 @@ function renderExercise(lesson) {
   document.querySelectorAll(".lesson-card").forEach((card) => {
     card.classList.toggle("is-active", card.dataset.id === lesson.id);
   });
+  previousButton.disabled = lessonIndex <= 0;
+  nextButton.disabled = lessonIndex >= lessons.length - 1;
+}
+
+function moveLesson(step) {
+  const lessonIndex = lessons.findIndex((lesson) => lesson.id === activeLesson.id);
+  const nextLesson = lessons[lessonIndex + step];
+  if (!nextLesson) return;
+  renderExercise(nextLesson);
 }
 
 function renderAccount() {
@@ -240,6 +254,9 @@ form.addEventListener("submit", (event) => {
 
   renderAccount();
 });
+
+previousButton.addEventListener("click", () => moveLesson(-1));
+nextButton.addEventListener("click", () => moveLesson(1));
 
 authForm.addEventListener("submit", async (event) => {
   event.preventDefault();
