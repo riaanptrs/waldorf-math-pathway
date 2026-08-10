@@ -52,7 +52,7 @@ function normalizeExpression(value) {
 }
 
 function getLessonProgress(lessonId) {
-  if (!currentUser) return null;
+  if (!currentUser || currentUser.role !== "student" || !currentUser.studentId) return null;
   const progress = readJson(progressKey, []);
   return progress.find(
     (entry) =>
