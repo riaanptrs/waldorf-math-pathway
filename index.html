@@ -67,19 +67,13 @@
               <option value="register">Register</option>
             </select>
 
-            <label for="role">Account type</label>
-            <select id="role" name="role">
-              <option value="student">Student</option>
-              <option value="parent">Parent</option>
-            </select>
-
-            <label for="username">Username</label>
-            <input id="username" name="username" autocomplete="username" />
+            <label for="username">Guardian email</label>
+            <input id="username" name="username" type="email" autocomplete="email" />
 
             <label for="password">Password</label>
             <input id="password" name="password" type="password" autocomplete="current-password" />
 
-            <label for="student-link">Parent link student username</label>
+            <label for="student-link">Learner nickname</label>
             <input id="student-link" name="student-link" autocomplete="off" />
 
             <button class="button button--small" type="submit">Continue</button>
@@ -153,7 +147,7 @@
           <h2>Progress and lesson plan notes</h2>
         </div>
         <div class="parent-dashboard" hidden>
-          <h3>Linked student progress</h3>
+          <h3>Math progress for linked learners</h3>
           <ul class="progress-list"></ul>
         </div>
         <div class="note-grid">
@@ -175,9 +169,9 @@
           <article>
             <h3>Shared database shape</h3>
             <p>
-              Math records are tagged as Waldorf Math while keeping the same
-              username, password, role, student link, and progress fields needed
-              beside Waldorf Pathway or English.
+              Math uses the same Supabase guardian account, learner records,
+              objective responses, and activity progress tables as Waldorf
+              English Pathway.
             </p>
           </article>
         </div>
@@ -192,6 +186,6 @@
     </footer>
 
     <script src="src/exercises.js"></script>
-    <script src="src/app.js"></script>
+    <script type="module" src="src/app.js"></script>
   </body>
 </html>

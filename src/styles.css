@@ -426,6 +426,28 @@ select {
   line-height: 1.7;
 }
 
+.learner-choice {
+  border: 0;
+  background: transparent;
+  color: var(--moss);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.learner-choice.is-active {
+  color: var(--berry);
+}
+
+.account-status[data-state="success"] {
+  color: #2f6f45;
+}
+
+.account-status[data-state="error"] {
+  color: #9a6630;
+}
+
 .note-grid article {
   padding: 22px;
 }

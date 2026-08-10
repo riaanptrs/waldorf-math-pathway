@@ -13,7 +13,7 @@ arithmetic practice, story problems, and rhythmic number work.
 - Original Grade 7 sample math exercises
 - Gentle answer checking
 - Waldorf-inspired visual direction
-- Project structure ready for more lessons
+- Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
 
 ## Curriculum Note
 
@@ -26,7 +26,6 @@ goals rather than copying protected workbook text.
 
 1. Choose the site name and GitHub repository name.
 2. Define the first Grade 7 lesson blocks.
-3. Add a lesson/exercise data model.
-4. Add more practice types: percentages, ratios, signed numbers, geometry,
+3. Add more practice types: percentages, ratios, signed numbers, geometry,
    business math, and early algebra.
-5. Publish the site once the first learning path feels complete.
+4. Add a fuller math portfolio view once the English portfolio is ready to show subject-specific filters.

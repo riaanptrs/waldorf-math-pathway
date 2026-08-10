@@ -1,3 +1,14 @@
+import {
+  PRIVACY_VERSION,
+  TERMS_VERSION,
+  ensureGuardianSetup,
+  schoolYearLabel,
+  supabase,
+  translateAuthError,
+} from "../assets/supabase-client.js";
+
+const lessons = window.lessons;
+const sharedDbShape = window.sharedDbShape;
 const list = document.querySelector(".lesson-list");
 const grade = document.querySelector(".exercise__grade");
 const title = document.querySelector(".exercise__title");
@@ -9,10 +20,9 @@ const answer = document.querySelector("#answer");
 const feedback = document.querySelector(".feedback");
 const authForm = document.querySelector(".auth-form");
 const authMode = document.querySelector("#auth-mode");
-const usernameInput = document.querySelector("#username");
+const emailInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
-const roleInput = document.querySelector("#role");
-const studentLinkInput = document.querySelector("#student-link");
+const learnerNicknameInput = document.querySelector("#student-link");
 const accountStatus = document.querySelector(".account-status");
 const learnerName = document.querySelector(".learner-name");
 const parentDashboard = document.querySelector(".parent-dashboard");
@@ -24,77 +34,39 @@ const lessonCount = document.querySelector(".lesson-count");
 const previousButton = document.querySelector(".lesson-prev");
 const nextButton = document.querySelector(".lesson-next");
 
-const accountKey = `${sharedDbShape.accountNamespace}:accounts:${SHARED_DB_VERSION}`;
-const progressKey = `${sharedDbShape.accountNamespace}:progress:${SHARED_DB_VERSION}`;
+const ACTIVE_LEARNER_KEY = "wep:active-learner";
+const LOCAL_PROGRESS_KEY = "waldorf-math:local-progress:v2";
 
 let activeLesson = lessons[0];
 let currentUser = null;
+let learners = [];
+let activeLearnerId = null;
+let objectiveResponses = [];
+let activityProgress = [];
 
-function readJson(key, fallback) {
+function readLocalProgress() {
   try {
-    return JSON.parse(localStorage.getItem(key)) ?? fallback;
+    return JSON.parse(localStorage.getItem(LOCAL_PROGRESS_KEY)) || [];
   } catch {
-    return fallback;
+    return [];
   }
 }
 
-function writeJson(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+function writeLocalProgress(rows) {
+  localStorage.setItem(LOCAL_PROGRESS_KEY, JSON.stringify(rows));
 }
 
-async function hashPassword(password) {
-  const encoded = new TextEncoder().encode(`${SITE_ID}:${password}`);
-  const digest = await crypto.subtle.digest("SHA-256", encoded);
-  return Array.from(new Uint8Array(digest))
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
+function activeLearner() {
+  return learners.find((learner) => learner.id === activeLearnerId) || null;
+}
+
+function setAccountStatus(message, type = "") {
+  accountStatus.textContent = message;
+  accountStatus.dataset.state = type;
 }
 
 function normalizeExpression(value) {
   return value.toLowerCase().replace(/\s+/g, "").replace(/\*/g, "");
-}
-
-function getLessonProgress(lessonId) {
-  if (!currentUser || currentUser.role !== "student" || !currentUser.studentId) return null;
-  const progress = readJson(progressKey, []);
-  return progress.find(
-    (entry) =>
-      entry.siteSlug === SITE_ID &&
-      entry.subjectSlug === SUBJECT_ID &&
-      entry.studentId === currentUser.studentId &&
-      entry.lessonId === lessonId,
-  );
-}
-
-function saveLessonProgress(lesson, value, isCorrect) {
-  if (!currentUser || currentUser.role !== "student") return;
-
-  const progress = readJson(progressKey, []);
-  const existingIndex = progress.findIndex(
-    (entry) =>
-      entry.siteSlug === SITE_ID &&
-      entry.subjectSlug === SUBJECT_ID &&
-      entry.studentId === currentUser.studentId &&
-      entry.lessonId === lesson.id,
-  );
-  const existing = existingIndex >= 0 ? progress[existingIndex] : null;
-  const next = {
-    siteSlug: SITE_ID,
-    subjectSlug: SUBJECT_ID,
-    studentId: currentUser.studentId,
-    lessonId: lesson.id,
-    status: isCorrect ? "correct" : "needs-correction",
-    attempts: (existing?.attempts ?? 0) + 1,
-    lastAnswer: value,
-    updatedAt: new Date().toISOString(),
-  };
-
-  if (existingIndex >= 0) {
-    progress[existingIndex] = next;
-  } else {
-    progress.push(next);
-  }
-  writeJson(progressKey, progress);
 }
 
 function checkAnswer(lesson, rawValue) {
@@ -108,18 +80,114 @@ function checkAnswer(lesson, rawValue) {
   return Math.abs(value - lesson.answer) <= (lesson.tolerance ?? 0);
 }
 
+function getLessonProgress(lesson) {
+  const response = objectiveResponses.find((entry) => entry.activity_key === lesson.activityKey);
+  if (response) return response.is_correct ? "correct" : "needs-correction";
+
+  const completed = activityProgress.find((entry) => entry.activity_key === lesson.activityKey && entry.completed);
+  if (completed) return "correct";
+
+  if (!currentUser) {
+    const local = readLocalProgress().find((entry) => entry.lessonId === lesson.id);
+    return local?.status || null;
+  }
+
+  return null;
+}
+
+async function loadCloudProgress() {
+  const learner = activeLearner();
+  objectiveResponses = [];
+  activityProgress = [];
+  if (!learner) return;
+
+  const activityKeys = lessons.map((lesson) => lesson.activityKey);
+  const [responsesResult, progressResult] = await Promise.all([
+    supabase
+      .from("objective_responses")
+      .select("activity_key, question_key, selected_answer, is_correct, updated_at")
+      .eq("learner_id", learner.id)
+      .in("activity_key", activityKeys),
+    supabase
+      .from("activity_progress")
+      .select("activity_key, completed, confidence, updated_at")
+      .eq("learner_id", learner.id)
+      .in("activity_key", activityKeys),
+  ]);
+
+  if (responsesResult.error) throw responsesResult.error;
+  if (progressResult.error) throw progressResult.error;
+  objectiveResponses = responsesResult.data || [];
+  activityProgress = progressResult.data || [];
+}
+
+async function saveLessonProgress(lesson, value, isCorrect) {
+  const now = new Date().toISOString();
+  const learner = activeLearner();
+
+  if (!learner) {
+    const progress = readLocalProgress();
+    const existingIndex = progress.findIndex((entry) => entry.lessonId === lesson.id);
+    const next = {
+      siteSlug: sharedDbShape.siteSlug,
+      subjectSlug: sharedDbShape.subjectSlug,
+      lessonId: lesson.id,
+      activityKey: lesson.activityKey,
+      status: isCorrect ? "correct" : "needs-correction",
+      lastAnswer: value,
+      updatedAt: now,
+    };
+    if (existingIndex >= 0) progress[existingIndex] = next;
+    else progress.push(next);
+    writeLocalProgress(progress);
+    return "local";
+  }
+
+  const responsePayload = {
+    learner_id: learner.id,
+    activity_key: lesson.activityKey,
+    question_key: "answer",
+    selected_answer: value,
+    is_correct: isCorrect,
+    updated_at: now,
+  };
+  const progressPayload = {
+    learner_id: learner.id,
+    activity_key: lesson.activityKey,
+    completed: isCorrect,
+    confidence: isCorrect ? "independent" : "needs_practice",
+    last_opened_at: now,
+    completed_at: isCorrect ? now : null,
+    updated_at: now,
+  };
+
+  const [responseResult, progressResult] = await Promise.all([
+    supabase.from("objective_responses").upsert(responsePayload, {
+      onConflict: "learner_id,activity_key,question_key",
+    }),
+    supabase.from("activity_progress").upsert(progressPayload, {
+      onConflict: "learner_id,activity_key",
+    }),
+  ]);
+
+  if (responseResult.error) throw responseResult.error;
+  if (progressResult.error) throw progressResult.error;
+  await loadCloudProgress();
+  return "cloud";
+}
+
 function renderList() {
   lessonCount.textContent = `${lessons.length} Grade 7 activities available`;
   list.innerHTML = lessons
     .map((lesson) => {
-      const progress = getLessonProgress(lesson.id);
-      const stateLabel = progress?.status === "correct" ? "Done" : progress ? "Review" : "Open";
+      const state = getLessonProgress(lesson);
+      const stateLabel = state === "correct" ? "Done" : state ? "Review" : "Open";
       return `
         <button class="lesson-card" data-id="${lesson.id}" type="button">
           <span>${lesson.grade} - ${lesson.block}</span>
           <strong>${lesson.title}</strong>
           <small>${lesson.time}</small>
-          <em data-state="${progress?.status ?? "open"}">${stateLabel}</em>
+          <em data-state="${state ?? "open"}">${stateLabel}</em>
         </button>
       `;
     })
@@ -158,6 +226,51 @@ function renderExercise(lesson) {
   nextButton.disabled = lessonIndex >= lessons.length - 1;
 }
 
+function renderParentDashboard() {
+  if (!currentUser) return;
+  if (!learners.length) {
+    progressList.innerHTML = "<li>No learner is linked to this guardian account yet.</li>";
+    return;
+  }
+
+  progressList.innerHTML = learners
+    .map((learner) => {
+      const isActive = learner.id === activeLearnerId;
+      const correct = isActive
+        ? lessons.filter((lesson) => getLessonProgress(lesson) === "correct").length
+        : 0;
+      const label = `${learner.nickname} (${schoolYearLabel(learner.school_year)})`;
+      return `<li><button class="learner-choice${isActive ? " is-active" : ""}" data-learner-id="${learner.id}" type="button">${label}</button> ${isActive ? `${correct}/${lessons.length} math activities correct` : ""}</li>`;
+    })
+    .join("");
+}
+
+function renderAccount() {
+  dbBadge.textContent = `Supabase ${sharedDbShape.accountNamespace} / ${sharedDbShape.siteSlug}`;
+
+  if (!currentUser) {
+    learnerName.textContent = "Guest learner";
+    setAccountStatus("Sign in with the same guardian email and password used for Waldorf English Pathway.");
+    parentDashboard.hidden = true;
+    signOutButton.hidden = true;
+    renderList();
+    return;
+  }
+
+  const learner = activeLearner();
+  learnerName.textContent = learner ? learner.nickname : currentUser.email || "Guardian account";
+  parentDashboard.hidden = false;
+  signOutButton.hidden = false;
+  setAccountStatus(
+    learner
+      ? `Cloud sync active for ${learner.nickname}. This is the same learner record used by Waldorf English Pathway.`
+      : "Guardian account found, but no learner is linked yet. Register with a learner nickname to add one.",
+    learner ? "success" : "error",
+  );
+  renderParentDashboard();
+  renderList();
+}
+
 function moveLesson(step) {
   const lessonIndex = lessons.findIndex((lesson) => lesson.id === activeLesson.id);
   const nextLesson = lessons[lessonIndex + step];
@@ -165,60 +278,26 @@ function moveLesson(step) {
   renderExercise(nextLesson);
 }
 
-function renderAccount() {
-  const accounts = readJson(accountKey, []);
-  const hasSharedRecords = accounts.some((account) => account.siteSlug === SITE_ID);
-  dbBadge.textContent = `${sharedDbShape.accountNamespace} / ${SITE_ID}`;
-
-  if (!currentUser) {
-    learnerName.textContent = "Guest learner";
-    accountStatus.textContent = hasSharedRecords
-      ? "Sign in to continue saved math progress."
-      : "Register a parent or student account to save progress on this device.";
-    parentDashboard.hidden = true;
-    signOutButton.hidden = true;
-    renderList();
-    return;
+async function chooseLearner(learnerId) {
+  activeLearnerId = learnerId;
+  localStorage.setItem(ACTIVE_LEARNER_KEY, learnerId);
+  try {
+    await loadCloudProgress();
+  } catch (error) {
+    setAccountStatus(translateAuthError(error), "error");
   }
-
-  learnerName.textContent = currentUser.username;
-  accountStatus.textContent =
-    currentUser.role === "parent"
-      ? "Parent account active. Linked student progress appears below."
-      : "Student account active. Corrected work is saved to the shared progress shape.";
-  parentDashboard.hidden = currentUser.role !== "parent";
-  signOutButton.hidden = false;
-  renderParentDashboard();
-  renderList();
+  renderAccount();
 }
 
-function renderParentDashboard() {
-  if (!currentUser || currentUser.role !== "parent") return;
-
-  const accounts = readJson(accountKey, []);
-  const progress = readJson(progressKey, []);
-  const linked = currentUser.linkedStudentIds
-    .map((studentId) => accounts.find((account) => account.studentId === studentId))
-    .filter(Boolean);
-
-  if (!linked.length) {
-    progressList.innerHTML = "<li>No linked student yet. Register a student, then add that username to the parent link field.</li>";
-    return;
-  }
-
-  progressList.innerHTML = linked
-    .map((student) => {
-      const studentProgress = progress.filter(
-        (entry) =>
-          entry.siteSlug === SITE_ID &&
-          entry.subjectSlug === SUBJECT_ID &&
-          entry.studentId === student.studentId,
-      );
-      const correct = studentProgress.filter((entry) => entry.status === "correct").length;
-      const review = studentProgress.filter((entry) => entry.status === "needs-correction").length;
-      return `<li><strong>${student.username}</strong>: ${correct}/${lessons.length} correct, ${review} needing correction</li>`;
-    })
-    .join("");
+async function finishSignIn(user) {
+  currentUser = user;
+  learners = await ensureGuardianSetup(user);
+  const remembered = localStorage.getItem(ACTIVE_LEARNER_KEY);
+  activeLearnerId = learners.some((learner) => learner.id === remembered)
+    ? remembered
+    : learners[0]?.id || null;
+  await loadCloudProgress();
+  renderAccount();
 }
 
 list.addEventListener("click", (event) => {
@@ -229,7 +308,7 @@ list.addEventListener("click", (event) => {
   answer.focus();
 });
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const value = answer.value.trim();
 
@@ -240,85 +319,134 @@ form.addEventListener("submit", (event) => {
   }
 
   const isCorrect = checkAnswer(activeLesson, value);
-  saveLessonProgress(activeLesson, value, isCorrect);
 
-  if (isCorrect) {
-    feedback.textContent = `Correct. ${value}${activeLesson.suffix ? ` ${activeLesson.suffix}` : ""} is saved.`;
-    feedback.dataset.state = "correct";
-    correction.hidden = true;
-  } else {
-    feedback.textContent = "Needs correction. Read the hint, revise your work, and check again.";
+  try {
+    const savedTo = await saveLessonProgress(activeLesson, value, isCorrect);
+    if (isCorrect) {
+      feedback.textContent =
+        savedTo === "cloud"
+          ? `Correct. Saved to ${activeLearner()?.nickname}'s shared portfolio.`
+          : "Correct. Saved on this device. Sign in to save it to the shared portfolio.";
+      feedback.dataset.state = "correct";
+      correction.hidden = true;
+    } else {
+      feedback.textContent =
+        savedTo === "cloud"
+          ? "Needs correction. Saved for review in the shared portfolio."
+          : "Needs correction. Saved on this device.";
+      feedback.dataset.state = "try";
+      correction.hidden = false;
+    }
+    renderAccount();
+  } catch (error) {
+    feedback.textContent = `The answer was checked, but cloud saving failed: ${translateAuthError(error)}`;
     feedback.dataset.state = "try";
-    correction.hidden = false;
+    correction.hidden = !isCorrect;
   }
-
-  renderAccount();
 });
 
 previousButton.addEventListener("click", () => moveLesson(-1));
 nextButton.addEventListener("click", () => moveLesson(1));
 
+progressList.addEventListener("click", (event) => {
+  const button = event.target.closest(".learner-choice");
+  if (!button) return;
+  chooseLearner(button.dataset.learnerId);
+});
+
 authForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const username = usernameInput.value.trim().toLowerCase();
+  const email = emailInput.value.trim();
   const password = passwordInput.value;
-  const role = roleInput.value;
-  const linkedStudentName = studentLinkInput.value.trim().toLowerCase();
+  const nickname = learnerNicknameInput.value.trim();
 
-  if (!username || !password) {
-    accountStatus.textContent = "Enter both a username and password.";
+  if (!email || !password) {
+    setAccountStatus("Enter the guardian email and password.", "error");
     return;
   }
 
-  const accounts = readJson(accountKey, []);
-  const passwordHash = await hashPassword(password);
-  const existing = accounts.find((account) => account.username === username);
+  authForm.querySelectorAll("button, input, select").forEach((control) => {
+    control.disabled = true;
+  });
 
-  if (authMode.value === "login") {
-    if (!existing || existing.passwordHash !== passwordHash) {
-      accountStatus.textContent = "That username and password did not match.";
-      return;
-    }
-    if (existing.role === "parent" && linkedStudentName) {
-      const linkedStudent = accounts.find((account) => account.username === linkedStudentName && account.role === "student");
-      if (linkedStudent && !existing.linkedStudentIds.includes(linkedStudent.studentId)) {
-        existing.linkedStudentIds = [...existing.linkedStudentIds, linkedStudent.studentId];
-        writeJson(accountKey, accounts);
+  try {
+    if (authMode.value === "login") {
+      setAccountStatus("Signing in through the shared Waldorf database...");
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      await finishSignIn(data.user);
+    } else {
+      if (!nickname) {
+        setAccountStatus("Enter a learner nickname for the shared portfolio.", "error");
+        return;
+      }
+
+      setAccountStatus("Creating the shared guardian account...");
+      const consentedAt = new Date().toISOString();
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: "https://riaanptrs.github.io/waldorf-math-pathway/",
+          data: {
+            learner_nickname: nickname,
+            learner_school_year: "7",
+            guardian_confirmed: true,
+            privacy_version: PRIVACY_VERSION,
+            terms_version: TERMS_VERSION,
+            consented_at: consentedAt,
+          },
+        },
+      });
+      if (error) throw error;
+
+      if (data.user && data.session) {
+        await finishSignIn(data.user);
+      } else {
+        authForm.reset();
+        setAccountStatus("Account created. Confirm the email, then sign in here with the same Waldorf account.", "success");
       }
     }
-    currentUser = existing;
-  } else {
-    if (existing) {
-      accountStatus.textContent = "That username already exists. Choose sign in instead.";
-      return;
-    }
-
-    const linkedStudent = accounts.find((account) => account.username === linkedStudentName && account.role === "student");
-    const account = {
-      siteSlug: SITE_ID,
-      subjectSlug: SUBJECT_ID,
-      username,
-      passwordHash,
-      role,
-      studentId: role === "student" ? `${SITE_ID}:student:${crypto.randomUUID()}` : "",
-      linkedStudentIds: role === "parent" && linkedStudent ? [linkedStudent.studentId] : [],
-      createdAt: new Date().toISOString(),
-    };
-    accounts.push(account);
-    writeJson(accountKey, accounts);
-    currentUser = account;
+  } catch (error) {
+    setAccountStatus(translateAuthError(error), "error");
+  } finally {
+    authForm.querySelectorAll("button, input, select").forEach((control) => {
+      control.disabled = false;
+    });
   }
-
-  authForm.reset();
-  authMode.value = "login";
-  renderAccount();
 });
 
-signOutButton.addEventListener("click", () => {
+signOutButton.addEventListener("click", async () => {
+  await supabase.auth.signOut();
   currentUser = null;
+  learners = [];
+  activeLearnerId = null;
+  objectiveResponses = [];
+  activityProgress = [];
   renderAccount();
 });
 
-renderList();
-renderExercise(activeLesson);
-renderAccount();
+async function initialise() {
+  renderList();
+  renderExercise(activeLesson);
+  renderAccount();
+
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session?.user) {
+    try {
+      await finishSignIn(session.user);
+    } catch (error) {
+      setAccountStatus(translateAuthError(error), "error");
+    }
+  }
+}
+
+supabase.auth.onAuthStateChange((event, session) => {
+  if (event === "SIGNED_IN" && session?.user) {
+    window.setTimeout(() => finishSignIn(session.user).catch((error) => {
+      setAccountStatus(translateAuthError(error), "error");
+    }), 0);
+  }
+});
+
+initialise().catch((error) => setAccountStatus(translateAuthError(error), "error"));

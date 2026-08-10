@@ -5,6 +5,7 @@ const SHARED_DB_VERSION = "v1";
 const lessons = [
   {
     id: "g7-percent-base",
+    activityKey: "g7-math-percent-base",
     grade: "Grade 7",
     block: "Percents",
     title: "Finding the Base",
@@ -23,6 +24,7 @@ const lessons = [
   },
   {
     id: "g7-compound-interest",
+    activityKey: "g7-math-compound-interest",
     grade: "Grade 7",
     block: "Business Math",
     title: "Simple and Compound Interest",
@@ -42,6 +44,7 @@ const lessons = [
   },
   {
     id: "g7-ratio-whole",
+    activityKey: "g7-math-ratio-whole",
     grade: "Grade 7",
     block: "Ratios",
     title: "Sharing by Ratio",
@@ -60,6 +63,7 @@ const lessons = [
   },
   {
     id: "g7-rate-speed",
+    activityKey: "g7-math-rate-speed",
     grade: "Grade 7",
     block: "Rates",
     title: "Average Speed",
@@ -78,6 +82,7 @@ const lessons = [
   },
   {
     id: "g7-negative-numbers",
+    activityKey: "g7-math-negative-numbers",
     grade: "Grade 7",
     block: "Algebra",
     title: "Positive and Negative Numbers",
@@ -95,6 +100,7 @@ const lessons = [
   },
   {
     id: "g7-expression-like-terms",
+    activityKey: "g7-math-expression-like-terms",
     grade: "Grade 7",
     block: "Algebra",
     title: "Combining Like Terms",
@@ -111,6 +117,7 @@ const lessons = [
   },
   {
     id: "g7-equation-balance",
+    activityKey: "g7-math-equation-balance",
     grade: "Grade 7",
     block: "Algebra",
     title: "Balance the Equation",
@@ -128,6 +135,7 @@ const lessons = [
   },
   {
     id: "g7-gauss-sum",
+    activityKey: "g7-math-gauss-sum",
     grade: "Grade 7",
     block: "Formulas",
     title: "Gauss's Sum",
@@ -148,7 +156,10 @@ const lessons = [
 const sharedDbShape = {
   siteSlug: SITE_ID,
   subjectSlug: SUBJECT_ID,
-  accountNamespace: "waldorf-shared-learning",
-  accountFields: ["username", "passwordHash", "role", "linkedStudentIds"],
-  progressFields: ["siteSlug", "subjectSlug", "studentId", "lessonId", "status", "attempts", "lastAnswer", "updatedAt"],
+  accountNamespace: "Waldorf English Pathway Supabase",
+  accountFields: ["auth.users.email", "guardian_profiles.user_id", "learners.nickname", "learners.school_year"],
+  progressFields: ["objective_responses.learner_id", "objective_responses.activity_key", "activity_progress.completed"],
 };
+
+window.lessons = lessons;
+window.sharedDbShape = sharedDbShape;
