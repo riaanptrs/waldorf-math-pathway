@@ -4,7 +4,8 @@ A first repository for a Waldorf-inspired Grade 7 online math practice site.
 
 The goal is to create a child-friendly website similar in spirit to a Waldorf
 pathway: gentle lessons, practical arithmetic, story problems, and exercises
-children can complete online. The first focus is Grade 7.
+children can complete online. The first focus is Grade 7, with gentle
+arithmetic practice, story problems, and rhythmic number work.
 
 ## Current First Step
 
