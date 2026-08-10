@@ -21,6 +21,7 @@
           <span>Waldorf Math Pathway</span>
         </a>
         <div class="topbar__links">
+          <a href="#account">Accounts</a>
           <a href="#practice">Practice</a>
           <a href="#rhythm">Rhythm</a>
           <a href="#parent">Parent Notes</a>
@@ -30,9 +31,9 @@
         <p class="eyebrow">Grade 7 online math practice</p>
         <h1>A living path through percentages, ratios, and early algebra.</h1>
         <p class="hero__copy">
-          Short, child-friendly exercises for practical arithmetic, business
-          math, signed numbers, proportion, and algebraic thinking, inspired by
-          Waldorf curriculum patterns.
+          A Grade 7 lesson path with practical arithmetic, business math,
+          ratios, rates, signed numbers, formulas, and early algebra. Students
+          can check, correct, and save their work for parent review.
         </p>
         <a class="button" href="#practice">Begin Practice</a>
       </section>
@@ -45,16 +46,59 @@
           <h2>Grade 7 is the first pathway</h2>
         </div>
         <p>
-          This starter gives us a focused first block: online answer checking,
-          practical story problems, teacher notes, and a library of original
-          exercises shaped by Grade 7 Waldorf math themes.
+          This first math path adapts the Grade 7 sequence found in the source
+          books into original online activities: percent base, compound
+          interest, ratios, rate problems, negative numbers, expressions,
+          equations, and formulas.
         </p>
+      </section>
+
+      <section class="account" id="account" aria-labelledby="account-title">
+        <div class="section-heading">
+          <p class="eyebrow">Shared registration</p>
+          <h2 id="account-title">Sign in or register</h2>
+        </div>
+
+        <div class="account__layout">
+          <form class="auth-form">
+            <label for="auth-mode">Mode</label>
+            <select id="auth-mode" name="auth-mode">
+              <option value="login">Sign in</option>
+              <option value="register">Register</option>
+            </select>
+
+            <label for="role">Account type</label>
+            <select id="role" name="role">
+              <option value="student">Student</option>
+              <option value="parent">Parent</option>
+            </select>
+
+            <label for="username">Username</label>
+            <input id="username" name="username" autocomplete="username" />
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" />
+
+            <label for="student-link">Parent link student username</label>
+            <input id="student-link" name="student-link" autocomplete="off" />
+
+            <button class="button button--small" type="submit">Continue</button>
+          </form>
+
+          <div class="account-panel">
+            <p class="eyebrow">Current learner</p>
+            <h3 class="learner-name">Guest learner</h3>
+            <p class="account-status"></p>
+            <p class="db-badge"></p>
+            <button class="button button--small sign-out" type="button" hidden>Sign out</button>
+          </div>
+        </div>
       </section>
 
       <section class="practice" id="practice" aria-labelledby="practice-title">
         <div class="section-heading">
-          <p class="eyebrow">Practice garden</p>
-          <h2 id="practice-title">Choose today’s exercise</h2>
+          <p class="eyebrow">Lesson studio</p>
+          <h2 id="practice-title">Choose today's activity</h2>
         </div>
 
         <div class="practice__layout">
@@ -79,6 +123,7 @@
                 <button class="button button--small" type="submit">Check</button>
               </div>
               <p class="feedback" role="status"></p>
+              <p class="correction" hidden></p>
             </form>
           </article>
         </div>
@@ -100,29 +145,34 @@
       <section class="parent" id="parent">
         <div class="section-heading">
           <p class="eyebrow">Parent notes</p>
-          <h2>What this first version includes</h2>
+          <h2>Progress and lesson plan notes</h2>
+        </div>
+        <div class="parent-dashboard" hidden>
+          <h3>Linked student progress</h3>
+          <ul class="progress-list"></ul>
         </div>
         <div class="note-grid">
           <article>
-            <h3>Original exercises</h3>
+            <h3>Lesson extraction</h3>
             <p>
-              The sample activities are original and modeled around common
-              Grade 7 Waldorf math movements: practical life arithmetic,
-              proportion, signed numbers, early algebra, and clear reasoning.
+              Grade 7 topics are sequenced from the referenced Waldorf math
+              books, then rewritten as original online lessons with a single
+              checkable task.
             </p>
           </article>
           <article>
-            <h3>Online checking</h3>
+            <h3>Correction loop</h3>
             <p>
-              Children can enter answers and receive gentle feedback without
-              scores, streak pressure, or noisy reward loops.
+              Incorrect answers reveal a correction hint and remain marked for
+              review until the student submits a correct answer.
             </p>
           </article>
           <article>
-            <h3>Ready to grow</h3>
+            <h3>Shared database shape</h3>
             <p>
-              Next steps can add more Grade 7 blocks, saved progress, printable
-              pages, and carefully sourced curriculum references.
+              Math records are tagged as Waldorf Math while keeping the same
+              username, password, role, student link, and progress fields needed
+              beside Waldorf Pathway or English.
             </p>
           </article>
         </div>
@@ -131,8 +181,8 @@
 
     <footer>
       <p>
-        Waldorf Math Pathway is an independent learning project. Curriculum
-        references can be added with permission or original adaptation.
+        Waldorf Math Pathway is an independent learning project with original
+        activities adapted from owned curriculum references.
       </p>
     </footer>
 

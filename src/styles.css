@@ -1,12 +1,12 @@
 :root {
   --ink: #24312b;
-  --paper: #fbf5e8;
-  --cream: #fffaf0;
-  --sage: #66806a;
-  --moss: #394f3c;
-  --gold: #d99a3f;
-  --berry: #a94f55;
-  --sky: #6d9bb3;
+  --paper: #f6f7f2;
+  --cream: #fffdfa;
+  --sage: #6d856e;
+  --moss: #2f4b3a;
+  --gold: #d19a3f;
+  --berry: #b24e5a;
+  --sky: #4f8eb0;
   --line: rgba(36, 49, 43, 0.16);
   --shadow: 0 18px 50px rgba(36, 49, 43, 0.14);
 }
@@ -175,6 +175,7 @@ main {
 
 .band,
 .practice,
+.account,
 .parent {
   padding-inline: clamp(18px, 5vw, 72px);
 }
@@ -199,7 +200,8 @@ main {
   margin-bottom: 28px;
 }
 
-.practice__layout {
+.practice__layout,
+.account__layout {
   display: grid;
   grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
   gap: 24px;
@@ -227,8 +229,11 @@ main {
 
 .lesson-card span,
 .lesson-card small,
+.lesson-card em,
 .exercise__time,
-.answer-form label {
+.answer-form label,
+.auth-form label,
+.db-badge {
   color: rgba(36, 49, 43, 0.68);
   font-family: Arial, sans-serif;
   font-size: 0.86rem;
@@ -238,12 +243,33 @@ main {
   font-size: 1.1rem;
 }
 
+.lesson-card em {
+  justify-self: start;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(79, 142, 176, 0.12);
+  font-style: normal;
+}
+
+.lesson-card em[data-state="correct"] {
+  background: rgba(47, 111, 69, 0.14);
+  color: #2f6f45;
+}
+
+.lesson-card em[data-state="needs-correction"] {
+  background: rgba(154, 102, 48, 0.14);
+  color: #8a5928;
+}
+
 .lesson-card.is-active {
   border-color: rgba(169, 79, 85, 0.5);
   box-shadow: inset 5px 0 0 var(--berry);
 }
 
 .exercise,
+.auth-form,
+.account-panel,
+.parent-dashboard,
 .note-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -253,6 +279,12 @@ main {
 
 .exercise {
   padding: clamp(22px, 4vw, 38px);
+}
+
+.auth-form,
+.account-panel,
+.parent-dashboard {
+  padding: 22px;
 }
 
 .exercise__header {
@@ -273,16 +305,34 @@ main {
 }
 
 .exercise__body ul,
+.exercise__body ol,
 .rhythm__steps {
   margin: 0;
   padding-left: 22px;
   line-height: 1.7;
 }
 
-.answer-form {
+.lesson-note {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--sky);
+  background: rgba(79, 142, 176, 0.1);
+}
+
+.lesson-note p {
+  margin: 6px 0 0;
+  line-height: 1.55;
+}
+
+.answer-form,
+.auth-form {
   display: grid;
   gap: 10px;
   margin-top: 28px;
+}
+
+.auth-form {
+  margin-top: 0;
 }
 
 .answer-form__row {
@@ -290,7 +340,8 @@ main {
   gap: 10px;
 }
 
-input {
+input,
+select {
   width: min(220px, 100%);
   min-height: 44px;
   padding: 0 14px;
@@ -299,6 +350,11 @@ input {
   background: #fffdf7;
   color: var(--ink);
   font: inherit;
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
 }
 
 .feedback {
@@ -315,6 +371,16 @@ input {
   color: #9a6630;
 }
 
+.correction {
+  margin: 4px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(154, 102, 48, 0.24);
+  border-radius: 8px;
+  background: rgba(217, 154, 63, 0.12);
+  font-family: Arial, sans-serif;
+  line-height: 1.45;
+}
+
 .rhythm {
   background: #eaf0e5;
 }
@@ -327,6 +393,16 @@ input {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.parent-dashboard {
+  margin-bottom: 18px;
+}
+
+.progress-list {
+  margin: 0;
+  padding-left: 22px;
+  line-height: 1.7;
 }
 
 .note-grid article {
@@ -360,6 +436,7 @@ footer {
 
   .band,
   .practice__layout,
+  .account__layout,
   .note-grid {
     grid-template-columns: 1fr;
   }
@@ -373,6 +450,7 @@ footer {
   }
 
   input,
+  select,
   .button--small {
     width: 100%;
   }
