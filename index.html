@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A Waldorf-inspired Grade 7 math path with online exercises for percentages, ratios, negative numbers, and early algebra."
+    />
+    <title>Waldorf Math Pathway</title>
+    <link rel="preload" href="public/learning-path.png" as="image" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img class="hero__image" src="public/learning-path.png" alt="" />
+      <div class="hero__shade"></div>
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Waldorf Math Pathway home">
+          <span class="brand__mark">✦</span>
+          <span>Waldorf Math Pathway</span>
+        </a>
+        <div class="topbar__links">
+          <a href="#practice">Practice</a>
+          <a href="#rhythm">Rhythm</a>
+          <a href="#parent">Parent Notes</a>
+        </div>
+      </nav>
+      <section class="hero__content" id="top">
+        <p class="eyebrow">Grade 7 online math practice</p>
+        <h1>A living path through percentages, ratios, and early algebra.</h1>
+        <p class="hero__copy">
+          Short, child-friendly exercises for practical arithmetic, business
+          math, signed numbers, proportion, and algebraic thinking, inspired by
+          Waldorf curriculum patterns.
+        </p>
+        <a class="button" href="#practice">Begin Practice</a>
+      </section>
+    </header>
+
+    <main>
+      <section class="intro band">
+        <div>
+          <p class="eyebrow">Step one</p>
+          <h2>Grade 7 is the first pathway</h2>
+        </div>
+        <p>
+          This starter gives us a focused first block: online answer checking,
+          practical story problems, teacher notes, and a library of original
+          exercises shaped by Grade 7 Waldorf math themes.
+        </p>
+      </section>
+
+      <section class="practice" id="practice" aria-labelledby="practice-title">
+        <div class="section-heading">
+          <p class="eyebrow">Practice garden</p>
+          <h2 id="practice-title">Choose today’s exercise</h2>
+        </div>
+
+        <div class="practice__layout">
+          <aside class="lesson-list" aria-label="Exercise list"></aside>
+
+          <article class="exercise" aria-live="polite">
+            <div class="exercise__header">
+              <div>
+                <p class="eyebrow exercise__grade"></p>
+                <h3 class="exercise__title"></h3>
+              </div>
+              <span class="exercise__time"></span>
+            </div>
+
+            <p class="exercise__prompt"></p>
+            <div class="exercise__body"></div>
+
+            <form class="answer-form">
+              <label for="answer">Your answer</label>
+              <div class="answer-form__row">
+                <input id="answer" name="answer" inputmode="numeric" autocomplete="off" />
+                <button class="button button--small" type="submit">Check</button>
+              </div>
+              <p class="feedback" role="status"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <section class="rhythm band" id="rhythm">
+        <div>
+          <p class="eyebrow">Daily rhythm</p>
+          <h2>Warm up before the screen</h2>
+        </div>
+        <ol class="rhythm__steps">
+          <li>Estimate before calculating.</li>
+          <li>Name the operation in your own words.</li>
+          <li>Solve one practical problem slowly.</li>
+          <li>Explain how you checked your answer.</li>
+        </ol>
+      </section>
+
+      <section class="parent" id="parent">
+        <div class="section-heading">
+          <p class="eyebrow">Parent notes</p>
+          <h2>What this first version includes</h2>
+        </div>
+        <div class="note-grid">
+          <article>
+            <h3>Original exercises</h3>
+            <p>
+              The sample activities are original and modeled around common
+              Grade 7 Waldorf math movements: practical life arithmetic,
+              proportion, signed numbers, early algebra, and clear reasoning.
+            </p>
+          </article>
+          <article>
+            <h3>Online checking</h3>
+            <p>
+              Children can enter answers and receive gentle feedback without
+              scores, streak pressure, or noisy reward loops.
+            </p>
+          </article>
+          <article>
+            <h3>Ready to grow</h3>
+            <p>
+              Next steps can add more Grade 7 blocks, saved progress, printable
+              pages, and carefully sourced curriculum references.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Waldorf Math Pathway is an independent learning project. Curriculum
+        references can be added with permission or original adaptation.
+      </p>
+    </footer>
+
+    <script src="src/exercises.js"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>
