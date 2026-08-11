@@ -162,15 +162,15 @@ const lessons = [
     teacherAim:
       "Students rebuild a multiplication fact through doubling and symmetry instead of guessing.",
     examplePt:
-      "Exemplo: para 6 x 8, pense 6 x 4 = 24. Dobrar 24 dá 48, então 6 x 8 = 48. Também podemos verificar: 8 x 6 = 48.",
+      "Example: for 6 x 8, think 6 x 4 = 24. Doubling 24 gives 48, so 6 x 8 = 48. We can also check: 8 x 6 = 48.",
     rhythm: ["Use a fact you know.", "Double or halve when it helps.", "Check by turning the factors around."],
     prompt: "Complete the steps for 7 x 8. Then give the final product.",
     guidedSteps: [
-      { label: "Passo 1: Calcule 7 x 4.", answerType: "number", answer: 28 },
-      { label: "Passo 2: Dobre o resultado para chegar a 7 x 8.", answerType: "number", answer: 56 },
-      { label: "Passo 3: Verifique: 8 x 7 =", answerType: "number", answer: 56 },
+      { label: "Step 1: Calculate 7 x 4.", answerType: "number", answer: 28 },
+      { label: "Step 2: Double the result to reach 7 x 8.", answerType: "number", answer: 56 },
+      { label: "Step 3: Check: 8 x 7 =", answerType: "number", answer: 56 },
     ],
-    correction: "Respostas corretas: 7 x 4 = 28; dobrando 28 obtemos 56; 8 x 7 também é 56.",
+    correction: "Correct answers: 7 x 4 = 28; doubling 28 gives 56; 8 x 7 is also 56.",
     answerType: "number",
     answer: 56,
     tolerance: 0,
@@ -186,15 +186,15 @@ const lessons = [
     teacherAim:
       "Students reason from place value, carry digits, and multiplication facts before naming the missing digit.",
     examplePt:
-      "Exemplo: em 3? x 4 = 148, olhe primeiro para as unidades. 4 x ? termina em 8, então ? pode ser 2 ou 7. Testando 37 x 4 = 148, o dígito faltante é 7.",
+      "Example: in 3? x 4 = 148, first look at the ones. 4 x ? ends in 8, so ? could be 2 or 7. Testing 37 x 4 = 148 shows the missing digit is 7.",
     rhythm: ["Start with the ones column.", "Use the carry.", "Check the whole multiplication."],
     prompt: "Find the missing digit in 4? x 6 = 276. Then write the complete two-digit number.",
     guidedSteps: [
-      { label: "Passo 1: Qual digit makes 6 x ? end in 6?", answerType: "number", answer: 6 },
-      { label: "Passo 2: 6 x 6 = 36, so what carry goes to the tens column?", answerType: "number", answer: 3 },
-      { label: "Passo 3: Check the tens: 6 x 4 + 3 =", answerType: "number", answer: 27 },
+      { label: "Step 1: Which digit makes 6 x ? end in 6?", answerType: "number", answer: 6 },
+      { label: "Step 2: 6 x 6 = 36, so what carry goes to the tens column?", answerType: "number", answer: 3 },
+      { label: "Step 3: Check the tens: 6 x 4 + 3 =", answerType: "number", answer: 27 },
     ],
-    correction: "Respostas corretas: o dígito é 6; o carry é 3; 6 x 4 + 3 = 27; o número completo é 46.",
+    correction: "Correct answers: the digit is 6; the carry is 3; 6 x 4 + 3 = 27; the complete number is 46.",
     answerType: "number",
     answer: 46,
     tolerance: 0,
@@ -210,16 +210,16 @@ const lessons = [
     teacherAim:
       "Students show denominator choice, equivalent fractions, and the final mixed-number result.",
     examplePt:
-      "Exemplo: para 1/3 + 1/4, use denominador 12. Então 1/3 = 4/12 e 1/4 = 3/12. Somando: 7/12.",
+      "Example: for 1/3 + 1/4, use denominator 12. Then 1/3 = 4/12 and 1/4 = 3/12. Adding gives 7/12.",
     rhythm: ["Choose one common denominator.", "Rewrite both fractions.", "Add numerators and keep the denominator."],
     prompt: "Add 5/6 + 3/8. Complete each step before the final answer.",
     guidedSteps: [
-      { label: "Passo 1: Escolha um denominador comum.", answerType: "number", answer: 24 },
-      { label: "Passo 2: Rewrite 5/6 as twenty-fourths.", answerType: "expression", acceptedAnswers: ["20/24"] },
-      { label: "Passo 3: Rewrite 3/8 as twenty-fourths.", answerType: "expression", acceptedAnswers: ["9/24"] },
-      { label: "Passo 4: Add the numerators.", answerType: "expression", acceptedAnswers: ["29/24"] },
+      { label: "Step 1: Choose a common denominator.", answerType: "number", answer: 24 },
+      { label: "Step 2: Rewrite 5/6 as twenty-fourths.", answerType: "expression", acceptedAnswers: ["20/24"] },
+      { label: "Step 3: Rewrite 3/8 as twenty-fourths.", answerType: "expression", acceptedAnswers: ["9/24"] },
+      { label: "Step 4: Add the numerators.", answerType: "expression", acceptedAnswers: ["29/24"] },
     ],
-    correction: "Respostas corretas: denominador comum 24; 5/6 = 20/24; 3/8 = 9/24; soma = 29/24 = 1 5/24.",
+    correction: "Correct answers: common denominator 24; 5/6 = 20/24; 3/8 = 9/24; sum = 29/24 = 1 5/24.",
     answerType: "expression",
     acceptedAnswers: ["29/24", "1 5/24", "1+5/24"],
   },
@@ -234,15 +234,15 @@ const lessons = [
     teacherAim:
       "Students transform an equivalent division problem and estimate before calculating.",
     examplePt:
-      "Exemplo: 36 ÷ 0.09 fica 3600 ÷ 9, porque movemos as duas vírgulas duas casas para a direita. A resposta é 400.",
+      "Example: 36 ÷ 0.09 becomes 3600 ÷ 9 because we move both decimal points two places to the right. The answer is 400.",
     rhythm: ["Move both decimal points the same number of places.", "Make the divisor whole.", "Estimate before dividing."],
     prompt: "Solve 21.3 ÷ 5.68. Round to the nearest hundredth.",
     guidedSteps: [
-      { label: "Passo 1: Move decimal points how many places?", answerType: "number", answer: 2 },
-      { label: "Passo 2: The equivalent problem is 2130 ÷", answerType: "number", answer: 568 },
-      { label: "Passo 3: Estimate the answer to the nearest whole number.", answerType: "number", answer: 4, tolerance: 1 },
+      { label: "Step 1: Move decimal points how many places?", answerType: "number", answer: 2 },
+      { label: "Step 2: The equivalent problem is 2130 ÷", answerType: "number", answer: 568 },
+      { label: "Step 3: Estimate the answer to the nearest whole number.", answerType: "number", answer: 4, tolerance: 1 },
     ],
-    correction: "Respostas corretas: mova 2 casas; 21.3 ÷ 5.68 = 2130 ÷ 568; o resultado é aproximadamente 3.75.",
+    correction: "Correct answers: move 2 places; 21.3 ÷ 5.68 = 2130 ÷ 568; the result is approximately 3.75.",
     answerType: "number",
     answer: 3.75,
     tolerance: 0.01,
@@ -258,15 +258,15 @@ const lessons = [
     teacherAim:
       "Students divide total cost by quantity and compare one-unit prices.",
     examplePt:
-      "Exemplo: se 5 laranjas custam R$10,00, cada laranja custa R$2,00, porque 10 ÷ 5 = 2.",
+      "Example: if 5 oranges cost $10.00, each orange costs $2.00 because 10 ÷ 5 = 2.",
     rhythm: ["Find the price for one item.", "Compare equal units.", "Choose the smaller unit price."],
     prompt: "Store A sells 6 pencils for $4.20. Store B sells 10 pencils for $6.50. Which store is cheaper per pencil?",
     guidedSteps: [
-      { label: "Passo 1: Store A unit price: 4.20 ÷ 6 =", answerType: "number", answer: 0.7, tolerance: 0.001 },
-      { label: "Passo 2: Store B unit price: 6.50 ÷ 10 =", answerType: "number", answer: 0.65, tolerance: 0.001 },
-      { label: "Passo 3: Which unit price is smaller, A or B?", answerType: "expression", acceptedAnswers: ["b", "storeb", "store b"] },
+      { label: "Step 1: Store A unit price: 4.20 ÷ 6 =", answerType: "number", answer: 0.7, tolerance: 0.001 },
+      { label: "Step 2: Store B unit price: 6.50 ÷ 10 =", answerType: "number", answer: 0.65, tolerance: 0.001 },
+      { label: "Step 3: Which unit price is smaller, A or B?", answerType: "expression", acceptedAnswers: ["b", "storeb", "store b"] },
     ],
-    correction: "Respostas corretas: Store A = $0.70 por lápis; Store B = $0.65 por lápis; Store B é mais barato.",
+    correction: "Correct answers: Store A = $0.70 per pencil; Store B = $0.65 per pencil; Store B is cheaper.",
     answerType: "expression",
     acceptedAnswers: ["b", "storeb", "store b"],
   },
@@ -281,15 +281,15 @@ const lessons = [
     teacherAim:
       "Students use digit tests and explain which divisors work.",
     examplePt:
-      "Exemplo: 732 é divisível por 3 porque 7 + 3 + 2 = 12, e 12 é divisível por 3. Não é divisível por 5 porque não termina em 0 ou 5.",
+      "Example: 732 is divisible by 3 because 7 + 3 + 2 = 12, and 12 is divisible by 3. It is not divisible by 5 because it does not end in 0 or 5.",
     rhythm: ["Check the last digit.", "Add the digits.", "Check the last two digits for 4."],
     prompt: "Which of 2, 3, 4, 5, 9, and 10 divide 85,734 evenly?",
     guidedSteps: [
-      { label: "Passo 1: Add the digits: 8 + 5 + 7 + 3 + 4 =", answerType: "number", answer: 27 },
-      { label: "Passo 2: Is the number even? Answer yes or no.", answerType: "expression", acceptedAnswers: ["yes", "sim"] },
-      { label: "Passo 3: Are the last two digits, 34, divisible by 4? Answer yes or no.", answerType: "expression", acceptedAnswers: ["no", "nao", "não"] },
+      { label: "Step 1: Add the digits: 8 + 5 + 7 + 3 + 4 =", answerType: "number", answer: 27 },
+      { label: "Step 2: Is the number even? Answer yes or no.", answerType: "expression", acceptedAnswers: ["yes", "sim"] },
+      { label: "Step 3: Are the last two digits, 34, divisible by 4? Answer yes or no.", answerType: "expression", acceptedAnswers: ["no", "nao", "não"] },
     ],
-    correction: "Respostas corretas: soma dos dígitos = 27; o número é par; 34 não é divisível por 4. Divisores: 2, 3 e 9.",
+    correction: "Correct answers: digit sum = 27; the number is even; 34 is not divisible by 4. Divisors: 2, 3, and 9.",
     answerType: "expression",
     acceptedAnswers: ["2,3,9", "2 3 9", "2;3;9"],
   },
@@ -304,15 +304,15 @@ const lessons = [
     teacherAim:
       "Students reduce in visible stages instead of trying to jump to the answer.",
     examplePt:
-      "Exemplo: 36/48 pode ser dividido por 12. Então 36 ÷ 12 = 3 e 48 ÷ 12 = 4, logo 36/48 = 3/4.",
+      "Example: 36/48 can be divided by 12. Then 36 ÷ 12 = 3 and 48 ÷ 12 = 4, so 36/48 = 3/4.",
     rhythm: ["Find a common factor.", "Divide top and bottom by the same number.", "Keep reducing until no factor remains."],
     prompt: "Reduce 7560/8100 to lowest terms.",
     guidedSteps: [
-      { label: "Passo 1: Divide top and bottom by 180. New numerator:", answerType: "number", answer: 42 },
-      { label: "Passo 2: Divide top and bottom by 180. New denominator:", answerType: "number", answer: 45 },
-      { label: "Passo 3: Reduce 42/45 by 3.", answerType: "expression", acceptedAnswers: ["14/15"] },
+      { label: "Step 1: Divide top and bottom by 180. New numerator:", answerType: "number", answer: 42 },
+      { label: "Step 2: Divide top and bottom by 180. New denominator:", answerType: "number", answer: 45 },
+      { label: "Step 3: Reduce 42/45 by 3.", answerType: "expression", acceptedAnswers: ["14/15"] },
     ],
-    correction: "Respostas corretas: 7560/8100 ÷ 180 = 42/45; depois 42/45 ÷ 3 = 14/15.",
+    correction: "Correct answers: 7560/8100 ÷ 180 = 42/45; then 42/45 ÷ 3 = 14/15.",
     answerType: "expression",
     acceptedAnswers: ["14/15"],
   },
@@ -327,19 +327,263 @@ const lessons = [
     teacherAim:
       "Students connect a repeating block to 9s in the denominator and then reduce.",
     examplePt:
-      "Exemplo: 0.27 repetindo vira 27/99, porque dois algarismos repetem. Depois reduzimos: 27/99 = 3/11.",
+      "Example: repeating 0.27 becomes 27/99 because two digits repeat. Then we reduce: 27/99 = 3/11.",
     rhythm: ["Count the repeating digits.", "Use the same number of 9s.", "Reduce the fraction."],
     prompt: "Convert 0.36 repeating to a fraction in lowest terms.",
     guidedSteps: [
-      { label: "Passo 1: How many digits repeat?", answerType: "number", answer: 2 },
-      { label: "Passo 2: Write the first fraction before reducing.", answerType: "expression", acceptedAnswers: ["36/99"] },
-      { label: "Passo 3: Divide numerator and denominator by 9.", answerType: "expression", acceptedAnswers: ["4/11"] },
+      { label: "Step 1: How many digits repeat?", answerType: "number", answer: 2 },
+      { label: "Step 2: Write the first fraction before reducing.", answerType: "expression", acceptedAnswers: ["36/99"] },
+      { label: "Step 3: Divide numerator and denominator by 9.", answerType: "expression", acceptedAnswers: ["4/11"] },
     ],
-    correction: "Respostas corretas: dois dígitos repetem; 0.363636... = 36/99; reduzindo por 9 obtemos 4/11.",
+    correction: "Correct answers: two digits repeat; 0.363636... = 36/99; reducing by 9 gives 4/11.",
     answerType: "expression",
     acceptedAnswers: ["4/11"],
   },
 ];
+
+const lessonTranslations = {
+  "g7-percent-base": {
+    grade: "7o ano",
+    block: "Porcentagens",
+    title: "Encontrando o todo",
+    sourceFocus: "Trabalho de porcentagem do 7o ano: passar de encontrar uma porcentagem de um numero para encontrar o todo.",
+    teacherAim:
+      "Os estudantes praticam o pensamento inverso da porcentagem antes da algebra formal: se uma parte e uma porcentagem conhecida, o todo pode ser reconstruido.",
+    rhythm: ["35% significa 35 de cada 100.", "Divida a parte pela forma decimal da porcentagem.", "Confira calculando a porcentagem novamente."],
+    prompt: "Uma turma arrecadou 42 dolares. Isso foi 35% da meta da feira. Qual era a meta total?",
+    correction:
+      "35% e 35/100. Divida 42 por 0.35 para reconstruir a meta total, depois confira se 35% da sua resposta e 42.",
+  },
+  "g7-compound-interest": {
+    grade: "7o ano",
+    block: "Matematica financeira",
+    title: "Juros simples e compostos",
+    sourceFocus: "Juros compostos do 7o ano: composicao anual por crescimento percentual ano a ano.",
+    teacherAim:
+      "Os estudantes comparam juros simples e compostos sem usar ainda a formula posterior de crescimento exponencial.",
+    rhythm: ["Comece com o capital inicial.", "Encontre os juros deste ano.", "Some os juros antes de calcular os juros do proximo ano."],
+    prompt: "Mara guarda 200 dolares com juros de 5% ao ano, compostos anualmente. Qual e o saldo depois de 2 anos?",
+    correction:
+      "No ano 1, rende 10 dolares, entao o saldo vira 210. No ano 2, 5% de 210 e 10.50. Some isso a 210.",
+  },
+  "g7-ratio-whole": {
+    grade: "7o ano",
+    block: "Razoes",
+    title: "Dividindo por razao",
+    sourceFocus: "Razoes no 7o ano: interpretar partes de um todo antes de resolver equacoes de proporcao.",
+    teacherAim:
+      "Os estudantes veem a razao como partes de um todo e usam o raciocinio de fracao do todo.",
+    rhythm: ["Some as partes da razao.", "Nomeie cada parte como fracao do todo.", "Multiplique o todo por essa parte."],
+    prompt: "Um canteiro tem flores vermelhas e amarelas na razao 2:3. Ha 45 flores ao todo. Quantas sao amarelas?",
+    correction:
+      "A razao tem 5 partes ao todo. As amarelas sao 3 dessas 5 partes, entao encontre 3/5 de 45.",
+  },
+  "g7-rate-speed": {
+    grade: "7o ano",
+    block: "Taxas",
+    title: "Velocidade media",
+    sourceFocus: "Problemas de taxa do 7o ano: desenvolver intuicao para quando multiplicar e quando dividir.",
+    teacherAim:
+      "Os estudantes convertem unidades de tempo e dividem a distancia total pelo tempo total para encontrar uma taxa.",
+    rhythm: ["Taxa significa quantidade por uma unidade.", "Transforme minutos em horas.", "Divida a distancia pelas horas."],
+    prompt: "Um ciclista percorre 6 milhas em 15 minutos. Qual e a velocidade media em milhas por hora?",
+    correction:
+      "15 minutos e 1/4 de hora. Uma taxa em milhas por hora pergunta a distancia em uma hora, entao divida 6 por 1/4.",
+  },
+  "g7-negative-numbers": {
+    grade: "7o ano",
+    block: "Algebra",
+    title: "Numeros positivos e negativos",
+    sourceFocus: "Aula principal de algebra do 7o ano: pratica cuidadosa das quatro operacoes com numeros com sinal.",
+    teacherAim:
+      "Os estudantes trabalham com numeros negativos como relacoes numericas e depois conferem invertendo as operacoes.",
+    rhythm: ["Negativo vezes positivo e negativo.", "Negativo vezes negativo e positivo.", "Confira o sinal antes do tamanho."],
+    prompt: "Encontre o valor de -8 x 7 + 18.",
+    correction:
+      "Primeiro multiplique: -8 x 7 = -56. Depois some 18, andando 18 passos em direcao ao zero.",
+  },
+  "g7-expression-like-terms": {
+    grade: "7o ano",
+    block: "Algebra",
+    title: "Juntando termos semelhantes",
+    sourceFocus: "Algebra do 7o ano: desenvolver forma clara ao simplificar expressoes.",
+    teacherAim:
+      "Os estudantes separam termos diferentes e constantes, depois simplificam com passos visiveis e organizados.",
+    rhythm: ["Junte as mesmas letras.", "Junte os numeros sem letra.", "Mantenha termos diferentes separados."],
+    prompt: "Simplifique: 6k - 3 + 4k - 11. Escreva a expressao simplificada.",
+    correction:
+      "Junte 6k e 4k para formar 10k. Junte -3 e -11 para formar -14.",
+  },
+  "g7-equation-balance": {
+    grade: "7o ano",
+    block: "Algebra",
+    title: "Equilibre a equacao",
+    sourceFocus: "Algebra do 7o ano: resolver equacoes fazendo a mesma coisa nos dois lados.",
+    teacherAim:
+      "Os estudantes usam a regra de ouro das equacoes e verificam o valor por substituicao.",
+    rhythm: ["Mantenha o sinal de igual equilibrado.", "Reuna as constantes.", "Divida por ultimo."],
+    prompt: "Resolva para x: 5x - 2 = 3x + 8.",
+    correction:
+      "Subtraia 3x dos dois lados para obter 2x - 2 = 8. Some 2 nos dois lados, depois divida por 2.",
+  },
+  "g7-gauss-sum": {
+    grade: "7o ano",
+    block: "Formulas",
+    title: "A soma de Gauss",
+    sourceFocus: "Formulas do 7o ano: usar primeiro termo, ultimo termo e numero de termos para somar uma sequencia aritmetica.",
+    teacherAim:
+      "Os estudantes vivenciam uma formula como pensamento condensado, nao apenas como regra para decorar.",
+    rhythm: ["Faca pares do primeiro com o ultimo.", "Conte quantos numeros existem.", "Use metade da quantidade vezes a soma do par."],
+    prompt: "Encontre a soma de 12 + 15 + 18 + ... + 48.",
+    correction:
+      "A sequencia tem 13 numeros. Primeiro mais ultimo e 60. Use 13 x 60 / 2.",
+  },
+  "g7-table-square-products": {
+    grade: "7o ano",
+    block: "Revisao aritmetica",
+    title: "Pensamento da tabuada",
+    sourceFocus: "Fluencia na tabuada a partir do modelo de 1 a 12.",
+    teacherAim:
+      "Os estudantes reconstruem um fato de multiplicacao por duplicacao e simetria, em vez de adivinhar.",
+    examplePt:
+      "Exemplo: para 6 x 8, pense 6 x 4 = 24. Dobrar 24 da 48, entao 6 x 8 = 48. Tambem podemos verificar: 8 x 6 = 48.",
+    rhythm: ["Use um fato que voce conhece.", "Dobre ou divida pela metade quando ajudar.", "Confira trocando a ordem dos fatores."],
+    prompt: "Complete os passos para 7 x 8. Depois de o produto final.",
+    guidedSteps: [
+      { label: "Passo 1: Calcule 7 x 4.", answerType: "number", answer: 28 },
+      { label: "Passo 2: Dobre o resultado para chegar a 7 x 8.", answerType: "number", answer: 56 },
+      { label: "Passo 3: Verifique: 8 x 7 =", answerType: "number", answer: 56 },
+    ],
+    correction: "Respostas corretas: 7 x 4 = 28; dobrando 28 obtemos 56; 8 x 7 tambem e 56.",
+  },
+  "g7-missing-digit": {
+    grade: "7o ano",
+    block: "Desafios",
+    title: "Multiplicacao com algarismo faltando",
+    sourceFocus: "Desafios de multiplicacao com algarismo faltando e aritmetica de algarismos.",
+    teacherAim:
+      "Os estudantes raciocinam com valor posicional, transporte e fatos de multiplicacao antes de nomear o algarismo faltante.",
+    examplePt:
+      "Exemplo: em 3? x 4 = 148, olhe primeiro para as unidades. 4 x ? termina em 8, entao ? pode ser 2 ou 7. Testando 37 x 4 = 148, o algarismo faltante e 7.",
+    rhythm: ["Comece pela coluna das unidades.", "Use o transporte.", "Confira a multiplicacao inteira."],
+    prompt: "Encontre o algarismo faltante em 4? x 6 = 276. Depois escreva o numero completo de dois algarismos.",
+    guidedSteps: [
+      { label: "Passo 1: Qual algarismo faz 6 x ? terminar em 6?", answerType: "number", answer: 6 },
+      { label: "Passo 2: 6 x 6 = 36; qual transporte vai para a dezena?", answerType: "number", answer: 3 },
+      { label: "Passo 3: Confira as dezenas: 6 x 4 + 3 =", answerType: "number", answer: 27 },
+    ],
+    correction: "Respostas corretas: o algarismo e 6; o transporte e 3; 6 x 4 + 3 = 27; o numero completo e 46.",
+  },
+  "g7-fraction-common-denominator": {
+    grade: "7o ano",
+    block: "Fracoes",
+    title: "Soma com denominador comum",
+    sourceFocus: "Soma de fracoes e revisao de fracoes-decimais.",
+    teacherAim:
+      "Os estudantes mostram a escolha do denominador, fracoes equivalentes e o resultado final como numero misto.",
+    examplePt:
+      "Exemplo: para 1/3 + 1/4, use denominador 12. Entao 1/3 = 4/12 e 1/4 = 3/12. Somando: 7/12.",
+    rhythm: ["Escolha um denominador comum.", "Reescreva as duas fracoes.", "Some os numeradores e mantenha o denominador."],
+    prompt: "Some 5/6 + 3/8. Complete cada passo antes da resposta final.",
+    guidedSteps: [
+      { label: "Passo 1: Escolha um denominador comum.", answerType: "number", answer: 24 },
+      { label: "Passo 2: Reescreva 5/6 em vinte e quatro avos.", answerType: "expression", acceptedAnswers: ["20/24"] },
+      { label: "Passo 3: Reescreva 3/8 em vinte e quatro avos.", answerType: "expression", acceptedAnswers: ["9/24"] },
+      { label: "Passo 4: Some os numeradores.", answerType: "expression", acceptedAnswers: ["29/24"] },
+    ],
+    correction: "Respostas corretas: denominador comum 24; 5/6 = 20/24; 3/8 = 9/24; soma = 29/24 = 1 5/24.",
+  },
+  "g7-decimal-division-shift": {
+    grade: "7o ano",
+    block: "Decimais",
+    title: "Transforme o divisor em inteiro",
+    sourceFocus: "Revisao de divisao decimal: ajustar o divisor movendo as virgulas antes de dividir.",
+    teacherAim:
+      "Os estudantes transformam um problema de divisao equivalente e estimam antes de calcular.",
+    examplePt:
+      "Exemplo: 36 dividido por 0.09 fica 3600 dividido por 9, porque movemos as duas virgulas duas casas para a direita. A resposta e 400.",
+    rhythm: ["Mova as duas virgulas o mesmo numero de casas.", "Transforme o divisor em inteiro.", "Estime antes de dividir."],
+    prompt: "Resolva 21.3 dividido por 5.68. Arredonde para o centesimo mais proximo.",
+    guidedSteps: [
+      { label: "Passo 1: Mova as virgulas quantas casas?", answerType: "number", answer: 2 },
+      { label: "Passo 2: O problema equivalente e 2130 dividido por", answerType: "number", answer: 568 },
+      { label: "Passo 3: Estime a resposta para o inteiro mais proximo.", answerType: "number", answer: 4, tolerance: 1 },
+    ],
+    correction: "Respostas corretas: mova 2 casas; 21.3 dividido por 5.68 = 2130 dividido por 568; o resultado e aproximadamente 3.75.",
+  },
+  "g7-unit-cost": {
+    grade: "7o ano",
+    block: "Custo unitario",
+    title: "Qual preco e melhor?",
+    sourceFocus: "Problemas de custo unitario das folhas de revisao aritmetica.",
+    teacherAim:
+      "Os estudantes dividem o custo total pela quantidade e comparam precos de uma unidade.",
+    examplePt:
+      "Exemplo: se 5 laranjas custam R$10,00, cada laranja custa R$2,00, porque 10 dividido por 5 = 2.",
+    rhythm: ["Encontre o preco de um item.", "Compare unidades iguais.", "Escolha o menor preco unitario."],
+    prompt: "A loja A vende 6 lapis por $4.20. A loja B vende 10 lapis por $6.50. Qual loja e mais barata por lapis?",
+    guidedSteps: [
+      { label: "Passo 1: Preco unitario da loja A: 4.20 dividido por 6 =", answerType: "number", answer: 0.7, tolerance: 0.001 },
+      { label: "Passo 2: Preco unitario da loja B: 6.50 dividido por 10 =", answerType: "number", answer: 0.65, tolerance: 0.001 },
+      { label: "Passo 3: Qual preco unitario e menor, A ou B?", answerType: "expression", acceptedAnswers: ["b", "storeb", "store b"] },
+    ],
+    correction: "Respostas corretas: Loja A = $0.70 por lapis; Loja B = $0.65 por lapis; a Loja B e mais barata.",
+  },
+  "g7-divisibility-check": {
+    grade: "7o ano",
+    block: "Divisibilidade",
+    title: "Regras de divisibilidade",
+    sourceFocus: "Divisibilidade por 2, 3, 4, 5, 9 e 10.",
+    teacherAim:
+      "Os estudantes usam testes com algarismos e explicam quais divisores funcionam.",
+    examplePt:
+      "Exemplo: 732 e divisivel por 3 porque 7 + 3 + 2 = 12, e 12 e divisivel por 3. Nao e divisivel por 5 porque nao termina em 0 ou 5.",
+    rhythm: ["Confira o ultimo algarismo.", "Some os algarismos.", "Confira os dois ultimos algarismos para 4."],
+    prompt: "Quais numeros entre 2, 3, 4, 5, 9 e 10 dividem 85.734 exatamente?",
+    guidedSteps: [
+      { label: "Passo 1: Some os algarismos: 8 + 5 + 7 + 3 + 4 =", answerType: "number", answer: 27 },
+      { label: "Passo 2: O numero e par? Responda sim ou nao.", answerType: "expression", acceptedAnswers: ["yes", "sim"] },
+      { label: "Passo 3: Os dois ultimos algarismos, 34, sao divisiveis por 4? Responda sim ou nao.", answerType: "expression", acceptedAnswers: ["no", "nao", "não"] },
+    ],
+    correction: "Respostas corretas: soma dos algarismos = 27; o numero e par; 34 nao e divisivel por 4. Divisores: 2, 3 e 9.",
+  },
+  "g7-reduce-fraction": {
+    grade: "7o ano",
+    block: "Fracoes",
+    title: "Reduza uma fracao grande",
+    sourceFocus: "Reducao de fracoes grandes na revisao aritmetica do 7o ano.",
+    teacherAim:
+      "Os estudantes reduzem em etapas visiveis em vez de tentar saltar direto para a resposta.",
+    examplePt:
+      "Exemplo: 36/48 pode ser dividido por 12. Entao 36 dividido por 12 = 3 e 48 dividido por 12 = 4, logo 36/48 = 3/4.",
+    rhythm: ["Encontre um fator comum.", "Divida numerador e denominador pelo mesmo numero.", "Continue reduzindo ate nao haver fator comum."],
+    prompt: "Reduza 7560/8100 aos menores termos.",
+    guidedSteps: [
+      { label: "Passo 1: Divida numerador e denominador por 180. Novo numerador:", answerType: "number", answer: 42 },
+      { label: "Passo 2: Divida numerador e denominador por 180. Novo denominador:", answerType: "number", answer: 45 },
+      { label: "Passo 3: Reduza 42/45 por 3.", answerType: "expression", acceptedAnswers: ["14/15"] },
+    ],
+    correction: "Respostas corretas: 7560/8100 dividido por 180 = 42/45; depois 42/45 dividido por 3 = 14/15.",
+  },
+  "g7-repeating-decimal-fraction": {
+    grade: "7o ano",
+    block: "Dizimas periodicas",
+    title: "Dizima periodica para fracao",
+    sourceFocus: "Conversao de dizimas periodicas em fracoes.",
+    teacherAim:
+      "Os estudantes conectam um bloco repetido aos 9 no denominador e depois reduzem.",
+    examplePt:
+      "Exemplo: 0.27 repetindo vira 27/99, porque dois algarismos repetem. Depois reduzimos: 27/99 = 3/11.",
+    rhythm: ["Conte os algarismos que repetem.", "Use o mesmo numero de 9 no denominador.", "Reduza a fracao."],
+    prompt: "Converta 0.36 repetindo em uma fracao nos menores termos.",
+    guidedSteps: [
+      { label: "Passo 1: Quantos algarismos repetem?", answerType: "number", answer: 2 },
+      { label: "Passo 2: Escreva a primeira fracao antes de reduzir.", answerType: "expression", acceptedAnswers: ["36/99"] },
+      { label: "Passo 3: Divida numerador e denominador por 9.", answerType: "expression", acceptedAnswers: ["4/11"] },
+    ],
+    correction: "Respostas corretas: dois algarismos repetem; 0.363636... = 36/99; reduzindo por 9 obtemos 4/11.",
+  },
+};
 
 const sharedDbShape = {
   siteSlug: SITE_ID,
@@ -350,4 +594,5 @@ const sharedDbShape = {
 };
 
 window.lessons = lessons;
+window.lessonTranslations = lessonTranslations;
 window.sharedDbShape = sharedDbShape;

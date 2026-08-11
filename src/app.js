@@ -8,6 +8,7 @@ import {
 } from "../assets/supabase-client.js";
 
 const lessons = window.lessons;
+const lessonTranslations = window.lessonTranslations || {};
 const sharedDbShape = window.sharedDbShape;
 const list = document.querySelector(".lesson-list");
 const grade = document.querySelector(".exercise__grade");
@@ -24,6 +25,7 @@ const authMode = document.querySelector("#auth-mode");
 const emailInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 const learnerNicknameInput = document.querySelector("#student-link");
+const languageInput = document.querySelector("#language");
 const accountStatus = document.querySelector(".account-status");
 const learnerName = document.querySelector(".learner-name");
 const parentDashboard = document.querySelector(".parent-dashboard");
@@ -37,6 +39,178 @@ const nextButton = document.querySelector(".lesson-next");
 
 const ACTIVE_LEARNER_KEY = "wep:active-learner";
 const LOCAL_PROGRESS_KEY = "waldorf-math:local-progress:v2";
+const LANGUAGE_KEY = "waldorf-math:language";
+
+const copy = {
+  pt: {
+    brand: "Trilha de Matematica Waldorf",
+    navAccount: "Conta",
+    navPractice: "Praticar",
+    navRhythm: "Ritmo",
+    navParent: "Notas para os pais",
+    heroEyebrow: "Pratica online de matematica do 7o ano",
+    heroTitle: "Um caminho vivo por porcentagens, razoes e algebra inicial.",
+    heroCopy:
+      "Uma trilha de aulas do 7o ano com aritmetica pratica, matematica financeira, fracoes, decimais, razoes, numeros com sinal, formulas e algebra inicial. Os estudantes completam passos visiveis, corrigem o proprio trabalho e salvam o progresso para revisao dos pais.",
+    heroButton: "Comecar a praticar",
+    introEyebrow: "Primeiro passo",
+    introTitle: "O 7o ano e a primeira trilha",
+    introCopy:
+      "Esta trilha de matematica adapta a sequencia do 7o ano e as folhas de revisao em atividades online originais: revisao aritmetica, fracoes, decimais, divisibilidade, custo unitario, dizimas periodicas, porcentagem, razoes, numeros com sinal, equacoes e formulas.",
+    accountEyebrow: "Cadastro compartilhado",
+    accountTitle: "Entrar ou cadastrar",
+    modeLabel: "Modo",
+    modeLogin: "Entrar",
+    modeRegister: "Cadastrar",
+    emailLabel: "Email do responsavel",
+    passwordLabel: "Senha",
+    learnerLabel: "Apelido do estudante",
+    languageLabel: "Idioma do estudante",
+    continueButton: "Continuar",
+    currentLearnerEyebrow: "Estudante atual",
+    signOut: "Sair",
+    practiceEyebrow: "Sala de pratica",
+    practiceTitle: "Escolha a atividade de hoje",
+    previousButton: "Anterior",
+    nextButton: "Proxima",
+    checkButton: "Verificar",
+    rhythmEyebrow: "Ritmo diario",
+    rhythmTitle: "Aquecimento antes da tela",
+    rhythmStep1: "Estime antes de calcular.",
+    rhythmStep2: "Nomeie a operacao com suas proprias palavras.",
+    rhythmStep3: "Resolva um problema pratico devagar.",
+    rhythmStep4: "Explique como voce conferiu a resposta.",
+    parentEyebrow: "Notas para os pais",
+    parentTitle: "Progresso e notas do plano de aulas",
+    dashboardTitle: "Progresso em matematica dos estudantes vinculados",
+    note1Title: "Extracao das licoes",
+    note1Copy:
+      "Os topicos do 7o ano sao organizados a partir dos livros e folhas de matematica Waldorf de referencia, depois reescritos como licoes online originais com passos verificaveis e gabaritos.",
+    note2Title: "Ciclo de correcao",
+    note2Copy:
+      "Respostas incorretas mostram uma dica de correcao e ficam marcadas para revisao ate que o estudante envie uma resposta correta.",
+    note3Title: "Banco compartilhado",
+    note3Copy:
+      "Matematica usa a mesma conta Supabase do responsavel, registros de estudantes, respostas objetivas e tabelas de progresso de atividades da Waldorf English Pathway.",
+    footerCopy:
+      "Trilha de Matematica Waldorf e um projeto independente de aprendizagem, com atividades originais adaptadas de referencias curriculares proprias.",
+    lessonCount: (count) => `${count} atividades do 7o ano disponiveis`,
+    stateCorrect: "Feita",
+    stateReview: "Revisar",
+    stateOpen: "Abrir",
+    lessonFocus: "Foco da licao",
+    howTo: "Como fazer",
+    showSteps: "Mostre os passos",
+    finalAnswer: "Resposta final depois dos passos",
+    yourAnswer: "Sua resposta",
+    expressionPlaceholder: "Exemplo: 10k - 14",
+    numberPlaceholder: "Digite um numero",
+    stepCorrect: "Correto.",
+    stepReview: "Revise. Resposta correta:",
+    noLearner: "Nenhum estudante esta vinculado a esta conta de responsavel ainda.",
+    guestLearner: "Estudante visitante",
+    guardianAccount: "Conta do responsavel",
+    signInPrompt: "Entre com o mesmo email e senha de responsavel usados na Waldorf English Pathway.",
+    cloudActive: (name) => `Sincronizacao em nuvem ativa para ${name}. Este e o mesmo registro de estudante usado pela Waldorf English Pathway.`,
+    noLinkedLearner: "Conta do responsavel encontrada, mas nenhum estudante esta vinculado ainda. Cadastre com um apelido de estudante para adicionar um.",
+    progressSuffix: (correct, total) => `${correct}/${total} atividades de matematica corretas`,
+    emptyAnswer: "Digite uma resposta primeiro.",
+    cloudCorrect: (name) => `Correto. Salvo no portfolio compartilhado de ${name}.`,
+    localCorrect: "Correto. Salvo neste dispositivo. Entre na conta para salvar no portfolio compartilhado.",
+    cloudTry: "Precisa de correcao. Salvo para revisao no portfolio compartilhado. Veja as notas dos passos e o gabarito abaixo.",
+    localTry: "Precisa de correcao. Salvo neste dispositivo. Veja as notas dos passos e o gabarito abaixo.",
+    saveFailed: (message) => `A resposta foi verificada, mas o salvamento na nuvem falhou: ${message}`,
+    enterCredentials: "Digite o email do responsavel e a senha.",
+    signingIn: "Entrando pelo banco Waldorf compartilhado...",
+    enterNickname: "Digite um apelido do estudante para o portfolio compartilhado.",
+    creatingAccount: "Criando a conta compartilhada do responsavel...",
+    accountCreated: "Conta criada. Confirme o email e depois entre aqui com a mesma conta Waldorf.",
+  },
+  en: {
+    brand: "Waldorf Math Pathway",
+    navAccount: "Accounts",
+    navPractice: "Practice",
+    navRhythm: "Rhythm",
+    navParent: "Parent Notes",
+    heroEyebrow: "Grade 7 online math practice",
+    heroTitle: "A living path through percentages, ratios, and early algebra.",
+    heroCopy:
+      "A Grade 7 lesson path with practical arithmetic, business math, fractions, decimals, ratios, signed numbers, formulas, and early algebra. Students complete visible steps, self-correct, and save their work for parent review.",
+    heroButton: "Begin Practice",
+    introEyebrow: "Step one",
+    introTitle: "Grade 7 is the first pathway",
+    introCopy:
+      "This math path adapts the Grade 7 sequence and review sheets into original online activities: arithmetic review, fractions, decimals, divisibility, unit cost, repeating decimals, percent, ratios, signed numbers, equations, and formulas.",
+    accountEyebrow: "Shared registration",
+    accountTitle: "Sign in or register",
+    modeLabel: "Mode",
+    modeLogin: "Sign in",
+    modeRegister: "Register",
+    emailLabel: "Guardian email",
+    passwordLabel: "Password",
+    learnerLabel: "Learner nickname",
+    languageLabel: "Learner language",
+    continueButton: "Continue",
+    currentLearnerEyebrow: "Current learner",
+    signOut: "Sign out",
+    practiceEyebrow: "Lesson studio",
+    practiceTitle: "Choose today's activity",
+    previousButton: "Previous",
+    nextButton: "Next",
+    checkButton: "Check",
+    rhythmEyebrow: "Daily rhythm",
+    rhythmTitle: "Warm up before the screen",
+    rhythmStep1: "Estimate before calculating.",
+    rhythmStep2: "Name the operation in your own words.",
+    rhythmStep3: "Solve one practical problem slowly.",
+    rhythmStep4: "Explain how you checked your answer.",
+    parentEyebrow: "Parent notes",
+    parentTitle: "Progress and lesson plan notes",
+    dashboardTitle: "Math progress for linked learners",
+    note1Title: "Lesson extraction",
+    note1Copy:
+      "Grade 7 topics are sequenced from the referenced Waldorf math books and worksheets, then rewritten as original online lessons with checkable steps and answer keys.",
+    note2Title: "Correction loop",
+    note2Copy:
+      "Incorrect answers reveal a correction hint and remain marked for review until the student submits a correct answer.",
+    note3Title: "Shared database shape",
+    note3Copy:
+      "Math uses the same Supabase guardian account, learner records, objective responses, and activity progress tables as Waldorf English Pathway.",
+    footerCopy:
+      "Waldorf Math Pathway is an independent learning project with original activities adapted from owned curriculum references.",
+    lessonCount: (count) => `${count} Grade 7 activities available`,
+    stateCorrect: "Done",
+    stateReview: "Review",
+    stateOpen: "Open",
+    lessonFocus: "Lesson focus",
+    howTo: "How to work it",
+    showSteps: "Show the steps",
+    finalAnswer: "Final answer after the steps",
+    yourAnswer: "Your answer",
+    expressionPlaceholder: "Example: 10k - 14",
+    numberPlaceholder: "Enter a number",
+    stepCorrect: "Correct.",
+    stepReview: "Review. Correct answer:",
+    noLearner: "No learner is linked to this guardian account yet.",
+    guestLearner: "Guest learner",
+    guardianAccount: "Guardian account",
+    signInPrompt: "Sign in with the same guardian email and password used for Waldorf English Pathway.",
+    cloudActive: (name) => `Cloud sync active for ${name}. This is the same learner record used by Waldorf English Pathway.`,
+    noLinkedLearner: "Guardian account found, but no learner is linked yet. Register with a learner nickname to add one.",
+    progressSuffix: (correct, total) => `${correct}/${total} math activities correct`,
+    emptyAnswer: "Try entering an answer first.",
+    cloudCorrect: (name) => `Correct. Saved to ${name}'s shared portfolio.`,
+    localCorrect: "Correct. Saved on this device. Sign in to save it to the shared portfolio.",
+    cloudTry: "Needs correction. Saved for review in the shared portfolio. Check the step notes and the answer key below.",
+    localTry: "Needs correction. Saved on this device. Check the step notes and the answer key below.",
+    saveFailed: (message) => `The answer was checked, but cloud saving failed: ${message}`,
+    enterCredentials: "Enter the guardian email and password.",
+    signingIn: "Signing in through the shared Waldorf database...",
+    enterNickname: "Enter a learner nickname for the shared portfolio.",
+    creatingAccount: "Creating the shared guardian account...",
+    accountCreated: "Account created. Confirm the email, then sign in here with the same Waldorf account.",
+  },
+};
 
 let activeLesson = lessons[0];
 let currentUser = null;
@@ -44,6 +218,34 @@ let learners = [];
 let activeLearnerId = null;
 let objectiveResponses = [];
 let activityProgress = [];
+let language = localStorage.getItem(LANGUAGE_KEY) || "pt";
+
+function t(key, ...args) {
+  const value = copy[language][key];
+  return typeof value === "function" ? value(...args) : value;
+}
+
+function lessonCopy(lesson) {
+  return language === "pt" ? { ...lesson, ...(lessonTranslations[lesson.id] || {}) } : lesson;
+}
+
+function applyLanguage() {
+  document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+  document.title = language === "pt" ? "Trilha de Matematica Waldorf" : "Waldorf Math Pathway";
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute(
+      "content",
+      language === "pt"
+        ? "Um percurso de matematica Waldorf para o 7o ano, com exercicios online sobre porcentagens, razoes, numeros negativos e algebra inicial."
+        : "A Waldorf-inspired Grade 7 math path with online exercises for percentages, ratios, negative numbers, and early algebra.",
+    );
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    element.textContent = t(element.dataset.i18n);
+  });
+  languageInput.value = language;
+  authForm.dataset.language = language;
+}
 
 function readLocalProgress() {
   try {
@@ -106,8 +308,8 @@ function evaluateGuidedSteps(lesson) {
     if (!row || !status) return;
     row.dataset.state = result.isCorrect ? "correct" : "try";
     status.textContent = result.isCorrect
-      ? "Correto."
-      : `Revise. Resposta correta: ${answers[index].correct}`;
+      ? t("stepCorrect")
+      : `${t("stepReview")} ${answers[index].correct}`;
   });
 
   return {
@@ -213,16 +415,17 @@ async function saveLessonProgress(lesson, value, isCorrect) {
 }
 
 function renderList() {
-  lessonCount.textContent = `${lessons.length} Grade 7 activities available`;
+  lessonCount.textContent = t("lessonCount", lessons.length);
   list.innerHTML = lessons
     .map((lesson) => {
+      const displayLesson = lessonCopy(lesson);
       const state = getLessonProgress(lesson);
-      const stateLabel = state === "correct" ? "Done" : state ? "Review" : "Open";
+      const stateLabel = state === "correct" ? t("stateCorrect") : state ? t("stateReview") : t("stateOpen");
       return `
         <button class="lesson-card" data-id="${lesson.id}" type="button">
-          <span>${lesson.grade} - ${lesson.block}</span>
-          <strong>${lesson.title}</strong>
-          <small>${lesson.time}</small>
+          <span>${displayLesson.grade} - ${displayLesson.block}</span>
+          <strong>${displayLesson.title}</strong>
+          <small>${displayLesson.time}</small>
           <em data-state="${state ?? "open"}">${stateLabel}</em>
         </button>
       `;
@@ -232,34 +435,35 @@ function renderList() {
 
 function renderExercise(lesson) {
   activeLesson = lesson;
+  const displayLesson = lessonCopy(lesson);
   const lessonIndex = lessons.findIndex((item) => item.id === lesson.id);
-  grade.textContent = `${lesson.grade} - ${lesson.block}`;
-  title.textContent = lesson.title;
-  time.textContent = lesson.time;
-  prompt.textContent = lesson.prompt;
+  grade.textContent = `${displayLesson.grade} - ${displayLesson.block}`;
+  title.textContent = displayLesson.title;
+  time.textContent = displayLesson.time;
+  prompt.textContent = displayLesson.prompt;
   feedback.textContent = "";
   feedback.dataset.state = "neutral";
   correction.hidden = true;
-  correction.textContent = lesson.correction;
-  answerLabel.textContent = lesson.guidedSteps?.length ? "Final answer after the steps" : "Your answer";
+  correction.textContent = displayLesson.correction;
+  answerLabel.textContent = displayLesson.guidedSteps?.length ? t("finalAnswer") : t("yourAnswer");
   answer.value = "";
-  answer.placeholder = lesson.answerType === "expression" ? "Example: 10k - 14" : "Enter a number";
+  answer.placeholder = lesson.answerType === "expression" ? t("expressionPlaceholder") : t("numberPlaceholder");
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
   body.innerHTML = `
     <div class="lesson-note">
-      <strong>Lesson focus</strong>
-      <p>${lesson.teacherAim}</p>
-      <small>${lesson.sourceFocus}</small>
-      ${lesson.examplePt ? `<div class="example-pt"><strong>Como fazer</strong><p>${lesson.examplePt}</p></div>` : ""}
+      <strong>${t("lessonFocus")}</strong>
+      <p>${displayLesson.teacherAim}</p>
+      <small>${displayLesson.sourceFocus}</small>
+      ${displayLesson.examplePt ? `<div class="example-pt"><strong>${t("howTo")}</strong><p>${displayLesson.examplePt}</p></div>` : ""}
     </div>
     <ol>
-      ${lesson.rhythm.map((step) => `<li>${step}</li>`).join("")}
+      ${displayLesson.rhythm.map((step) => `<li>${step}</li>`).join("")}
     </ol>
     ${
-      lesson.guidedSteps?.length
+      displayLesson.guidedSteps?.length
         ? `<div class="guided-steps">
-            <h4>Mostre os passos</h4>
-            ${lesson.guidedSteps
+            <h4>${t("showSteps")}</h4>
+            ${displayLesson.guidedSteps
               .map(
                 (step, index) => `
                   <label class="guided-step">
@@ -285,7 +489,7 @@ function renderExercise(lesson) {
 function renderParentDashboard() {
   if (!currentUser) return;
   if (!learners.length) {
-    progressList.innerHTML = "<li>No learner is linked to this guardian account yet.</li>";
+    progressList.innerHTML = `<li>${t("noLearner")}</li>`;
     return;
   }
 
@@ -296,7 +500,7 @@ function renderParentDashboard() {
         ? lessons.filter((lesson) => getLessonProgress(lesson) === "correct").length
         : 0;
       const label = `${learner.nickname} (${schoolYearLabel(learner.school_year)})`;
-      return `<li><button class="learner-choice${isActive ? " is-active" : ""}" data-learner-id="${learner.id}" type="button">${label}</button> ${isActive ? `${correct}/${lessons.length} math activities correct` : ""}</li>`;
+      return `<li><button class="learner-choice${isActive ? " is-active" : ""}" data-learner-id="${learner.id}" type="button">${label}</button> ${isActive ? t("progressSuffix", correct, lessons.length) : ""}</li>`;
     })
     .join("");
 }
@@ -305,8 +509,8 @@ function renderAccount() {
   dbBadge.textContent = `Supabase ${sharedDbShape.accountNamespace} / ${sharedDbShape.siteSlug}`;
 
   if (!currentUser) {
-    learnerName.textContent = "Guest learner";
-    setAccountStatus("Sign in with the same guardian email and password used for Waldorf English Pathway.");
+    learnerName.textContent = t("guestLearner");
+    setAccountStatus(t("signInPrompt"));
     parentDashboard.hidden = true;
     signOutButton.hidden = true;
     renderList();
@@ -314,13 +518,13 @@ function renderAccount() {
   }
 
   const learner = activeLearner();
-  learnerName.textContent = learner ? learner.nickname : currentUser.email || "Guardian account";
+  learnerName.textContent = learner ? learner.nickname : currentUser.email || t("guardianAccount");
   parentDashboard.hidden = false;
   signOutButton.hidden = false;
   setAccountStatus(
     learner
-      ? `Cloud sync active for ${learner.nickname}. This is the same learner record used by Waldorf English Pathway.`
-      : "Guardian account found, but no learner is linked yet. Register with a learner nickname to add one.",
+      ? t("cloudActive", learner.nickname)
+      : t("noLinkedLearner"),
     learner ? "success" : "error",
   );
   renderParentDashboard();
@@ -347,6 +551,12 @@ async function chooseLearner(learnerId) {
 
 async function finishSignIn(user) {
   currentUser = user;
+  const savedLanguage = user.user_metadata?.preferred_language || user.user_metadata?.learner_language;
+  if (savedLanguage === "pt" || savedLanguage === "en") {
+    language = savedLanguage;
+    localStorage.setItem(LANGUAGE_KEY, language);
+    applyLanguage();
+  }
   learners = await ensureGuardianSetup(user);
   const remembered = localStorage.getItem(ACTIVE_LEARNER_KEY);
   activeLearnerId = learners.some((learner) => learner.id === remembered)
@@ -369,7 +579,7 @@ form.addEventListener("submit", async (event) => {
   const value = answer.value.trim();
 
   if (value === "") {
-    feedback.textContent = "Try entering an answer first.";
+    feedback.textContent = t("emptyAnswer");
     feedback.dataset.state = "neutral";
     return;
   }
@@ -389,21 +599,21 @@ form.addEventListener("submit", async (event) => {
     if (fullAttemptIsCorrect) {
       feedback.textContent =
         savedTo === "cloud"
-          ? `Correct. Saved to ${activeLearner()?.nickname}'s shared portfolio.`
-          : "Correct. Saved on this device. Sign in to save it to the shared portfolio.";
+          ? t("cloudCorrect", activeLearner()?.nickname)
+          : t("localCorrect");
       feedback.dataset.state = "correct";
       correction.hidden = true;
     } else {
       feedback.textContent =
         savedTo === "cloud"
-          ? "Needs correction. Saved for review in the shared portfolio. Check the step notes and the answer key below."
-          : "Needs correction. Saved on this device. Check the step notes and the answer key below.";
+          ? t("cloudTry")
+          : t("localTry");
       feedback.dataset.state = "try";
       correction.hidden = false;
     }
     renderAccount();
   } catch (error) {
-    feedback.textContent = `The answer was checked, but cloud saving failed: ${translateAuthError(error)}`;
+    feedback.textContent = t("saveFailed", translateAuthError(error));
     feedback.dataset.state = "try";
     correction.hidden = fullAttemptIsCorrect;
   }
@@ -425,7 +635,7 @@ authForm.addEventListener("submit", async (event) => {
   const nickname = learnerNicknameInput.value.trim();
 
   if (!email || !password) {
-    setAccountStatus("Enter the guardian email and password.", "error");
+    setAccountStatus(t("enterCredentials"), "error");
     return;
   }
 
@@ -435,17 +645,17 @@ authForm.addEventListener("submit", async (event) => {
 
   try {
     if (authMode.value === "login") {
-      setAccountStatus("Signing in through the shared Waldorf database...");
+      setAccountStatus(t("signingIn"));
       const { data, error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
       await finishSignIn(data.user);
     } else {
       if (!nickname) {
-        setAccountStatus("Enter a learner nickname for the shared portfolio.", "error");
+        setAccountStatus(t("enterNickname"), "error");
         return;
       }
 
-      setAccountStatus("Creating the shared guardian account...");
+      setAccountStatus(t("creatingAccount"));
       const consentedAt = new Date().toISOString();
       const { data, error } = await supabase.auth.signUp({
         email,
@@ -455,6 +665,8 @@ authForm.addEventListener("submit", async (event) => {
           data: {
             learner_nickname: nickname,
             learner_school_year: "7",
+            learner_language: language,
+            preferred_language: language,
             guardian_confirmed: true,
             privacy_version: PRIVACY_VERSION,
             terms_version: TERMS_VERSION,
@@ -468,7 +680,8 @@ authForm.addEventListener("submit", async (event) => {
         await finishSignIn(data.user);
       } else {
         authForm.reset();
-        setAccountStatus("Account created. Confirm the email, then sign in here with the same Waldorf account.", "success");
+        languageInput.value = language;
+        setAccountStatus(t("accountCreated"), "success");
       }
     }
   } catch (error) {
@@ -478,6 +691,15 @@ authForm.addEventListener("submit", async (event) => {
       control.disabled = false;
     });
   }
+});
+
+languageInput.addEventListener("change", () => {
+  language = languageInput.value === "en" ? "en" : "pt";
+  localStorage.setItem(LANGUAGE_KEY, language);
+  applyLanguage();
+  renderList();
+  renderExercise(activeLesson);
+  renderAccount();
 });
 
 signOutButton.addEventListener("click", async () => {
@@ -491,6 +713,7 @@ signOutButton.addEventListener("click", async () => {
 });
 
 async function initialise() {
+  applyLanguage();
   renderList();
   renderExercise(activeLesson);
   renderAccount();

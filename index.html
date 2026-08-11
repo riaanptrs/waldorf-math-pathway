@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A Waldorf-inspired Grade 7 math path with online exercises for percentages, ratios, negative numbers, and early algebra."
+      content="Um percurso de matematica Waldorf para o 7o ano, com exercicios online sobre porcentagens, razoes, numeros negativos e algebra inicial."
     />
-    <title>Waldorf Math Pathway</title>
+    <title>Trilha de Matematica Waldorf</title>
     <link rel="preload" href="public/learning-path.png" as="image" />
     <link rel="stylesheet" href="src/styles.css" />
   </head>
@@ -15,90 +15,90 @@
     <header class="hero">
       <img class="hero__image" src="public/learning-path.png" alt="" />
       <div class="hero__shade"></div>
-      <nav class="topbar" aria-label="Primary">
-        <a class="brand" href="#top" aria-label="Waldorf Math Pathway home">
+      <nav class="topbar" aria-label="Principal">
+        <a class="brand" href="#top" aria-label="Inicio da Trilha de Matematica Waldorf">
           <span class="brand__mark">✦</span>
-          <span>Waldorf Math Pathway</span>
+          <span data-i18n="brand">Trilha de Matematica Waldorf</span>
         </a>
         <div class="topbar__links">
-          <a href="#account">Accounts</a>
-          <a href="#practice">Practice</a>
-          <a href="#rhythm">Rhythm</a>
-          <a href="#parent">Parent Notes</a>
+          <a href="#account" data-i18n="navAccount">Conta</a>
+          <a href="#practice" data-i18n="navPractice">Praticar</a>
+          <a href="#rhythm" data-i18n="navRhythm">Ritmo</a>
+          <a href="#parent" data-i18n="navParent">Notas para os pais</a>
         </div>
       </nav>
       <section class="hero__content" id="top">
-        <p class="eyebrow">Grade 7 online math practice</p>
-        <h1>A living path through percentages, ratios, and early algebra.</h1>
-        <p class="hero__copy">
-          A Grade 7 lesson path with practical arithmetic, business math,
-          fractions, decimals, ratios, signed numbers, formulas, and early
-          algebra. Students complete visible steps, self-correct, and save
-          their work for parent review.
+        <p class="eyebrow" data-i18n="heroEyebrow">Pratica online de matematica do 7o ano</p>
+        <h1 data-i18n="heroTitle">Um caminho vivo por porcentagens, razoes e algebra inicial.</h1>
+        <p class="hero__copy" data-i18n="heroCopy">
+          Uma trilha de aulas do 7o ano com aritmetica pratica, matematica financeira, fracoes, decimais, razoes, numeros com sinal, formulas e algebra inicial. Os estudantes completam passos visiveis, corrigem o proprio trabalho e salvam o progresso para revisao dos pais.
         </p>
-        <a class="button" href="#practice">Begin Practice</a>
+        <a class="button" href="#practice" data-i18n="heroButton">Comecar a praticar</a>
       </section>
     </header>
 
     <main>
       <section class="intro band">
         <div>
-          <p class="eyebrow">Step one</p>
-          <h2>Grade 7 is the first pathway</h2>
+          <p class="eyebrow" data-i18n="introEyebrow">Primeiro passo</p>
+          <h2 data-i18n="introTitle">O 7o ano e a primeira trilha</h2>
         </div>
-        <p>
-          This math path adapts the Grade 7 sequence and review sheets into
-          original online activities: arithmetic review, fractions, decimals,
-          divisibility, unit cost, repeating decimals, percent, ratios, signed
-          numbers, equations, and formulas.
+        <p data-i18n="introCopy">
+          Esta trilha de matematica adapta a sequencia do 7o ano e as folhas de revisao em atividades online originais: revisao aritmetica, fracoes, decimais, divisibilidade, custo unitario, dizimas periodicas, porcentagem, razoes, numeros com sinal, equacoes e formulas.
         </p>
       </section>
 
       <section class="account" id="account" aria-labelledby="account-title">
         <div class="section-heading">
-          <p class="eyebrow">Shared registration</p>
-          <h2 id="account-title">Sign in or register</h2>
+          <p class="eyebrow" data-i18n="accountEyebrow">Cadastro compartilhado</p>
+          <h2 id="account-title" data-i18n="accountTitle">Entrar ou cadastrar</h2>
         </div>
 
         <div class="account__layout">
           <form class="auth-form" method="post" action="#">
-            <label for="auth-mode">Mode</label>
+            <label for="auth-mode" data-i18n="modeLabel">Modo</label>
             <select id="auth-mode" name="auth-mode">
-              <option value="login">Sign in</option>
-              <option value="register">Register</option>
+              <option value="login" data-i18n="modeLogin">Entrar</option>
+              <option value="register" data-i18n="modeRegister">Cadastrar</option>
             </select>
 
-            <label for="username">Guardian email</label>
+            <label for="username" data-i18n="emailLabel">Email do responsavel</label>
             <input id="username" name="username" type="email" autocomplete="email" />
 
-            <label for="password">Password</label>
+            <label for="password" data-i18n="passwordLabel">Senha</label>
             <input id="password" name="password" type="password" autocomplete="current-password" />
 
-            <label for="student-link">Learner nickname</label>
+            <label for="student-link" data-i18n="learnerLabel">Apelido do estudante</label>
             <input id="student-link" name="student-link" autocomplete="off" />
 
-            <button class="button button--small" type="submit">Continue</button>
+            <label for="language" data-i18n="languageLabel">Idioma do estudante</label>
+            <select id="language" name="language">
+              <option value="pt" selected>Portugues</option>
+              <option value="en">English</option>
+            </select>
+
+            <button class="button button--small" type="submit" data-i18n="continueButton">Continuar</button>
           </form>
 
           <div class="account-panel">
-            <p class="eyebrow">Current learner</p>
-            <h3 class="learner-name">Guest learner</h3>
+            <p class="eyebrow" data-i18n="currentLearnerEyebrow">Estudante atual</p>
+            <h3 class="learner-name">Estudante visitante</h3>
             <p class="account-status"></p>
             <p class="db-badge"></p>
-            <button class="button button--small sign-out" type="button" hidden>Sign out</button>
+            <button class="button button--small sign-out" type="button" hidden data-i18n="signOut">Sair</button>
           </div>
         </div>
       </section>
 
       <section class="practice" id="practice" aria-labelledby="practice-title">
         <div class="section-heading">
-          <p class="eyebrow">Lesson studio</p>
-          <h2 id="practice-title">Choose today's activity</h2>
+          <p class="eyebrow" data-i18n="practiceEyebrow">Sala de pratica</p>
+          <h2 id="practice-title" data-i18n="practiceTitle">Escolha a atividade de hoje</h2>
           <p class="lesson-count"></p>
         </div>
 
         <div class="practice__layout">
-          <aside class="lesson-list" aria-label="Exercise list"></aside>
+          <aside class="lesson-list" aria-label="Lista de exercicios"></aside>
 
           <article class="exercise" aria-live="polite">
             <div class="exercise__header">
@@ -112,15 +112,15 @@
             <p class="exercise__prompt"></p>
             <div class="exercise__body"></div>
             <div class="lesson-nav" aria-label="Lesson navigation">
-              <button class="button button--small lesson-prev" type="button">Previous</button>
-              <button class="button button--small lesson-next" type="button">Next</button>
+              <button class="button button--small lesson-prev" type="button" data-i18n="previousButton">Anterior</button>
+              <button class="button button--small lesson-next" type="button" data-i18n="nextButton">Proxima</button>
             </div>
 
             <form class="answer-form">
-              <label for="answer">Your answer</label>
+              <label for="answer">Sua resposta</label>
               <div class="answer-form__row">
                 <input id="answer" name="answer" inputmode="numeric" autocomplete="off" />
-                <button class="button button--small" type="submit">Check</button>
+                <button class="button button--small" type="submit" data-i18n="checkButton">Verificar</button>
               </div>
               <p class="feedback" role="status"></p>
               <p class="correction" hidden></p>
@@ -131,48 +131,43 @@
 
       <section class="rhythm band" id="rhythm">
         <div>
-          <p class="eyebrow">Daily rhythm</p>
-          <h2>Warm up before the screen</h2>
+          <p class="eyebrow" data-i18n="rhythmEyebrow">Ritmo diario</p>
+          <h2 data-i18n="rhythmTitle">Aquecimento antes da tela</h2>
         </div>
         <ol class="rhythm__steps">
-          <li>Estimate before calculating.</li>
-          <li>Name the operation in your own words.</li>
-          <li>Solve one practical problem slowly.</li>
-          <li>Explain how you checked your answer.</li>
+          <li data-i18n="rhythmStep1">Estime antes de calcular.</li>
+          <li data-i18n="rhythmStep2">Nomeie a operacao com suas proprias palavras.</li>
+          <li data-i18n="rhythmStep3">Resolva um problema pratico devagar.</li>
+          <li data-i18n="rhythmStep4">Explique como voce conferiu a resposta.</li>
         </ol>
       </section>
 
       <section class="parent" id="parent">
         <div class="section-heading">
-          <p class="eyebrow">Parent notes</p>
-          <h2>Progress and lesson plan notes</h2>
+          <p class="eyebrow" data-i18n="parentEyebrow">Notas para os pais</p>
+          <h2 data-i18n="parentTitle">Progresso e notas do plano de aulas</h2>
         </div>
         <div class="parent-dashboard" hidden>
-          <h3>Math progress for linked learners</h3>
+          <h3 data-i18n="dashboardTitle">Progresso em matematica dos estudantes vinculados</h3>
           <ul class="progress-list"></ul>
         </div>
         <div class="note-grid">
           <article>
-            <h3>Lesson extraction</h3>
-            <p>
-              Grade 7 topics are sequenced from the referenced Waldorf math
-              books and worksheets, then rewritten as original online lessons
-              with checkable steps and answer keys.
+            <h3 data-i18n="note1Title">Extracao das licoes</h3>
+            <p data-i18n="note1Copy">
+              Os topicos do 7o ano sao organizados a partir dos livros e folhas de matematica Waldorf de referencia, depois reescritos como licoes online originais com passos verificaveis e gabaritos.
             </p>
           </article>
           <article>
-            <h3>Correction loop</h3>
-            <p>
-              Incorrect answers reveal a correction hint and remain marked for
-              review until the student submits a correct answer.
+            <h3 data-i18n="note2Title">Ciclo de correcao</h3>
+            <p data-i18n="note2Copy">
+              Respostas incorretas mostram uma dica de correcao e ficam marcadas para revisao ate que o estudante envie uma resposta correta.
             </p>
           </article>
           <article>
-            <h3>Shared database shape</h3>
-            <p>
-              Math uses the same Supabase guardian account, learner records,
-              objective responses, and activity progress tables as Waldorf
-              English Pathway.
+            <h3 data-i18n="note3Title">Banco compartilhado</h3>
+            <p data-i18n="note3Copy">
+              Matematica usa a mesma conta Supabase do responsavel, registros de estudantes, respostas objetivas e tabelas de progresso de atividades da Waldorf English Pathway.
             </p>
           </article>
         </div>
@@ -181,8 +176,7 @@
 
     <footer>
       <p>
-        Waldorf Math Pathway is an independent learning project with original
-        activities adapted from owned curriculum references.
+        <span data-i18n="footerCopy">Trilha de Matematica Waldorf e um projeto independente de aprendizagem, com atividades originais adaptadas de referencias curriculares proprias.</span>
       </p>
     </footer>
 
