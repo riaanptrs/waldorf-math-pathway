@@ -100,6 +100,9 @@ const copy = {
     stateOpen: "Abrir",
     lessonFocus: "Foco da licao",
     howTo: "Como fazer",
+    refresherTitle: "Precisa relembrar?",
+    refresherMethod: "Metodo",
+    refresherExample: "Exemplo rapido",
     showSteps: "Mostre os passos",
     finalAnswer: "Resposta final depois dos passos",
     yourAnswer: "Sua resposta",
@@ -184,6 +187,9 @@ const copy = {
     stateOpen: "Open",
     lessonFocus: "Lesson focus",
     howTo: "How to work it",
+    refresherTitle: "Need a refresher?",
+    refresherMethod: "Method",
+    refresherExample: "Quick example",
     showSteps: "Show the steps",
     finalAnswer: "Final answer after the steps",
     yourAnswer: "Your answer",
@@ -456,6 +462,22 @@ function renderExercise(lesson) {
       <small>${displayLesson.sourceFocus}</small>
       ${displayLesson.examplePt ? `<div class="example-pt"><strong>${t("howTo")}</strong><p>${displayLesson.examplePt}</p></div>` : ""}
     </div>
+    ${
+      displayLesson.memoryRefresh
+        ? `<details class="memory-refresh" open>
+            <summary>${t("refresherTitle")}</summary>
+            <div class="memory-refresh__content">
+              <p>${displayLesson.memoryRefresh.idea}</p>
+              <strong>${t("refresherMethod")}</strong>
+              <ol>
+                ${displayLesson.memoryRefresh.method.map((step) => `<li>${step}</li>`).join("")}
+              </ol>
+              <strong>${t("refresherExample")}</strong>
+              <p>${displayLesson.memoryRefresh.example}</p>
+            </div>
+          </details>`
+        : ""
+    }
     <ol>
       ${displayLesson.rhythm.map((step) => `<li>${step}</li>`).join("")}
     </ol>

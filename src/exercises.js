@@ -13,6 +13,11 @@ const lessons = [
     sourceFocus: "Grade 7 percent work: move from finding a percent of a number to finding the whole.",
     teacherAim:
       "Students practice inverse percent thinking before formal algebra: if a part is a known percent, the whole can be rebuilt.",
+    memoryRefresh: {
+      idea: "A percent problem has a base, which is the whole amount the percent is taken from. Finding the base means working backward from the part.",
+      method: ["Turn the percent into a decimal or fraction.", "Ask what whole number would give this part.", "Use the inverse operation: divide by the decimal, or multiply by the reciprocal.", "Check by taking the percent of your answer."],
+      example: "If 18 is 30% of a number, think 18 ÷ 0.30 = 60. Check: 30% of 60 is 18.",
+    },
     rhythm: ["25% means one quarter.", "If 36 is one quarter, the whole is four quarters.", "Check by taking the percent again."],
     prompt: "A class raised 42 dollars. This was 35% of its fair-day goal. What was the whole goal?",
     correction:
@@ -32,6 +37,11 @@ const lessons = [
     sourceFocus: "Grade 7 compound interest: compound annually by repeated year-by-year percent growth.",
     teacherAim:
       "Students compare simple interest with compound interest without using the later exponential-growth formula.",
+    memoryRefresh: {
+      idea: "Simple interest uses the original amount every year. Compound interest grows year by year because each new balance earns the next year's interest.",
+      method: ["Start with the principal.", "Find one year's interest from the current balance.", "Add the interest to make a new balance.", "Repeat for each year, rounding money to cents when needed."],
+      example: "$100 at 10% compounded yearly becomes $110 after year 1. Year 2 earns 10% of $110, so the balance becomes $121.",
+    },
     rhythm: ["Start with the principal.", "Find this year's interest.", "Add it before finding the next year's interest."],
     prompt:
       "Mara saves 200 dollars at 5% interest compounded annually. What is the balance after 2 years?",
@@ -52,6 +62,11 @@ const lessons = [
     sourceFocus: "Grade 7 ratios: interpret parts of a whole before solving proportion equations.",
     teacherAim:
       "Students see a ratio as parts of a whole and use fraction-of-the-whole reasoning.",
+    memoryRefresh: {
+      idea: "A ratio names shares. The total number of ratio parts represents the whole group.",
+      method: ["Add the parts in the ratio.", "Decide which part belongs to the question.", "Write that share as a fraction of the whole.", "Multiply the total by that fraction."],
+      example: "In a 1:4 ratio, there are 5 parts. The second share is 4/5 of the whole, so if the whole is 30, the second share is 24.",
+    },
     rhythm: ["Add the ratio parts.", "Name each share as part of the whole.", "Multiply the whole by that part."],
     prompt: "A garden bed has red and yellow flowers in a ratio of 2:3. There are 45 flowers altogether. How many are yellow?",
     correction:
@@ -71,6 +86,11 @@ const lessons = [
     sourceFocus: "Grade 7 rate problems: build intuition for when to multiply and when to divide.",
     teacherAim:
       "Students convert time units and divide total distance by total time to find a rate.",
+    memoryRefresh: {
+      idea: "A rate tells how much happens for one unit. Miles per hour asks how many miles happen in one hour.",
+      method: ["Convert the time to hours.", "Ask whether you need distance, time, or speed.", "For speed, divide distance by time.", "Check whether the answer is reasonable for one hour."],
+      example: "If 12 miles take 1/2 hour, then the one-hour speed is 12 ÷ 1/2 = 24 mph.",
+    },
     rhythm: ["Rate means amount per one.", "Change minutes into hours.", "Divide distance by hours."],
     prompt: "A cyclist travels 6 miles in 15 minutes. What is the cyclist's average speed in miles per hour?",
     correction:
@@ -90,6 +110,11 @@ const lessons = [
     sourceFocus: "Grade 7 algebra main lesson: careful practice with all four operations using signed numbers.",
     teacherAim:
       "Students work with negative numbers as number relationships, then check by reversing operations.",
+    memoryRefresh: {
+      idea: "Negative numbers are numbers below zero. In an expression, handle multiplication first and keep track of the sign before combining.",
+      method: ["Do multiplication or division before addition.", "A negative times a positive is negative.", "A negative times a negative is positive.", "When adding a positive to a negative, move toward zero."],
+      example: "-6 x 5 + 12 becomes -30 + 12, which is -18.",
+    },
     rhythm: ["A negative times a positive is negative.", "A negative times a negative is positive.", "Check the sign before the size."],
     prompt: "Find the value of -8 x 7 + 18.",
     correction:
@@ -108,6 +133,11 @@ const lessons = [
     sourceFocus: "Grade 7 algebra: develop clear form while simplifying expressions.",
     teacherAim:
       "Students separate unlike terms and constants, then simplify with neat visible steps.",
+    memoryRefresh: {
+      idea: "Like terms have the same letter part. Plain numbers combine only with plain numbers.",
+      method: ["Circle or gather terms with the same letter.", "Keep the sign attached to each term.", "Add or subtract the coefficients.", "Write unlike terms separately in a clean final expression."],
+      example: "4m - 7 + 2m + 3 becomes 6m - 4.",
+    },
     rhythm: ["Gather the same letters.", "Gather plain numbers.", "Keep unlike terms separate."],
     prompt: "Simplify: 6k - 3 + 4k - 11. Write the simplified expression.",
     correction:
@@ -125,6 +155,11 @@ const lessons = [
     sourceFocus: "Grade 7 algebra: solve equations by doing the same thing to both sides.",
     teacherAim:
       "Students use the golden rule of equations and verify the value by substitution.",
+    memoryRefresh: {
+      idea: "An equation is a balance puzzle. Whatever you do to one side must also be done to the other side.",
+      method: ["Move variable terms to one side by doing the same operation to both sides.", "Move plain numbers to the other side.", "Divide by the number multiplying the variable.", "Check by substituting the answer into the original equation."],
+      example: "2x + 3 = 11. Subtract 3 from both sides: 2x = 8. Divide both sides by 2: x = 4.",
+    },
     rhythm: ["Keep the equal sign balanced.", "Move constants together.", "Divide last."],
     prompt: "Solve for x: 5x - 2 = 3x + 8.",
     correction:
@@ -143,6 +178,11 @@ const lessons = [
     sourceFocus: "Grade 7 formulas: use first, last, and number of terms to sum an arithmetic sequence.",
     teacherAim:
       "Students experience a formula as condensed thinking rather than a rule to memorize.",
+    memoryRefresh: {
+      idea: "A formula can hold a pattern in a short form. For a regular sequence, pair the first and last numbers.",
+      method: ["Find the first number and last number.", "Count how many numbers are in the sequence.", "Add first plus last.", "Multiply by the number of terms, then divide by 2."],
+      example: "For 2 + 4 + 6 + 8, first plus last is 10, there are 4 numbers, so 4 x 10 ÷ 2 = 20.",
+    },
     rhythm: ["Pair first with last.", "Count how many numbers.", "Use half the count times the pair sum."],
     prompt: "Find the sum of 12 + 15 + 18 + ... + 48.",
     correction:
@@ -161,6 +201,11 @@ const lessons = [
     sourceFocus: "Multiplication table fluency from the 1-12 table template.",
     teacherAim:
       "Students rebuild a multiplication fact through doubling and symmetry instead of guessing.",
+    memoryRefresh: {
+      idea: "When a multiplication fact feels rusty, build it from a nearby fact you know well.",
+      method: ["Choose an easier related fact.", "Double, halve, or add another group to reach the target fact.", "Use the turn-around fact to check.", "Write the final product only after the check makes sense."],
+      example: "For 7 x 8, use 7 x 4 = 28, then double 28 to get 56.",
+    },
     examplePt:
       "Example: for 6 x 8, think 6 x 4 = 24. Doubling 24 gives 48, so 6 x 8 = 48. We can also check: 8 x 6 = 48.",
     rhythm: ["Use a fact you know.", "Double or halve when it helps.", "Check by turning the factors around."],
@@ -185,6 +230,11 @@ const lessons = [
     sourceFocus: "Missing-digit multiplication puzzles and digit arithmetic.",
     teacherAim:
       "Students reason from place value, carry digits, and multiplication facts before naming the missing digit.",
+    memoryRefresh: {
+      idea: "Missing-digit multiplication is solved column by column. The ones column usually gives the first clue.",
+      method: ["Look at the ones digit of the answer.", "Find which digit could make that ones digit.", "Include the carry into the tens column.", "Check the complete multiplication."],
+      example: "In 2? x 3 = 78, the ones digit must make 3 x ? end in 8, so ? is 6. Then 26 x 3 = 78.",
+    },
     examplePt:
       "Example: in 3? x 4 = 148, first look at the ones. 4 x ? ends in 8, so ? could be 2 or 7. Testing 37 x 4 = 148 shows the missing digit is 7.",
     rhythm: ["Start with the ones column.", "Use the carry.", "Check the whole multiplication."],
@@ -209,6 +259,11 @@ const lessons = [
     sourceFocus: "Fraction addition and fraction-decimal review sheets.",
     teacherAim:
       "Students show denominator choice, equivalent fractions, and the final mixed-number result.",
+    memoryRefresh: {
+      idea: "Fractions can be added only when the pieces have the same size. A common denominator makes the pieces match.",
+      method: ["Choose a common denominator.", "Rewrite each fraction without changing its value.", "Add the numerators and keep the denominator.", "Reduce or write a mixed number if needed."],
+      example: "1/3 + 1/6 becomes 2/6 + 1/6 = 3/6 = 1/2.",
+    },
     examplePt:
       "Example: for 1/3 + 1/4, use denominator 12. Then 1/3 = 4/12 and 1/4 = 3/12. Adding gives 7/12.",
     rhythm: ["Choose one common denominator.", "Rewrite both fractions.", "Add numerators and keep the denominator."],
@@ -233,6 +288,11 @@ const lessons = [
     sourceFocus: "Decimal division review: fix the divisor by moving decimal places before dividing.",
     teacherAim:
       "Students transform an equivalent division problem and estimate before calculating.",
+    memoryRefresh: {
+      idea: "Decimal division gets easier when the divisor is a whole number. Move both decimal points the same number of places so the value of the division stays the same.",
+      method: ["Count how many places move the divisor to a whole number.", "Move the dividend the same number of places.", "Divide the new numbers.", "Estimate first so you can catch a decimal-point mistake."],
+      example: "4.8 ÷ 0.6 becomes 48 ÷ 6, so the answer is 8.",
+    },
     examplePt:
       "Example: 36 ÷ 0.09 becomes 3600 ÷ 9 because we move both decimal points two places to the right. The answer is 400.",
     rhythm: ["Move both decimal points the same number of places.", "Make the divisor whole.", "Estimate before dividing."],
@@ -257,6 +317,11 @@ const lessons = [
     sourceFocus: "Unit cost problems from the arithmetic review sheets.",
     teacherAim:
       "Students divide total cost by quantity and compare one-unit prices.",
+    memoryRefresh: {
+      idea: "Unit cost means the cost for one item. Once both choices are reduced to one item, the comparison is fair.",
+      method: ["Divide total price by number of items.", "Do this for each store or option.", "Compare the same unit in both answers.", "Choose the smaller unit price for the better buy."],
+      example: "If 4 notebooks cost $10, one notebook costs $10 ÷ 4 = $2.50.",
+    },
     examplePt:
       "Example: if 5 oranges cost $10.00, each orange costs $2.00 because 10 ÷ 5 = 2.",
     rhythm: ["Find the price for one item.", "Compare equal units.", "Choose the smaller unit price."],
@@ -280,6 +345,11 @@ const lessons = [
     sourceFocus: "Divisibility by 2, 3, 4, 5, 9, and 10.",
     teacherAim:
       "Students use digit tests and explain which divisors work.",
+    memoryRefresh: {
+      idea: "Divisibility rules are quick checks that use digits instead of long division.",
+      method: ["Check 2 with the last digit.", "Check 3 and 9 by adding digits.", "Check 4 with the last two digits.", "Check 5 and 10 by the ending digit."],
+      example: "732 is divisible by 2 because it is even, by 3 because 7 + 3 + 2 = 12, and by 4 because 32 is divisible by 4.",
+    },
     examplePt:
       "Example: 732 is divisible by 3 because 7 + 3 + 2 = 12, and 12 is divisible by 3. It is not divisible by 5 because it does not end in 0 or 5.",
     rhythm: ["Check the last digit.", "Add the digits.", "Check the last two digits for 4."],
@@ -303,6 +373,11 @@ const lessons = [
     sourceFocus: "Reducing large fractions from Grade 7 arithmetic review.",
     teacherAim:
       "Students reduce in visible stages instead of trying to jump to the answer.",
+    memoryRefresh: {
+      idea: "Reducing a fraction means dividing the numerator and denominator by the same factor so the value stays equal.",
+      method: ["Look for an easy common factor.", "Divide top and bottom by that factor.", "Repeat until no common factor remains.", "Check that the numerator and denominator are still whole numbers."],
+      example: "48/60 can be divided by 12 to get 4/5.",
+    },
     examplePt:
       "Example: 36/48 can be divided by 12. Then 36 ÷ 12 = 3 and 48 ÷ 12 = 4, so 36/48 = 3/4.",
     rhythm: ["Find a common factor.", "Divide top and bottom by the same number.", "Keep reducing until no factor remains."],
@@ -326,6 +401,11 @@ const lessons = [
     sourceFocus: "Converting repeating decimals into fractions.",
     teacherAim:
       "Students connect a repeating block to 9s in the denominator and then reduce.",
+    memoryRefresh: {
+      idea: "A repeating decimal can often be turned into a fraction with 9s in the denominator. The number of repeating digits tells how many 9s to use.",
+      method: ["Count the repeating digits.", "Put the repeating block over the same number of 9s.", "Reduce the fraction.", "Check by thinking whether the decimal repeats with the same block."],
+      example: "0.45 repeating has two repeating digits, so it becomes 45/99, which reduces to 5/11.",
+    },
     examplePt:
       "Example: repeating 0.27 becomes 27/99 because two digits repeat. Then we reduce: 27/99 = 3/11.",
     rhythm: ["Count the repeating digits.", "Use the same number of 9s.", "Reduce the fraction."],
@@ -349,6 +429,11 @@ const lessonTranslations = {
     sourceFocus: "Trabalho de porcentagem do 7o ano: passar de encontrar uma porcentagem de um numero para encontrar o todo.",
     teacherAim:
       "Os estudantes praticam o pensamento inverso da porcentagem antes da algebra formal: se uma parte e uma porcentagem conhecida, o todo pode ser reconstruido.",
+    memoryRefresh: {
+      idea: "Um problema de porcentagem tem uma base: o todo do qual a porcentagem foi tirada. Encontrar a base significa trabalhar de volta a partir da parte.",
+      method: ["Transforme a porcentagem em decimal ou fracao.", "Pergunte qual todo produziria essa parte.", "Use a operacao inversa: divida pelo decimal ou multiplique pelo reciproco.", "Confira calculando a porcentagem da sua resposta."],
+      example: "Se 18 e 30% de um numero, pense 18 dividido por 0.30 = 60. Confira: 30% de 60 e 18.",
+    },
     rhythm: ["35% significa 35 de cada 100.", "Divida a parte pela forma decimal da porcentagem.", "Confira calculando a porcentagem novamente."],
     prompt: "Uma turma arrecadou 42 dolares. Isso foi 35% da meta da feira. Qual era a meta total?",
     correction:
@@ -361,6 +446,11 @@ const lessonTranslations = {
     sourceFocus: "Juros compostos do 7o ano: composicao anual por crescimento percentual ano a ano.",
     teacherAim:
       "Os estudantes comparam juros simples e compostos sem usar ainda a formula posterior de crescimento exponencial.",
+    memoryRefresh: {
+      idea: "Juros simples usam o valor inicial todos os anos. Juros compostos crescem ano a ano, porque cada novo saldo rende os juros do ano seguinte.",
+      method: ["Comece com o capital inicial.", "Calcule os juros de um ano usando o saldo atual.", "Some os juros para formar o novo saldo.", "Repita para cada ano, arredondando dinheiro para centavos quando necessario."],
+      example: "$100 a 10% ao ano vira $110 depois do ano 1. No ano 2, 10% de $110 e $11, entao o saldo vira $121.",
+    },
     rhythm: ["Comece com o capital inicial.", "Encontre os juros deste ano.", "Some os juros antes de calcular os juros do proximo ano."],
     prompt: "Mara guarda 200 dolares com juros de 5% ao ano, compostos anualmente. Qual e o saldo depois de 2 anos?",
     correction:
@@ -373,6 +463,11 @@ const lessonTranslations = {
     sourceFocus: "Razoes no 7o ano: interpretar partes de um todo antes de resolver equacoes de proporcao.",
     teacherAim:
       "Os estudantes veem a razao como partes de um todo e usam o raciocinio de fracao do todo.",
+    memoryRefresh: {
+      idea: "Uma razao nomeia partes. A soma das partes da razao representa o grupo inteiro.",
+      method: ["Some as partes da razao.", "Veja qual parte a pergunta pede.", "Escreva essa parte como fracao do todo.", "Multiplique o total por essa fracao."],
+      example: "Na razao 1:4, ha 5 partes. A segunda parte e 4/5 do todo; se o todo e 30, essa parte vale 24.",
+    },
     rhythm: ["Some as partes da razao.", "Nomeie cada parte como fracao do todo.", "Multiplique o todo por essa parte."],
     prompt: "Um canteiro tem flores vermelhas e amarelas na razao 2:3. Ha 45 flores ao todo. Quantas sao amarelas?",
     correction:
@@ -385,6 +480,11 @@ const lessonTranslations = {
     sourceFocus: "Problemas de taxa do 7o ano: desenvolver intuicao para quando multiplicar e quando dividir.",
     teacherAim:
       "Os estudantes convertem unidades de tempo e dividem a distancia total pelo tempo total para encontrar uma taxa.",
+    memoryRefresh: {
+      idea: "Uma taxa diz quanto acontece em uma unidade. Milhas por hora pergunta quantas milhas acontecem em uma hora.",
+      method: ["Converta o tempo para horas.", "Pergunte se voce precisa de distancia, tempo ou velocidade.", "Para velocidade, divida distancia por tempo.", "Confira se a resposta faz sentido para uma hora."],
+      example: "Se 12 milhas levam 1/2 hora, a velocidade em uma hora e 12 dividido por 1/2 = 24 mph.",
+    },
     rhythm: ["Taxa significa quantidade por uma unidade.", "Transforme minutos em horas.", "Divida a distancia pelas horas."],
     prompt: "Um ciclista percorre 6 milhas em 15 minutos. Qual e a velocidade media em milhas por hora?",
     correction:
@@ -397,6 +497,11 @@ const lessonTranslations = {
     sourceFocus: "Aula principal de algebra do 7o ano: pratica cuidadosa das quatro operacoes com numeros com sinal.",
     teacherAim:
       "Os estudantes trabalham com numeros negativos como relacoes numericas e depois conferem invertendo as operacoes.",
+    memoryRefresh: {
+      idea: "Numeros negativos sao numeros abaixo de zero. Em uma expressao, faca a multiplicacao primeiro e acompanhe o sinal antes de combinar.",
+      method: ["Faca multiplicacao ou divisao antes da adicao.", "Negativo vezes positivo e negativo.", "Negativo vezes negativo e positivo.", "Ao somar um positivo a um negativo, caminhe em direcao ao zero."],
+      example: "-6 x 5 + 12 vira -30 + 12, que e -18.",
+    },
     rhythm: ["Negativo vezes positivo e negativo.", "Negativo vezes negativo e positivo.", "Confira o sinal antes do tamanho."],
     prompt: "Encontre o valor de -8 x 7 + 18.",
     correction:
@@ -409,6 +514,11 @@ const lessonTranslations = {
     sourceFocus: "Algebra do 7o ano: desenvolver forma clara ao simplificar expressoes.",
     teacherAim:
       "Os estudantes separam termos diferentes e constantes, depois simplificam com passos visiveis e organizados.",
+    memoryRefresh: {
+      idea: "Termos semelhantes tem a mesma parte com letra. Numeros sem letra combinam apenas com numeros sem letra.",
+      method: ["Circule ou junte termos com a mesma letra.", "Mantenha o sinal ligado a cada termo.", "Some ou subtraia os coeficientes.", "Escreva os termos diferentes separados em uma expressao limpa."],
+      example: "4m - 7 + 2m + 3 vira 6m - 4.",
+    },
     rhythm: ["Junte as mesmas letras.", "Junte os numeros sem letra.", "Mantenha termos diferentes separados."],
     prompt: "Simplifique: 6k - 3 + 4k - 11. Escreva a expressao simplificada.",
     correction:
@@ -421,6 +531,11 @@ const lessonTranslations = {
     sourceFocus: "Algebra do 7o ano: resolver equacoes fazendo a mesma coisa nos dois lados.",
     teacherAim:
       "Os estudantes usam a regra de ouro das equacoes e verificam o valor por substituicao.",
+    memoryRefresh: {
+      idea: "Uma equacao e um desafio de equilibrio. Tudo que voce faz em um lado tambem deve fazer no outro.",
+      method: ["Leve os termos com variavel para um lado fazendo a mesma operacao nos dois lados.", "Leve os numeros sem letra para o outro lado.", "Divida pelo numero que multiplica a variavel.", "Confira substituindo a resposta na equacao original."],
+      example: "2x + 3 = 11. Subtraia 3 dos dois lados: 2x = 8. Divida os dois lados por 2: x = 4.",
+    },
     rhythm: ["Mantenha o sinal de igual equilibrado.", "Reuna as constantes.", "Divida por ultimo."],
     prompt: "Resolva para x: 5x - 2 = 3x + 8.",
     correction:
@@ -433,6 +548,11 @@ const lessonTranslations = {
     sourceFocus: "Formulas do 7o ano: usar primeiro termo, ultimo termo e numero de termos para somar uma sequencia aritmetica.",
     teacherAim:
       "Os estudantes vivenciam uma formula como pensamento condensado, nao apenas como regra para decorar.",
+    memoryRefresh: {
+      idea: "Uma formula pode guardar um padrao de forma curta. Em uma sequencia regular, faca pares com o primeiro e o ultimo numero.",
+      method: ["Encontre o primeiro e o ultimo numero.", "Conte quantos numeros ha na sequencia.", "Some primeiro mais ultimo.", "Multiplique pela quantidade de termos e divida por 2."],
+      example: "Para 2 + 4 + 6 + 8, primeiro mais ultimo e 10, ha 4 numeros, entao 4 x 10 dividido por 2 = 20.",
+    },
     rhythm: ["Faca pares do primeiro com o ultimo.", "Conte quantos numeros existem.", "Use metade da quantidade vezes a soma do par."],
     prompt: "Encontre a soma de 12 + 15 + 18 + ... + 48.",
     correction:
@@ -445,6 +565,11 @@ const lessonTranslations = {
     sourceFocus: "Fluencia na tabuada a partir do modelo de 1 a 12.",
     teacherAim:
       "Os estudantes reconstruem um fato de multiplicacao por duplicacao e simetria, em vez de adivinhar.",
+    memoryRefresh: {
+      idea: "Quando uma tabuada esta enferrujada, construa a resposta a partir de um fato proximo que voce conhece bem.",
+      method: ["Escolha um fato relacionado mais facil.", "Dobre, divida pela metade ou some outro grupo ate chegar ao fato desejado.", "Use a multiplicacao invertida para conferir.", "Escreva o produto final apenas depois que a verificacao fizer sentido."],
+      example: "Para 7 x 8, use 7 x 4 = 28 e depois dobre 28 para obter 56.",
+    },
     examplePt:
       "Exemplo: para 6 x 8, pense 6 x 4 = 24. Dobrar 24 da 48, entao 6 x 8 = 48. Tambem podemos verificar: 8 x 6 = 48.",
     rhythm: ["Use um fato que voce conhece.", "Dobre ou divida pela metade quando ajudar.", "Confira trocando a ordem dos fatores."],
@@ -463,6 +588,11 @@ const lessonTranslations = {
     sourceFocus: "Desafios de multiplicacao com algarismo faltando e aritmetica de algarismos.",
     teacherAim:
       "Os estudantes raciocinam com valor posicional, transporte e fatos de multiplicacao antes de nomear o algarismo faltante.",
+    memoryRefresh: {
+      idea: "Multiplicacao com algarismo faltando se resolve coluna por coluna. A coluna das unidades costuma dar a primeira pista.",
+      method: ["Observe o algarismo das unidades da resposta.", "Descubra qual algarismo poderia produzir essa unidade.", "Inclua o transporte na coluna das dezenas.", "Confira a multiplicacao completa."],
+      example: "Em 2? x 3 = 78, a unidade precisa fazer 3 x ? terminar em 8, entao ? e 6. Depois, 26 x 3 = 78.",
+    },
     examplePt:
       "Exemplo: em 3? x 4 = 148, olhe primeiro para as unidades. 4 x ? termina em 8, entao ? pode ser 2 ou 7. Testando 37 x 4 = 148, o algarismo faltante e 7.",
     rhythm: ["Comece pela coluna das unidades.", "Use o transporte.", "Confira a multiplicacao inteira."],
@@ -481,6 +611,11 @@ const lessonTranslations = {
     sourceFocus: "Soma de fracoes e revisao de fracoes-decimais.",
     teacherAim:
       "Os estudantes mostram a escolha do denominador, fracoes equivalentes e o resultado final como numero misto.",
+    memoryRefresh: {
+      idea: "Fracoes so podem ser somadas diretamente quando os pedacos tem o mesmo tamanho. Um denominador comum faz os pedacos ficarem iguais.",
+      method: ["Escolha um denominador comum.", "Reescreva cada fracao sem mudar seu valor.", "Some os numeradores e mantenha o denominador.", "Reduza ou escreva um numero misto se necessario."],
+      example: "1/3 + 1/6 vira 2/6 + 1/6 = 3/6 = 1/2.",
+    },
     examplePt:
       "Exemplo: para 1/3 + 1/4, use denominador 12. Entao 1/3 = 4/12 e 1/4 = 3/12. Somando: 7/12.",
     rhythm: ["Escolha um denominador comum.", "Reescreva as duas fracoes.", "Some os numeradores e mantenha o denominador."],
@@ -500,6 +635,11 @@ const lessonTranslations = {
     sourceFocus: "Revisao de divisao decimal: ajustar o divisor movendo as virgulas antes de dividir.",
     teacherAim:
       "Os estudantes transformam um problema de divisao equivalente e estimam antes de calcular.",
+    memoryRefresh: {
+      idea: "Divisao com decimais fica mais facil quando o divisor e um numero inteiro. Mova as duas virgulas o mesmo numero de casas para manter a divisao equivalente.",
+      method: ["Conte quantas casas movem o divisor ate virar inteiro.", "Mova o dividendo o mesmo numero de casas.", "Divida os novos numeros.", "Estime antes para perceber erro de virgula."],
+      example: "4.8 dividido por 0.6 vira 48 dividido por 6, entao a resposta e 8.",
+    },
     examplePt:
       "Exemplo: 36 dividido por 0.09 fica 3600 dividido por 9, porque movemos as duas virgulas duas casas para a direita. A resposta e 400.",
     rhythm: ["Mova as duas virgulas o mesmo numero de casas.", "Transforme o divisor em inteiro.", "Estime antes de dividir."],
@@ -518,6 +658,11 @@ const lessonTranslations = {
     sourceFocus: "Problemas de custo unitario das folhas de revisao aritmetica.",
     teacherAim:
       "Os estudantes dividem o custo total pela quantidade e comparam precos de uma unidade.",
+    memoryRefresh: {
+      idea: "Custo unitario significa o preco de um item. Depois que as escolhas viram preco de um item, a comparacao fica justa.",
+      method: ["Divida o preco total pela quantidade de itens.", "Faca isso para cada loja ou opcao.", "Compare a mesma unidade nas duas respostas.", "Escolha o menor preco unitario como melhor compra."],
+      example: "Se 4 cadernos custam $10, um caderno custa $10 dividido por 4 = $2.50.",
+    },
     examplePt:
       "Exemplo: se 5 laranjas custam R$10,00, cada laranja custa R$2,00, porque 10 dividido por 5 = 2.",
     rhythm: ["Encontre o preco de um item.", "Compare unidades iguais.", "Escolha o menor preco unitario."],
@@ -536,6 +681,11 @@ const lessonTranslations = {
     sourceFocus: "Divisibilidade por 2, 3, 4, 5, 9 e 10.",
     teacherAim:
       "Os estudantes usam testes com algarismos e explicam quais divisores funcionam.",
+    memoryRefresh: {
+      idea: "Regras de divisibilidade sao verificacoes rapidas que usam algarismos em vez de divisao longa.",
+      method: ["Confira 2 pelo ultimo algarismo.", "Confira 3 e 9 somando os algarismos.", "Confira 4 pelos dois ultimos algarismos.", "Confira 5 e 10 pelo algarismo final."],
+      example: "732 e divisivel por 2 porque e par, por 3 porque 7 + 3 + 2 = 12, e por 4 porque 32 e divisivel por 4.",
+    },
     examplePt:
       "Exemplo: 732 e divisivel por 3 porque 7 + 3 + 2 = 12, e 12 e divisivel por 3. Nao e divisivel por 5 porque nao termina em 0 ou 5.",
     rhythm: ["Confira o ultimo algarismo.", "Some os algarismos.", "Confira os dois ultimos algarismos para 4."],
@@ -554,6 +704,11 @@ const lessonTranslations = {
     sourceFocus: "Reducao de fracoes grandes na revisao aritmetica do 7o ano.",
     teacherAim:
       "Os estudantes reduzem em etapas visiveis em vez de tentar saltar direto para a resposta.",
+    memoryRefresh: {
+      idea: "Reduzir uma fracao significa dividir numerador e denominador pelo mesmo fator, mantendo o valor igual.",
+      method: ["Procure um fator comum facil.", "Divida em cima e embaixo por esse fator.", "Repita ate nao haver fator comum.", "Confira se numerador e denominador continuam inteiros."],
+      example: "48/60 pode ser dividido por 12 para obter 4/5.",
+    },
     examplePt:
       "Exemplo: 36/48 pode ser dividido por 12. Entao 36 dividido por 12 = 3 e 48 dividido por 12 = 4, logo 36/48 = 3/4.",
     rhythm: ["Encontre um fator comum.", "Divida numerador e denominador pelo mesmo numero.", "Continue reduzindo ate nao haver fator comum."],
@@ -572,6 +727,11 @@ const lessonTranslations = {
     sourceFocus: "Conversao de dizimas periodicas em fracoes.",
     teacherAim:
       "Os estudantes conectam um bloco repetido aos 9 no denominador e depois reduzem.",
+    memoryRefresh: {
+      idea: "Uma dizima periodica pode muitas vezes virar uma fracao com 9 no denominador. A quantidade de algarismos que repetem diz quantos 9 usar.",
+      method: ["Conte os algarismos que repetem.", "Coloque o bloco que repete sobre a mesma quantidade de 9.", "Reduza a fracao.", "Confira se o decimal repetiria o mesmo bloco."],
+      example: "0.45 repetindo tem dois algarismos repetidos, entao vira 45/99, que reduz para 5/11.",
+    },
     examplePt:
       "Exemplo: 0.27 repetindo vira 27/99, porque dois algarismos repetem. Depois reduzimos: 27/99 = 3/11.",
     rhythm: ["Conte os algarismos que repetem.", "Use o mesmo numero de 9 no denominador.", "Reduza a fracao."],
