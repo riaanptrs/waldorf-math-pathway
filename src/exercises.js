@@ -980,6 +980,225 @@ const lessonWorkedSteps = {
   },
 };
 
+const extraPracticeBank = {
+  pt: {
+    "g7-percent-base": {
+      prompt: "Treino: 24 e 40% de qual numero?",
+      answerType: "number",
+      answer: 60,
+      tolerance: 0,
+      steps: ["40% = 40/100 = 4/10.", "Se 4 partes valem 24, 1 parte vale 24 dividido por 4 = 6.", "O todo tem 10 partes, entao 6 x 10 = 60.", "Confira: 40% de 60 e 24."],
+    },
+    "g7-compound-interest": {
+      prompt: "Treino: 300 dolares rendem 4% ao ano, compostos anualmente. Qual e o saldo depois de 2 anos?",
+      answerType: "number",
+      answer: 324.48,
+      tolerance: 0.01,
+      steps: ["Ano 1: 4% de 300 = 12.", "Novo saldo: 300 + 12 = 312.", "Ano 2: 4% de 312 = 12.48.", "Saldo final: 312 + 12.48 = 324.48."],
+    },
+    "g7-ratio-whole": {
+      prompt: "Treino: Uma receita usa farinha e aveia na razao 3:2. Ha 40 xicaras ao todo. Quantas xicaras sao de farinha?",
+      answerType: "number",
+      answer: 24,
+      tolerance: 0,
+      steps: ["Some as partes: 3 + 2 = 5.", "Farinha e 3 das 5 partes.", "40 dividido por 5 = 8.", "3 partes de farinha: 3 x 8 = 24."],
+    },
+    "g7-rate-speed": {
+      prompt: "Treino: Uma pessoa caminha 9 km em 30 minutos. Qual e a velocidade media em km por hora?",
+      answerType: "number",
+      answer: 18,
+      tolerance: 0,
+      steps: ["30 minutos e 1/2 hora.", "Se 9 km acontecem em meia hora, em 1 hora sera o dobro.", "9 x 2 = 18.", "Velocidade media: 18 km/h."],
+    },
+    "g7-negative-numbers": {
+      prompt: "Treino: Calcule -6 x 9 + 20.",
+      answerType: "number",
+      answer: -34,
+      tolerance: 0,
+      steps: ["Faca a multiplicacao primeiro.", "-6 x 9 = -54.", "Agora some 20: -54 + 20.", "Andando 20 passos em direcao ao zero, chegamos a -34."],
+    },
+    "g7-expression-like-terms": {
+      prompt: "Treino: Simplifique 8m - 5 + 3m - 12.",
+      answerType: "expression",
+      acceptedAnswers: ["11m-17", "11m - 17"],
+      steps: ["Junte os termos com m: 8m + 3m = 11m.", "Junte os numeros: -5 - 12 = -17.", "Escreva a expressao final: 11m - 17."],
+    },
+    "g7-equation-balance": {
+      prompt: "Treino: Resolva para x: 4x + 6 = 2x + 18.",
+      answerType: "number",
+      answer: 6,
+      tolerance: 0,
+      steps: ["Subtraia 2x dos dois lados: 2x + 6 = 18.", "Subtraia 6 dos dois lados: 2x = 12.", "Divida por 2: x = 6.", "Confira: 4(6)+6 = 30 e 2(6)+18 = 30."],
+    },
+    "g7-gauss-sum": {
+      prompt: "Treino: Some 5 + 8 + 11 + ... + 35.",
+      answerType: "number",
+      answer: 220,
+      tolerance: 0,
+      steps: ["A sequencia cresce de 3 em 3.", "De 5 ate 35 ha 11 termos.", "Primeiro + ultimo: 5 + 35 = 40.", "Soma: 11 x 40 dividido por 2 = 220."],
+    },
+    "g7-table-square-products": {
+      prompt: "Treino: Use um fato conhecido para calcular 9 x 6.",
+      answerType: "number",
+      answer: 54,
+      tolerance: 0,
+      steps: ["Use 9 x 3 = 27.", "Como 6 e o dobro de 3, dobre o resultado.", "27 x 2 = 54.", "Confira: 6 x 9 tambem e 54."],
+    },
+    "g7-missing-digit": {
+      prompt: "Treino: Encontre o numero completo em 3? x 4 = 156.",
+      answerType: "number",
+      answer: 39,
+      tolerance: 0,
+      steps: ["Olhe as unidades: a resposta termina em 6.", "4 x ? precisa terminar em 6. 4 x 9 = 36.", "Vai 3 para a dezena.", "4 x 3 + 3 = 15. Entao o numero e 39."],
+    },
+    "g7-fraction-common-denominator": {
+      prompt: "Treino: Some 2/3 + 5/12.",
+      answerType: "expression",
+      acceptedAnswers: ["13/12", "1 1/12", "1+1/12"],
+      steps: ["Use denominador comum 12.", "2/3 = 8/12.", "5/12 ja esta em doze avos.", "8/12 + 5/12 = 13/12 = 1 1/12."],
+    },
+    "g7-decimal-division-shift": {
+      prompt: "Treino: Resolva 14.4 dividido por 0.36.",
+      answerType: "number",
+      answer: 40,
+      tolerance: 0,
+      steps: ["O divisor 0.36 tem duas casas decimais.", "Mova as duas virgulas duas casas: 14.4 vira 1440 e 0.36 vira 36.", "Resolva 1440 dividido por 36.", "36 x 40 = 1440, entao a resposta e 40."],
+    },
+    "g7-unit-cost": {
+      prompt: "Treino: Loja A vende 8 canetas por $5.60. Loja B vende 5 canetas por $3.75. Qual loja e mais barata por caneta?",
+      answerType: "expression",
+      acceptedAnswers: ["a", "lojaa", "loja a"],
+      steps: ["Loja A: 5.60 dividido por 8 = 0.70.", "Loja B: 3.75 dividido por 5 = 0.75.", "0.70 e menor que 0.75.", "A Loja A e mais barata por caneta."],
+    },
+    "g7-divisibility-check": {
+      prompt: "Treino: Quais de 2, 3, 4, 5, 9 e 10 dividem 64.512 exatamente?",
+      answerType: "expression",
+      acceptedAnswers: ["2,3,4,9", "2 3 4 9", "2;3;4;9"],
+      steps: ["Termina em 2, entao e divisivel por 2.", "Soma dos algarismos: 6+4+5+1+2 = 18, entao e divisivel por 3 e 9.", "Os dois ultimos algarismos sao 12, entao e divisivel por 4.", "Nao termina em 0 ou 5, entao nao e divisivel por 5 ou 10.", "Resposta: 2, 3, 4 e 9."],
+    },
+    "g7-reduce-fraction": {
+      prompt: "Treino: Reduza 1260/1470.",
+      answerType: "expression",
+      acceptedAnswers: ["6/7"],
+      steps: ["Divida os dois por 210.", "1260 dividido por 210 = 6.", "1470 dividido por 210 = 7.", "A fracao reduzida e 6/7."],
+    },
+    "g7-repeating-decimal-fraction": {
+      prompt: "Treino: Converta 0.72 repetindo em fracao reduzida.",
+      answerType: "expression",
+      acceptedAnswers: ["8/11"],
+      steps: ["O bloco que repete e 72, com dois algarismos.", "Coloque 72 sobre 99: 72/99.", "Reduza dividindo por 9.", "72/99 = 8/11."],
+    },
+  },
+  en: {
+    "g7-percent-base": {
+      prompt: "Practice: 24 is 40% of what number?",
+      answerType: "number",
+      answer: 60,
+      tolerance: 0,
+      steps: ["40% = 40/100 = 4/10.", "If 4 parts are worth 24, 1 part is 24 divided by 4 = 6.", "The whole has 10 parts, so 6 x 10 = 60.", "Check: 40% of 60 is 24."],
+    },
+    "g7-compound-interest": {
+      prompt: "Practice: 300 dollars earns 4% interest compounded annually. What is the balance after 2 years?",
+      answerType: "number",
+      answer: 324.48,
+      tolerance: 0.01,
+      steps: ["Year 1: 4% of 300 = 12.", "New balance: 300 + 12 = 312.", "Year 2: 4% of 312 = 12.48.", "Final balance: 312 + 12.48 = 324.48."],
+    },
+    "g7-ratio-whole": {
+      prompt: "Practice: A recipe uses flour and oats in a 3:2 ratio. There are 40 cups altogether. How many cups are flour?",
+      answerType: "number",
+      answer: 24,
+      tolerance: 0,
+      steps: ["Add the parts: 3 + 2 = 5.", "Flour is 3 of the 5 parts.", "40 divided by 5 = 8.", "3 flour parts: 3 x 8 = 24."],
+    },
+    "g7-rate-speed": {
+      prompt: "Practice: A person walks 9 km in 30 minutes. What is the average speed in km per hour?",
+      answerType: "number",
+      answer: 18,
+      tolerance: 0,
+      steps: ["30 minutes is 1/2 hour.", "If 9 km happens in half an hour, one hour is double.", "9 x 2 = 18.", "Average speed: 18 km/h."],
+    },
+    "g7-negative-numbers": {
+      prompt: "Practice: Calculate -6 x 9 + 20.",
+      answerType: "number",
+      answer: -34,
+      tolerance: 0,
+      steps: ["Multiply first.", "-6 x 9 = -54.", "Now add 20: -54 + 20.", "Move 20 steps toward zero to reach -34."],
+    },
+    "g7-expression-like-terms": {
+      prompt: "Practice: Simplify 8m - 5 + 3m - 12.",
+      answerType: "expression",
+      acceptedAnswers: ["11m-17", "11m - 17"],
+      steps: ["Combine m terms: 8m + 3m = 11m.", "Combine plain numbers: -5 - 12 = -17.", "Final expression: 11m - 17."],
+    },
+    "g7-equation-balance": {
+      prompt: "Practice: Solve for x: 4x + 6 = 2x + 18.",
+      answerType: "number",
+      answer: 6,
+      tolerance: 0,
+      steps: ["Subtract 2x from both sides: 2x + 6 = 18.", "Subtract 6 from both sides: 2x = 12.", "Divide by 2: x = 6.", "Check: 4(6)+6 = 30 and 2(6)+18 = 30."],
+    },
+    "g7-gauss-sum": {
+      prompt: "Practice: Sum 5 + 8 + 11 + ... + 35.",
+      answerType: "number",
+      answer: 220,
+      tolerance: 0,
+      steps: ["The sequence grows by 3.", "From 5 to 35 there are 11 terms.", "First + last: 5 + 35 = 40.", "Sum: 11 x 40 divided by 2 = 220."],
+    },
+    "g7-table-square-products": {
+      prompt: "Practice: Use a known fact to calculate 9 x 6.",
+      answerType: "number",
+      answer: 54,
+      tolerance: 0,
+      steps: ["Use 9 x 3 = 27.", "Since 6 is double 3, double the result.", "27 x 2 = 54.", "Check: 6 x 9 is also 54."],
+    },
+    "g7-missing-digit": {
+      prompt: "Practice: Find the complete number in 3? x 4 = 156.",
+      answerType: "number",
+      answer: 39,
+      tolerance: 0,
+      steps: ["Look at the ones: the answer ends in 6.", "4 x ? needs to end in 6. 4 x 9 = 36.", "Carry 3 to the tens.", "4 x 3 + 3 = 15. So the number is 39."],
+    },
+    "g7-fraction-common-denominator": {
+      prompt: "Practice: Add 2/3 + 5/12.",
+      answerType: "expression",
+      acceptedAnswers: ["13/12", "1 1/12", "1+1/12"],
+      steps: ["Use common denominator 12.", "2/3 = 8/12.", "5/12 is already in twelfths.", "8/12 + 5/12 = 13/12 = 1 1/12."],
+    },
+    "g7-decimal-division-shift": {
+      prompt: "Practice: Solve 14.4 divided by 0.36.",
+      answerType: "number",
+      answer: 40,
+      tolerance: 0,
+      steps: ["The divisor 0.36 has two decimal places.", "Move both decimals two places: 14.4 becomes 1440 and 0.36 becomes 36.", "Solve 1440 divided by 36.", "36 x 40 = 1440, so the answer is 40."],
+    },
+    "g7-unit-cost": {
+      prompt: "Practice: Store A sells 8 pens for $5.60. Store B sells 5 pens for $3.75. Which store is cheaper per pen?",
+      answerType: "expression",
+      acceptedAnswers: ["a", "storea", "store a"],
+      steps: ["Store A: 5.60 divided by 8 = 0.70.", "Store B: 3.75 divided by 5 = 0.75.", "0.70 is less than 0.75.", "Store A is cheaper per pen."],
+    },
+    "g7-divisibility-check": {
+      prompt: "Practice: Which of 2, 3, 4, 5, 9, and 10 divide 64,512 evenly?",
+      answerType: "expression",
+      acceptedAnswers: ["2,3,4,9", "2 3 4 9", "2;3;4;9"],
+      steps: ["It ends in 2, so it is divisible by 2.", "Digit sum: 6+4+5+1+2 = 18, so it is divisible by 3 and 9.", "The last two digits are 12, so it is divisible by 4.", "It does not end in 0 or 5, so not 5 or 10.", "Answer: 2, 3, 4, and 9."],
+    },
+    "g7-reduce-fraction": {
+      prompt: "Practice: Reduce 1260/1470.",
+      answerType: "expression",
+      acceptedAnswers: ["6/7"],
+      steps: ["Divide both numbers by 210.", "1260 divided by 210 = 6.", "1470 divided by 210 = 7.", "The reduced fraction is 6/7."],
+    },
+    "g7-repeating-decimal-fraction": {
+      prompt: "Practice: Convert repeating 0.72 to a reduced fraction.",
+      answerType: "expression",
+      acceptedAnswers: ["8/11"],
+      steps: ["The repeating block is 72, with two digits.", "Put 72 over 99: 72/99.", "Reduce by dividing by 9.", "72/99 = 8/11."],
+    },
+  },
+};
+
 const sharedDbShape = {
   siteSlug: SITE_ID,
   subjectSlug: SUBJECT_ID,
@@ -991,4 +1210,5 @@ const sharedDbShape = {
 window.lessons = lessons;
 window.lessonTranslations = lessonTranslations;
 window.lessonWorkedSteps = lessonWorkedSteps;
+window.extraPracticeBank = extraPracticeBank;
 window.sharedDbShape = sharedDbShape;

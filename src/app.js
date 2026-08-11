@@ -10,6 +10,7 @@ import {
 const lessons = window.lessons;
 const lessonTranslations = window.lessonTranslations || {};
 const lessonWorkedSteps = window.lessonWorkedSteps || {};
+const extraPracticeBank = window.extraPracticeBank || {};
 const sharedDbShape = window.sharedDbShape;
 const list = document.querySelector(".lesson-list");
 const grade = document.querySelector(".exercise__grade");
@@ -32,6 +33,7 @@ const learnerName = document.querySelector(".learner-name");
 const parentDashboard = document.querySelector(".parent-dashboard");
 const progressList = document.querySelector(".progress-list");
 const correction = document.querySelector(".correction");
+const attemptTools = document.querySelector(".attempt-tools");
 const dbBadge = document.querySelector(".db-badge");
 const signOutButton = document.querySelector(".sign-out");
 const lessonCount = document.querySelector(".lesson-count");
@@ -122,8 +124,18 @@ const copy = {
     emptyAnswer: "Digite uma resposta primeiro.",
     cloudCorrect: (name) => `Correto. Salvo no portfolio compartilhado de ${name}.`,
     localCorrect: "Correto. Salvo neste dispositivo. Entre na conta para salvar no portfolio compartilhado.",
-    cloudTry: "Precisa de correcao. Salvo para revisao no portfolio compartilhado. Veja as notas dos passos e o gabarito abaixo.",
-    localTry: "Precisa de correcao. Salvo neste dispositivo. Veja as notas dos passos e o gabarito abaixo.",
+    cloudTry: "Precisa de correcao. Salvo para revisao no portfolio compartilhado. Voce pode tentar de novo ou abrir a resposta guiada.",
+    localTry: "Precisa de correcao. Salvo neste dispositivo. Voce pode tentar de novo ou abrir a resposta guiada.",
+    tryAgainButton: "Tentar de novo",
+    guidedAnswerButton: "Ver resposta guiada",
+    guidedAnswerTitle: "Resposta guiada",
+    correctAnswerLabel: "Resposta correta",
+    extraPracticeTitle: "Treino extra",
+    extraPracticeIntro: "Antes de voltar para a atividade, tente uma conta parecida.",
+    extraAnswerLabel: "Resposta do treino extra",
+    checkExtraButton: "Verificar treino",
+    extraCorrect: "Correto. Agora volte para a atividade principal.",
+    extraTry: "Ainda nao. Veja o caminho guiado abaixo e tente a atividade principal outra vez.",
     saveFailed: (message) => `A resposta foi verificada, mas o salvamento na nuvem falhou: ${message}`,
     enterCredentials: "Digite o email do responsavel e a senha.",
     signingIn: "Entrando pelo banco Waldorf compartilhado...",
@@ -210,8 +222,18 @@ const copy = {
     emptyAnswer: "Try entering an answer first.",
     cloudCorrect: (name) => `Correct. Saved to ${name}'s shared portfolio.`,
     localCorrect: "Correct. Saved on this device. Sign in to save it to the shared portfolio.",
-    cloudTry: "Needs correction. Saved for review in the shared portfolio. Check the step notes and the answer key below.",
-    localTry: "Needs correction. Saved on this device. Check the step notes and the answer key below.",
+    cloudTry: "Needs correction. Saved for review in the shared portfolio. You can try again or open the guided answer.",
+    localTry: "Needs correction. Saved on this device. You can try again or open the guided answer.",
+    tryAgainButton: "Try again",
+    guidedAnswerButton: "See guided answer",
+    guidedAnswerTitle: "Guided answer",
+    correctAnswerLabel: "Correct answer",
+    extraPracticeTitle: "Extra practice",
+    extraPracticeIntro: "Before returning to the main activity, try a similar problem.",
+    extraAnswerLabel: "Extra practice answer",
+    checkExtraButton: "Check practice",
+    extraCorrect: "Correct. Now return to the main activity.",
+    extraTry: "Not yet. Read the guided path below, then try the main activity again.",
     saveFailed: (message) => `The answer was checked, but cloud saving failed: ${message}`,
     enterCredentials: "Enter the guardian email and password.",
     signingIn: "Signing in through the shared Waldorf database...",
@@ -246,6 +268,10 @@ function lessonCopy(lesson) {
         }
       : null,
   };
+}
+
+function extraPracticeFor(lesson) {
+  return extraPracticeBank[language]?.[lesson.id] || extraPracticeBank.en?.[lesson.id] || null;
 }
 
 function applyLanguage() {
@@ -309,6 +335,63 @@ function checkAnswer(lesson, rawValue) {
 function correctAnswerText(config) {
   if (config.acceptedAnswers?.length) return config.acceptedAnswers[0];
   return String(config.answer);
+}
+
+function renderSteps(steps) {
+  return steps?.length
+    ? `<ol class="worked-steps">${steps.map((step) => `<li>${step}</li>`).join("")}</ol>`
+    : "";
+}
+
+function renderGuidedAnswer(lesson) {
+  const displayLesson = lessonCopy(lesson);
+  return `
+    <section class="guided-answer" data-panel="guided-answer" hidden>
+      <h4>${t("guidedAnswerTitle")}</h4>
+      <p><strong>${t("correctAnswerLabel")}:</strong> ${correctAnswerText(lesson)}</p>
+      ${renderSteps(displayLesson.memoryRefresh?.workedSteps)}
+      <p>${displayLesson.correction}</p>
+    </section>
+  `;
+}
+
+function renderExtraPractice(lesson) {
+  const practice = extraPracticeFor(lesson);
+  if (!practice) return "";
+  return `
+    <section class="extra-practice" data-panel="extra-practice">
+      <h4>${t("extraPracticeTitle")}</h4>
+      <p>${t("extraPracticeIntro")}</p>
+      <p class="extra-practice__prompt">${practice.prompt}</p>
+      <label for="extra-answer">${t("extraAnswerLabel")}</label>
+      <div class="answer-form__row">
+        <input id="extra-answer" class="extra-answer" autocomplete="off" inputmode="${practice.answerType === "expression" ? "text" : "decimal"}" />
+        <button class="button button--small check-extra" type="button">${t("checkExtraButton")}</button>
+      </div>
+      <p class="extra-feedback" role="status"></p>
+      <div class="extra-solution" hidden>
+        <p><strong>${t("correctAnswerLabel")}:</strong> ${correctAnswerText(practice)}</p>
+        ${renderSteps(practice.steps)}
+      </div>
+    </section>
+  `;
+}
+
+function showAttemptTools() {
+  attemptTools.hidden = false;
+  attemptTools.innerHTML = `
+    <div class="attempt-actions">
+      <button class="button button--small try-again" type="button">${t("tryAgainButton")}</button>
+      <button class="button button--small button--ghost show-guided-answer" type="button">${t("guidedAnswerButton")}</button>
+    </div>
+    ${renderGuidedAnswer(activeLesson)}
+    ${renderExtraPractice(activeLesson)}
+  `;
+}
+
+function hideAttemptTools() {
+  attemptTools.hidden = true;
+  attemptTools.innerHTML = "";
 }
 
 function evaluateGuidedSteps(lesson) {
@@ -464,6 +547,7 @@ function renderExercise(lesson) {
   feedback.dataset.state = "neutral";
   correction.hidden = true;
   correction.textContent = displayLesson.correction;
+  hideAttemptTools();
   answerLabel.textContent = displayLesson.guidedSteps?.length ? t("finalAnswer") : t("yourAnswer");
   answer.value = "";
   answer.placeholder = lesson.answerType === "expression" ? t("expressionPlaceholder") : t("numberPlaceholder");
@@ -648,19 +732,63 @@ form.addEventListener("submit", async (event) => {
           : t("localCorrect");
       feedback.dataset.state = "correct";
       correction.hidden = true;
+      hideAttemptTools();
     } else {
       feedback.textContent =
         savedTo === "cloud"
           ? t("cloudTry")
           : t("localTry");
       feedback.dataset.state = "try";
-      correction.hidden = false;
+      correction.hidden = true;
+      showAttemptTools();
     }
     renderAccount();
   } catch (error) {
     feedback.textContent = t("saveFailed", translateAuthError(error));
     feedback.dataset.state = "try";
     correction.hidden = fullAttemptIsCorrect;
+  }
+});
+
+attemptTools.addEventListener("click", (event) => {
+  const tryAgain = event.target.closest(".try-again");
+  if (tryAgain) {
+    feedback.textContent = "";
+    feedback.dataset.state = "neutral";
+    correction.hidden = true;
+    hideAttemptTools();
+    answer.value = "";
+    answer.focus();
+    return;
+  }
+
+  const showGuided = event.target.closest(".show-guided-answer");
+  if (showGuided) {
+    const panel = attemptTools.querySelector('[data-panel="guided-answer"]');
+    if (panel) panel.hidden = false;
+    return;
+  }
+
+  const checkExtra = event.target.closest(".check-extra");
+  if (!checkExtra) return;
+  const practice = extraPracticeFor(activeLesson);
+  const input = attemptTools.querySelector(".extra-answer");
+  const extraFeedback = attemptTools.querySelector(".extra-feedback");
+  const extraSolution = attemptTools.querySelector(".extra-solution");
+  const value = input?.value.trim() || "";
+
+  if (!value) {
+    extraFeedback.textContent = t("emptyAnswer");
+    extraFeedback.dataset.state = "neutral";
+    return;
+  }
+
+  const isCorrect = checkValue(practice, value);
+  extraFeedback.textContent = isCorrect ? t("extraCorrect") : t("extraTry");
+  extraFeedback.dataset.state = isCorrect ? "correct" : "try";
+  if (extraSolution) extraSolution.hidden = isCorrect;
+  if (isCorrect) {
+    answer.focus();
   }
 });
 

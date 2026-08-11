@@ -505,6 +505,69 @@ select {
   color: #9a6630;
 }
 
+.attempt-tools {
+  display: grid;
+  gap: 14px;
+}
+
+.attempt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button--ghost {
+  border: 1px solid rgba(47, 75, 58, 0.24);
+  background: transparent;
+  color: var(--moss);
+}
+
+.guided-answer,
+.extra-practice {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid rgba(178, 78, 90, 0.22);
+  border-radius: 8px;
+  background: #fff7ec;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.extra-practice {
+  border-color: rgba(47, 75, 58, 0.22);
+  background: #f4f8ef;
+}
+
+.guided-answer h4,
+.extra-practice h4 {
+  margin: 0;
+  color: var(--berry);
+  font-size: 1rem;
+}
+
+.guided-answer p,
+.extra-practice p {
+  margin: 0;
+}
+
+.extra-practice label {
+  color: rgba(36, 49, 43, 0.72);
+}
+
+.extra-feedback {
+  min-height: 22px;
+  margin: 0;
+}
+
+.extra-feedback[data-state="correct"] {
+  color: #2f6f45;
+}
+
+.extra-feedback[data-state="try"] {
+  color: #9a6630;
+}
+
 .correction {
   margin: 4px 0 0;
   padding: 12px 14px;
@@ -602,6 +665,10 @@ footer {
   }
 
   .answer-form__row {
+    flex-direction: column;
+  }
+
+  .attempt-actions {
     flex-direction: column;
   }
 
