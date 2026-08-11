@@ -363,6 +363,17 @@ main {
   padding-left: 22px;
 }
 
+.worked-steps {
+  display: grid;
+  gap: 8px;
+}
+
+.worked-steps li {
+  padding: 8px 10px;
+  border-left: 3px solid rgba(209, 154, 63, 0.7);
+  background: rgba(255, 253, 250, 0.76);
+}
+
 .memory-refresh__content strong {
   color: var(--berry);
 }

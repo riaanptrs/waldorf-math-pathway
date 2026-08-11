@@ -9,6 +9,7 @@ import {
 
 const lessons = window.lessons;
 const lessonTranslations = window.lessonTranslations || {};
+const lessonWorkedSteps = window.lessonWorkedSteps || {};
 const sharedDbShape = window.sharedDbShape;
 const list = document.querySelector(".lesson-list");
 const grade = document.querySelector(".exercise__grade");
@@ -102,6 +103,7 @@ const copy = {
     howTo: "Como fazer",
     refresherTitle: "Precisa relembrar?",
     refresherMethod: "Metodo",
+    refresherWorked: "Passo por passo",
     refresherExample: "Exemplo rapido",
     showSteps: "Mostre os passos",
     finalAnswer: "Resposta final depois dos passos",
@@ -189,6 +191,7 @@ const copy = {
     howTo: "How to work it",
     refresherTitle: "Need a refresher?",
     refresherMethod: "Method",
+    refresherWorked: "Step by step",
     refresherExample: "Quick example",
     showSteps: "Show the steps",
     finalAnswer: "Final answer after the steps",
@@ -232,7 +235,17 @@ function t(key, ...args) {
 }
 
 function lessonCopy(lesson) {
-  return language === "pt" ? { ...lesson, ...(lessonTranslations[lesson.id] || {}) } : lesson;
+  const localizedLesson = language === "pt" ? { ...lesson, ...(lessonTranslations[lesson.id] || {}) } : lesson;
+  const workedSteps = lessonWorkedSteps[language]?.[lesson.id] || localizedLesson.memoryRefresh?.workedSteps;
+  return {
+    ...localizedLesson,
+    memoryRefresh: localizedLesson.memoryRefresh
+      ? {
+          ...localizedLesson.memoryRefresh,
+          workedSteps,
+        }
+      : null,
+  };
 }
 
 function applyLanguage() {
@@ -472,6 +485,14 @@ function renderExercise(lesson) {
               <ol>
                 ${displayLesson.memoryRefresh.method.map((step) => `<li>${step}</li>`).join("")}
               </ol>
+              ${
+                displayLesson.memoryRefresh.workedSteps?.length
+                  ? `<strong>${t("refresherWorked")}</strong>
+                    <ol class="worked-steps">
+                      ${displayLesson.memoryRefresh.workedSteps.map((step) => `<li>${step}</li>`).join("")}
+                    </ol>`
+                  : ""
+              }
               <strong>${t("refresherExample")}</strong>
               <p>${displayLesson.memoryRefresh.example}</p>
             </div>
