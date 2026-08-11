@@ -103,7 +103,7 @@ const copy = {
     howTo: "Como fazer",
     refresherTitle: "Precisa relembrar?",
     refresherMethod: "Metodo",
-    refresherWorked: "Passo por passo",
+    workedTitle: "Como resolver esta conta, passo por passo",
     refresherExample: "Exemplo rapido",
     showSteps: "Mostre os passos",
     finalAnswer: "Resposta final depois dos passos",
@@ -191,7 +191,7 @@ const copy = {
     howTo: "How to work it",
     refresherTitle: "Need a refresher?",
     refresherMethod: "Method",
-    refresherWorked: "Step by step",
+    workedTitle: "How to solve this, step by step",
     refresherExample: "Quick example",
     showSteps: "Show the steps",
     finalAnswer: "Final answer after the steps",
@@ -469,6 +469,16 @@ function renderExercise(lesson) {
   answer.placeholder = lesson.answerType === "expression" ? t("expressionPlaceholder") : t("numberPlaceholder");
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
   body.innerHTML = `
+    ${
+      displayLesson.memoryRefresh?.workedSteps?.length
+        ? `<section class="worked-solution" aria-labelledby="worked-solution-title">
+            <h4 id="worked-solution-title">${t("workedTitle")}</h4>
+            <ol class="worked-steps">
+              ${displayLesson.memoryRefresh.workedSteps.map((step) => `<li>${step}</li>`).join("")}
+            </ol>
+          </section>`
+        : ""
+    }
     <div class="lesson-note">
       <strong>${t("lessonFocus")}</strong>
       <p>${displayLesson.teacherAim}</p>
@@ -485,14 +495,6 @@ function renderExercise(lesson) {
               <ol>
                 ${displayLesson.memoryRefresh.method.map((step) => `<li>${step}</li>`).join("")}
               </ol>
-              ${
-                displayLesson.memoryRefresh.workedSteps?.length
-                  ? `<strong>${t("refresherWorked")}</strong>
-                    <ol class="worked-steps">
-                      ${displayLesson.memoryRefresh.workedSteps.map((step) => `<li>${step}</li>`).join("")}
-                    </ol>`
-                  : ""
-              }
               <strong>${t("refresherExample")}</strong>
               <p>${displayLesson.memoryRefresh.example}</p>
             </div>

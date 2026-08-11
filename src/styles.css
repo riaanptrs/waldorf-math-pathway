@@ -325,6 +325,21 @@ main {
   background: rgba(79, 142, 176, 0.1);
 }
 
+.worked-solution {
+  margin: 0 0 20px;
+  padding: clamp(16px, 3vw, 24px);
+  border: 1px solid rgba(178, 78, 90, 0.22);
+  border-radius: 8px;
+  background: #fff7ec;
+}
+
+.worked-solution h4 {
+  margin: 0 0 14px;
+  color: var(--berry);
+  font-family: Arial, sans-serif;
+  font-size: 1.05rem;
+}
+
 .lesson-note p {
   margin: 6px 0 0;
   line-height: 1.55;
@@ -366,6 +381,8 @@ main {
 .worked-steps {
   display: grid;
   gap: 8px;
+  margin: 0;
+  padding-left: 28px;
 }
 
 .worked-steps li {
