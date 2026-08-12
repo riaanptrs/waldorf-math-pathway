@@ -15,6 +15,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -175,6 +179,7 @@ main {
 
 .band,
 .practice,
+.arithmetic-review,
 .account,
 .parent {
   padding-inline: clamp(18px, 5vw, 72px);
@@ -207,6 +212,7 @@ main {
 }
 
 .practice__layout,
+.arithmetic-review__layout,
 .account__layout {
   display: grid;
   grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
@@ -214,12 +220,20 @@ main {
   align-items: start;
 }
 
+.arithmetic-review__intro {
+  max-width: 760px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.55;
+}
+
 .lesson-list {
   display: grid;
   gap: 10px;
 }
 
-.lesson-card {
+.lesson-card,
+.review-sheet-card {
   display: grid;
   gap: 5px;
   width: 100%;
@@ -236,6 +250,8 @@ main {
 .lesson-card span,
 .lesson-card small,
 .lesson-card em,
+.review-sheet-card span,
+.review-sheet-card small,
 .exercise__time,
 .answer-form label,
 .auth-form label,
@@ -245,7 +261,8 @@ main {
   font-size: 0.86rem;
 }
 
-.lesson-card strong {
+.lesson-card strong,
+.review-sheet-card strong {
   font-size: 1.1rem;
 }
 
@@ -272,10 +289,25 @@ main {
   box-shadow: inset 5px 0 0 var(--berry);
 }
 
+.review-sheet-card.is-active {
+  border-color: rgba(169, 79, 85, 0.5);
+  box-shadow: inset 5px 0 0 var(--berry);
+}
+
+.review-sheet-list {
+  display: grid;
+  gap: 10px;
+  align-self: start;
+  max-height: 78vh;
+  overflow: auto;
+  padding-right: 4px;
+}
+
 .exercise,
 .auth-form,
 .account-panel,
 .parent-dashboard,
+.review-sheet,
 .note-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -283,7 +315,8 @@ main {
   box-shadow: var(--shadow);
 }
 
-.exercise {
+.exercise,
+.review-sheet {
   padding: clamp(22px, 4vw, 38px);
 }
 
@@ -300,9 +333,27 @@ main {
   margin-bottom: 18px;
 }
 
-.exercise__title {
+.review-sheet__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 34%);
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.exercise__title,
+.review-sheet__title {
   margin-bottom: 0;
   font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.review-sheet__focus {
+  margin: 0;
+  padding: 12px 14px;
+  border-left: 4px solid var(--sky);
+  background: rgba(79, 142, 176, 0.1);
+  font-family: Arial, sans-serif;
+  line-height: 1.45;
 }
 
 .exercise__prompt {
@@ -568,6 +619,78 @@ select {
   color: #9a6630;
 }
 
+.review-problem-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-problem {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(36, 49, 43, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 253, 250, 0.78);
+}
+
+.review-problem__top {
+  display: grid;
+  gap: 6px;
+}
+
+.review-problem__top span {
+  color: var(--berry);
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.review-problem__top strong {
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
+
+.review-problem__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.review-answer {
+  width: min(240px, 100%);
+}
+
+.review-feedback {
+  min-height: 22px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.review-feedback[data-state="correct"] {
+  color: #2f6f45;
+}
+
+.review-feedback[data-state="try"] {
+  color: #9a6630;
+}
+
+.review-guide {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(47, 75, 58, 0.2);
+  border-radius: 8px;
+  background: #f4f8ef;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.review-guide p {
+  margin: 0;
+}
+
 .correction {
   margin: 4px 0 0;
   padding: 12px 14px;
@@ -655,8 +778,13 @@ footer {
 
   .band,
   .practice__layout,
+  .arithmetic-review__layout,
   .account__layout,
   .note-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-sheet__header {
     grid-template-columns: 1fr;
   }
 
@@ -673,6 +801,11 @@ footer {
   }
 
   .lesson-nav {
+    flex-direction: column;
+  }
+
+  .review-problem__controls {
+    align-items: stretch;
     flex-direction: column;
   }
 

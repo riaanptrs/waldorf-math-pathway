@@ -11,8 +11,14 @@ const lessons = window.lessons;
 const lessonTranslations = window.lessonTranslations || {};
 const lessonWorkedSteps = window.lessonWorkedSteps || {};
 const extraPracticeBank = window.extraPracticeBank || {};
+const arithmeticReviewSheets = window.arithmeticReviewSheets || [];
 const sharedDbShape = window.sharedDbShape;
 const list = document.querySelector(".lesson-list");
+const reviewSheetList = document.querySelector(".review-sheet-list");
+const reviewSheetNumber = document.querySelector(".review-sheet__number");
+const reviewSheetTitle = document.querySelector(".review-sheet__title");
+const reviewSheetFocus = document.querySelector(".review-sheet__focus");
+const reviewProblemList = document.querySelector(".review-problem-list");
 const grade = document.querySelector(".exercise__grade");
 const title = document.querySelector(".exercise__title");
 const time = document.querySelector(".exercise__time");
@@ -49,6 +55,7 @@ const copy = {
     brand: "Trilha de Matematica Waldorf",
     navAccount: "Conta",
     navPractice: "Praticar",
+    navArithmeticReview: "Revisao",
     navRhythm: "Ritmo",
     navParent: "Notas para os pais",
     heroEyebrow: "Pratica online de matematica do 7o ano",
@@ -74,6 +81,17 @@ const copy = {
     signOut: "Sair",
     practiceEyebrow: "Sala de pratica",
     practiceTitle: "Escolha a atividade de hoje",
+    arithmeticReviewEyebrow: "Revisao aritmetica",
+    arithmeticReviewTitle: "Folhas de revisao com explicacao guiada",
+    arithmeticReviewIntro:
+      "Pratique fracoes, decimais, divisao, conversoes e calculo mental. Cada resposta pode ser conferida com passos.",
+    reviewSheetLabel: (number) => `Folha ${number}`,
+    reviewProblemLabel: (number) => `Exercicio ${number}`,
+    reviewCheck: "Verificar",
+    reviewTryAgain: "Tentar de novo",
+    reviewShowGuide: "Ver explicacao guiada",
+    reviewCorrect: "Correto.",
+    reviewTry: "Ainda nao. Tente de novo ou veja a explicacao guiada.",
     previousButton: "Anterior",
     nextButton: "Proxima",
     checkButton: "Verificar",
@@ -147,6 +165,7 @@ const copy = {
     brand: "Waldorf Math Pathway",
     navAccount: "Accounts",
     navPractice: "Practice",
+    navArithmeticReview: "Review",
     navRhythm: "Rhythm",
     navParent: "Parent Notes",
     heroEyebrow: "Grade 7 online math practice",
@@ -172,6 +191,17 @@ const copy = {
     signOut: "Sign out",
     practiceEyebrow: "Lesson studio",
     practiceTitle: "Choose today's activity",
+    arithmeticReviewEyebrow: "Arithmetic review",
+    arithmeticReviewTitle: "Review sheets with guided explanations",
+    arithmeticReviewIntro:
+      "Practice fractions, decimals, division, conversions, and mental arithmetic. Every answer can be checked with steps.",
+    reviewSheetLabel: (number) => `Sheet ${number}`,
+    reviewProblemLabel: (number) => `Problem ${number}`,
+    reviewCheck: "Check",
+    reviewTryAgain: "Try again",
+    reviewShowGuide: "See guided explanation",
+    reviewCorrect: "Correct.",
+    reviewTry: "Not yet. Try again or open the guided explanation.",
     previousButton: "Previous",
     nextButton: "Next",
     checkButton: "Check",
@@ -250,6 +280,7 @@ let activeLearnerId = null;
 let objectiveResponses = [];
 let activityProgress = [];
 let language = localStorage.getItem(LANGUAGE_KEY) || "pt";
+let activeReviewSheetId = arithmeticReviewSheets[0]?.id || null;
 
 function t(key, ...args) {
   const value = copy[language][key];
@@ -341,6 +372,39 @@ function renderSteps(steps) {
   return steps?.length
     ? `<ol class="worked-steps">${steps.map((step) => `<li>${step}</li>`).join("")}</ol>`
     : "";
+}
+
+function localText(value) {
+  if (!value || typeof value !== "object") return value || "";
+  return value[language] || value.en || value.pt || "";
+}
+
+function reviewPrompt(problem) {
+  return localText(problem.prompt);
+}
+
+function reviewSteps(problem) {
+  return localText(problem.steps) || [];
+}
+
+function reviewAcceptedAnswers(problem) {
+  if (problem.acceptedAnswers) return problem.acceptedAnswers;
+  if (problem.answerType === "expression") return [String(problem.answer)];
+  return null;
+}
+
+function reviewAnswerText(problem) {
+  const accepted = reviewAcceptedAnswers(problem);
+  if (accepted?.length) return accepted[0];
+  return String(problem.answer);
+}
+
+function checkReviewProblem(problem, rawValue) {
+  const config = {
+    ...problem,
+    acceptedAnswers: reviewAcceptedAnswers(problem),
+  };
+  return checkValue(config, rawValue);
 }
 
 function renderGuidedAnswer(lesson) {
@@ -535,6 +599,51 @@ function renderList() {
     .join("");
 }
 
+function renderReviewSheets() {
+  if (!reviewSheetList || !reviewProblemList || !arithmeticReviewSheets.length) return;
+  const activeSheet = arithmeticReviewSheets.find((sheet) => sheet.id === activeReviewSheetId) || arithmeticReviewSheets[0];
+  activeReviewSheetId = activeSheet.id;
+
+  reviewSheetList.innerHTML = arithmeticReviewSheets
+    .map(
+      (sheet) => `
+        <button class="review-sheet-card${sheet.id === activeSheet.id ? " is-active" : ""}" data-id="${sheet.id}" type="button">
+          <span>${t("reviewSheetLabel", sheet.number)}</span>
+          <strong>${localText(sheet.title)}</strong>
+          <small>${localText(sheet.focus)}</small>
+        </button>
+      `,
+    )
+    .join("");
+
+  reviewSheetNumber.textContent = t("reviewSheetLabel", activeSheet.number);
+  reviewSheetTitle.textContent = localText(activeSheet.title);
+  reviewSheetFocus.textContent = localText(activeSheet.focus);
+  reviewProblemList.innerHTML = activeSheet.problems
+    .map(
+      (problem, index) => `
+        <article class="review-problem" data-problem-id="${problem.id}">
+          <div class="review-problem__top">
+            <span>${t("reviewProblemLabel", index + 1)}</span>
+            <strong>${reviewPrompt(problem)}</strong>
+          </div>
+          <div class="review-problem__controls">
+            <input class="review-answer" autocomplete="off" inputmode="${problem.answerType === "expression" ? "text" : "decimal"}" />
+            <button class="button button--small review-check" type="button">${t("reviewCheck")}</button>
+            <button class="button button--small button--ghost review-retry" type="button" hidden>${t("reviewTryAgain")}</button>
+            <button class="button button--small button--ghost review-guide-toggle" type="button" hidden>${t("reviewShowGuide")}</button>
+          </div>
+          <p class="review-feedback" role="status"></p>
+          <div class="review-guide" hidden>
+            <p><strong>${t("correctAnswerLabel")}:</strong> ${reviewAnswerText(problem)}</p>
+            ${renderSteps(reviewSteps(problem))}
+          </div>
+        </article>
+      `,
+    )
+    .join("");
+}
+
 function renderExercise(lesson) {
   activeLesson = lesson;
   const displayLesson = lessonCopy(lesson);
@@ -685,6 +794,7 @@ async function finishSignIn(user) {
     language = savedLanguage;
     localStorage.setItem(LANGUAGE_KEY, language);
     applyLanguage();
+    renderReviewSheets();
   }
   learners = await ensureGuardianSetup(user);
   const remembered = localStorage.getItem(ACTIVE_LEARNER_KEY);
@@ -701,6 +811,58 @@ list.addEventListener("click", (event) => {
   const nextLesson = lessons.find((lesson) => lesson.id === card.dataset.id);
   renderExercise(nextLesson);
   answer.focus();
+});
+
+reviewSheetList?.addEventListener("click", (event) => {
+  const card = event.target.closest(".review-sheet-card");
+  if (!card) return;
+  activeReviewSheetId = card.dataset.id;
+  renderReviewSheets();
+});
+
+reviewProblemList?.addEventListener("click", (event) => {
+  const problemCard = event.target.closest(".review-problem");
+  if (!problemCard) return;
+  const activeSheet = arithmeticReviewSheets.find((sheet) => sheet.id === activeReviewSheetId);
+  const problem = activeSheet?.problems.find((item) => item.id === problemCard.dataset.problemId);
+  if (!problem) return;
+
+  const input = problemCard.querySelector(".review-answer");
+  const feedbackEl = problemCard.querySelector(".review-feedback");
+  const guide = problemCard.querySelector(".review-guide");
+  const retryButton = problemCard.querySelector(".review-retry");
+  const guideButton = problemCard.querySelector(".review-guide-toggle");
+
+  if (event.target.closest(".review-check")) {
+    const value = input.value.trim();
+    if (!value) {
+      feedbackEl.textContent = t("emptyAnswer");
+      feedbackEl.dataset.state = "neutral";
+      return;
+    }
+    const isCorrect = checkReviewProblem(problem, value);
+    feedbackEl.textContent = isCorrect ? t("reviewCorrect") : t("reviewTry");
+    feedbackEl.dataset.state = isCorrect ? "correct" : "try";
+    retryButton.hidden = false;
+    guideButton.hidden = false;
+    guide.hidden = true;
+    return;
+  }
+
+  if (event.target.closest(".review-retry")) {
+    input.value = "";
+    feedbackEl.textContent = "";
+    feedbackEl.dataset.state = "neutral";
+    guide.hidden = true;
+    retryButton.hidden = true;
+    guideButton.hidden = true;
+    input.focus();
+    return;
+  }
+
+  if (event.target.closest(".review-guide-toggle")) {
+    guide.hidden = false;
+  }
 });
 
 form.addEventListener("submit", async (event) => {
@@ -872,6 +1034,7 @@ languageInput.addEventListener("change", () => {
   applyLanguage();
   renderList();
   renderExercise(activeLesson);
+  renderReviewSheets();
   renderAccount();
 });
 
@@ -889,6 +1052,7 @@ async function initialise() {
   applyLanguage();
   renderList();
   renderExercise(activeLesson);
+  renderReviewSheets();
   renderAccount();
 
   const { data: { session } } = await supabase.auth.getSession();
