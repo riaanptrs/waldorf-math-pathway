@@ -58,15 +58,15 @@ const copy = {
     navArithmeticReview: "Revisao",
     navRhythm: "Ritmo",
     navParent: "Notas para os pais",
-    heroEyebrow: "Pratica online de matematica do 6o e 7o ano",
-    heroTitle: "Um caminho vivo por dinheiro, porcentagens, razoes e algebra inicial.",
+    heroEyebrow: "Pratica online de matematica do 5o, 6o e 7o ano",
+    heroTitle: "Um caminho vivo por medida, dinheiro, porcentagens, razoes e algebra inicial.",
     heroCopy:
-      "Uma trilha de aulas do 6o e 7o ano com aritmetica pratica, matematica financeira, fracoes, decimais, razoes, numeros com sinal, formulas e algebra inicial. Os estudantes completam passos visiveis, corrigem o proprio trabalho e salvam o progresso para revisao dos pais.",
+      "Uma trilha de aulas do 5o, 6o e 7o ano com aritmetica pratica, medida, geometria, matematica financeira, fracoes, decimais, razoes, numeros com sinal, formulas e algebra inicial. Os estudantes completam passos visiveis, corrigem o proprio trabalho e salvam o progresso para revisao dos pais.",
     heroButton: "Comecar a praticar",
     introEyebrow: "Primeiro passo",
-    introTitle: "Agora com blocos do 6o e 7o ano",
+    introTitle: "Agora com blocos do 5o, 6o e 7o ano",
     introCopy:
-      "Esta trilha de matematica adapta blocos Waldorf em atividades online originais: no 6o ano, matematica financeira, descontos, orcamento e geometria precisa; no 7o ano, revisao aritmetica, fracoes, decimais, razoes, numeros com sinal, equacoes e formulas.",
+      "Esta trilha de matematica adapta blocos Waldorf em atividades online originais: no 5o ano, fracoes decimais, medidas e geometria a mao livre; no 6o ano, matematica financeira, descontos, orcamento e geometria precisa; no 7o ano, revisao aritmetica, fracoes, decimais, razoes, numeros com sinal, equacoes e formulas.",
     accountEyebrow: "Cadastro compartilhado",
     accountTitle: "Entrar ou cadastrar",
     modeLabel: "Modo",
@@ -106,7 +106,7 @@ const copy = {
     dashboardTitle: "Progresso em matematica dos estudantes vinculados",
     note1Title: "Extracao das licoes",
     note1Copy:
-      "Os topicos do 6o e 7o ano sao organizados a partir de objetivos Waldorf de matematica, depois reescritos como licoes online originais com passos verificaveis e gabaritos.",
+      "Os topicos do 5o, 6o e 7o ano sao organizados a partir de objetivos Waldorf de matematica, depois reescritos como licoes online originais com passos verificaveis e gabaritos.",
     note2Title: "Ciclo de correcao",
     note2Copy:
       "Respostas incorretas mostram uma dica de correcao e ficam marcadas para revisao ate que o estudante envie uma resposta correta.",
@@ -168,15 +168,15 @@ const copy = {
     navArithmeticReview: "Review",
     navRhythm: "Rhythm",
     navParent: "Parent Notes",
-    heroEyebrow: "Grade 6 and 7 online math practice",
-    heroTitle: "A living path through money, percentages, ratios, and early algebra.",
+    heroEyebrow: "Grade 5, 6, and 7 online math practice",
+    heroTitle: "A living path through measure, money, percentages, ratios, and early algebra.",
     heroCopy:
-      "A Grade 6 and 7 lesson path with practical arithmetic, business math, fractions, decimals, ratios, signed numbers, formulas, and early algebra. Students complete visible steps, self-correct, and save their work for parent review.",
+      "A Grade 5, 6, and 7 lesson path with practical arithmetic, measure, geometry, business math, fractions, decimals, ratios, signed numbers, formulas, and early algebra. Students complete visible steps, self-correct, and save their work for parent review.",
     heroButton: "Begin Practice",
     introEyebrow: "Step one",
-    introTitle: "Now with Grade 6 and Grade 7 blocks",
+    introTitle: "Now with Grade 5, Grade 6, and Grade 7 blocks",
     introCopy:
-      "This math path adapts Waldorf math blocks into original online activities: Grade 6 business math, discounts, budgeting, and precise geometry; Grade 7 arithmetic review, fractions, decimals, ratios, signed numbers, equations, and formulas.",
+      "This math path adapts Waldorf math blocks into original online activities: Grade 5 decimal fractions, measurement, and freehand geometry; Grade 6 business math, discounts, budgeting, and precise geometry; Grade 7 arithmetic review, fractions, decimals, ratios, signed numbers, equations, and formulas.",
     accountEyebrow: "Shared registration",
     accountTitle: "Sign in or register",
     modeLabel: "Mode",
@@ -216,7 +216,7 @@ const copy = {
     dashboardTitle: "Math progress for linked learners",
     note1Title: "Lesson extraction",
     note1Copy:
-      "Grade 6 and 7 topics are sequenced from Waldorf math goals, then rewritten as original online lessons with checkable steps and answer keys.",
+      "Grade 5, 6, and 7 topics are sequenced from Waldorf math goals, then rewritten as original online lessons with checkable steps and answer keys.",
     note2Title: "Correction loop",
     note2Copy:
       "Incorrect answers reveal a correction hint and remain marked for review until the student submits a correct answer.",
@@ -313,8 +313,8 @@ function applyLanguage() {
     ?.setAttribute(
       "content",
       language === "pt"
-        ? "Um percurso de matematica Waldorf para 6o e 7o ano, com exercicios online sobre matematica financeira, porcentagens, razoes, numeros negativos e algebra inicial."
-        : "A Waldorf-inspired Grade 6 and 7 math path with online exercises for business math, percentages, ratios, negative numbers, and early algebra.",
+        ? "Um percurso de matematica Waldorf para 5o, 6o e 7o ano, com exercicios online sobre fracoes decimais, medida, matematica financeira, porcentagens, razoes, numeros negativos e algebra inicial."
+        : "A Waldorf-inspired Grade 5, 6, and 7 math path with online exercises for decimal fractions, measurement, business math, percentages, ratios, negative numbers, and early algebra.",
     );
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = t(element.dataset.i18n);
