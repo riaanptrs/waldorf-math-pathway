@@ -58,15 +58,15 @@ const copy = {
     navArithmeticReview: "Revisao",
     navRhythm: "Ritmo",
     navParent: "Notas para os pais",
-    heroEyebrow: "Pratica online de matematica do 7o ano",
-    heroTitle: "Um caminho vivo por porcentagens, razoes e algebra inicial.",
+    heroEyebrow: "Pratica online de matematica do 6o e 7o ano",
+    heroTitle: "Um caminho vivo por dinheiro, porcentagens, razoes e algebra inicial.",
     heroCopy:
-      "Uma trilha de aulas do 7o ano com aritmetica pratica, matematica financeira, fracoes, decimais, razoes, numeros com sinal, formulas e algebra inicial. Os estudantes completam passos visiveis, corrigem o proprio trabalho e salvam o progresso para revisao dos pais.",
+      "Uma trilha de aulas do 6o e 7o ano com aritmetica pratica, matematica financeira, fracoes, decimais, razoes, numeros com sinal, formulas e algebra inicial. Os estudantes completam passos visiveis, corrigem o proprio trabalho e salvam o progresso para revisao dos pais.",
     heroButton: "Comecar a praticar",
     introEyebrow: "Primeiro passo",
-    introTitle: "O 7o ano e a primeira trilha",
+    introTitle: "Agora com blocos do 6o e 7o ano",
     introCopy:
-      "Esta trilha de matematica adapta a sequencia do 7o ano e as folhas de revisao em atividades online originais: revisao aritmetica, fracoes, decimais, divisibilidade, custo unitario, dizimas periodicas, porcentagem, razoes, numeros com sinal, equacoes e formulas.",
+      "Esta trilha de matematica adapta blocos Waldorf em atividades online originais: no 6o ano, matematica financeira, descontos, orcamento e geometria precisa; no 7o ano, revisao aritmetica, fracoes, decimais, razoes, numeros com sinal, equacoes e formulas.",
     accountEyebrow: "Cadastro compartilhado",
     accountTitle: "Entrar ou cadastrar",
     modeLabel: "Modo",
@@ -106,7 +106,7 @@ const copy = {
     dashboardTitle: "Progresso em matematica dos estudantes vinculados",
     note1Title: "Extracao das licoes",
     note1Copy:
-      "Os topicos do 7o ano sao organizados a partir dos livros e folhas de matematica Waldorf de referencia, depois reescritos como licoes online originais com passos verificaveis e gabaritos.",
+      "Os topicos do 6o e 7o ano sao organizados a partir de objetivos Waldorf de matematica, depois reescritos como licoes online originais com passos verificaveis e gabaritos.",
     note2Title: "Ciclo de correcao",
     note2Copy:
       "Respostas incorretas mostram uma dica de correcao e ficam marcadas para revisao ate que o estudante envie uma resposta correta.",
@@ -115,7 +115,7 @@ const copy = {
       "Matematica usa a mesma conta Supabase do responsavel, registros de estudantes, respostas objetivas e tabelas de progresso de atividades da Waldorf English Pathway.",
     footerCopy:
       "Trilha de Matematica Waldorf e um projeto independente de aprendizagem, com atividades originais adaptadas de referencias curriculares proprias.",
-    lessonCount: (count) => `${count} atividades do 7o ano disponiveis`,
+    lessonCount: (count) => `${count} atividades de matematica disponiveis`,
     stateCorrect: "Feita",
     stateReview: "Revisar",
     stateOpen: "Abrir",
@@ -168,15 +168,15 @@ const copy = {
     navArithmeticReview: "Review",
     navRhythm: "Rhythm",
     navParent: "Parent Notes",
-    heroEyebrow: "Grade 7 online math practice",
-    heroTitle: "A living path through percentages, ratios, and early algebra.",
+    heroEyebrow: "Grade 6 and 7 online math practice",
+    heroTitle: "A living path through money, percentages, ratios, and early algebra.",
     heroCopy:
-      "A Grade 7 lesson path with practical arithmetic, business math, fractions, decimals, ratios, signed numbers, formulas, and early algebra. Students complete visible steps, self-correct, and save their work for parent review.",
+      "A Grade 6 and 7 lesson path with practical arithmetic, business math, fractions, decimals, ratios, signed numbers, formulas, and early algebra. Students complete visible steps, self-correct, and save their work for parent review.",
     heroButton: "Begin Practice",
     introEyebrow: "Step one",
-    introTitle: "Grade 7 is the first pathway",
+    introTitle: "Now with Grade 6 and Grade 7 blocks",
     introCopy:
-      "This math path adapts the Grade 7 sequence and review sheets into original online activities: arithmetic review, fractions, decimals, divisibility, unit cost, repeating decimals, percent, ratios, signed numbers, equations, and formulas.",
+      "This math path adapts Waldorf math blocks into original online activities: Grade 6 business math, discounts, budgeting, and precise geometry; Grade 7 arithmetic review, fractions, decimals, ratios, signed numbers, equations, and formulas.",
     accountEyebrow: "Shared registration",
     accountTitle: "Sign in or register",
     modeLabel: "Mode",
@@ -216,7 +216,7 @@ const copy = {
     dashboardTitle: "Math progress for linked learners",
     note1Title: "Lesson extraction",
     note1Copy:
-      "Grade 7 topics are sequenced from the referenced Waldorf math books and worksheets, then rewritten as original online lessons with checkable steps and answer keys.",
+      "Grade 6 and 7 topics are sequenced from Waldorf math goals, then rewritten as original online lessons with checkable steps and answer keys.",
     note2Title: "Correction loop",
     note2Copy:
       "Incorrect answers reveal a correction hint and remain marked for review until the student submits a correct answer.",
@@ -225,7 +225,7 @@ const copy = {
       "Math uses the same Supabase guardian account, learner records, objective responses, and activity progress tables as Waldorf English Pathway.",
     footerCopy:
       "Waldorf Math Pathway is an independent learning project with original activities adapted from owned curriculum references.",
-    lessonCount: (count) => `${count} Grade 7 activities available`,
+    lessonCount: (count) => `${count} math activities available`,
     stateCorrect: "Done",
     stateReview: "Review",
     stateOpen: "Open",
@@ -313,8 +313,8 @@ function applyLanguage() {
     ?.setAttribute(
       "content",
       language === "pt"
-        ? "Um percurso de matematica Waldorf para o 7o ano, com exercicios online sobre porcentagens, razoes, numeros negativos e algebra inicial."
-        : "A Waldorf-inspired Grade 7 math path with online exercises for percentages, ratios, negative numbers, and early algebra.",
+        ? "Um percurso de matematica Waldorf para 6o e 7o ano, com exercicios online sobre matematica financeira, porcentagens, razoes, numeros negativos e algebra inicial."
+        : "A Waldorf-inspired Grade 6 and 7 math path with online exercises for business math, percentages, ratios, negative numbers, and early algebra.",
     );
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = t(element.dataset.i18n);
