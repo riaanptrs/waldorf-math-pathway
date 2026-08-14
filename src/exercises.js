@@ -1521,6 +1521,141 @@ const lessonTranslations = {
   },
 };
 
+const lessonMathTips = {
+  en: {
+    "g7-percent-base": {
+      source: "Grade 7 trick",
+      text: "For 15%, find 10% first, then add half of that 10%. This is a quick mental check for percent work.",
+    },
+    "g7-compound-interest": {
+      source: "Grade 6 trick",
+      text: "For 5%, take 10% and cut it in half. It keeps interest work mental before the written calculation begins.",
+    },
+    "g7-ratio-whole": {
+      source: "Grade 6 trick",
+      text: "When adding ratio parts or totals, group numbers that make 10 or 20 so the whole is easier to see.",
+    },
+    "g7-rate-speed": {
+      source: "Grade 6 trick",
+      text: "Dividing by 4 can be done by halving twice. This is useful when a rate uses quarter-hours.",
+    },
+    "g7-negative-numbers": {
+      source: "Grade 7 trick",
+      text: "For an almost-easy multiplier, use the nearby easy number and adjust. For example, 39 groups means 40 groups minus one group.",
+    },
+    "g7-expression-like-terms": {
+      source: "Grade 6 trick",
+      text: "Group what belongs together. In arithmetic that means friendly sums; in algebra it means like terms.",
+    },
+    "g7-equation-balance": {
+      source: "Grade 6 trick",
+      text: "Subtraction can be checked by adding distances. After solving, measure the distance back to make sure both sides balance.",
+    },
+    "g7-gauss-sum": {
+      source: "Grade 6 trick",
+      text: "Look for pairs that make the same sum. Friendly pairing is the mental version of the Gauss sum pattern.",
+    },
+    "g7-table-square-products": {
+      source: "Grade 6 trick",
+      text: "Multiplying by 4 is just doubling twice. Multiplying by 5 is half the number, then times 10.",
+    },
+    "g7-missing-digit": {
+      source: "Grade 7 trick",
+      text: "For two-digit multiplication, the ones column gives the first clue, then the cross-products and carry reveal the tens.",
+    },
+    "g7-fraction-common-denominator": {
+      source: "Grade 6 trick",
+      text: "Treat division as a fraction you can reduce. The same equal-value thinking helps when rewriting fractions to a common denominator.",
+    },
+    "g7-decimal-division-shift": {
+      source: "Grade 6 trick",
+      text: "When multiplying or dividing by 10, 100, or 1000, move the decimal point the same number of places as there are zeroes.",
+    },
+    "g7-unit-cost": {
+      source: "Grade 7 trick",
+      text: "To divide by 25, double twice and then divide by 100. It is a handy unit-price shortcut.",
+    },
+    "g7-divisibility-check": {
+      source: "Grade 6 trick",
+      text: "Nines have a special rhythm: digit sums test divisibility by 9, and denominators made of 9s create repeating decimals.",
+    },
+    "g7-reduce-fraction": {
+      source: "Grade 6 trick",
+      text: "Before dividing, reduce the fraction if the top and bottom share a factor. Smaller numbers make the work clearer.",
+    },
+    "g7-repeating-decimal-fraction": {
+      source: "Grade 6 trick",
+      text: "A repeating block over the same number of 9s makes the first fraction: 0.36 repeating starts as 36/99.",
+    },
+  },
+  pt: {
+    "g7-percent-base": {
+      source: "Truque do 7o ano",
+      text: "Para 15%, ache primeiro 10% e some metade desses 10%. E uma verificacao mental rapida para porcentagens.",
+    },
+    "g7-compound-interest": {
+      source: "Truque do 6o ano",
+      text: "Para 5%, ache 10% e divida pela metade. Isso mantem o calculo de juros mental antes da conta escrita.",
+    },
+    "g7-ratio-whole": {
+      source: "Truque do 6o ano",
+      text: "Ao somar partes de razao ou totais, junte numeros que fazem 10 ou 20 para enxergar o todo com mais facilidade.",
+    },
+    "g7-rate-speed": {
+      source: "Truque do 6o ano",
+      text: "Dividir por 4 pode ser feito tomando a metade duas vezes. Isso ajuda quando uma taxa usa quartos de hora.",
+    },
+    "g7-negative-numbers": {
+      source: "Truque do 7o ano",
+      text: "Para multiplicar por um numero quase facil, use o numero facil mais proximo e ajuste. Por exemplo, 39 grupos sao 40 grupos menos 1 grupo.",
+    },
+    "g7-expression-like-terms": {
+      source: "Truque do 6o ano",
+      text: "Agrupe o que pertence junto. Na aritmetica, isso cria somas amigas; na algebra, cria termos semelhantes.",
+    },
+    "g7-equation-balance": {
+      source: "Truque do 6o ano",
+      text: "Subtracao pode ser conferida somando distancias. Depois de resolver, meca o caminho de volta para ver se os dois lados equilibram.",
+    },
+    "g7-gauss-sum": {
+      source: "Truque do 6o ano",
+      text: "Procure pares que formam a mesma soma. Fazer pares mentalmente e a versao viva do padrao da soma de Gauss.",
+    },
+    "g7-table-square-products": {
+      source: "Truque do 6o ano",
+      text: "Multiplicar por 4 e dobrar duas vezes. Multiplicar por 5 e tomar metade do numero e depois multiplicar por 10.",
+    },
+    "g7-missing-digit": {
+      source: "Truque do 7o ano",
+      text: "Na multiplicacao de dois algarismos, a unidade da a primeira pista; depois os produtos cruzados e o transporte revelam as dezenas.",
+    },
+    "g7-fraction-common-denominator": {
+      source: "Truque do 6o ano",
+      text: "Veja uma divisao como uma fracao que pode ser reduzida. Esse mesmo pensamento de valor igual ajuda ao reescrever fracoes com denominador comum.",
+    },
+    "g7-decimal-division-shift": {
+      source: "Truque do 6o ano",
+      text: "Ao multiplicar ou dividir por 10, 100 ou 1000, mova a virgula o mesmo numero de casas que ha zeros.",
+    },
+    "g7-unit-cost": {
+      source: "Truque do 7o ano",
+      text: "Para dividir por 25, dobre duas vezes e depois divida por 100. E um atalho util para preco unitario.",
+    },
+    "g7-divisibility-check": {
+      source: "Truque do 6o ano",
+      text: "Os noves tem um ritmo especial: a soma dos algarismos testa divisibilidade por 9, e denominadores com 9 criam dizimas periodicas.",
+    },
+    "g7-reduce-fraction": {
+      source: "Truque do 6o ano",
+      text: "Antes de dividir, reduza a fracao se numerador e denominador tiverem um fator comum. Numeros menores deixam o trabalho mais claro.",
+    },
+    "g7-repeating-decimal-fraction": {
+      source: "Truque do 6o ano",
+      text: "Um bloco repetido sobre a mesma quantidade de 9 forma a primeira fracao: 0.36 repetindo comeca como 36/99.",
+    },
+  },
+};
+
 const lessonWorkedSteps = {
   pt: {
     "g7-percent-base": [
@@ -2184,6 +2319,7 @@ const sharedDbShape = {
 
 window.lessons = lessons;
 window.lessonTranslations = lessonTranslations;
+window.lessonMathTips = lessonMathTips;
 window.lessonWorkedSteps = lessonWorkedSteps;
 window.extraPracticeBank = extraPracticeBank;
 window.arithmeticReviewSheets = arithmeticReviewSheets;

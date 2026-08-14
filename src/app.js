@@ -148,6 +148,7 @@ const copy = {
     guidedAnswerButton: "Ver resposta guiada",
     guidedAnswerTitle: "Resposta guiada",
     correctAnswerLabel: "Resposta correta",
+    mathTipTitle: "Dica de calculo mental",
     extraPracticeTitle: "Treino extra",
     extraPracticeIntro: "Antes de voltar para a atividade, tente uma conta parecida.",
     extraAnswerLabel: "Resposta do treino extra",
@@ -258,6 +259,7 @@ const copy = {
     guidedAnswerButton: "See guided answer",
     guidedAnswerTitle: "Guided answer",
     correctAnswerLabel: "Correct answer",
+    mathTipTitle: "Mental math tip",
     extraPracticeTitle: "Extra practice",
     extraPracticeIntro: "Before returning to the main activity, try a similar problem.",
     extraAnswerLabel: "Extra practice answer",
@@ -290,8 +292,10 @@ function t(key, ...args) {
 function lessonCopy(lesson) {
   const localizedLesson = language === "pt" ? { ...lesson, ...(lessonTranslations[lesson.id] || {}) } : lesson;
   const workedSteps = lessonWorkedSteps[language]?.[lesson.id] || localizedLesson.memoryRefresh?.workedSteps;
+  const mathTip = window.lessonMathTips?.[language]?.[lesson.id] || window.lessonMathTips?.en?.[lesson.id] || null;
   return {
     ...localizedLesson,
+    mathTip,
     memoryRefresh: localizedLesson.memoryRefresh
       ? {
           ...localizedLesson.memoryRefresh,
@@ -692,6 +696,14 @@ function renderExercise(lesson) {
               <p>${displayLesson.memoryRefresh.example}</p>
             </div>
           </details>`
+        : ""
+    }
+    ${
+      displayLesson.mathTip
+        ? `<aside class="math-tip">
+            <strong>${t("mathTipTitle")}</strong>
+            <p><span>${displayLesson.mathTip.source}:</span> ${displayLesson.mathTip.text}</p>
+          </aside>`
         : ""
     }
     <ol>

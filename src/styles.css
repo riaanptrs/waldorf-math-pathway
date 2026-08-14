@@ -446,6 +446,31 @@ main {
   color: var(--berry);
 }
 
+.math-tip {
+  margin: 18px 0;
+  padding: 14px 16px;
+  border-left: 4px solid #2f8f83;
+  border-radius: 8px;
+  background: #eef9f5;
+  font-family: Arial, sans-serif;
+}
+
+.math-tip strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.math-tip p {
+  margin: 0;
+  color: #31524d;
+  line-height: 1.55;
+}
+
+.math-tip span {
+  font-weight: 700;
+}
+
 .example-pt {
   margin-top: 14px;
   padding-top: 12px;
