@@ -9,7 +9,7 @@
     />
     <title>Trilha de Matematica Waldorf</title>
     <link rel="preload" href="public/learning-path.png" as="image" />
-    <link rel="stylesheet" href="src/styles.css?v=20260813-grade6-business-math" />
+    <link rel="stylesheet" href="src/styles.css?v=20260814-guided-mental-tricks" />
   </head>
   <body>
     <header class="hero">
@@ -24,6 +24,7 @@
           <a href="#account" data-i18n="navAccount">Conta</a>
           <a href="#practice" data-i18n="navPractice">Praticar</a>
           <a href="#arithmetic-review" data-i18n="navArithmeticReview">Revisao</a>
+          <a href="#mental-tricks" data-i18n="navMentalTricks">Dicas</a>
           <a href="#rhythm" data-i18n="navRhythm">Ritmo</a>
           <a href="#parent" data-i18n="navParent">Notas para os pais</a>
         </div>
@@ -155,6 +156,26 @@
         </div>
       </section>
 
+      <section class="mental-tricks" id="mental-tricks" aria-labelledby="mental-tricks-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="mentalTricksEyebrow">Dicas de calculo mental</p>
+          <h2 id="mental-tricks-title" data-i18n="mentalTricksTitle">Truques guiados do 6o e 7o ano</h2>
+          <p class="mental-tricks__intro" data-i18n="mentalTricksIntro">
+            Escolha uma dica, veja o exemplo passo a passo, entenda por que funciona e tente uma conta parecida.
+          </p>
+        </div>
+
+        <div class="trick-grade-tabs" aria-label="Ano das dicas">
+          <button class="button button--small trick-grade-tab is-active" type="button" data-grade="grade6" data-i18n="grade6Tricks">6o ano</button>
+          <button class="button button--small button--ghost trick-grade-tab" type="button" data-grade="grade7" data-i18n="grade7Tricks">7o ano</button>
+        </div>
+
+        <div class="mental-tricks__layout">
+          <aside class="trick-list" aria-label="Lista de dicas de calculo mental"></aside>
+          <article class="trick-detail" aria-live="polite"></article>
+        </div>
+      </section>
+
       <section class="rhythm band" id="rhythm">
         <div>
           <p class="eyebrow" data-i18n="rhythmEyebrow">Ritmo diario</p>
@@ -206,7 +227,7 @@
       </p>
     </footer>
 
-    <script src="src/exercises.js?v=20260813-grade6-business-math"></script>
-    <script type="module" src="src/app.js?v=20260813-grade6-business-math"></script>
+    <script src="src/exercises.js?v=20260814-guided-mental-tricks"></script>
+    <script type="module" src="src/app.js?v=20260814-guided-mental-tricks"></script>
   </body>
 </html>

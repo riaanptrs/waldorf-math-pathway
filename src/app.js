@@ -12,6 +12,7 @@ const lessonTranslations = window.lessonTranslations || {};
 const lessonWorkedSteps = window.lessonWorkedSteps || {};
 const extraPracticeBank = window.extraPracticeBank || {};
 const arithmeticReviewSheets = window.arithmeticReviewSheets || [];
+const mentalTrickGuides = window.mentalTrickGuides || { grade6: [], grade7: [] };
 const sharedDbShape = window.sharedDbShape;
 const list = document.querySelector(".lesson-list");
 const reviewSheetList = document.querySelector(".review-sheet-list");
@@ -19,6 +20,9 @@ const reviewSheetNumber = document.querySelector(".review-sheet__number");
 const reviewSheetTitle = document.querySelector(".review-sheet__title");
 const reviewSheetFocus = document.querySelector(".review-sheet__focus");
 const reviewProblemList = document.querySelector(".review-problem-list");
+const trickGradeTabs = document.querySelector(".trick-grade-tabs");
+const trickList = document.querySelector(".trick-list");
+const trickDetail = document.querySelector(".trick-detail");
 const grade = document.querySelector(".exercise__grade");
 const title = document.querySelector(".exercise__title");
 const time = document.querySelector(".exercise__time");
@@ -56,6 +60,7 @@ const copy = {
     navAccount: "Conta",
     navPractice: "Praticar",
     navArithmeticReview: "Revisao",
+    navMentalTricks: "Dicas",
     navRhythm: "Ritmo",
     navParent: "Notas para os pais",
     heroEyebrow: "Pratica online de matematica do 5o, 6o e 7o ano",
@@ -85,6 +90,19 @@ const copy = {
     arithmeticReviewTitle: "Folhas de revisao com explicacao guiada",
     arithmeticReviewIntro:
       "Pratique fracoes, decimais, divisao, conversoes e calculo mental. Cada resposta pode ser conferida com passos.",
+    mentalTricksEyebrow: "Dicas de calculo mental",
+    mentalTricksTitle: "Truques guiados do 6o e 7o ano",
+    mentalTricksIntro:
+      "Escolha uma dica, veja o exemplo passo a passo, entenda por que funciona e tente uma conta parecida.",
+    grade6Tricks: "6o ano",
+    grade7Tricks: "7o ano",
+    trickExample: "Exemplo",
+    trickSteps: "Passo a passo",
+    trickWhy: "Por que funciona",
+    trickPractice: "Tente voce",
+    trickShowAnswer: "Ver resposta guiada",
+    trickHideAnswer: "Esconder resposta",
+    trickAnswer: "Resposta guiada",
     reviewSheetLabel: (number) => `Folha ${number}`,
     reviewProblemLabel: (number) => `Exercicio ${number}`,
     reviewCheck: "Verificar",
@@ -167,6 +185,7 @@ const copy = {
     navAccount: "Accounts",
     navPractice: "Practice",
     navArithmeticReview: "Review",
+    navMentalTricks: "Tips",
     navRhythm: "Rhythm",
     navParent: "Parent Notes",
     heroEyebrow: "Grade 5, 6, and 7 online math practice",
@@ -196,6 +215,19 @@ const copy = {
     arithmeticReviewTitle: "Review sheets with guided explanations",
     arithmeticReviewIntro:
       "Practice fractions, decimals, division, conversions, and mental arithmetic. Every answer can be checked with steps.",
+    mentalTricksEyebrow: "Mental math tips",
+    mentalTricksTitle: "Guided Grade 6 and 7 tricks",
+    mentalTricksIntro:
+      "Choose a tip, see the example step by step, understand why it works, and try a similar calculation.",
+    grade6Tricks: "Grade 6",
+    grade7Tricks: "Grade 7",
+    trickExample: "Example",
+    trickSteps: "Step by step",
+    trickWhy: "Why it works",
+    trickPractice: "Try it",
+    trickShowAnswer: "See guided answer",
+    trickHideAnswer: "Hide answer",
+    trickAnswer: "Guided answer",
     reviewSheetLabel: (number) => `Sheet ${number}`,
     reviewProblemLabel: (number) => `Problem ${number}`,
     reviewCheck: "Check",
@@ -283,6 +315,8 @@ let objectiveResponses = [];
 let activityProgress = [];
 let language = localStorage.getItem(LANGUAGE_KEY) || "pt";
 let activeReviewSheetId = arithmeticReviewSheets[0]?.id || null;
+let activeTrickGrade = "grade6";
+let activeTrickId = mentalTrickGuides.grade6?.[0]?.id || null;
 
 function t(key, ...args) {
   const value = copy[language][key];
@@ -381,6 +415,11 @@ function renderSteps(steps) {
 function localText(value) {
   if (!value || typeof value !== "object") return value || "";
   return value[language] || value.en || value.pt || "";
+}
+
+function localList(value) {
+  const localized = localText(value);
+  return Array.isArray(localized) ? localized : [];
 }
 
 function reviewPrompt(problem) {
@@ -648,6 +687,75 @@ function renderReviewSheets() {
     .join("");
 }
 
+function activeTricks() {
+  return mentalTrickGuides[activeTrickGrade] || [];
+}
+
+function activeTrick() {
+  const tricks = activeTricks();
+  return tricks.find((trick) => trick.id === activeTrickId) || tricks[0] || null;
+}
+
+function renderMentalTricks() {
+  if (!trickList || !trickDetail) return;
+  const tricks = activeTricks();
+  const trick = activeTrick();
+  activeTrickId = trick?.id || null;
+
+  document.querySelectorAll(".trick-grade-tab").forEach((button) => {
+    const isActive = button.dataset.grade === activeTrickGrade;
+    button.classList.toggle("is-active", isActive);
+    button.classList.toggle("button--ghost", !isActive);
+  });
+
+  trickList.innerHTML = tricks
+    .map(
+      (item, index) => `
+        <button class="trick-card${item.id === activeTrickId ? " is-active" : ""}" data-id="${item.id}" type="button">
+          <span>${index + 1}</span>
+          <strong>${localText(item.title)}</strong>
+        </button>
+      `,
+    )
+    .join("");
+
+  if (!trick) {
+    trickDetail.innerHTML = "";
+    return;
+  }
+
+  trickDetail.innerHTML = `
+    <div class="trick-detail__header">
+      <p class="eyebrow">${activeTrickGrade === "grade6" ? t("grade6Tricks") : t("grade7Tricks")}</p>
+      <h3>${localText(trick.title)}</h3>
+      <p>${localText(trick.idea)}</p>
+    </div>
+    <div class="trick-example">
+      <span>${t("trickExample")}</span>
+      <strong>${trick.example}</strong>
+    </div>
+    <section class="trick-panel">
+      <h4>${t("trickSteps")}</h4>
+      <ol class="worked-steps">
+        ${localList(trick.steps).map((step) => `<li>${step}</li>`).join("")}
+      </ol>
+    </section>
+    <section class="trick-panel trick-panel--why">
+      <h4>${t("trickWhy")}</h4>
+      <p>${localText(trick.why)}</p>
+    </section>
+    <section class="trick-panel trick-panel--practice">
+      <h4>${t("trickPractice")}</h4>
+      <p class="trick-practice__prompt">${trick.practice}</p>
+      <button class="button button--small button--ghost trick-answer-toggle" type="button">${t("trickShowAnswer")}</button>
+      <div class="trick-answer" hidden>
+        <strong>${t("trickAnswer")}</strong>
+        <p>${localText(trick.answer)}</p>
+      </div>
+    </section>
+  `;
+}
+
 function renderExercise(lesson) {
   activeLesson = lesson;
   const displayLesson = lessonCopy(lesson);
@@ -807,6 +915,7 @@ async function finishSignIn(user) {
     localStorage.setItem(LANGUAGE_KEY, language);
     applyLanguage();
     renderReviewSheets();
+    renderMentalTricks();
   }
   learners = await ensureGuardianSetup(user);
   const remembered = localStorage.getItem(ACTIVE_LEARNER_KEY);
@@ -830,6 +939,30 @@ reviewSheetList?.addEventListener("click", (event) => {
   if (!card) return;
   activeReviewSheetId = card.dataset.id;
   renderReviewSheets();
+});
+
+trickGradeTabs?.addEventListener("click", (event) => {
+  const button = event.target.closest(".trick-grade-tab");
+  if (!button) return;
+  activeTrickGrade = button.dataset.grade;
+  activeTrickId = mentalTrickGuides[activeTrickGrade]?.[0]?.id || null;
+  renderMentalTricks();
+});
+
+trickList?.addEventListener("click", (event) => {
+  const card = event.target.closest(".trick-card");
+  if (!card) return;
+  activeTrickId = card.dataset.id;
+  renderMentalTricks();
+});
+
+trickDetail?.addEventListener("click", (event) => {
+  const button = event.target.closest(".trick-answer-toggle");
+  if (!button) return;
+  const answerPanel = trickDetail.querySelector(".trick-answer");
+  const nextHidden = !answerPanel.hidden;
+  answerPanel.hidden = nextHidden;
+  button.textContent = nextHidden ? t("trickShowAnswer") : t("trickHideAnswer");
 });
 
 reviewProblemList?.addEventListener("click", (event) => {
@@ -1047,6 +1180,7 @@ languageInput.addEventListener("change", () => {
   renderList();
   renderExercise(activeLesson);
   renderReviewSheets();
+  renderMentalTricks();
   renderAccount();
 });
 
@@ -1065,6 +1199,7 @@ async function initialise() {
   renderList();
   renderExercise(activeLesson);
   renderReviewSheets();
+  renderMentalTricks();
   renderAccount();
 
   const { data: { session } } = await supabase.auth.getSession();

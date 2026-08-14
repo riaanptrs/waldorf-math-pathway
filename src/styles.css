@@ -180,6 +180,7 @@ main {
 .band,
 .practice,
 .arithmetic-review,
+.mental-tricks,
 .account,
 .parent {
   padding-inline: clamp(18px, 5vw, 72px);
@@ -213,6 +214,7 @@ main {
 
 .practice__layout,
 .arithmetic-review__layout,
+.mental-tricks__layout,
 .account__layout {
   display: grid;
   grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
@@ -227,13 +229,28 @@ main {
   line-height: 1.55;
 }
 
+.mental-tricks__intro {
+  max-width: 760px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.trick-grade-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -8px 0 22px;
+}
+
 .lesson-list {
   display: grid;
   gap: 10px;
 }
 
 .lesson-card,
-.review-sheet-card {
+.review-sheet-card,
+.trick-card {
   display: grid;
   gap: 5px;
   width: 100%;
@@ -303,11 +320,44 @@ main {
   padding-right: 4px;
 }
 
+.trick-list {
+  display: grid;
+  gap: 10px;
+  align-self: start;
+  max-height: 78vh;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.trick-card {
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+}
+
+.trick-card span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(47, 75, 58, 0.1);
+  color: var(--moss);
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.trick-card.is-active {
+  border-color: rgba(169, 79, 85, 0.5);
+  box-shadow: inset 5px 0 0 var(--berry);
+}
+
 .exercise,
 .auth-form,
 .account-panel,
 .parent-dashboard,
 .review-sheet,
+.trick-detail,
 .note-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -316,7 +366,8 @@ main {
 }
 
 .exercise,
-.review-sheet {
+.review-sheet,
+.trick-detail {
   padding: clamp(22px, 4vw, 38px);
 }
 
@@ -342,9 +393,93 @@ main {
 }
 
 .exercise__title,
-.review-sheet__title {
+.review-sheet__title,
+.trick-detail__header h3 {
   margin-bottom: 0;
   font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.trick-detail {
+  display: grid;
+  gap: 18px;
+}
+
+.trick-detail__header p:last-child {
+  max-width: 760px;
+  margin: 12px 0 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.trick-example {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  background: #fff7ec;
+  font-family: Arial, sans-serif;
+}
+
+.trick-example span {
+  color: rgba(36, 49, 43, 0.66);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.trick-example strong {
+  font-size: clamp(1.6rem, 4vw, 2.45rem);
+  line-height: 1;
+}
+
+.trick-panel {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(36, 49, 43, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 253, 250, 0.78);
+  font-family: Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.trick-panel h4 {
+  margin: 0;
+  color: var(--berry);
+  font-size: 1rem;
+}
+
+.trick-panel p {
+  margin: 0;
+}
+
+.trick-panel--why {
+  border-color: rgba(79, 142, 176, 0.26);
+  background: rgba(79, 142, 176, 0.1);
+}
+
+.trick-panel--practice {
+  border-color: rgba(47, 75, 58, 0.22);
+  background: #f4f8ef;
+}
+
+.trick-practice__prompt {
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.trick-answer {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-left: 4px solid #2f8f83;
+  border-radius: 8px;
+  background: #eef9f5;
+}
+
+.trick-answer strong {
+  color: var(--moss);
 }
 
 .review-sheet__focus {
@@ -804,6 +939,7 @@ footer {
   .band,
   .practice__layout,
   .arithmetic-review__layout,
+  .mental-tricks__layout,
   .account__layout,
   .note-grid {
     grid-template-columns: 1fr;
