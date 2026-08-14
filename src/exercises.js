@@ -1523,6 +1523,46 @@ const lessonTranslations = {
 
 const lessonMathTips = {
   en: {
+    "g6-real-world-prices": {
+      source: "Grade 6 trick",
+      text: "When adding prices, group friendly amounts that make 10 or 20, then add the leftovers.",
+    },
+    "g6-percent-half": {
+      source: "Grade 6 trick",
+      text: "For 50%, cut the number in half. For 5%, find 10% first and halve it.",
+    },
+    "g6-fair-discount": {
+      source: "Grade 6 trick",
+      text: "A 50% discount is half off, so halve the original price and check that two halves make the full price.",
+    },
+    "g6-better-deal": {
+      source: "Grade 6 trick",
+      text: "Before dividing, cancel matching ending zeroes or reduce the division as a fraction to make the unit cost easier.",
+    },
+    "g6-cost-price-profit": {
+      source: "Grade 6 trick",
+      text: "Use subtraction by distance: pick an easy number between cost and price, then add the two distances.",
+    },
+    "g6-simple-interest": {
+      source: "Grade 6 trick",
+      text: "Multiplying by 10 or 100 is a decimal move. Use that to find 10% quickly before adding interest.",
+    },
+    "g6-budget-challenge": {
+      source: "Grade 6 trick",
+      text: "Search for pairs that make 10 or 20 while adding a budget total, then compare with the money available.",
+    },
+    "g6-geometry-precision": {
+      source: "Grade 6 trick",
+      text: "Multiplying by 4 is doubling twice, and dividing by 4 is halving twice. That helps with radius and diameter checks.",
+    },
+    "g6-business-order": {
+      source: "Grade 6 trick",
+      text: "When multiplying with ending zeroes, ignore the zeroes first, multiply the main digits, then put the zeroes back.",
+    },
+    "g6-market-day-portfolio": {
+      source: "Grade 6 trick",
+      text: "For profit and discount work, use friendly percentages first: 10%, 50%, and 5% make good mental checkpoints.",
+    },
     "g7-percent-base": {
       source: "Grade 7 trick",
       text: "For 15%, find 10% first, then add half of that 10%. This is a quick mental check for percent work.",
@@ -1589,6 +1629,46 @@ const lessonMathTips = {
     },
   },
   pt: {
+    "g6-real-world-prices": {
+      source: "Truque do 6o ano",
+      text: "Ao somar precos, agrupe valores amigos que formam 10 ou 20 e depois some o que sobrou.",
+    },
+    "g6-percent-half": {
+      source: "Truque do 6o ano",
+      text: "Para 50%, divida o numero pela metade. Para 5%, ache 10% primeiro e tome metade disso.",
+    },
+    "g6-fair-discount": {
+      source: "Truque do 6o ano",
+      text: "Um desconto de 50% e metade do preco. Divida o preco original pela metade e confira que duas metades formam o total.",
+    },
+    "g6-better-deal": {
+      source: "Truque do 6o ano",
+      text: "Antes de dividir, cancele zeros finais iguais ou reduza a divisao como fracao para facilitar o custo unitario.",
+    },
+    "g6-cost-price-profit": {
+      source: "Truque do 6o ano",
+      text: "Use subtracao por distancia: escolha um numero facil entre custo e preco, depois some as duas distancias.",
+    },
+    "g6-simple-interest": {
+      source: "Truque do 6o ano",
+      text: "Multiplicar por 10 ou 100 e mover a virgula. Use isso para achar 10% rapidamente antes de somar os juros.",
+    },
+    "g6-budget-challenge": {
+      source: "Truque do 6o ano",
+      text: "Procure pares que fazem 10 ou 20 ao somar um orcamento, depois compare com o dinheiro disponivel.",
+    },
+    "g6-geometry-precision": {
+      source: "Truque do 6o ano",
+      text: "Multiplicar por 4 e dobrar duas vezes; dividir por 4 e tomar metade duas vezes. Isso ajuda a conferir raio e diametro.",
+    },
+    "g6-business-order": {
+      source: "Truque do 6o ano",
+      text: "Ao multiplicar com zeros finais, ignore os zeros primeiro, multiplique os algarismos principais e depois devolva os zeros.",
+    },
+    "g6-market-day-portfolio": {
+      source: "Truque do 6o ano",
+      text: "Em lucro e desconto, use porcentagens amigas primeiro: 10%, 50% e 5% sao boas conferencias mentais.",
+    },
     "g7-percent-base": {
       source: "Truque do 7o ano",
       text: "Para 15%, ache primeiro 10% e some metade desses 10%. E uma verificacao mental rapida para porcentagens.",
