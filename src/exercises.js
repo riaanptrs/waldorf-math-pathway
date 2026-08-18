@@ -264,6 +264,62 @@ const lessons = [
     suffix: "reais",
   },
   {
+    id: "g6-fraction-multiplication",
+    activityKey: "g6-math-fraction-multiplication",
+    grade: "Grade 6",
+    block: "Fractions",
+    title: "Multiplying Fractions",
+    time: "15 min",
+    sourceFocus: "Grade 6 fractions: strengthen the four processes with fractions through clear, repeated practice.",
+    teacherAim:
+      "Students understand fraction multiplication as taking a part of a part, then reduce the result.",
+    memoryRefresh: {
+      idea: "In fraction language, 'of' often means multiply. To find a part of a part, multiply numerator by numerator and denominator by denominator.",
+      method: ["Read 'of' as multiplication.", "Multiply the numerators.", "Multiply the denominators.", "Reduce the answer."],
+      example: "2/3 of 3/4 means 2/3 x 3/4 = 6/12 = 1/2.",
+      workedSteps: ["The problem is 3/5 x 10/12.", "Multiply the top numbers: 3 x 10 = 30.", "Multiply the bottom numbers: 5 x 12 = 60.", "Reduce 30/60 to 1/2."],
+    },
+    rhythm: ["A part of a part.", "Top times top.", "Bottom times bottom.", "Reduce."],
+    prompt: "Calculate 3/5 x 10/12. Write the answer in lowest terms.",
+    guidedSteps: [
+      { label: "Step 1: Numerators: 3 x 10 =", answerType: "number", answer: 30 },
+      { label: "Step 2: Denominators: 5 x 12 =", answerType: "number", answer: 60 },
+      { label: "Step 3: Reduce 30/60.", answerType: "expression", acceptedAnswers: ["1/2"] },
+    ],
+    correction:
+      "Multiply straight across: 3 x 10 = 30 and 5 x 12 = 60. Then reduce 30/60 to 1/2.",
+    answerType: "expression",
+    acceptedAnswers: ["1/2", "0.5"],
+  },
+  {
+    id: "g6-fraction-division",
+    activityKey: "g6-math-fraction-division",
+    grade: "Grade 6",
+    block: "Fractions",
+    title: "Dividing Fractions",
+    time: "16 min",
+    sourceFocus: "Grade 6 fractions and division: see a fraction over a fraction as division and use the reciprocal.",
+    teacherAim:
+      "Students connect division by a fraction to multiplying by the reciprocal, instead of memorizing an empty rule.",
+    memoryRefresh: {
+      idea: "Dividing by a fraction asks how many of that fractional size fit. The shortcut is to multiply by the reciprocal.",
+      method: ["Keep the first fraction.", "Flip the divisor to make its reciprocal.", "Change division to multiplication.", "Multiply and reduce."],
+      example: "4/5 divided by 2/3 becomes 4/5 x 3/2 = 12/10 = 6/5.",
+      workedSteps: ["Start with 5/6 divided by 5/12.", "Keep 5/6.", "Flip 5/12 to 12/5.", "Multiply: 5/6 x 12/5.", "Cancel the 5s and simplify 12/6 to 2."],
+    },
+    rhythm: ["Keep the first fraction.", "Flip the divisor.", "Multiply.", "Reduce."],
+    prompt: "Calculate 5/6 divided by 5/12.",
+    guidedSteps: [
+      { label: "Step 1: What is the reciprocal of 5/12?", answerType: "expression", acceptedAnswers: ["12/5"] },
+      { label: "Step 2: After flipping, write the multiplication.", answerType: "expression", acceptedAnswers: ["5/6x12/5", "5/6*12/5", "5/6 x 12/5"] },
+      { label: "Step 3: Simplify the result.", answerType: "expression", acceptedAnswers: ["2"] },
+    ],
+    correction:
+      "Dividing by 5/12 means multiplying by 12/5. So 5/6 x 12/5 cancels to 12/6, which equals 2.",
+    answerType: "expression",
+    acceptedAnswers: ["2"],
+  },
+  {
     id: "g6-percent-half",
     activityKey: "g6-math-percent-half",
     grade: "Grade 6",
@@ -1063,6 +1119,48 @@ const lessonTranslations = {
     prompt: "Um caderno custa R$20, um conjunto de lapis custa R$12 e um pincel custa R$16. Qual e o preco total?",
     correction: "Some os tres precos: 20 + 12 + 16 = 48. Os tres itens custam R$48 ao todo.",
   },
+  "g6-fraction-multiplication": {
+    grade: "6o ano",
+    block: "Fracoes",
+    title: "Multiplicando fracoes",
+    sourceFocus: "Fracoes do 6o ano: fortalecer as quatro operacoes com fracoes por meio de pratica clara e repetida.",
+    teacherAim: "Os estudantes entendem multiplicacao de fracoes como tomar uma parte de uma parte, depois reduzir o resultado.",
+    memoryRefresh: {
+      idea: "Na linguagem das fracoes, 'de' muitas vezes significa multiplicar. Para achar uma parte de uma parte, multiplique numerador por numerador e denominador por denominador.",
+      method: ["Leia 'de' como multiplicacao.", "Multiplique os numeradores.", "Multiplique os denominadores.", "Reduza a resposta."],
+      example: "2/3 de 3/4 significa 2/3 x 3/4 = 6/12 = 1/2.",
+      workedSteps: ["A conta e 3/5 x 10/12.", "Multiplique os numeros de cima: 3 x 10 = 30.", "Multiplique os numeros de baixo: 5 x 12 = 60.", "Reduza 30/60 para 1/2."],
+    },
+    rhythm: ["Uma parte de uma parte.", "Cima vezes cima.", "Baixo vezes baixo.", "Reduza."],
+    prompt: "Calcule 3/5 x 10/12. Escreva a resposta nos menores termos.",
+    guidedSteps: [
+      { label: "Passo 1: Numeradores: 3 x 10 =", answerType: "number", answer: 30 },
+      { label: "Passo 2: Denominadores: 5 x 12 =", answerType: "number", answer: 60 },
+      { label: "Passo 3: Reduza 30/60.", answerType: "expression", acceptedAnswers: ["1/2"] },
+    ],
+    correction: "Multiplique em linha: 3 x 10 = 30 e 5 x 12 = 60. Depois reduza 30/60 para 1/2.",
+  },
+  "g6-fraction-division": {
+    grade: "6o ano",
+    block: "Fracoes",
+    title: "Dividindo fracoes",
+    sourceFocus: "Fracoes e divisao do 6o ano: ver uma fracao sobre outra fracao como divisao e usar o reciproco.",
+    teacherAim: "Os estudantes conectam divisao por uma fracao a multiplicacao pelo reciproco, em vez de decorar uma regra vazia.",
+    memoryRefresh: {
+      idea: "Dividir por uma fracao pergunta quantas partes daquele tamanho cabem. O atalho e multiplicar pelo reciproco.",
+      method: ["Mantenha a primeira fracao.", "Vire o divisor para formar o reciproco.", "Troque divisao por multiplicacao.", "Multiplique e reduza."],
+      example: "4/5 dividido por 2/3 vira 4/5 x 3/2 = 12/10 = 6/5.",
+      workedSteps: ["Comece com 5/6 dividido por 5/12.", "Mantenha 5/6.", "Vire 5/12 para 12/5.", "Multiplique: 5/6 x 12/5.", "Cancele os 5 e simplifique 12/6 para 2."],
+    },
+    rhythm: ["Mantenha a primeira fracao.", "Vire o divisor.", "Multiplique.", "Reduza."],
+    prompt: "Calcule 5/6 dividido por 5/12.",
+    guidedSteps: [
+      { label: "Passo 1: Qual e o reciproco de 5/12?", answerType: "expression", acceptedAnswers: ["12/5"] },
+      { label: "Passo 2: Depois de virar, escreva a multiplicacao.", answerType: "expression", acceptedAnswers: ["5/6x12/5", "5/6*12/5", "5/6 x 12/5"] },
+      { label: "Passo 3: Simplifique o resultado.", answerType: "expression", acceptedAnswers: ["2"] },
+    ],
+    correction: "Dividir por 5/12 significa multiplicar por 12/5. Entao 5/6 x 12/5 cancela para 12/6, que e igual a 2.",
+  },
   "g6-percent-half": {
     grade: "6o ano",
     block: "Porcentagens",
@@ -1527,6 +1625,14 @@ const lessonMathTips = {
       source: "Grade 6 trick",
       text: "When adding prices, group friendly amounts that make 10 or 20, then add the leftovers.",
     },
+    "g6-fraction-multiplication": {
+      source: "Grade 6 trick",
+      text: "Before multiplying, look for cross-canceling. Smaller factors make the same product easier to reduce.",
+    },
+    "g6-fraction-division": {
+      source: "Grade 6 trick",
+      text: "A fraction over a fraction is a division problem. Keep the first fraction, flip the second, then multiply.",
+    },
     "g6-percent-half": {
       source: "Grade 6 trick",
       text: "For 50%, cut the number in half. For 5%, find 10% first and halve it.",
@@ -1632,6 +1738,14 @@ const lessonMathTips = {
     "g6-real-world-prices": {
       source: "Truque do 6o ano",
       text: "Ao somar precos, agrupe valores amigos que formam 10 ou 20 e depois some o que sobrou.",
+    },
+    "g6-fraction-multiplication": {
+      source: "Truque do 6o ano",
+      text: "Antes de multiplicar, procure cancelamentos cruzados. Fatores menores deixam o mesmo produto mais facil de reduzir.",
+    },
+    "g6-fraction-division": {
+      source: "Truque do 6o ano",
+      text: "Uma fracao sobre outra fracao e uma divisao. Mantenha a primeira, vire a segunda e multiplique.",
     },
     "g6-percent-half": {
       source: "Truque do 6o ano",
@@ -1973,6 +2087,18 @@ const lessonWorkedSteps = {
 
 const extraPracticeBank = {
   pt: {
+    "g6-fraction-multiplication": {
+      prompt: "Treino: Calcule 4/7 x 21/32.",
+      answerType: "expression",
+      acceptedAnswers: ["3/8"],
+      steps: ["Cancele 21 com 7: sobra 3 em cima.", "Cancele 4 com 32: sobra 8 embaixo.", "Agora 3/8 ja esta reduzido."],
+    },
+    "g6-fraction-division": {
+      prompt: "Treino: Calcule 3/8 dividido por 6/7.",
+      answerType: "expression",
+      acceptedAnswers: ["7/16"],
+      steps: ["Mantenha 3/8.", "Vire 6/7 para 7/6.", "Multiplique: 3/8 x 7/6.", "Cancele 3 com 6, sobrando 1 e 2. Resultado: 7/16."],
+    },
     "g7-percent-base": {
       prompt: "Treino: 24 e 40% de qual numero?",
       answerType: "number",
@@ -2081,6 +2207,18 @@ const extraPracticeBank = {
     },
   },
   en: {
+    "g6-fraction-multiplication": {
+      prompt: "Practice: Calculate 4/7 x 21/32.",
+      answerType: "expression",
+      acceptedAnswers: ["3/8"],
+      steps: ["Cancel 21 with 7, leaving 3 on top.", "Cancel 4 with 32, leaving 8 on the bottom.", "Now 3/8 is already reduced."],
+    },
+    "g6-fraction-division": {
+      prompt: "Practice: Calculate 3/8 divided by 6/7.",
+      answerType: "expression",
+      acceptedAnswers: ["7/16"],
+      steps: ["Keep 3/8.", "Flip 6/7 into 7/6.", "Multiply: 3/8 x 7/6.", "Cancel 3 with 6, leaving 1 and 2. Result: 7/16."],
+    },
     "g7-percent-base": {
       prompt: "Practice: 24 is 40% of what number?",
       answerType: "number",
