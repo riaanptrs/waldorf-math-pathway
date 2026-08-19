@@ -3530,6 +3530,104 @@ Object.assign(lessonTranslations, {
 });
 
 Object.assign(extraPracticeBank.pt, {
+  "g5-decimal-tenths": [
+    { prompt: "Treino 1: Escreva cinco décimos como decimal.", answerType: "number", answer: 0.5, tolerance: 0, steps: ["Cinco décimos são 5/10.", "5/10 em forma decimal é 0,5."] },
+    { prompt: "Treino 2: Escreva oito décimos como decimal.", answerType: "number", answer: 0.8, tolerance: 0, steps: ["Oito décimos são 8/10.", "8/10 em forma decimal é 0,8."] },
+    { prompt: "Treino 3: Escreva um décimo como decimal.", answerType: "number", answer: 0.1, tolerance: 0, steps: ["Um décimo é 1/10.", "1/10 em forma decimal é 0,1."] },
+  ],
+  "g5-decimal-hundredths-money": [
+    { prompt: "Treino 1: Em R$2,45, quantos centavos aparecem na parte decimal?", answerType: "number", answer: 45, tolerance: 0, steps: ["A parte decimal é 45.", "Em dinheiro, 0,45 real são 45 centavos."] },
+    { prompt: "Treino 2: Em R$7,08, quantos centavos aparecem na parte decimal?", answerType: "number", answer: 8, tolerance: 0, steps: ["A parte decimal é 08.", "08 centavos significam 8 centavos."] },
+    { prompt: "Treino 3: Escreva 63 centavos como parte decimal de um real.", answerType: "number", answer: 0.63, tolerance: 0, steps: ["Centavos são centésimos.", "63 centavos são 63/100 de real.", "63/100 = 0,63."] },
+  ],
+  "g5-fraction-decimal-quarter": [
+    { prompt: "Treino 1: Escreva 3/4 como decimal.", answerType: "number", answer: 0.75, tolerance: 0, steps: ["Um inteiro tem 100 centésimos.", "3/4 de 100 é 75.", "3/4 = 0,75."] },
+    { prompt: "Treino 2: Escreva 1/2 como decimal.", answerType: "number", answer: 0.5, tolerance: 0, steps: ["Metade de 100 centésimos é 50 centésimos.", "50/100 = 0,50 = 0,5."] },
+    { prompt: "Treino 3: Escreva 2/4 como decimal.", answerType: "number", answer: 0.5, tolerance: 0, steps: ["2/4 é a mesma quantidade que 1/2.", "1/2 em decimal é 0,5."] },
+  ],
+  "g5-metric-centimeters": [
+    { prompt: "Treino 1: Quantos centímetros há em 2 metros?", answerType: "number", answer: 200, tolerance: 0, steps: ["1 metro tem 100 centímetros.", "2 x 100 = 200."] },
+    { prompt: "Treino 2: Quantos centímetros há em 5 metros?", answerType: "number", answer: 500, tolerance: 0, steps: ["Cada metro tem 100 centímetros.", "5 x 100 = 500."] },
+    { prompt: "Treino 3: Quantos centímetros há em 1,5 metro?", answerType: "number", answer: 150, tolerance: 0, steps: ["1 metro tem 100 cm.", "0,5 metro tem 50 cm.", "100 + 50 = 150 cm."] },
+  ],
+  "g5-fraction-review-journey": [
+    { prompt: "Treino 1: Some 1/2 + 1/8.", answerType: "expression", acceptedAnswers: ["5/8"], steps: ["Use denominador 8.", "1/2 = 4/8.", "4/8 + 1/8 = 5/8."] },
+    { prompt: "Treino 2: Some 1/4 + 2/4.", answerType: "expression", acceptedAnswers: ["3/4"], steps: ["As partes já têm o mesmo tamanho.", "Some os numeradores: 1 + 2 = 3.", "Resposta: 3/4."] },
+    { prompt: "Treino 3: Some 2/3 + 1/6.", answerType: "expression", acceptedAnswers: ["5/6"], steps: ["Use denominador 6.", "2/3 = 4/6.", "4/6 + 1/6 = 5/6."] },
+  ],
+  "g5-freehand-circle-diameter": [
+    { prompt: "Treino 1: O raio é 3 cm. Qual é o diâmetro?", answerType: "number", answer: 6, tolerance: 0, steps: ["O diâmetro é duas vezes o raio.", "3 x 2 = 6 cm."] },
+    { prompt: "Treino 2: O raio é 7 cm. Qual é o diâmetro?", answerType: "number", answer: 14, tolerance: 0, steps: ["Dobre o raio.", "7 + 7 = 14 cm."] },
+    { prompt: "Treino 3: O diâmetro é 12 cm. Qual é o raio?", answerType: "number", answer: 6, tolerance: 0, steps: ["O raio é metade do diâmetro.", "12 dividido por 2 = 6 cm."] },
+  ],
+  "g5-pentagon-perimeter": [
+    { prompt: "Treino 1: Um pentágono regular tem lado de 3 cm. Qual é o perímetro?", answerType: "number", answer: 15, tolerance: 0, steps: ["Um pentágono tem 5 lados.", "5 x 3 = 15 cm."] },
+    { prompt: "Treino 2: Um hexágono regular tem lado de 4 cm. Qual é o perímetro?", answerType: "number", answer: 24, tolerance: 0, steps: ["Um hexágono tem 6 lados.", "6 x 4 = 24 cm."] },
+    { prompt: "Treino 3: Um quadrado tem lado de 9 cm. Qual é o perímetro?", answerType: "number", answer: 36, tolerance: 0, steps: ["Um quadrado tem 4 lados iguais.", "4 x 9 = 36 cm."] },
+  ],
+  "g5-symmetry-balance": [
+    { prompt: "Treino 1: Um ponto está 4 cm à esquerda da linha de simetria. A imagem fica a quantos cm à direita?", answerType: "number", answer: 4, tolerance: 0, steps: ["Pontos espelhados ficam à mesma distância da linha.", "A distância à direita também é 4 cm."] },
+    { prompt: "Treino 2: Um ponto está 9 cm acima da linha de simetria. A imagem fica a quantos cm abaixo?", answerType: "number", answer: 9, tolerance: 0, steps: ["A simetria conserva a distância.", "A imagem fica 9 cm abaixo."] },
+    { prompt: "Treino 3: Um ponto e sua imagem estão separados por 10 cm, com a linha no meio. Qual é a distância de cada ponto até a linha?", answerType: "number", answer: 5, tolerance: 0, steps: ["A linha fica no meio da distância total.", "10 dividido por 2 = 5 cm."] },
+  ],
+  "g5-greek-games-distance": [
+    { prompt: "Treino 1: Um aluno corre 3 voltas de 80 metros. Qual é a distância total?", answerType: "number", answer: 240, tolerance: 0, steps: ["Uma volta tem 80 m.", "3 x 80 = 240 m."] },
+    { prompt: "Treino 2: Uma corrida tem 5 voltas de 50 metros. Qual é a distância total?", answerType: "number", answer: 250, tolerance: 0, steps: ["Cada volta tem 50 m.", "5 x 50 = 250 m."] },
+    { prompt: "Treino 3: Um percurso de 300 metros tem 6 voltas iguais. Quantos metros tem cada volta?", answerType: "number", answer: 50, tolerance: 0, steps: ["Divida a distância total pelo número de voltas.", "300 dividido por 6 = 50 m."] },
+  ],
+  "g5-ancient-measures": [
+    { prompt: "Treino 1: Use 1 cúbito = 0,5 m. Quanto medem 8 cúbitos?", answerType: "number", answer: 4, tolerance: 0, steps: ["Cada cúbito mede meio metro.", "8 meios metros formam 4 metros."] },
+    { prompt: "Treino 2: Use 1 cúbito = 0,5 m. Quanto medem 10 cúbitos?", answerType: "number", answer: 5, tolerance: 0, steps: ["Multiplique 10 por 0,5.", "10 x 0,5 = 5 m."] },
+    { prompt: "Treino 3: Se 1 palmo mede 0,2 m, quanto medem 5 palmos?", answerType: "number", answer: 1, tolerance: 0, steps: ["Multiplique 5 por 0,2.", "5 x 0,2 = 1 m."] },
+  ],
+  "g6-real-world-prices": [
+    { prompt: "Treino 1: Um caderno custa R$18, uma régua custa R$7 e uma borracha custa R$5. Qual é o total?", answerType: "number", answer: 30, tolerance: 0, steps: ["Some os preços.", "18 + 7 + 5 = 30."] },
+    { prompt: "Treino 2: Tintas custam R$24 e pincéis custam R$16. Qual é o total?", answerType: "number", answer: 40, tolerance: 0, steps: ["Some os dois valores.", "24 + 16 = 40."] },
+  ],
+  "g6-fraction-multiplication": [
+    { prompt: "Treino 1: Calcule 4/7 x 21/32.", answerType: "expression", acceptedAnswers: ["3/8"], steps: ["Cancele 21 com 7: sobra 3 em cima.", "Cancele 4 com 32: sobra 8 embaixo.", "Resultado: 3/8."] },
+    { prompt: "Treino 2: Calcule 2/5 x 15/16.", answerType: "expression", acceptedAnswers: ["3/8"], steps: ["Cancele 15 com 5: sobra 3 em cima.", "Cancele 2 com 16: sobra 8 embaixo.", "Resultado: 3/8."] },
+  ],
+  "g6-fraction-division": [
+    { prompt: "Treino 1: Calcule 3/8 dividido por 6/7.", answerType: "expression", acceptedAnswers: ["7/16"], steps: ["Mantenha 3/8.", "Vire 6/7 para 7/6.", "Multiplique e reduza: 7/16."] },
+    { prompt: "Treino 2: Calcule 2/3 dividido por 4/9.", answerType: "expression", acceptedAnswers: ["3/2", "1 1/2"], steps: ["Mantenha 2/3.", "Vire 4/9 para 9/4.", "2/3 x 9/4 = 18/12 = 3/2."] },
+  ],
+  "g6-percent-half": [
+    { prompt: "Treino 1: Quanto é 50% de R$36?", answerType: "number", answer: 18, tolerance: 0, steps: ["50% é metade.", "Metade de 36 é 18."] },
+    { prompt: "Treino 2: Quanto é 25% de R$40?", answerType: "number", answer: 10, tolerance: 0, steps: ["25% é um quarto.", "40 dividido por 4 = 10."] },
+  ],
+  "g6-fair-discount": [
+    { prompt: "Treino 1: Um livro custa R$30 e tem 50% de desconto. Qual é o novo preço?", answerType: "number", answer: 15, tolerance: 0, steps: ["50% de 30 é 15.", "30 - 15 = 15."] },
+    { prompt: "Treino 2: Uma bolsa custa R$80 e tem 25% de desconto. Qual é o novo preço?", answerType: "number", answer: 60, tolerance: 0, steps: ["25% de 80 é 20.", "80 - 20 = 60."] },
+  ],
+  "g6-better-deal": [
+    { prompt: "Treino 1: 4 canetas por R$12 ou 5 canetas por R$20. Qual é o menor preço por caneta?", answerType: "number", answer: 3, tolerance: 0, steps: ["12 dividido por 4 = 3.", "20 dividido por 5 = 4.", "O menor preço é R$3."] },
+    { prompt: "Treino 2: 6 maçãs por R$18 ou 4 maçãs por R$16. Qual é o menor preço por maçã?", answerType: "number", answer: 3, tolerance: 0, steps: ["18 dividido por 6 = 3.", "16 dividido por 4 = 4.", "O menor preço é R$3."] },
+  ],
+  "g6-cost-price-profit": [
+    { prompt: "Treino 1: Um item custa R$5 para fazer e vende por R$12. Qual é o lucro?", answerType: "number", answer: 7, tolerance: 0, steps: ["Lucro = preço de venda - custo.", "12 - 5 = 7."] },
+    { prompt: "Treino 2: Um produto custa R$9 para fazer e vende por R$15. Qual é o lucro?", answerType: "number", answer: 6, tolerance: 0, steps: ["Subtraia o custo do preço de venda.", "15 - 9 = 6."] },
+  ],
+  "g6-simple-interest": [
+    { prompt: "Treino 1: R$200 com juros simples de 10% por um ano. Quanto deve ser pago no total?", answerType: "number", answer: 220, tolerance: 0, steps: ["10% de 200 é 20.", "200 + 20 = 220."] },
+    { prompt: "Treino 2: R$50 com juros simples de 20% por um ano. Quanto deve ser pago no total?", answerType: "number", answer: 60, tolerance: 0, steps: ["20% de 50 é 10.", "50 + 10 = 60."] },
+  ],
+  "g6-budget-challenge": [
+    { prompt: "Treino 1: O orçamento é R$60. O plano custa R$72. Quanto passa do orçamento?", answerType: "number", answer: 12, tolerance: 0, steps: ["Compare o custo com o orçamento.", "72 - 60 = 12."] },
+    { prompt: "Treino 2: O orçamento é R$100. O plano custa R$87. Quanto sobra?", answerType: "number", answer: 13, tolerance: 0, steps: ["Subtraia o custo do orçamento.", "100 - 87 = 13."] },
+  ],
+  "g6-geometry-precision": [
+    { prompt: "Treino 1: Um círculo tem raio de 6 cm. Qual é o diâmetro?", answerType: "number", answer: 12, tolerance: 0, steps: ["O diâmetro é o dobro do raio.", "6 x 2 = 12."] },
+    { prompt: "Treino 2: Um círculo tem diâmetro de 18 cm. Qual é o raio?", answerType: "number", answer: 9, tolerance: 0, steps: ["O raio é metade do diâmetro.", "18 dividido por 2 = 9."] },
+  ],
+  "g6-business-order": [
+    { prompt: "Treino 1: 30 etiquetas custam R$0,20 cada. Qual é o custo total?", answerType: "number", answer: 6, tolerance: 0, steps: ["Multiplique quantidade por preço.", "30 x 0,20 = 6."] },
+    { prompt: "Treino 2: 12 sacolas custam R$0,50 cada. Qual é o custo total?", answerType: "number", answer: 6, tolerance: 0, steps: ["12 x 0,50 = 6.", "O custo total é R$6."] },
+  ],
+  "g6-market-day-portfólio": [
+    { prompt: "Treino 1: Um produto vende por R$20. Com 10% de desconto, qual é o novo preço?", answerType: "number", answer: 18, tolerance: 0, steps: ["10% de 20 é 2.", "20 - 2 = 18."] },
+    { prompt: "Treino 2: Um produto custa R$8 para fazer e vende por R$14. Qual é o lucro antes do desconto?", answerType: "number", answer: 6, tolerance: 0, steps: ["Lucro = venda - custo.", "14 - 8 = 6."] },
+  ],
   "g8-binary-place-value": { prompt: "Treino: converta 10101 em base dois para base dez.", answerType: "number", answer: 21, tolerance: 0, steps: ["Valores: 16, 8, 4, 2, 1.", "Mantenha 16, 4 e 1.", "16 + 4 + 1 = 21."] },
   "g8-scientific-notation": { prompt: "Treino: escreva 93.000 em notação científica.", answerType: "expression", acceptedAnswers: ["9.3x10^4", "9.3*10^4", "9.3 x 10^4"], steps: ["Mova a vírgula 4 casas.", "93.000 = 9.3 x 10^4."] },
   "g8-pythagorean-hypotenuse": { prompt: "Treino: catetos 8 e 15. Qual é a hipotenusa?", answerType: "number", answer: 17, tolerance: 0, steps: ["8^2 = 64.", "15^2 = 225.", "64 + 225 = 289.", "Raiz de 289 = 17."] },

@@ -182,7 +182,7 @@ const copy = {
     correctAnswerLabel: "Resposta correta",
     mathTipTitle: "Dica de cálculo mental",
     extraPracticeTitle: "Treino extra",
-    extraPracticeIntro: "Antes de voltar para a atividade, tente uma conta parecida.",
+    extraPracticeIntro: "Tente mais algumas contas parecidas para firmar o caminho.",
     extraAnswerLabel: "Resposta do treino extra",
     checkExtraButton: "Verificar treino",
     extraCorrect: "Correto. Agora volte para a atividade principal.",
@@ -320,7 +320,7 @@ const copy = {
     correctAnswerLabel: "Correct answer",
     mathTipTitle: "Mental math tip",
     extraPracticeTitle: "Extra practice",
-    extraPracticeIntro: "Before returning to the main activity, try a similar problem.",
+    extraPracticeIntro: "Try a few more similar problems to make the method steady.",
     extraAnswerLabel: "Extra practice answer",
     checkExtraButton: "Check practice",
     extraCorrect: "Correct. Now return to the main activity.",
@@ -367,7 +367,9 @@ function lessonCopy(lesson) {
 }
 
 function extraPracticeFor(lesson) {
-  return extraPracticeBank[language]?.[lesson.id] || extraPracticeBank.en?.[lesson.id] || null;
+  const practice = extraPracticeBank[language]?.[lesson.id] || extraPracticeBank.en?.[lesson.id] || null;
+  if (!practice) return [];
+  return Array.isArray(practice) ? practice : [practice];
 }
 
 function applyLanguage() {
@@ -632,23 +634,34 @@ function renderGuidedAnswer(lesson) {
   `;
 }
 
-function renderExtraPractice(lesson) {
-  const practice = extraPracticeFor(lesson);
-  if (!practice) return "";
+function renderExtraPractice(lesson, context = "lesson") {
+  const practiceItems = extraPracticeFor(lesson);
+  if (!practiceItems.length) return "";
   return `
     <section class="extra-practice" data-panel="extra-practice">
       <h4>${t("extraPracticeTitle")}</h4>
       <p>${t("extraPracticeIntro")}</p>
-      <p class="extra-practice__prompt">${practice.prompt}</p>
-      <label for="extra-answer">${t("extraAnswerLabel")}</label>
-      <div class="answer-form__row">
-        <input id="extra-answer" class="extra-answer" autocomplete="off" inputmode="${practice.answerType === "expression" ? "text" : "decimal"}" />
-        <button class="button button--small check-extra" type="button">${t("checkExtraButton")}</button>
-      </div>
-      <p class="extra-feedback" role="status"></p>
-      <div class="extra-solution" hidden>
-        <p><strong>${t("correctAnswerLabel")}:</strong> ${correctAnswerText(practice)}</p>
-        ${renderSteps(practice.steps)}
+      <div class="extra-practice__list">
+        ${practiceItems
+          .map((practice, index) => {
+            const inputId = `extra-answer-${context}-${index}`;
+            return `
+              <article class="extra-practice__item" data-practice-index="${index}">
+                <p class="extra-practice__prompt">${practice.prompt}</p>
+                <label for="${inputId}">${t("extraAnswerLabel")}</label>
+                <div class="answer-form__row">
+                  <input id="${inputId}" class="extra-answer" autocomplete="off" inputmode="${practice.answerType === "expression" ? "text" : "decimal"}" />
+                  <button class="button button--small check-extra" type="button">${t("checkExtraButton")}</button>
+                </div>
+                <p class="extra-feedback" role="status"></p>
+                <div class="extra-solution" hidden>
+                  <p><strong>${t("correctAnswerLabel")}:</strong> ${correctAnswerText(practice)}</p>
+                  ${renderSteps(practice.steps)}
+                </div>
+              </article>
+            `;
+          })
+          .join("")}
       </div>
     </section>
   `;
@@ -662,13 +675,38 @@ function showAttemptTools() {
       <button class="button button--small button--ghost show-guided-answer" type="button">${t("guidedAnswerButton")}</button>
     </div>
     ${renderGuidedAnswer(activeLesson)}
-    ${renderExtraPractice(activeLesson)}
   `;
 }
 
 function hideAttemptTools() {
   attemptTools.hidden = true;
   attemptTools.innerHTML = "";
+}
+
+function checkExtraPracticeButton(button) {
+  const item = button.closest(".extra-practice__item");
+  const practiceIndex = Number(item?.dataset.practiceIndex || 0);
+  const practice = extraPracticeFor(activeLesson)[practiceIndex];
+  const input = item?.querySelector(".extra-answer");
+  const extraFeedback = item?.querySelector(".extra-feedback");
+  const extraSolution = item?.querySelector(".extra-solution");
+  const value = input?.value.trim() || "";
+
+  if (!practice || !extraFeedback) return;
+
+  if (!value) {
+    extraFeedback.textContent = t("emptyAnswer");
+    extraFeedback.dataset.state = "neutral";
+    return;
+  }
+
+  const isCorrect = checkValue(practice, value);
+  extraFeedback.textContent = isCorrect ? t("extraCorrect") : t("extraTry");
+  extraFeedback.dataset.state = isCorrect ? "correct" : "try";
+  if (extraSolution) extraSolution.hidden = isCorrect;
+  if (isCorrect) {
+    answer.focus();
+  }
 }
 
 function evaluateGuidedSteps(lesson) {
@@ -978,6 +1016,7 @@ function renderExercise(lesson) {
           </aside>`
         : ""
     }
+    ${renderExtraPractice(displayLesson)}
     ${
       displayLesson.guidedSteps?.length
         ? `<div class="guided-steps">
@@ -1242,26 +1281,12 @@ attemptTools.addEventListener("click", (event) => {
   }
 
   const checkExtra = event.target.closest(".check-extra");
-  if (!checkExtra) return;
-  const practice = extraPracticeFor(activeLesson);
-  const input = attemptTools.querySelector(".extra-answer");
-  const extraFeedback = attemptTools.querySelector(".extra-feedback");
-  const extraSolution = attemptTools.querySelector(".extra-solution");
-  const value = input?.value.trim() || "";
+  if (checkExtra) checkExtraPracticeButton(checkExtra);
+});
 
-  if (!value) {
-    extraFeedback.textContent = t("emptyAnswer");
-    extraFeedback.dataset.state = "neutral";
-    return;
-  }
-
-  const isCorrect = checkValue(practice, value);
-  extraFeedback.textContent = isCorrect ? t("extraCorrect") : t("extraTry");
-  extraFeedback.dataset.state = isCorrect ? "correct" : "try";
-  if (extraSolution) extraSolution.hidden = isCorrect;
-  if (isCorrect) {
-    answer.focus();
-  }
+body.addEventListener("click", (event) => {
+  const checkExtra = event.target.closest(".check-extra");
+  if (checkExtra) checkExtraPracticeButton(checkExtra);
 });
 
 previousButton.addEventListener("click", () => moveLesson(-1));

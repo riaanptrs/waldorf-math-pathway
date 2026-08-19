@@ -829,6 +829,20 @@ select {
   background: #f4f8ef;
 }
 
+.extra-practice__list {
+  display: grid;
+  gap: 12px;
+}
+
+.extra-practice__item {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid rgba(47, 75, 58, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 253, 250, 0.72);
+}
+
 .guided-answer h4,
 .extra-practice h4 {
   margin: 0;
