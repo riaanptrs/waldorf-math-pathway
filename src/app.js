@@ -29,6 +29,7 @@ const time = document.querySelector(".exercise__time");
 const prompt = document.querySelector(".exercise__prompt");
 const body = document.querySelector(".exercise__body");
 const form = document.querySelector(".answer-form");
+const answerQuestion = document.querySelector(".answer-form__question");
 const answer = document.querySelector("#answer");
 const answerLabel = document.querySelector('label[for="answer"]');
 const feedback = document.querySelector(".feedback");
@@ -56,139 +57,139 @@ const LANGUAGE_KEY = "waldorf-math:language";
 
 const copy = {
   pt: {
-    brand: "Trilha de Matematica Waldorf",
+    brand: "Trilha de Matemática Waldorf",
     navAccount: "Conta",
     navPractice: "Praticar",
-    navArithmeticReview: "Revisao",
+    navArithmeticReview: "Revisão",
     navMentalTricks: "Dicas",
     navRhythm: "Ritmo",
     navParent: "Notas para os pais",
-    heroEyebrow: "Pratica online de matematica do 5o ao 9o ano",
-    heroTitle: "Um caminho vivo por medida, dinheiro, porcentagens, razoes, geometria e algebra.",
+    heroEyebrow: "Prática online de matemática do 5º ao 9º ano",
+    heroTitle: "Um caminho vivo por medida, dinheiro, porcentagens, razões, geometria e álgebra.",
     heroCopy:
-      "Uma trilha de aulas do 5o ao 9o ano com aritmetica pratica, medida, geometria, matematica financeira, fracoes, decimais, razoes, numeros com sinal, formulas, Teorema de Pitagoras, crescimento, funcoes e algebra. Os estudantes completam passos visiveis, corrigem o proprio trabalho e salvam o progresso para revisao dos pais.",
-    heroButton: "Comecar a praticar",
+      "Uma trilha de aulas do 5º ao 9º ano com aritmética prática, medida, geometria, matemática financeira, frações, decimais, razões, números com sinal, fórmulas, Teorema de Pitágoras, crescimento, funções e álgebra. Os estudantes completam passos visíveis, corrigem o próprio trabalho e salvam o progresso para revisão dos pais.",
+    heroButton: "Começar a praticar",
     introEyebrow: "Primeiro passo",
-    introTitle: "Agora com blocos do 5o ao 9o ano",
+    introTitle: "Agora com blocos do 5º ao 9º ano",
     introCopy:
-      "Esta trilha de matematica adapta blocos Waldorf em atividades online originais: no 5o ano, fracoes decimais, medidas e geometria a mao livre; no 6o ano, matematica financeira, descontos, orcamento e geometria precisa; no 7o ano, revisao aritmetica, razoes e algebra inicial; no 8o ano, bases numericas, Pitagoras, crescimento, proporcoes, mensuracao e estereometria inicial; no 9o ano, algebra I, funcoes, radicais, sistemas e modelos de crescimento.",
+      "Esta trilha de matemática adapta blocos Waldorf em atividades online originais: no 5º ano, frações decimais, medidas e geometria à mão livre; no 6º ano, matemática financeira, descontos, orçamento e geometria precisa; no 7º ano, revisão aritmética, razões e álgebra inicial; no 8º ano, bases numéricas, Pitágoras, crescimento, proporções, mensuração e estereometria inicial; no 9º ano, álgebra I, funções, radicais, sistemas e modelos de crescimento.",
     accountEyebrow: "Cadastro compartilhado",
     accountTitle: "Entrar ou cadastrar",
     modeLabel: "Modo",
     modeLogin: "Entrar",
     modeRegister: "Cadastrar",
-    emailLabel: "Email do responsavel",
+    emailLabel: "Email do responsável",
     passwordLabel: "Senha",
     learnerLabel: "Apelido do estudante",
     languageLabel: "Idioma do estudante",
     continueButton: "Continuar",
     currentLearnerEyebrow: "Estudante atual",
     signOut: "Sair",
-    practiceEyebrow: "Sala de pratica",
+    practiceEyebrow: "Sala de prática",
     practiceTitle: "Escolha a atividade de hoje",
-    arithmeticReviewEyebrow: "Revisao aritmetica",
-    arithmeticReviewTitle: "Folhas de revisao com explicacao guiada",
+    arithmeticReviewEyebrow: "Revisão aritmética",
+    arithmeticReviewTitle: "Folhas de revisão com explicação guiada",
     arithmeticReviewIntro:
-      "Pratique fracoes, decimais, divisao, conversoes e calculo mental. Cada resposta pode ser conferida com passos.",
-    mentalTricksEyebrow: "Dicas de calculo mental",
-    mentalTricksTitle: "Truques guiados do 6o e 7o ano",
+      "Pratique frações, decimais, divisão, conversões e cálculo mental. Cada resposta pode ser conferida com passos.",
+    mentalTricksEyebrow: "Dicas de cálculo mental",
+    mentalTricksTitle: "Truques guiados do 6º e 7º ano",
     mentalTricksIntro:
       "Escolha uma dica, veja o exemplo passo a passo, entenda por que funciona e tente uma conta parecida.",
-    grade6Tricks: "6o ano",
-    grade7Tricks: "7o ano",
+    grade6Tricks: "6º ano",
+    grade7Tricks: "7º ano",
     trickExample: "Exemplo",
     trickSteps: "Passo a passo",
     trickWhy: "Por que funciona",
-    trickPractice: "Tente voce",
+    trickPractice: "Tente você",
     trickShowAnswer: "Ver resposta guiada",
     trickHideAnswer: "Esconder resposta",
     trickAnswer: "Resposta guiada",
     reviewSheetLabel: (number) => `Folha ${number}`,
-    reviewProblemLabel: (number) => `Exercicio ${number}`,
+    reviewProblemLabel: (number) => `Exercício ${number}`,
     reviewCheck: "Verificar",
     reviewTryAgain: "Tentar de novo",
-    reviewShowGuide: "Ver explicacao guiada",
+    reviewShowGuide: "Ver explicação guiada",
     reviewCorrect: "Correto.",
-    reviewTry: "Ainda nao. Tente de novo ou veja a explicacao guiada.",
+    reviewTry: "Ainda não. Tente de novo ou veja a explicação guiada.",
     previousButton: "Anterior",
-    nextButton: "Proxima",
+    nextButton: "Próxima",
     checkButton: "Verificar",
-    rhythmEyebrow: "Ritmo diario",
+    rhythmEyebrow: "Ritmo diário",
     rhythmTitle: "Aquecimento antes da tela",
     rhythmStep1: "Estime antes de calcular.",
-    rhythmStep2: "Nomeie a operacao com suas proprias palavras.",
-    rhythmStep3: "Resolva um problema pratico devagar.",
-    rhythmStep4: "Explique como voce conferiu a resposta.",
+    rhythmStep2: "Nomeie a operação com suas próprias palavras.",
+    rhythmStep3: "Resolva um problema prático devagar.",
+    rhythmStep4: "Explique como você conferiu a resposta.",
     parentEyebrow: "Notas para os pais",
     parentTitle: "Progresso e notas do plano de aulas",
-    dashboardTitle: "Progresso em matematica dos estudantes vinculados",
-    note1Title: "Extracao das licoes",
+    dashboardTitle: "Progresso em matemática dos estudantes vinculados",
+    note1Title: "Extração das lições",
     note1Copy:
-      "Os topicos do 5o ao 9o ano sao organizados a partir de objetivos Waldorf de matematica, depois reescritos como licoes online originais com passos verificaveis e gabaritos.",
-    note2Title: "Ciclo de correcao",
+      "Os tópicos do 5º ao 9º ano são organizados a partir de objetivos Waldorf de matemática, depois reescritos como lições online originais com passos verificáveis e gabaritos.",
+    note2Title: "Ciclo de correção",
     note2Copy:
-      "Respostas incorretas mostram uma dica de correcao e ficam marcadas para revisao ate que o estudante envie uma resposta correta.",
+      "Respostas incorretas mostram uma dica de correção e ficam marcadas para revisão até que o estudante envie uma resposta correta.",
     note3Title: "Banco compartilhado",
     note3Copy:
-      "Matematica usa a mesma conta Supabase do responsavel, registros de estudantes, respostas objetivas e tabelas de progresso de atividades da Waldorf English Pathway.",
+      "Matemática usa a mesma conta Supabase do responsável, registros de estudantes, respostas objetivas e tabelas de progresso de atividades da Waldorf English Pathway.",
     footerCopy:
-      "Trilha de Matematica Waldorf e um projeto independente de aprendizagem, com atividades originais adaptadas de referencias curriculares proprias.",
-    lessonCount: (count) => `${count} atividades de matematica disponiveis`,
+      "Trilha de Matemática Waldorf é um projeto independente de aprendizagem, com atividades originais adaptadas de referências curriculares próprias.",
+    lessonCount: (count) => `${count} atividades de matemática disponíveis`,
     stateCorrect: "Feita",
     stateReview: "Revisar",
     stateOpen: "Abrir",
-    lessonFocus: "Foco da licao",
-    howTo: "Como fazer",
-    tutorTitle: "Tutor rapido",
-    tutorIntro: "Leia em um minuto, depois resolva com passos visiveis.",
+    questionLabel: "Pergunta",
+    answerPromptLabel: "Responda à pergunta:",
+    tutorTitle: "Tutor rápido",
+    tutorIntro: "Leia em um minuto, depois resolva com passos visíveis.",
     tutorWarmMemory: "1. Lembre",
     tutorWorkedExample: "2. Veja",
     tutorGuidedTry: "3. Tente guiado",
     tutorQuickCheck: "4. Confira",
-    tutorDeepDive: "Explicacao curta, mas completa",
+    tutorDeepDive: "Explicação curta, mas completa",
     tutorCommonMistake: "Erro comum",
     tutorCheckAnswer: "Como conferir",
     tutorRhythm: "Ritmo de trabalho",
     tutorNoGuidedSteps: "Use o ritmo abaixo como seus passos. Diga cada passo antes de calcular.",
     refresherTitle: "Precisa relembrar?",
-    refresherMethod: "Metodo",
+    refresherMethod: "Método",
     workedTitle: "Como resolver esta conta, passo por passo",
-    refresherExample: "Exemplo rapido",
+    refresherExample: "Exemplo rápido",
     showSteps: "Mostre os passos",
     finalAnswer: "Resposta final depois dos passos",
     yourAnswer: "Sua resposta",
     expressionPlaceholder: "Exemplo: 10k - 14",
-    numberPlaceholder: "Digite um numero",
+    numberPlaceholder: "Digite um número",
     stepCorrect: "Correto.",
     stepReview: "Revise. Resposta correta:",
-    noLearner: "Nenhum estudante esta vinculado a esta conta de responsavel ainda.",
+    noLearner: "Nenhum estudante está vinculado a esta conta de responsável ainda.",
     guestLearner: "Estudante visitante",
-    guardianAccount: "Conta do responsavel",
-    signInPrompt: "Entre com o mesmo email e senha de responsavel usados na Waldorf English Pathway.",
-    cloudActive: (name) => `Sincronizacao em nuvem ativa para ${name}. Este e o mesmo registro de estudante usado pela Waldorf English Pathway.`,
-    noLinkedLearner: "Conta do responsavel encontrada, mas nenhum estudante esta vinculado ainda. Cadastre com um apelido de estudante para adicionar um.",
-    progressSuffix: (correct, total) => `${correct}/${total} atividades de matematica corretas`,
+    guardianAccount: "Conta do responsável",
+    signInPrompt: "Entre com o mesmo email e senha de responsável usados na Waldorf English Pathway.",
+    cloudActive: (name) => `Sincronização em nuvem ativa para ${name}. Este é o mesmo registro de estudante usado pela Waldorf English Pathway.`,
+    noLinkedLearner: "Conta do responsável encontrada, mas nenhum estudante está vinculado ainda. Cadastre com um apelido de estudante para adicionar um.",
+    progressSuffix: (correct, total) => `${correct}/${total} atividades de matemática corretas`,
     emptyAnswer: "Digite uma resposta primeiro.",
-    cloudCorrect: (name) => `Correto. Salvo no portfolio compartilhado de ${name}.`,
-    localCorrect: "Correto. Salvo neste dispositivo. Entre na conta para salvar no portfolio compartilhado.",
-    cloudTry: "Precisa de correcao. Salvo para revisao no portfolio compartilhado. Voce pode tentar de novo ou abrir a resposta guiada.",
-    localTry: "Precisa de correcao. Salvo neste dispositivo. Voce pode tentar de novo ou abrir a resposta guiada.",
+    cloudCorrect: (name) => `Correto. Salvo no portfólio compartilhado de ${name}.`,
+    localCorrect: "Correto. Salvo neste dispositivo. Entre na conta para salvar no portfólio compartilhado.",
+    cloudTry: "Precisa de correção. Salvo para revisão no portfólio compartilhado. Você pode tentar de novo ou abrir a resposta guiada.",
+    localTry: "Precisa de correção. Salvo neste dispositivo. Você pode tentar de novo ou abrir a resposta guiada.",
     tryAgainButton: "Tentar de novo",
     guidedAnswerButton: "Ver resposta guiada",
     guidedAnswerTitle: "Resposta guiada",
     correctAnswerLabel: "Resposta correta",
-    mathTipTitle: "Dica de calculo mental",
+    mathTipTitle: "Dica de cálculo mental",
     extraPracticeTitle: "Treino extra",
     extraPracticeIntro: "Antes de voltar para a atividade, tente uma conta parecida.",
     extraAnswerLabel: "Resposta do treino extra",
     checkExtraButton: "Verificar treino",
     extraCorrect: "Correto. Agora volte para a atividade principal.",
-    extraTry: "Ainda nao. Veja o caminho guiado abaixo e tente a atividade principal outra vez.",
+    extraTry: "Ainda não. Veja o caminho guiado abaixo e tente a atividade principal outra vez.",
     saveFailed: (message) => `A resposta foi verificada, mas o salvamento na nuvem falhou: ${message}`,
-    enterCredentials: "Digite o email do responsavel e a senha.",
+    enterCredentials: "Digite o email do responsável e a senha.",
     signingIn: "Entrando pelo banco Waldorf compartilhado...",
-    enterNickname: "Digite um apelido do estudante para o portfolio compartilhado.",
-    creatingAccount: "Criando a conta compartilhada do responsavel...",
+    enterNickname: "Digite um apelido do estudante para o portfólio compartilhado.",
+    creatingAccount: "Criando a conta compartilhada do responsável...",
     accountCreated: "Conta criada. Confirme o email e depois entre aqui com a mesma conta Waldorf.",
   },
   en: {
@@ -273,8 +274,8 @@ const copy = {
     stateCorrect: "Done",
     stateReview: "Review",
     stateOpen: "Open",
-    lessonFocus: "Lesson focus",
-    howTo: "How to work it",
+    questionLabel: "Question",
+    answerPromptLabel: "Answer this question:",
     tutorTitle: "Quick tutor",
     tutorIntro: "Read this in one minute, then solve with visible steps.",
     tutorWarmMemory: "1. Remember",
@@ -305,9 +306,9 @@ const copy = {
     noLinkedLearner: "Guardian account found, but no learner is linked yet. Register with a learner nickname to add one.",
     progressSuffix: (correct, total) => `${correct}/${total} math activities correct`,
     emptyAnswer: "Try entering an answer first.",
-    cloudCorrect: (name) => `Correct. Saved to ${name}'s shared portfolio.`,
-    localCorrect: "Correct. Saved on this device. Sign in to save it to the shared portfolio.",
-    cloudTry: "Needs correction. Saved for review in the shared portfolio. You can try again or open the guided answer.",
+    cloudCorrect: (name) => `Correct. Saved to ${name}'s shared portfólio.`,
+    localCorrect: "Correct. Saved on this device. Sign in to save it to the shared portfólio.",
+    cloudTry: "Needs correction. Saved for review in the shared portfólio. You can try again or open the guided answer.",
     localTry: "Needs correction. Saved on this device. You can try again or open the guided answer.",
     tryAgainButton: "Try again",
     guidedAnswerButton: "See guided answer",
@@ -323,7 +324,7 @@ const copy = {
     saveFailed: (message) => `The answer was checked, but cloud saving failed: ${message}`,
     enterCredentials: "Enter the guardian email and password.",
     signingIn: "Signing in through the shared Waldorf database...",
-    enterNickname: "Enter a learner nickname for the shared portfolio.",
+    enterNickname: "Enter a learner nickname for the shared portfólio.",
     creatingAccount: "Creating the shared guardian account...",
     accountCreated: "Account created. Confirm the email, then sign in here with the same Waldorf account.",
   },
@@ -367,13 +368,13 @@ function extraPracticeFor(lesson) {
 
 function applyLanguage() {
   document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
-  document.title = language === "pt" ? "Trilha de Matematica Waldorf" : "Waldorf Math Pathway";
+  document.title = language === "pt" ? "Trilha de Matemática Waldorf" : "Waldorf Math Pathway";
   document
     .querySelector('meta[name="description"]')
     ?.setAttribute(
       "content",
       language === "pt"
-        ? "Um percurso de matematica Waldorf para 5o ao 9o ano, com exercicios online sobre fracoes decimais, medida, matematica financeira, porcentagens, razoes, numeros negativos, geometria, funcoes e algebra."
+        ? "Um percurso de matemática Waldorf para 5º ao 9º ano, com exercícios online sobre frações decimais, medida, matemática financeira, porcentagens, razões, números negativos, geometria, funções e álgebra."
         : "A Waldorf-inspired Grade 5 through 9 math path with online exercises for decimal fractions, measurement, business math, percentages, ratios, negative numbers, geometry, functions, and algebra.",
     );
   document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -405,7 +406,7 @@ function setAccountStatus(message, type = "") {
 }
 
 function normalizeExpression(value) {
-  return value.toLowerCase().replace(/\s+/g, "").replace(/\*/g, "");
+  return value.toLowerCase().replace(/,/g, ".").replace(/\s+/g, "").replace(/\*/g, "");
 }
 
 function checkValue(config, rawValue) {
@@ -414,7 +415,7 @@ function checkValue(config, rawValue) {
     return config.acceptedAnswers.some((accepted) => normalizeExpression(accepted) === normalized);
   }
 
-  const value = Number(rawValue);
+  const value = Number(rawValue.replace(",", "."));
   if (Number.isNaN(value)) return false;
   return Math.abs(value - config.answer) <= (config.tolerance ?? 0);
 }
@@ -437,34 +438,34 @@ function renderSteps(steps) {
 const tutorSupport = {
   pt: [
     {
-      test: /percent|porcent|discount|desconto|interest|juros|growth|crescimento|profit|lucro|budget|orcamento|business|financeira/,
-      mistake: "Nao misture o valor original, a porcentagem e o resultado. Primeiro encontre a parte percentual, depois decida se deve somar ou subtrair.",
+      test: /percent|porcent|discount|desconto|interest|juros|growth|crescimento|profit|lucro|budget|orçamento|business|financeira/,
+      mistake: "Não misture o valor original, a porcentagem e o resultado. Primeiro encontre a parte percentual, depois decida se deve somar ou subtrair.",
       check: "Compare com 10%, 50% ou 100%. Se a resposta ficar maior ou menor do que esses marcos permitem, revise.",
     },
     {
-      test: /fraction|fracao|fracoes|decimal|decim|repeating|dizima|radical|raiz/,
-      mistake: "Nao trate numerador, denominador e casas decimais como etiquetas soltas. Eles sempre dizem o tamanho das partes.",
-      check: "Estime o tamanho: a resposta deve ser menor, maior ou proxima de 1? Depois confira reduzindo ou convertendo.",
+      test: /fraction|fração|frações|decimal|decim|repeating|dízima|radical|raiz/,
+      mistake: "Não trate numerador, denominador e casas decimais como etiquetas soltas. Eles sempre dizem o tamanho das partes.",
+      check: "Estime o tamanho: a resposta deve ser menor, maior ou próxima de 1? Depois confira reduzindo ou convertendo.",
     },
     {
-      test: /ratio|razao|proportion|propor|rate|taxa|speed|velocidade|scale|escala|unit cost|custo unitario|dimensional/,
-      mistake: "Nao compare quantidades diferentes sem transformar para a mesma unidade ou para a mesma parte.",
-      check: "Escreva as unidades ao lado dos numeros. Se as unidades finais nao combinam com a pergunta, ajuste o caminho.",
+      test: /ratio|razão|proportion|propor|rate|taxa|speed|velocidade|scale|escala|unit cost|custo unitário|dimensional/,
+      mistake: "Não compare quantidades diferentes sem transformar para a mesma unidade ou para a mesma parte.",
+      check: "Escreva as unidades ao lado dos números. Se as unidades finais não combinam com a pergunta, ajuste o caminho.",
     },
     {
-      test: /geometry|geometr|measure|medida|metric|metrica|mensuration|mensuracao|volume|circle|circulo|pythagorean|pitagoras|distance|distancia/,
-      mistake: "Nao use uma formula antes de nomear o que cada medida representa. Raio, diametro, altura, area e volume nao sao a mesma coisa.",
-      check: "Confira as unidades: comprimento usa unidade simples, area usa unidade quadrada, volume usa unidade cubica.",
+      test: /geometry|geometr|measure|medida|metric|métrica|mensuration|mensuração|volume|circle|círculo|pythagorean|pitagoras|distance|distância/,
+      mistake: "Não use uma formula antes de nomear o que cada medida representa. Raio, diâmetro, altura, área e volume não são a mesma coisa.",
+      check: "Confira as unidades: comprimento usa unidade simples, área usa unidade quadrada, volume usa unidade cubica.",
     },
     {
-      test: /algebra|equation|equac|expression|express|exponent|expoente|system|sistema|slope|inclinacao|quadratic|quadratica|linear|function|func/,
-      mistake: "Nao faca uma operacao em apenas um lado da equacao. O equilibrio so permanece se os dois lados recebem o mesmo tratamento.",
+      test: /álgebra|equation|equac|expression|express|exponent|expoente|system|sistema|slope|inclinação|quadratic|quadrática|linear|function|func/,
+      mistake: "Não faça uma operação em apenas um lado da equação. O equilíbrio so permanece se os dois lados recebem o mesmo tratamento.",
       check: "Substitua sua resposta no problema original. Se os dois lados combinam, o valor faz sentido.",
     },
     {
-      test: /base|binary|binario|scientific|cientifica|power|potencia/,
-      mistake: "Nao leia outro sistema de numeracao como se fosse sempre base dez. Cada posicao tem um valor proprio.",
-      check: "Expanda o numero em valores de posicao ou potencias. A soma deve reconstruir o valor pedido.",
+      test: /base|binary|binário|scientific|científica|power|potência/,
+      mistake: "Não leia outro sistema de numeracao como se fosse sempre base dez. Cada posição tem um valor próprio.",
+      check: "Expanda o número em valores de posição ou potências. A soma deve reconstruir o valor pedido.",
     },
   ],
   en: [
@@ -485,8 +486,8 @@ const tutorSupport = {
     },
     {
       test: /geometry|measure|metric|mensuration|volume|circle|pythagorean|distance/,
-      mistake: "Do not use a formula before naming what each measure means. Radius, diameter, height, area, and volume are different things.",
-      check: "Check the units: length uses plain units, area uses square units, and volume uses cubic units.",
+      mistake: "Do not use a formula before naming what each measure means. Radius, diameter, height, área, and volume are different things.",
+      check: "Check the units: length uses plain units, área uses square units, and volume uses cubic units.",
     },
     {
       test: /algebra|equation|expression|exponent|system|slope|quadratic|linear|function/,
@@ -929,6 +930,9 @@ function renderExercise(lesson) {
   title.textContent = displayLesson.title;
   time.textContent = displayLesson.time;
   prompt.textContent = displayLesson.prompt;
+  const answerQuestionLabel = document.createElement("strong");
+  answerQuestionLabel.textContent = t("answerPromptLabel");
+  answerQuestion.replaceChildren(answerQuestionLabel, document.createTextNode(` ${displayLesson.prompt}`));
   feedback.textContent = "";
   feedback.dataset.state = "neutral";
   correction.hidden = true;
@@ -939,12 +943,6 @@ function renderExercise(lesson) {
   answer.placeholder = lesson.answerType === "expression" ? t("expressionPlaceholder") : t("numberPlaceholder");
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
   body.innerHTML = `
-    <div class="lesson-note">
-      <strong>${t("lessonFocus")}</strong>
-      <p>${displayLesson.teacherAim}</p>
-      <small>${displayLesson.sourceFocus}</small>
-      ${displayLesson.examplePt ? `<div class="example-pt"><strong>${t("howTo")}</strong><p>${displayLesson.examplePt}</p></div>` : ""}
-    </div>
     ${renderQuickTutor(displayLesson)}
     ${
       displayLesson.memoryRefresh?.workedSteps?.length
