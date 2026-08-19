@@ -139,6 +139,17 @@ const copy = {
     stateOpen: "Abrir",
     lessonFocus: "Foco da licao",
     howTo: "Como fazer",
+    tutorTitle: "Tutor rapido",
+    tutorIntro: "Leia em um minuto, depois resolva com passos visiveis.",
+    tutorWarmMemory: "1. Lembre",
+    tutorWorkedExample: "2. Veja",
+    tutorGuidedTry: "3. Tente guiado",
+    tutorQuickCheck: "4. Confira",
+    tutorDeepDive: "Explicacao curta, mas completa",
+    tutorCommonMistake: "Erro comum",
+    tutorCheckAnswer: "Como conferir",
+    tutorRhythm: "Ritmo de trabalho",
+    tutorNoGuidedSteps: "Use o ritmo abaixo como seus passos. Diga cada passo antes de calcular.",
     refresherTitle: "Precisa relembrar?",
     refresherMethod: "Metodo",
     workedTitle: "Como resolver esta conta, passo por passo",
@@ -264,6 +275,17 @@ const copy = {
     stateOpen: "Open",
     lessonFocus: "Lesson focus",
     howTo: "How to work it",
+    tutorTitle: "Quick tutor",
+    tutorIntro: "Read this in one minute, then solve with visible steps.",
+    tutorWarmMemory: "1. Remember",
+    tutorWorkedExample: "2. See it",
+    tutorGuidedTry: "3. Guided try",
+    tutorQuickCheck: "4. Check",
+    tutorDeepDive: "Short but complete explanation",
+    tutorCommonMistake: "Common mistake",
+    tutorCheckAnswer: "How to check",
+    tutorRhythm: "Work rhythm",
+    tutorNoGuidedSteps: "Use the rhythm below as your steps. Say each step before calculating.",
     refresherTitle: "Need a refresher?",
     refresherMethod: "Method",
     workedTitle: "How to solve this, step by step",
@@ -410,6 +432,149 @@ function renderSteps(steps) {
   return steps?.length
     ? `<ol class="worked-steps">${steps.map((step) => `<li>${step}</li>`).join("")}</ol>`
     : "";
+}
+
+const tutorSupport = {
+  pt: [
+    {
+      test: /percent|porcent|discount|desconto|interest|juros|growth|crescimento|profit|lucro|budget|orcamento|business|financeira/,
+      mistake: "Nao misture o valor original, a porcentagem e o resultado. Primeiro encontre a parte percentual, depois decida se deve somar ou subtrair.",
+      check: "Compare com 10%, 50% ou 100%. Se a resposta ficar maior ou menor do que esses marcos permitem, revise.",
+    },
+    {
+      test: /fraction|fracao|fracoes|decimal|decim|repeating|dizima|radical|raiz/,
+      mistake: "Nao trate numerador, denominador e casas decimais como etiquetas soltas. Eles sempre dizem o tamanho das partes.",
+      check: "Estime o tamanho: a resposta deve ser menor, maior ou proxima de 1? Depois confira reduzindo ou convertendo.",
+    },
+    {
+      test: /ratio|razao|proportion|propor|rate|taxa|speed|velocidade|scale|escala|unit cost|custo unitario|dimensional/,
+      mistake: "Nao compare quantidades diferentes sem transformar para a mesma unidade ou para a mesma parte.",
+      check: "Escreva as unidades ao lado dos numeros. Se as unidades finais nao combinam com a pergunta, ajuste o caminho.",
+    },
+    {
+      test: /geometry|geometr|measure|medida|metric|metrica|mensuration|mensuracao|volume|circle|circulo|pythagorean|pitagoras|distance|distancia/,
+      mistake: "Nao use uma formula antes de nomear o que cada medida representa. Raio, diametro, altura, area e volume nao sao a mesma coisa.",
+      check: "Confira as unidades: comprimento usa unidade simples, area usa unidade quadrada, volume usa unidade cubica.",
+    },
+    {
+      test: /algebra|equation|equac|expression|express|exponent|expoente|system|sistema|slope|inclinacao|quadratic|quadratica|linear|function|func/,
+      mistake: "Nao faca uma operacao em apenas um lado da equacao. O equilibrio so permanece se os dois lados recebem o mesmo tratamento.",
+      check: "Substitua sua resposta no problema original. Se os dois lados combinam, o valor faz sentido.",
+    },
+    {
+      test: /base|binary|binario|scientific|cientifica|power|potencia/,
+      mistake: "Nao leia outro sistema de numeracao como se fosse sempre base dez. Cada posicao tem um valor proprio.",
+      check: "Expanda o numero em valores de posicao ou potencias. A soma deve reconstruir o valor pedido.",
+    },
+  ],
+  en: [
+    {
+      test: /percent|discount|interest|growth|profit|budget|business/,
+      mistake: "Do not mix up the original amount, the percent part, and the final result. Find the percent part first, then decide whether to add or subtract.",
+      check: "Compare with 10%, 50%, or 100%. If the answer is bigger or smaller than those landmarks allow, review it.",
+    },
+    {
+      test: /fraction|decimal|repeating|radical|root/,
+      mistake: "Do not treat numerators, denominators, and decimal places as loose labels. They always name the size of the parts.",
+      check: "Estimate the size: should the answer be less than, greater than, or close to 1? Then check by reducing or converting.",
+    },
+    {
+      test: /ratio|proportion|rate|speed|scale|unit cost|dimensional/,
+      mistake: "Do not compare unlike quantities before turning them into the same unit or the same kind of part.",
+      check: "Write the units beside the numbers. If the final units do not match the question, adjust the path.",
+    },
+    {
+      test: /geometry|measure|metric|mensuration|volume|circle|pythagorean|distance/,
+      mistake: "Do not use a formula before naming what each measure means. Radius, diameter, height, area, and volume are different things.",
+      check: "Check the units: length uses plain units, area uses square units, and volume uses cubic units.",
+    },
+    {
+      test: /algebra|equation|expression|exponent|system|slope|quadratic|linear|function/,
+      mistake: "Do not do an operation on only one side of an equation. The balance stays true only when both sides receive the same treatment.",
+      check: "Substitute your answer into the original problem. If both sides match, the value makes sense.",
+    },
+    {
+      test: /base|binary|scientific|power/,
+      mistake: "Do not read another number system as if it were always base ten. Each position has its own value.",
+      check: "Expand the number into place values or powers. The sum should rebuild the value you need.",
+    },
+  ],
+};
+
+function lessonSearchText(lesson) {
+  return [lesson.id, lesson.grade, lesson.block, lesson.title, lesson.sourceFocus]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
+function tutorSupportFor(lesson) {
+  const text = lessonSearchText(lesson);
+  const support = tutorSupport[language].find((item) => item.test.test(text)) || tutorSupport.en[0];
+  return {
+    mistake: support.mistake,
+    check: support.check,
+  };
+}
+
+function renderQuickTutor(lesson) {
+  if (!lesson.memoryRefresh) return "";
+  const support = tutorSupportFor(lesson);
+  const guidedPreview = lesson.guidedSteps?.length
+    ? lesson.guidedSteps.slice(0, 2).map((step) => step.label)
+    : [t("tutorNoGuidedSteps")];
+  return `
+    <section class="quick-tutor" aria-labelledby="quick-tutor-title">
+      <div class="quick-tutor__header">
+        <div>
+          <h4 id="quick-tutor-title">${t("tutorTitle")}</h4>
+          <p>${t("tutorIntro")}</p>
+        </div>
+      </div>
+      <div class="quick-tutor__grid">
+        <article>
+          <span>${t("tutorWarmMemory")}</span>
+          <p>${lesson.memoryRefresh.idea}</p>
+        </article>
+        <article>
+          <span>${t("tutorWorkedExample")}</span>
+          <p>${lesson.memoryRefresh.example}</p>
+        </article>
+        <article>
+          <span>${t("tutorGuidedTry")}</span>
+          <ul>${guidedPreview.map((step) => `<li>${step}</li>`).join("")}</ul>
+        </article>
+        <article>
+          <span>${t("tutorQuickCheck")}</span>
+          <p>${support.check}</p>
+        </article>
+      </div>
+    </section>
+  `;
+}
+
+function renderDeepTutor(lesson) {
+  if (!lesson.memoryRefresh) return "";
+  const support = tutorSupportFor(lesson);
+  return `
+    <details class="memory-refresh">
+      <summary>${t("tutorDeepDive")}</summary>
+      <div class="memory-refresh__content">
+        <strong>${t("refresherMethod")}</strong>
+        <ol>
+          ${lesson.memoryRefresh.method.map((step) => `<li>${step}</li>`).join("")}
+        </ol>
+        <strong>${t("tutorCommonMistake")}</strong>
+        <p>${support.mistake}</p>
+        <strong>${t("tutorCheckAnswer")}</strong>
+        <p>${support.check}</p>
+        <strong>${t("tutorRhythm")}</strong>
+        <ol>
+          ${lesson.rhythm.map((step) => `<li>${step}</li>`).join("")}
+        </ol>
+      </div>
+    </details>
+  `;
 }
 
 function localText(value) {
@@ -774,6 +939,13 @@ function renderExercise(lesson) {
   answer.placeholder = lesson.answerType === "expression" ? t("expressionPlaceholder") : t("numberPlaceholder");
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
   body.innerHTML = `
+    <div class="lesson-note">
+      <strong>${t("lessonFocus")}</strong>
+      <p>${displayLesson.teacherAim}</p>
+      <small>${displayLesson.sourceFocus}</small>
+      ${displayLesson.examplePt ? `<div class="example-pt"><strong>${t("howTo")}</strong><p>${displayLesson.examplePt}</p></div>` : ""}
+    </div>
+    ${renderQuickTutor(displayLesson)}
     ${
       displayLesson.memoryRefresh?.workedSteps?.length
         ? `<section class="worked-solution" aria-labelledby="worked-solution-title">
@@ -784,28 +956,7 @@ function renderExercise(lesson) {
           </section>`
         : ""
     }
-    <div class="lesson-note">
-      <strong>${t("lessonFocus")}</strong>
-      <p>${displayLesson.teacherAim}</p>
-      <small>${displayLesson.sourceFocus}</small>
-      ${displayLesson.examplePt ? `<div class="example-pt"><strong>${t("howTo")}</strong><p>${displayLesson.examplePt}</p></div>` : ""}
-    </div>
-    ${
-      displayLesson.memoryRefresh
-        ? `<details class="memory-refresh" open>
-            <summary>${t("refresherTitle")}</summary>
-            <div class="memory-refresh__content">
-              <p>${displayLesson.memoryRefresh.idea}</p>
-              <strong>${t("refresherMethod")}</strong>
-              <ol>
-                ${displayLesson.memoryRefresh.method.map((step) => `<li>${step}</li>`).join("")}
-              </ol>
-              <strong>${t("refresherExample")}</strong>
-              <p>${displayLesson.memoryRefresh.example}</p>
-            </div>
-          </details>`
-        : ""
-    }
+    ${renderDeepTutor(displayLesson)}
     ${
       displayLesson.mathTip
         ? `<aside class="math-tip">
@@ -814,9 +965,6 @@ function renderExercise(lesson) {
           </aside>`
         : ""
     }
-    <ol>
-      ${displayLesson.rhythm.map((step) => `<li>${step}</li>`).join("")}
-    </ol>
     ${
       displayLesson.guidedSteps?.length
         ? `<div class="guided-steps">

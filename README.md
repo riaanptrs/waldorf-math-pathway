@@ -19,6 +19,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Static website that opens from `index.html`
 - Original Grade 5 through Grade 9 sample math exercises
 - Gentle answer checking
+- Quick tutor lesson flow: remember, see an example, try guided steps, and check the answer
 - Guided worksheet-style activities with Portuguese examples, step checks, and answer keys
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
