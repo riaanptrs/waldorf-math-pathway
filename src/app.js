@@ -172,8 +172,10 @@ const copy = {
     emptyAnswer: "Digite uma resposta primeiro.",
     cloudCorrect: (name) => `Correto. Salvo no portfólio compartilhado de ${name}.`,
     localCorrect: "Correto. Salvo neste dispositivo. Entre na conta para salvar no portfólio compartilhado.",
+    catalogPendingCorrect: "Correto. Salvo neste dispositivo; a sincronização em nuvem desta lição será ativada após atualizar o catálogo.",
     cloudTry: "Precisa de correção. Salvo para revisão no portfólio compartilhado. Você pode tentar de novo ou abrir a resposta guiada.",
     localTry: "Precisa de correção. Salvo neste dispositivo. Você pode tentar de novo ou abrir a resposta guiada.",
+    catalogPendingTry: "Precisa de correção. Salvo neste dispositivo; a sincronização em nuvem desta lição será ativada após atualizar o catálogo.",
     tryAgainButton: "Tentar de novo",
     guidedAnswerButton: "Ver resposta guiada",
     guidedAnswerTitle: "Resposta guiada",
@@ -308,8 +310,10 @@ const copy = {
     emptyAnswer: "Try entering an answer first.",
     cloudCorrect: (name) => `Correct. Saved to ${name}'s shared portfólio.`,
     localCorrect: "Correct. Saved on this device. Sign in to save it to the shared portfólio.",
+    catalogPendingCorrect: "Correct. Saved on this device; cloud sync for this lesson will turn on after the catalogue is updated.",
     cloudTry: "Needs correction. Saved for review in the shared portfólio. You can try again or open the guided answer.",
     localTry: "Needs correction. Saved on this device. You can try again or open the guided answer.",
+    catalogPendingTry: "Needs correction. Saved on this device; cloud sync for this lesson will turn on after the catalogue is updated.",
     tryAgainButton: "Try again",
     guidedAnswerButton: "See guided answer",
     guidedAnswerTitle: "Guided answer",
@@ -738,7 +742,7 @@ async function saveLessonProgress(lesson, value, isCorrect) {
   const now = new Date().toISOString();
   const learner = activeLearner();
 
-  if (!learner) {
+  function saveLocal() {
     const progress = readLocalProgress();
     const existingIndex = progress.findIndex((entry) => entry.lessonId === lesson.id);
     const next = {
@@ -753,6 +757,10 @@ async function saveLessonProgress(lesson, value, isCorrect) {
     if (existingIndex >= 0) progress[existingIndex] = next;
     else progress.push(next);
     writeLocalProgress(progress);
+  }
+
+  if (!learner) {
+    saveLocal();
     return "local";
   }
 
@@ -783,8 +791,15 @@ async function saveLessonProgress(lesson, value, isCorrect) {
     }),
   ]);
 
-  if (responseResult.error) throw responseResult.error;
-  if (progressResult.error) throw progressResult.error;
+  const saveError = responseResult.error || progressResult.error;
+  if (saveError) {
+    const message = String(saveError.message || "");
+    if (saveError.code === "23503" && message.includes("course_activities")) {
+      saveLocal();
+      return "catalog-pending";
+    }
+    throw saveError;
+  }
   await loadCloudProgress();
   return "cloud";
 }
@@ -1182,6 +1197,8 @@ form.addEventListener("submit", async (event) => {
       feedback.textContent =
         savedTo === "cloud"
           ? t("cloudCorrect", activeLearner()?.nickname)
+          : savedTo === "catalog-pending"
+            ? t("catalogPendingCorrect")
           : t("localCorrect");
       feedback.dataset.state = "correct";
       correction.hidden = true;
@@ -1190,6 +1207,8 @@ form.addEventListener("submit", async (event) => {
       feedback.textContent =
         savedTo === "cloud"
           ? t("cloudTry")
+          : savedTo === "catalog-pending"
+            ? t("catalogPendingTry")
           : t("localTry");
       feedback.dataset.state = "try";
       correction.hidden = true;

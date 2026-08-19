@@ -1,0 +1,31 @@
+insert into public.course_activities (activity_key, unit_number, unit_position, title, path, is_portfolio, is_active)
+values
+  ('g5-math-decimal-tenths', 5, 1, 'Math: Tenths on the Number Line', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-decimal-tenths', false, true),
+  ('g5-math-decimal-hundredths-money', 5, 2, 'Math: Hundredths and Money', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-decimal-hundredths-money', false, true),
+  ('g5-math-fraction-decimal-quarter', 5, 3, 'Math: One Quarter as a Decimal', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-fraction-decimal-quarter', false, true),
+  ('g5-math-metric-centimeters', 5, 4, 'Math: Meters and Centimeters', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-metric-centimeters', false, true),
+  ('g5-math-fraction-review-journey', 5, 5, 'Math: Add Parts of the Journey', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-fraction-review-journey', false, true),
+  ('g5-math-freehand-circle-diameter', 5, 6, 'Math: Circle, Radius, Diameter', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-freehand-circle-diameter', false, true),
+  ('g5-math-pentagon-perimeter', 5, 7, 'Math: The Pentagon Perimeter', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-pentagon-perimeter', false, true),
+  ('g5-math-symmetry-balance', 5, 8, 'Math: Balance and Symmetry', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-symmetry-balance', false, true),
+  ('g5-math-greek-games-distance', 5, 9, 'Math: Greek Games Distance', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-greek-games-distance', false, true),
+  ('g5-math-ancient-measures', 5, 10, 'Math: From Cubits to Meters', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g5-ancient-measures', false, true),
+  ('g6-math-real-world-prices', 6, 1, 'Math: Numbers in the Real World', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-real-world-prices', false, true),
+  ('g6-math-fraction-multiplication', 6, 2, 'Math: Multiplying Fractions', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-fraction-multiplication', false, true),
+  ('g6-math-fraction-division', 6, 3, 'Math: Dividing Fractions', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-fraction-division', false, true),
+  ('g6-math-percent-half', 6, 4, 'Math: Fractions, Decimals and Percentages', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-percent-half', false, true),
+  ('g6-math-fair-discount', 6, 5, 'Math: A Fair Discount', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-fair-discount', false, true),
+  ('g6-math-better-deal', 6, 6, 'Math: Better Deal?', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-better-deal', false, true),
+  ('g6-math-cost-price-profit', 6, 7, 'Math: Cost, Price and Profit', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-cost-price-profit', false, true),
+  ('g6-math-simple-interest', 6, 8, 'Math: Interest and Borrowing Carefully', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-simple-interest', false, true),
+  ('g6-math-budget-challenge', 6, 9, 'Math: Budget Challenge', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-budget-challenge', false, true),
+  ('g6-math-geometry-precision', 6, 10, 'Math: Geometry with Precision', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-geometry-precision', false, true),
+  ('g6-math-business-order', 6, 11, 'Math: Business Writing Studio', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-business-order', false, true),
+  ('g6-math-market-day-portfólio', 6, 12, 'Math: Market Day Portfolio', 'https://riaanptrs.github.io/waldorf-math-pathway/#practice:g6-market-day-portfólio', true, true)
+on conflict (activity_key) do update
+set unit_number = excluded.unit_number,
+    unit_position = excluded.unit_position,
+    title = excluded.title,
+    path = excluded.path,
+    is_portfolio = excluded.is_portfolio,
+    is_active = excluded.is_active;
