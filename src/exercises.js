@@ -1066,13 +1066,14 @@ const lessonTranslations = {
     sourceFocus: "Clima geométrico do 5º ano: equilíbrio, formas espelhadas e distâncias iguais.",
     teacherAim: "Os estudantes conectam simetria com distância igual a partir de uma linha central.",
     memoryRefresh: {
-      idea: "Um ponto simétrico fica a mesma distância da linha de simetria no lado oposto.",
-      method: ["Encontre a linha de simetria.", "Meça a distância do ponto até a linha.", "Coloque o ponto correspondente na mesma distância do outro lado.", "Confira o equilíbrio."],
-      example: "Se um ponto está 3 cm à esquerda da linha, seu espelho está 3 cm à direita da linha.",
+      idea: "A linha de simetria funciona como um espelho: o ponto imagem fica do outro lado, mas na mesma distância da linha.",
+      method: ["Encontre a linha de simetria.", "Leia a distância do ponto até a linha.", "Copie essa mesma distância no lado oposto.", "Responda a distância até a linha, não a distância total entre os dois pontos."],
+      example: "Se um ponto está 3 cm à esquerda da linha, seu espelho está 3 cm à direita. A distância entre os dois pontos seria 6 cm, mas a pergunta pede 3 cm.",
+      workedSteps: ["O ponto original está 6 cm à esquerda da linha.", "Na simetria, o ponto espelho fica à mesma distância da linha.", "Então o ponto espelho fica 6 cm à direita da linha."],
     },
     rhythm: ["Encontre a linha espelho.", "Meça a distância.", "Repita do outro lado."],
-    prompt: "Um ponto está 6 cm à esquerda de uma linha de simetria. A que distância à direita da linha fica seu ponto espelho?",
-    correction: "Um ponto espelho fica a mesma distância no lado oposto. Ele fica 6 cm a direita.",
+    prompt: "Um ponto está 6 cm à esquerda de uma linha de simetria. O ponto espelho fica do outro lado da linha, à mesma distância. Quantos centímetros à direita da linha ele fica?",
+    correction: "O ponto espelho fica à mesma distância da linha, só que no lado oposto. Como o ponto original está a 6 cm da linha, o ponto espelho fica 6 cm à direita.",
   },
   "g5-greek-games-distance": {
     grade: "5º ano",
@@ -3566,9 +3567,9 @@ Object.assign(extraPracticeBank.pt, {
     { prompt: "Treino 3: Um quadrado tem lado de 9 cm. Qual é o perímetro?", answerType: "number", answer: 36, tolerance: 0, steps: ["Um quadrado tem 4 lados iguais.", "4 x 9 = 36 cm."] },
   ],
   "g5-symmetry-balance": [
-    { prompt: "Treino 1: Um ponto está 4 cm à esquerda da linha de simetria. A imagem fica a quantos cm à direita?", answerType: "number", answer: 4, tolerance: 0, steps: ["Pontos espelhados ficam à mesma distância da linha.", "A distância à direita também é 4 cm."] },
-    { prompt: "Treino 2: Um ponto está 9 cm acima da linha de simetria. A imagem fica a quantos cm abaixo?", answerType: "number", answer: 9, tolerance: 0, steps: ["A simetria conserva a distância.", "A imagem fica 9 cm abaixo."] },
-    { prompt: "Treino 3: Um ponto e sua imagem estão separados por 10 cm, com a linha no meio. Qual é a distância de cada ponto até a linha?", answerType: "number", answer: 5, tolerance: 0, steps: ["A linha fica no meio da distância total.", "10 dividido por 2 = 5 cm."] },
+    { prompt: "Treino 1: Um ponto está 4 cm à esquerda da linha de simetria. Seu ponto espelho fica do outro lado. Quantos cm à direita da linha ele fica?", answerType: "number", answer: 4, tolerance: 0, steps: ["Pontos espelhados ficam à mesma distância da linha.", "Se um lado mede 4 cm, o outro lado também mede 4 cm."] },
+    { prompt: "Treino 2: Um ponto está 9 cm acima da linha de simetria. Seu ponto espelho fica do outro lado. Quantos cm abaixo da linha ele fica?", answerType: "number", answer: 9, tolerance: 0, steps: ["A simetria mantém a mesma distância até a linha.", "Se o ponto está 9 cm acima, a imagem fica 9 cm abaixo."] },
+    { prompt: "Treino 3: Um ponto e sua imagem estão separados por 10 cm ao todo, e a linha de simetria está exatamente no meio. Quantos cm há da linha até cada ponto?", answerType: "number", answer: 5, tolerance: 0, steps: ["A distância total entre os dois pontos é 10 cm.", "A linha divide essa distância em duas partes iguais.", "10 dividido por 2 = 5 cm para cada lado."] },
   ],
   "g5-greek-games-distance": [
     { prompt: "Treino 1: Um aluno corre 3 voltas de 80 metros. Qual é a distância total?", answerType: "number", answer: 240, tolerance: 0, steps: ["Uma volta tem 80 m.", "3 x 80 = 240 m."] },
