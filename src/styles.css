@@ -744,6 +744,46 @@ main {
   background: linear-gradient(135deg, rgba(209, 154, 63, 0.82), rgba(178, 78, 90, 0.72));
 }
 
+.ratio-lab {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid rgba(178, 78, 90, 0.25);
+  border-radius: 8px;
+  background: #fff8f5;
+  font-family: Arial, sans-serif;
+}
+
+.ratio-model {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ratio-group {
+  display: grid;
+  gap: 7px;
+}
+
+.ratio-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 280px;
+}
+
+.ratio-dots span {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(36, 49, 43, 0.34);
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.ratio-dots span[style="--group:1"] { background: var(--sky); }
+.ratio-dots span[style="--group:2"] { background: var(--berry); }
+
 .discovery-card > span {
   display: grid;
   flex: 0 0 34px;

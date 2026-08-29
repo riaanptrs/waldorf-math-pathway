@@ -15,6 +15,8 @@ Last updated: 2026-08-29.
 - Learners can choose an untimed learning path or fluency timing, see only personal progress, and complete a relationship-based recovery round after mistakes.
 - Grade 5 now includes a ten-lesson Fraction Path: equivalence, reduction, like denominators, improper and mixed numbers, unlike denominators, comparison, multiplication with cancellation, division with reciprocals, and cumulative review.
 - Fraction Path lessons use visual bars before formal methods and remain original rather than reproducing source workbook exercises.
+- Grade 7 now includes a twelve-lesson Ratios and Rates Path that develops ratio meaning, multi-part ratios, whole and decimal forms, reciprocals, sharing, similar figures, shadows, direct and inverse relationships, and lever balance.
+- Grade 7 ratio work deliberately uses multiplicative reasoning before formal Grade 8 proportion algorithms.
 
 ## Git
 

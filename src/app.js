@@ -765,6 +765,14 @@ function renderFractionVisual(rows) {
   </section>`;
 }
 
+function renderRatioVisual(groups) {
+  if (!groups?.length) return "";
+  return `<section class="ratio-lab" aria-label="Ratio model">
+    <p class="eyebrow">${language === "pt" ? "Relação visível" : "Visible relationship"}</p>
+    <div class="ratio-model">${groups.map((group, groupIndex) => `<div class="ratio-group"><div class="ratio-dots">${Array.from({ length: group.count }, () => `<span style="--group:${groupIndex}"></span>`).join("")}</div><strong>${group.label}</strong></div>`).join("")}</div>
+  </section>`;
+}
+
 function hideAttemptTools() {
   attemptTools.hidden = true;
   attemptTools.innerHTML = "";
@@ -1089,6 +1097,7 @@ function renderExercise(lesson) {
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
   body.innerHTML = `
     ${renderFractionVisual(displayLesson.visualModel)}
+    ${renderRatioVisual(displayLesson.ratioModel)}
     <section class="discovery-card">
       <span>1</span>
       <div><h4>${t("discoveryTitle")}</h4><p>${t("discoveryCopy")}</p></div>
