@@ -757,6 +757,14 @@ function showAttemptTools() {
   `;
 }
 
+function renderFractionVisual(rows) {
+  if (!rows?.length) return "";
+  return `<section class="fraction-lab" aria-label="Fraction model">
+    <p class="eyebrow">${language === "pt" ? "Laboratório visual" : "Visual laboratory"}</p>
+    ${rows.map((row) => `<div class="fraction-model"><div class="fraction-bar" style="--parts:${row.parts}">${Array.from({ length: row.parts }, (_, index) => `<span class="${index < row.shaded ? "is-shaded" : ""}"></span>`).join("")}</div><strong>${row.label}</strong></div>`).join("")}
+  </section>`;
+}
+
 function hideAttemptTools() {
   attemptTools.hidden = true;
   attemptTools.innerHTML = "";
@@ -1080,6 +1088,7 @@ function renderExercise(lesson) {
   answer.placeholder = lesson.answerType === "expression" ? t("expressionPlaceholder") : t("numberPlaceholder");
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
   body.innerHTML = `
+    ${renderFractionVisual(displayLesson.visualModel)}
     <section class="discovery-card">
       <span>1</span>
       <div><h4>${t("discoveryTitle")}</h4><p>${t("discoveryCopy")}</p></div>

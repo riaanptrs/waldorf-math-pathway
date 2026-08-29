@@ -704,6 +704,46 @@ main {
   line-height: 1.5;
 }
 
+.fraction-lab {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid rgba(79, 142, 176, 0.3);
+  border-radius: 8px;
+  background: #f5fbfd;
+  font-family: Arial, sans-serif;
+}
+
+.fraction-model {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 68px;
+  gap: 12px;
+  align-items: center;
+}
+
+.fraction-bar {
+  display: grid;
+  grid-template-columns: repeat(var(--parts), minmax(0, 1fr));
+  min-height: 42px;
+  border: 2px solid var(--moss);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fraction-bar span {
+  border-right: 1px solid rgba(47, 75, 58, 0.55);
+  background: #fffdf7;
+}
+
+.fraction-bar span:last-child {
+  border-right: 0;
+}
+
+.fraction-bar span.is-shaded {
+  background: linear-gradient(135deg, rgba(209, 154, 63, 0.82), rgba(178, 78, 90, 0.72));
+}
+
 .discovery-card > span {
   display: grid;
   flex: 0 0 34px;

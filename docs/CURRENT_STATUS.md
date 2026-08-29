@@ -13,6 +13,8 @@ Last updated: 2026-08-29.
 - Every lesson now has at least one curated practice item in English and Portuguese; the 20 lessons that previously had none now have three each.
 - Daily Fact Rhythm generates original balanced sets of 60 addition, subtraction, multiplication, and exact-division facts for Grades 5 and 6.
 - Learners can choose an untimed learning path or fluency timing, see only personal progress, and complete a relationship-based recovery round after mistakes.
+- Grade 5 now includes a ten-lesson Fraction Path: equivalence, reduction, like denominators, improper and mixed numbers, unlike denominators, comparison, multiplication with cancellation, division with reciprocals, and cumulative review.
+- Fraction Path lessons use visual bars before formal methods and remain original rather than reproducing source workbook exercises.
 
 ## Git
 
