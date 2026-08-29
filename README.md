@@ -29,6 +29,8 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Daily Fact Rhythm with 60 balanced original arithmetic facts, learning and fluency paths, optional timing, personal records, and a six-fact recovery round
 - Complete original Grade 5 Fraction Path with ten sequenced bilingual lessons, visual fraction bars, guided discovery, optional steps, and cumulative practice
 - Complete original Grade 7 Ratios and Rates Path with twelve bilingual relationship-first lessons, visible ratio groups, similar figures, shadows, direct and inverse change, and lever balance
+- Complete original Grade 8 Proportions and Graphs Path with ten bilingual lessons connecting constant rates, tables, equations, coordinate graphs, direct and inverse proportion, scale, and practical cost
+- Responsive table-and-coordinate-graph models that let learners see a relationship before applying its equation
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
 
@@ -46,9 +48,9 @@ Algebra I preparation rather than copied book material.
 
 ## Suggested Next Steps
 
-1. Deepen the Grade 5 decimal fractions and freehand geometry block with drawing prompts.
-2. Deepen the Grade 6 business math block with more interactive portfolio tasks.
-3. Add three to five curated practice variations to every lesson; do not generate them by merely changing numbers unless the mathematical conditions are checked.
-4. Add visual manipulatives for fractions, ratios, signed numbers, geometry, and early algebra.
-5. Record hints used and independent mastery in the learner portfolio once the shared database schema is ready.
-6. Add a fuller math portfolio view once the English portfolio is ready to show subject-specific filters.
+1. Deepen the Grade 8 algebra and solid-geometry sequences while keeping formal Algebra I work in Grade 9.
+2. Deepen the Grade 5 decimal fractions and freehand geometry block with drawing prompts.
+3. Deepen the Grade 6 business math block with more interactive portfolio tasks.
+4. Add three to five curated practice variations to every lesson; do not generate them by merely changing numbers unless the mathematical conditions are checked.
+5. Add visual manipulatives for signed numbers, geometry, and early algebra.
+6. Record hints used and independent mastery in the learner portfolio once the shared database schema is ready.

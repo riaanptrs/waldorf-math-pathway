@@ -784,6 +784,42 @@ main {
 .ratio-dots span[style="--group:1"] { background: var(--sky); }
 .ratio-dots span[style="--group:2"] { background: var(--berry); }
 
+.graph-lab {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid rgba(47, 75, 58, 0.25);
+  border-radius: 8px;
+  background: #f7faf2;
+  font-family: Arial, sans-serif;
+}
+
+.graph-lab__content {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.4fr) minmax(260px, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.graph-lab table { width: 100%; border-collapse: collapse; text-align: center; }
+.graph-lab th, .graph-lab td { padding: 7px; border: 1px solid rgba(47, 75, 58, 0.22); }
+.graph-lab th { background: rgba(209, 154, 63, 0.16); }
+.coordinate-graph { width: 100%; min-height: 205px; overflow: visible; }
+.graph-grid line { stroke: rgba(47, 75, 58, 0.1); stroke-width: 1; }
+.graph-axis { stroke: var(--ink); stroke-width: 2; }
+.graph-line { fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.graph-point { stroke: #fffdf7; stroke-width: 2; }
+.graph-line.graph-series-a { stroke: var(--berry); fill: none; }
+.graph-line.graph-series-b { stroke: var(--sky); fill: none; }
+.graph-point.graph-series-a { stroke: #fffdf7; fill: var(--berry); }
+.graph-point.graph-series-b { stroke: #fffdf7; fill: var(--sky); }
+.coordinate-graph text { fill: var(--ink); font-size: 11px; }
+
+@media (max-width: 620px) {
+  .graph-lab__content { grid-template-columns: 1fr; }
+}
+
 .discovery-card > span {
   display: grid;
   flex: 0 0 34px;

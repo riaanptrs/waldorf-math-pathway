@@ -17,6 +17,8 @@ Last updated: 2026-08-29.
 - Fraction Path lessons use visual bars before formal methods and remain original rather than reproducing source workbook exercises.
 - Grade 7 now includes a twelve-lesson Ratios and Rates Path that develops ratio meaning, multi-part ratios, whole and decimal forms, reciprocals, sharing, similar figures, shadows, direct and inverse relationships, and lever balance.
 - Grade 7 ratio work deliberately uses multiplicative reasoning before formal Grade 8 proportion algorithms.
+- Grade 8 now includes a ten-lesson Proportions and Graphs Path: constant rates, proportion tables, the origin, `y = kx`, graph reading, missing coordinates, slope comparison, non-proportional starting values, inverse proportion, and a scale-and-cost capstone.
+- Grade 8 proportion lessons use responsive value tables and coordinate graphs, original practical contexts, bilingual support, progressive incorrect-answer hints, and cumulative practice drawn from neighbouring lessons in the block.
 
 ## Git
 

@@ -773,6 +773,30 @@ function renderRatioVisual(groups) {
   </section>`;
 }
 
+function renderGraphVisual(model) {
+  if (!model?.points?.length) return "";
+  const allPoints = [...model.points, ...(model.secondPoints || [])];
+  const maxX = Math.max(1, ...allPoints.map(([x]) => x));
+  const maxY = Math.max(1, ...allPoints.map(([, y]) => y));
+  const plot = (points, className) => {
+    const coordinates = points.map(([x, y]) => `${42 + (x / maxX) * 238},${170 - (y / maxY) * 138}`).join(" ");
+    return `${model.line ? `<polyline class="graph-line ${className}" points="${coordinates}" />` : ""}${points.map(([x, y]) => `<circle class="graph-point ${className}" cx="${42 + (x / maxX) * 238}" cy="${170 - (y / maxY) * 138}" r="4"><title>(${x}, ${y})</title></circle>`).join("")}`;
+  };
+  const rows = model.points.map(([x, y]) => `<tr><td>${x}</td><td>${y}</td></tr>`).join("");
+  return `<section class="graph-lab" aria-label="${language === "pt" ? "Tabela e gráfico da relação" : "Relationship table and graph"}">
+    <p class="eyebrow">${language === "pt" ? "Da tabela ao gráfico" : "From table to graph"}</p>
+    <div class="graph-lab__content">
+      <table><thead><tr><th>${model.xLabel}</th><th>${model.yLabel}</th></tr></thead><tbody>${rows}</tbody></table>
+      <svg class="coordinate-graph" viewBox="0 0 320 205" role="img" aria-label="${model.yLabel} versus ${model.xLabel}">
+        <g class="graph-grid">${[0,1,2,3,4].map((n) => `<line x1="42" y1="${170 - n * 34.5}" x2="280" y2="${170 - n * 34.5}" />`).join("")}${[0,1,2,3,4,5,6].map((n) => `<line x1="${42 + n * 39.67}" y1="32" x2="${42 + n * 39.67}" y2="170" />`).join("")}</g>
+        <line class="graph-axis" x1="42" y1="170" x2="292" y2="170" /><line class="graph-axis" x1="42" y1="182" x2="42" y2="22" />
+        ${plot(model.points, "graph-series-a")}${model.secondPoints?.length ? plot(model.secondPoints, "graph-series-b") : ""}
+        <text x="280" y="194">${model.xLabel}</text><text x="8" y="27">${model.yLabel}</text><text x="29" y="187">0</text>
+      </svg>
+    </div>
+  </section>`;
+}
+
 function hideAttemptTools() {
   attemptTools.hidden = true;
   attemptTools.innerHTML = "";
@@ -1098,6 +1122,7 @@ function renderExercise(lesson) {
   body.innerHTML = `
     ${renderFractionVisual(displayLesson.visualModel)}
     ${renderRatioVisual(displayLesson.ratioModel)}
+    ${renderGraphVisual(displayLesson.graphModel)}
     <section class="discovery-card">
       <span>1</span>
       <div><h4>${t("discoveryTitle")}</h4><p>${t("discoveryCopy")}</p></div>
