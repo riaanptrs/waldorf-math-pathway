@@ -1,6 +1,15 @@
 # Current Status
 
-Last updated: 2026-08-25 before Windows reset.
+Last updated: 2026-08-29.
+
+## Learning Flow
+
+- Grade 5 through Grade 9 lesson catalogue with grade filtering.
+- Student-facing rhythm: warm up, discover, practise, check, and reflect.
+- Methods and worked examples are optional support rather than pre-reading.
+- Incorrect answers receive progressively stronger help across three attempts.
+- Full guided answers are delayed until the learner has first received a noticing hint and a method hint.
+- Existing local and Supabase progress saving remains in place.
 
 ## Git
 

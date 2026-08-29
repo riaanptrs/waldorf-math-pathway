@@ -50,6 +50,7 @@ const signOutButton = document.querySelector(".sign-out");
 const lessonCount = document.querySelector(".lesson-count");
 const previousButton = document.querySelector(".lesson-prev");
 const nextButton = document.querySelector(".lesson-next");
+const gradeFilter = document.querySelector(".grade-filter");
 
 const ACTIVE_LEARNER_KEY = "wep:active-learner";
 const LOCAL_PROGRESS_KEY = "waldorf-math:local-progress:v2";
@@ -87,6 +88,23 @@ const copy = {
     signOut: "Sair",
     practiceEyebrow: "Sala de prática",
     practiceTitle: "Escolha a atividade de hoje",
+    gradeFilterLabel: "Escolha o ano",
+    allGrades: "Todos os anos",
+    pathWarmup: "Aquecer",
+    pathDiscover: "Descobrir",
+    pathPractice: "Praticar",
+    pathCheck: "Conferir",
+    pathReflect: "Refletir",
+    discoveryTitle: "Descubra antes de receber o método",
+    discoveryCopy: "Leia a situação, faça uma estimativa e experimente um caminho próprio. Você pode abrir apoio se ficar preso.",
+    supportSummary: "Preciso de uma lembrança ou exemplo",
+    guidedSupportSummary: "Quero resolver com passos guiados",
+    hintTitle: (attempt) => `Apoio ${attempt} de 3`,
+    hintNotice: "Primeiro, observe isto:",
+    hintMethod: "Agora experimente este caminho:",
+    hintGuide: "Use os passos guiados e tente uma conta parecida antes de ver a resposta.",
+    reflectionTitle: "Feche a aula com suas palavras",
+    reflectionPrompt: "O que ajudou você a saber que a resposta fazia sentido? Diga em voz alta ou escreva no caderno.",
     arithmeticReviewEyebrow: "Revisão aritmética",
     arithmeticReviewTitle: "Folhas de revisão com explicação guiada",
     arithmeticReviewIntro:
@@ -161,7 +179,8 @@ const copy = {
     expressionPlaceholder: "Exemplo: 10k - 14",
     numberPlaceholder: "Digite um número",
     stepCorrect: "Correto.",
-    stepReview: "Revise. Resposta correta:",
+    stepReview: "Revise este passo antes de continuar.",
+    stepReviewWithAnswer: "Revise. Resposta correta:",
     noLearner: "Nenhum estudante está vinculado a esta conta de responsável ainda.",
     guestLearner: "Estudante visitante",
     guardianAccount: "Conta do responsável",
@@ -225,6 +244,23 @@ const copy = {
     signOut: "Sign out",
     practiceEyebrow: "Lesson studio",
     practiceTitle: "Choose today's activity",
+    gradeFilterLabel: "Choose a grade",
+    allGrades: "All grades",
+    pathWarmup: "Warm up",
+    pathDiscover: "Discover",
+    pathPractice: "Practice",
+    pathCheck: "Check",
+    pathReflect: "Reflect",
+    discoveryTitle: "Discover before receiving the method",
+    discoveryCopy: "Read the situation, make an estimate, and try your own path. Open support if you become stuck.",
+    supportSummary: "I need a reminder or example",
+    guidedSupportSummary: "I want to solve with guided steps",
+    hintTitle: (attempt) => `Support ${attempt} of 3`,
+    hintNotice: "First, notice this:",
+    hintMethod: "Now try this path:",
+    hintGuide: "Use the guided steps and try a similar problem before seeing the answer.",
+    reflectionTitle: "Close the lesson in your own words",
+    reflectionPrompt: "What helped you know that your answer made sense? Say it aloud or write it in your notebook.",
     arithmeticReviewEyebrow: "Arithmetic review",
     arithmeticReviewTitle: "Review sheets with guided explanations",
     arithmeticReviewIntro:
@@ -299,7 +335,8 @@ const copy = {
     expressionPlaceholder: "Example: 10k - 14",
     numberPlaceholder: "Enter a number",
     stepCorrect: "Correct.",
-    stepReview: "Review. Correct answer:",
+    stepReview: "Review this step before continuing.",
+    stepReviewWithAnswer: "Review. Correct answer:",
     noLearner: "No learner is linked to this guardian account yet.",
     guestLearner: "Guest learner",
     guardianAccount: "Guardian account",
@@ -344,6 +381,8 @@ let language = localStorage.getItem(LANGUAGE_KEY) || "pt";
 let activeReviewSheetId = arithmeticReviewSheets[0]?.id || null;
 let activeTrickGrade = "grade6";
 let activeTrickId = mentalTrickGuides.grade6?.[0]?.id || null;
+let selectedGrade = "all";
+const lessonAttempts = new Map();
 
 function t(key, ...args) {
   const value = copy[language][key];
@@ -367,9 +406,39 @@ function lessonCopy(lesson) {
 }
 
 function extraPracticeFor(lesson) {
-  const practice = extraPracticeBank[language]?.[lesson.id] || extraPracticeBank.en?.[lesson.id] || null;
-  if (!practice) return [];
-  return Array.isArray(practice) ? practice : [practice];
+  const bank = extraPracticeBank[language] || extraPracticeBank.en || {};
+  const items = [];
+  const addPractice = (candidate) => {
+    const practice = bank[candidate.id] || extraPracticeBank.en?.[candidate.id] || null;
+    if (!practice) return;
+    const entries = Array.isArray(practice) ? practice : [practice];
+    entries.forEach((entry) => {
+      if (items.length < 5 && !items.some((item) => item.prompt === entry.prompt)) items.push(entry);
+    });
+  };
+
+  addPractice(lesson);
+  lessons
+    .filter((candidate) => candidate.id !== lesson.id && candidate.grade === lesson.grade && candidate.block === lesson.block)
+    .forEach(addPractice);
+  return items;
+}
+
+function availableGrades() {
+  return [...new Set(lessons.map((lesson) => lesson.grade))];
+}
+
+function filteredLessons() {
+  return selectedGrade === "all" ? lessons : lessons.filter((lesson) => lesson.grade === selectedGrade);
+}
+
+function renderGradeFilter() {
+  if (!gradeFilter) return;
+  gradeFilter.innerHTML = [
+    `<option value="all">${t("allGrades")}</option>`,
+    ...availableGrades().map((item) => `<option value="${item}">${item}</option>`),
+  ].join("");
+  gradeFilter.value = selectedGrade;
 }
 
 function applyLanguage() {
@@ -668,13 +737,22 @@ function renderExtraPractice(lesson, context = "lesson") {
 }
 
 function showAttemptTools() {
+  const attempt = lessonAttempts.get(activeLesson.id) || 1;
+  const displayLesson = lessonCopy(activeLesson);
+  const support = tutorSupportFor(displayLesson);
+  const methodStep = displayLesson.memoryRefresh?.method?.[0] || displayLesson.rhythm?.[0] || support.check;
+  const hint = attempt === 1 ? `${t("hintNotice")} ${support.check}` : attempt === 2 ? `${t("hintMethod")} ${methodStep}` : t("hintGuide");
   attemptTools.hidden = false;
   attemptTools.innerHTML = `
+    <section class="attempt-hint" aria-live="polite">
+      <strong>${t("hintTitle", Math.min(attempt, 3))}</strong>
+      <p>${hint}</p>
+    </section>
     <div class="attempt-actions">
       <button class="button button--small try-again" type="button">${t("tryAgainButton")}</button>
-      <button class="button button--small button--ghost show-guided-answer" type="button">${t("guidedAnswerButton")}</button>
+      ${attempt >= 3 ? `<button class="button button--small button--ghost show-guided-answer" type="button">${t("guidedAnswerButton")}</button>` : ""}
     </div>
-    ${renderGuidedAnswer(activeLesson)}
+    ${attempt >= 3 ? renderGuidedAnswer(activeLesson) : ""}
   `;
 }
 
@@ -710,7 +788,7 @@ function checkExtraPracticeButton(button) {
 }
 
 function evaluateGuidedSteps(lesson) {
-  if (!lesson.guidedSteps?.length) return { allCorrect: true, answers: [] };
+  if (!lesson.guidedSteps?.length) return { allCorrect: true, used: false, answers: [] };
 
   const answers = lesson.guidedSteps.map((step, index) => {
     const input = document.querySelector(`[data-step-index="${index}"]`);
@@ -719,6 +797,7 @@ function evaluateGuidedSteps(lesson) {
     return { input, rawValue, isCorrect, correct: correctAnswerText(step) };
   });
 
+  const mayRevealStepAnswers = (lessonAttempts.get(lesson.id) || 0) >= 2;
   answers.forEach((result, index) => {
     const row = result.input?.closest(".guided-step");
     const status = row?.querySelector(".step-feedback");
@@ -726,11 +805,14 @@ function evaluateGuidedSteps(lesson) {
     row.dataset.state = result.isCorrect ? "correct" : "try";
     status.textContent = result.isCorrect
       ? t("stepCorrect")
-      : `${t("stepReview")} ${answers[index].correct}`;
+      : mayRevealStepAnswers
+        ? `${t("stepReviewWithAnswer")} ${answers[index].correct}`
+        : t("stepReview");
   });
 
   return {
     allCorrect: answers.every((result) => result.isCorrect),
+    used: answers.some((result) => result.rawValue !== ""),
     answers,
   };
 }
@@ -843,8 +925,9 @@ async function saveLessonProgress(lesson, value, isCorrect) {
 }
 
 function renderList() {
-  lessonCount.textContent = t("lessonCount", lessons.length);
-  list.innerHTML = lessons
+  const visibleLessons = filteredLessons();
+  lessonCount.textContent = t("lessonCount", visibleLessons.length);
+  list.innerHTML = visibleLessons
     .map((lesson) => {
       const displayLesson = lessonCopy(lesson);
       const state = getLessonProgress(lesson);
@@ -978,7 +1061,6 @@ function renderMentalTricks() {
 function renderExercise(lesson) {
   activeLesson = lesson;
   const displayLesson = lessonCopy(lesson);
-  const lessonIndex = lessons.findIndex((item) => item.id === lesson.id);
   grade.textContent = `${displayLesson.grade} - ${displayLesson.block}`;
   title.textContent = displayLesson.title;
   time.textContent = displayLesson.time;
@@ -991,23 +1073,33 @@ function renderExercise(lesson) {
   correction.hidden = true;
   correction.textContent = displayLesson.correction;
   hideAttemptTools();
+  lessonAttempts.set(lesson.id, 0);
   answerLabel.textContent = displayLesson.guidedSteps?.length ? t("finalAnswer") : t("yourAnswer");
   answer.value = "";
   answer.placeholder = lesson.answerType === "expression" ? t("expressionPlaceholder") : t("numberPlaceholder");
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
   body.innerHTML = `
-    ${renderQuickTutor(displayLesson)}
-    ${
-      displayLesson.memoryRefresh?.workedSteps?.length
-        ? `<section class="worked-solution" aria-labelledby="worked-solution-title">
+    <section class="discovery-card">
+      <span>1</span>
+      <div><h4>${t("discoveryTitle")}</h4><p>${t("discoveryCopy")}</p></div>
+    </section>
+    <details class="lesson-support">
+      <summary>${t("supportSummary")}</summary>
+      <div class="lesson-support__content">
+        ${renderQuickTutor(displayLesson)}
+        ${
+          displayLesson.memoryRefresh?.workedSteps?.length
+            ? `<section class="worked-solution" aria-labelledby="worked-solution-title">
             <h4 id="worked-solution-title">${t("workedTitle")}</h4>
             <ol class="worked-steps">
               ${displayLesson.memoryRefresh.workedSteps.map((step) => `<li>${step}</li>`).join("")}
             </ol>
           </section>`
-        : ""
-    }
-    ${renderDeepTutor(displayLesson)}
+            : ""
+        }
+        ${renderDeepTutor(displayLesson)}
+      </div>
+    </details>
     ${
       displayLesson.mathTip
         ? `<aside class="math-tip">
@@ -1016,10 +1108,13 @@ function renderExercise(lesson) {
           </aside>`
         : ""
     }
-    ${renderExtraPractice(displayLesson)}
+    <details class="practice-set">
+      <summary>${t("extraPracticeTitle")}</summary>
+      ${renderExtraPractice(displayLesson)}
+    </details>
     ${
       displayLesson.guidedSteps?.length
-        ? `<div class="guided-steps">
+        ? `<details class="guided-support"><summary>${t("guidedSupportSummary")}</summary><div class="guided-steps">
             <h4>${t("showSteps")}</h4>
             ${displayLesson.guidedSteps
               .map(
@@ -1032,7 +1127,7 @@ function renderExercise(lesson) {
                 `,
               )
               .join("")}
-          </div>`
+          </div></details>`
         : ""
     }
   `;
@@ -1040,8 +1135,10 @@ function renderExercise(lesson) {
   document.querySelectorAll(".lesson-card").forEach((card) => {
     card.classList.toggle("is-active", card.dataset.id === lesson.id);
   });
-  previousButton.disabled = lessonIndex <= 0;
-  nextButton.disabled = lessonIndex >= lessons.length - 1;
+  const visibleLessons = filteredLessons();
+  const visibleIndex = visibleLessons.findIndex((item) => item.id === lesson.id);
+  previousButton.disabled = visibleIndex <= 0;
+  nextButton.disabled = visibleIndex < 0 || visibleIndex >= visibleLessons.length - 1;
 }
 
 function renderParentDashboard() {
@@ -1090,8 +1187,9 @@ function renderAccount() {
 }
 
 function moveLesson(step) {
-  const lessonIndex = lessons.findIndex((lesson) => lesson.id === activeLesson.id);
-  const nextLesson = lessons[lessonIndex + step];
+  const visibleLessons = filteredLessons();
+  const lessonIndex = visibleLessons.findIndex((lesson) => lesson.id === activeLesson.id);
+  const nextLesson = visibleLessons[lessonIndex + step];
   if (!nextLesson) return;
   renderExercise(nextLesson);
 }
@@ -1132,6 +1230,13 @@ list.addEventListener("click", (event) => {
   const nextLesson = lessons.find((lesson) => lesson.id === card.dataset.id);
   renderExercise(nextLesson);
   answer.focus();
+});
+
+gradeFilter?.addEventListener("change", () => {
+  selectedGrade = gradeFilter.value;
+  const nextLesson = filteredLessons()[0];
+  renderList();
+  if (nextLesson) renderExercise(nextLesson);
 });
 
 reviewSheetList?.addEventListener("click", (event) => {
@@ -1222,7 +1327,7 @@ form.addEventListener("submit", async (event) => {
 
   const isCorrect = checkAnswer(activeLesson, value);
   const stepResult = evaluateGuidedSteps(activeLesson);
-  const fullAttemptIsCorrect = isCorrect && stepResult.allCorrect;
+  const fullAttemptIsCorrect = isCorrect && (!stepResult.used || stepResult.allCorrect);
   const submittedValue = activeLesson.guidedSteps?.length
     ? JSON.stringify({
         final: value,
@@ -1242,7 +1347,10 @@ form.addEventListener("submit", async (event) => {
       feedback.dataset.state = "correct";
       correction.hidden = true;
       hideAttemptTools();
+      body.querySelector(".reflection-card")?.remove();
+      body.insertAdjacentHTML("beforeend", `<section class="reflection-card"><h4>${t("reflectionTitle")}</h4><p>${t("reflectionPrompt")}</p></section>`);
     } else {
+      lessonAttempts.set(activeLesson.id, (lessonAttempts.get(activeLesson.id) || 0) + 1);
       feedback.textContent =
         savedTo === "cloud"
           ? t("cloudTry")
@@ -1367,6 +1475,7 @@ languageInput.addEventListener("change", () => {
   language = languageInput.value === "en" ? "en" : "pt";
   localStorage.setItem(LANGUAGE_KEY, language);
   applyLanguage();
+  renderGradeFilter();
   renderList();
   renderExercise(activeLesson);
   renderReviewSheets();
@@ -1386,6 +1495,7 @@ signOutButton.addEventListener("click", async () => {
 
 async function initialise() {
   applyLanguage();
+  renderGradeFilter();
   renderList();
   renderExercise(activeLesson);
   renderReviewSheets();

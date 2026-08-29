@@ -9,7 +9,7 @@
     />
     <title>Trilha de Matemática Waldorf</title>
     <link rel="preload" href="public/learning-path.png" as="image" />
-    <link rel="stylesheet" href="src/styles.css?v=20260820-speed-facts" />
+    <link rel="stylesheet" href="src/styles.css?v=20260829-guided-discovery" />
   </head>
   <body>
     <header class="hero">
@@ -97,6 +97,10 @@
           <p class="eyebrow" data-i18n="practiceEyebrow">Sala de prática</p>
           <h2 id="practice-title" data-i18n="practiceTitle">Escolha a atividade de hoje</h2>
           <p class="lesson-count"></p>
+          <div class="lesson-filters" aria-label="Filtros de atividades">
+            <label for="grade-filter" data-i18n="gradeFilterLabel">Escolha o ano</label>
+            <select id="grade-filter" class="grade-filter"></select>
+          </div>
         </div>
 
         <div class="practice__layout">
@@ -110,6 +114,14 @@
               </div>
               <span class="exercise__time"></span>
             </div>
+
+            <ol class="learning-path" aria-label="Caminho da aula">
+              <li data-i18n="pathWarmup">Aquecer</li>
+              <li class="is-current" data-i18n="pathDiscover">Descobrir</li>
+              <li data-i18n="pathPractice">Praticar</li>
+              <li data-i18n="pathCheck">Conferir</li>
+              <li data-i18n="pathReflect">Refletir</li>
+            </ol>
 
             <p class="eyebrow exercise__question-label" data-i18n="questionLabel">Pergunta</p>
             <p class="exercise__prompt"></p>
@@ -229,7 +241,7 @@
       </p>
     </footer>
 
-    <script src="src/exercises.js?v=20260820-speed-facts"></script>
-    <script type="module" src="src/app.js?v=20260820-speed-facts"></script>
+    <script src="src/exercises.js?v=20260829-guided-discovery"></script>
+    <script type="module" src="src/app.js?v=20260829-guided-discovery"></script>
   </body>
 </html>

@@ -14,13 +14,17 @@ proportions, exponent laws, and mensuration. Grade 9 extends the path into
 Algebra I readiness with equations, systems, negative exponents, radicals,
 linear functions, quadratics, coordinate geometry, and growth models.
 
-## Current First Step
+## Current Learning Experience
 
 - Static website that opens from `index.html`
 - Original Grade 5 through Grade 9 sample math exercises
 - Gentle answer checking
-- Quick tutor lesson flow: remember, see an example, try guided steps, and check the answer
+- Student-first lesson flow: warm up, discover, practise, check, and reflect
+- Grade filtering so learners can stay inside the right developmental block
+- Try-first activities with examples and methods hidden behind optional support
+- Three levels of feedback after incorrect attempts: a noticing prompt, a method prompt, then guided-answer access
 - Guided worksheet-style activities with Portuguese examples, step checks, and answer keys
+- Extra practice sets and a student reflection prompt after successful work
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
 
@@ -38,9 +42,9 @@ Algebra I preparation rather than copied book material.
 
 ## Suggested Next Steps
 
-1. Choose the site name and GitHub repository name.
-2. Deepen the Grade 5 decimal fractions and freehand geometry block with drawing prompts.
-3. Deepen the Grade 6 business math block with more interactive portfolio tasks.
-4. Deepen the Grade 8 geometry and stereometry lesson blocks.
-5. Add more practice types: ratios, signed numbers, geometry, business math, and early algebra.
+1. Deepen the Grade 5 decimal fractions and freehand geometry block with drawing prompts.
+2. Deepen the Grade 6 business math block with more interactive portfolio tasks.
+3. Add three to five curated practice variations to every lesson; do not generate them by merely changing numbers unless the mathematical conditions are checked.
+4. Add visual manipulatives for fractions, ratios, signed numbers, geometry, and early algebra.
+5. Record hints used and independent mastery in the learner portfolio once the shared database schema is ready.
 6. Add a fuller math portfolio view once the English portfolio is ready to show subject-specific filters.
