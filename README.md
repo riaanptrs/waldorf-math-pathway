@@ -30,6 +30,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Complete original Grade 5 Fraction Path with ten sequenced bilingual lessons, visual fraction bars, guided discovery, optional steps, and cumulative practice
 - Complete original Grade 7 Ratios and Rates Path with twelve bilingual relationship-first lessons, visible ratio groups, similar figures, shadows, direct and inverse change, and lever balance
 - Complete original Grade 8 Proportions and Graphs Path with ten bilingual lessons connecting constant rates, tables, equations, coordinate graphs, direct and inverse proportion, scale, and practical cost
+- Complete original Grade 9 Algebra I Foundations Path with thirteen bilingual lessons progressing from expression meaning through equations, formulas, inequalities, linear models, and graphical systems
 - Responsive table-and-coordinate-graph models that let learners see a relationship before applying its equation
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
@@ -48,7 +49,7 @@ Algebra I preparation rather than copied book material.
 
 ## Suggested Next Steps
 
-1. Deepen the Grade 8 algebra and solid-geometry sequences while keeping formal Algebra I work in Grade 9.
+1. Add Grade 9 pathways for quadratics, combinations and permutations, and Euclidean/descriptive geometry.
 2. Deepen the Grade 5 decimal fractions and freehand geometry block with drawing prompts.
 3. Deepen the Grade 6 business math block with more interactive portfolio tasks.
 4. Add three to five curated practice variations to every lesson; do not generate them by merely changing numbers unless the mathematical conditions are checked.

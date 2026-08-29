@@ -19,6 +19,8 @@ Last updated: 2026-08-29.
 - Grade 7 ratio work deliberately uses multiplicative reasoning before formal Grade 8 proportion algorithms.
 - Grade 8 now includes a ten-lesson Proportions and Graphs Path: constant rates, proportion tables, the origin, `y = kx`, graph reading, missing coordinates, slope comparison, non-proportional starting values, inverse proportion, and a scale-and-cost capstone.
 - Grade 8 proportion lessons use responsive value tables and coordinate graphs, original practical contexts, bilingual support, progressive incorrect-answer hints, and cumulative practice drawn from neighbouring lessons in the block.
+- Grade 9 now includes a thirteen-lesson Algebra I Foundations Path: expression language, substitution, like terms, distribution, balance reasoning, multi-step and signed equations, variables on both sides, fractional equations, formula rearrangement, inequalities, linear models, and systems as graph intersections.
+- Grade 9 algebra lessons preserve a discovery-to-practice sequence, require checking in the original relationship, reuse responsive graphs where helpful, and provide bilingual progressive support after mistakes.
 
 ## Git
 
