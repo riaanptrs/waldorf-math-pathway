@@ -3726,6 +3726,178 @@ Object.assign(extraPracticeBank.en, {
   "g9-linear-vs-exponential": { prompt: "Practice: 4, 9, 14, 19 is linear or exponential?", answerType: "expression", acceptedAnswers: ["linear"], steps: ["The differences are always 5.", "Constant difference means linear."] },
 });
 
+// Curated foundational practice: three checked variations for every early lesson
+// that previously had no practice bank. These stay explicit so units, contexts,
+// and answers can be reviewed instead of relying on unchecked random numbers.
+const np = (prompt, answer, steps, tolerance = 0) => ({ prompt, answerType: "number", answer, tolerance, steps });
+const ep = (prompt, acceptedAnswers, steps) => ({ prompt, answerType: "expression", acceptedAnswers, steps });
+
+Object.assign(extraPracticeBank.en, {
+  "g5-decimal-tenths": [
+    np("Practice 1: Write seven tenths as a decimal.", 0.7, ["Seven tenths is 7/10.", "7/10 = 0.7."]),
+    np("Practice 2: Write nine tenths as a decimal.", 0.9, ["Nine tenths is 9/10.", "9/10 = 0.9."]),
+    np("Practice 3: Which decimal marks four tenths on a number line?", 0.4, ["Count four of ten equal parts from zero.", "The point is 0.4."]),
+  ],
+  "g5-decimal-hundredths-money": [
+    np("Practice 1: A pen costs R$3.42. How many centavos are in the decimal part?", 42, ["The decimal part is .42.", ".42 real = 42 centavos."]),
+    np("Practice 2: A ruler costs R$6.08. How many centavos are in the decimal part?", 8, ["The decimal part is .08.", ".08 real = 8 centavos."]),
+    np("Practice 3: A book costs R$12.95. How many centavos are in the decimal part?", 95, ["The decimal part is .95.", ".95 real = 95 centavos."]),
+  ],
+  "g5-fraction-decimal-quarter": [
+    np("Practice 1: Write 2/4 as a decimal.", 0.5, ["2/4 is one half.", "One half is 0.5."]),
+    np("Practice 2: Write 3/4 as a decimal.", 0.75, ["Each fourth is 0.25.", "3 x 0.25 = 0.75."]),
+    np("Practice 3: Write 5/4 as a decimal.", 1.25, ["4/4 is 1 whole.", "One more fourth gives 1.25."]),
+  ],
+  "g5-metric-centimeters": [
+    np("Practice 1: How many centimeters are in 5 meters?", 500, ["1 meter = 100 centimeters.", "5 x 100 = 500."]),
+    np("Practice 2: How many centimeters are in 2.5 meters?", 250, ["Multiply meters by 100.", "2.5 x 100 = 250."]),
+    np("Practice 3: How many meters are 450 centimeters?", 4.5, ["Divide centimeters by 100.", "450 / 100 = 4.5."]),
+  ],
+  "g5-fraction-review-journey": [
+    ep("Practice 1: Walk 1/3 of a path, then 1/6. What fraction is completed?", ["1/2", "3/6"], ["1/3 = 2/6.", "2/6 + 1/6 = 3/6 = 1/2."]),
+    ep("Practice 2: Cycle 2/5 of a path, then 1/5. What fraction is completed?", ["3/5"], ["The denominators already match.", "2/5 + 1/5 = 3/5."]),
+    ep("Practice 3: Row 1/4 of a course, then 3/8. What fraction is completed?", ["5/8"], ["1/4 = 2/8.", "2/8 + 3/8 = 5/8."]),
+  ],
+  "g5-freehand-circle-diameter": [
+    np("Practice 1: A circle has radius 3 cm. What is its diameter?", 6, ["Diameter is twice the radius.", "2 x 3 = 6 cm."]),
+    np("Practice 2: A circle has radius 7.5 cm. What is its diameter?", 15, ["Double the radius.", "2 x 7.5 = 15 cm."]),
+    np("Practice 3: A circle has diameter 18 cm. What is its radius?", 9, ["Radius is half the diameter.", "18 / 2 = 9 cm."]),
+  ],
+  "g5-pentagon-perimeter": [
+    np("Practice 1: A regular pentagon has sides of 6 cm. Find its perimeter.", 30, ["A pentagon has 5 sides.", "5 x 6 = 30 cm."]),
+    np("Practice 2: A regular pentagon has sides of 3.5 cm. Find its perimeter.", 17.5, ["Multiply one side by 5.", "3.5 x 5 = 17.5 cm."]),
+    np("Practice 3: A regular pentagon has perimeter 40 cm. Find one side.", 8, ["Share the perimeter among 5 equal sides.", "40 / 5 = 8 cm."]),
+  ],
+  "g5-symmetry-balance": [
+    np("Practice 1: A point is 4 cm left of a symmetry line. How far right is its mirror?", 4, ["Mirror points are equally far from the line.", "The distance is 4 cm."]),
+    np("Practice 2: A point is 9.5 cm above a horizontal symmetry line. How far below is its mirror?", 9.5, ["Keep the same perpendicular distance.", "The distance is 9.5 cm."]),
+    np("Practice 3: Two mirror points are 14 cm apart. How far is each from the symmetry line?", 7, ["The line lies halfway between them.", "14 / 2 = 7 cm."]),
+  ],
+  "g5-greek-games-distance": [
+    np("Practice 1: Run 5 laps of 80 meters. What is the total distance?", 400, ["Multiply laps by distance per lap.", "5 x 80 = 400 m."]),
+    np("Practice 2: Run 6 laps of 75 meters. What is the total distance?", 450, ["6 x 75 = 450.", "Total: 450 m."]),
+    np("Practice 3: A runner covers 600 meters in 5 equal laps. How long is one lap?", 120, ["Divide total distance by laps.", "600 / 5 = 120 m."]),
+  ],
+  "g5-ancient-measures": [
+    np("Practice 1: Use 1 cubit = 0.5 m. How long are 8 cubits?", 4, ["Multiply by 0.5.", "8 x 0.5 = 4 m."]),
+    np("Practice 2: Use 1 cubit = 0.5 m. How long are 15 cubits?", 7.5, ["Each cubit is half a meter.", "15 / 2 = 7.5 m."]),
+    np("Practice 3: A rope is 6 m long. How many 0.5 m cubits is that?", 12, ["Count half-meters in 6 meters.", "6 / 0.5 = 12 cubits."]),
+  ],
+  "g6-real-world-prices": [
+    np("Practice 1: Add prices R$18, R$7, and R$25.", 50, ["18 + 7 = 25.", "25 + 25 = 50."]),
+    np("Practice 2: Add prices R$12.50, R$8.25, and R$4.25.", 25, ["Add whole reais and centavos carefully.", "12.50 + 8.25 + 4.25 = 25.00."]),
+    np("Practice 3: You have R$60 and spend R$17, R$14, and R$9. How much remains?", 20, ["Total spent: 17 + 14 + 9 = 40.", "60 - 40 = 20."]),
+  ],
+  "g6-percent-half": [
+    np("Practice 1: What is 50% of R$36?", 18, ["50% means one half.", "36 / 2 = 18."]),
+    np("Practice 2: What is 25% of R$80?", 20, ["25% means one quarter.", "80 / 4 = 20."]),
+    np("Practice 3: What is 75% of R$40?", 30, ["75% means three quarters.", "40 / 4 x 3 = 30."]),
+  ],
+  "g6-fair-discount": [
+    np("Practice 1: A R$40 item has a 25% discount. What is the new price?", 30, ["25% of 40 is 10.", "40 - 10 = 30."]),
+    np("Practice 2: A R$75 item has a 20% discount. What is the new price?", 60, ["20% of 75 is 15.", "75 - 15 = 60."]),
+    np("Practice 3: A R$120 item has a 15% discount. What is the new price?", 102, ["15% of 120 is 18.", "120 - 18 = 102."]),
+  ],
+  "g6-better-deal": [
+    np("Practice 1: Compare 4 pens for R$12 and 6 pens for R$24. What is the cheaper unit price?", 3, ["12 / 4 = 3.", "24 / 6 = 4; cheaper is R$3."]),
+    np("Practice 2: Compare 5 notebooks for R$35 and 3 for R$24. What is the cheaper unit price?", 7, ["35 / 5 = 7.", "24 / 3 = 8; cheaper is R$7."]),
+    np("Practice 3: Compare 8 bags for R$36 and 5 for R$25. What is the cheaper unit price?", 4.5, ["36 / 8 = 4.50.", "25 / 5 = 5; cheaper is R$4.50."]),
+  ],
+  "g6-cost-price-profit": [
+    np("Practice 1: An item costs R$5 and sells for R$12. What is the profit?", 7, ["Profit = selling price - cost.", "12 - 5 = 7."]),
+    np("Practice 2: An item costs R$8.50 and sells for R$14. What is the profit?", 5.5, ["14.00 - 8.50 = 5.50."]),
+    np("Practice 3: An item sells for R$20 with R$6 profit. What was its cost?", 14, ["Cost = selling price - profit.", "20 - 6 = 14."]),
+  ],
+  "g6-simple-interest": [
+    np("Practice 1: Borrow R$200 at 5% simple interest for one year. What is the payback?", 210, ["5% of 200 is 10.", "200 + 10 = 210."]),
+    np("Practice 2: Invest R$300 at 4% simple interest for two years. What is the final amount?", 324, ["Interest: 300 x .04 x 2 = 24.", "300 + 24 = 324."]),
+    np("Practice 3: Borrow R$500 at 3% simple interest for three years. What is the payback?", 545, ["Interest: 500 x .03 x 3 = 45.", "500 + 45 = 545."]),
+  ],
+  "g6-budget-challenge": [
+    np("Practice 1: A R$80 budget has costs of R$35, R$28, and R$22. How far over budget?", 5, ["Costs total 85.", "85 - 80 = 5."]),
+    np("Practice 2: A R$100 budget has costs of R$40, R$27, and R$18. How much remains?", 15, ["Costs total 85.", "100 - 85 = 15."]),
+    np("Practice 3: A R$150 budget has costs of R$62, R$49, and R$45. How far over budget?", 6, ["Costs total 156.", "156 - 150 = 6."]),
+  ],
+  "g6-geometry-precision": [
+    np("Practice 1: A circle has radius 6 cm. What is its diameter?", 12, ["Diameter = 2 x radius.", "2 x 6 = 12 cm."]),
+    np("Practice 2: A circle has diameter 22 cm. What is its radius?", 11, ["Radius = diameter / 2.", "22 / 2 = 11 cm."]),
+    np("Practice 3: A circle has radius 4.25 cm. What is its diameter?", 8.5, ["Double the radius.", "4.25 x 2 = 8.5 cm."]),
+  ],
+  "g6-business-order": [
+    np("Practice 1: Order 30 bags at R$0.40 each. What is the total?", 12, ["30 x 0.40 = 12."]),
+    np("Practice 2: Order 24 labels at R$0.25 each. What is the total?", 6, ["24 x 0.25 = 6."]),
+    np("Practice 3: R$18 buys notebooks costing R$1.50 each. How many can you order?", 12, ["Divide the budget by unit price.", "18 / 1.50 = 12."]),
+  ],
+  "g6-market-day-portfólio": [
+    np("Practice 1: A product sells for R$20. After a 15% discount, what is the price?", 17, ["15% of 20 is 3.", "20 - 3 = 17."]),
+    np("Practice 2: A product costs R$9 and sells for R$15. What is the profit?", 6, ["15 - 9 = 6."]),
+    np("Practice 3: Sell 8 products at R$12 each. What is the revenue?", 96, ["Revenue = quantity x selling price.", "8 x 12 = 96."]),
+  ],
+});
+
+Object.assign(extraPracticeBank.pt, {
+  "g5-decimal-tenths": [
+    np("Treino 1: Escreva sete décimos como decimal.", .7, ["Sete décimos são 7/10.", "7/10 = 0,7."]), np("Treino 2: Escreva nove décimos como decimal.", .9, ["Nove décimos são 9/10.", "9/10 = 0,9."]), np("Treino 3: Qual decimal marca quatro décimos na reta numérica?", .4, ["Conte quatro de dez partes desde o zero.", "O ponto é 0,4."])
+  ],
+  "g5-decimal-hundredths-money": [
+    np("Treino 1: Uma caneta custa R$3,42. Quantos centavos há na parte decimal?", 42, ["A parte decimal é ,42.", "Isso vale 42 centavos."]), np("Treino 2: Uma régua custa R$6,08. Quantos centavos há na parte decimal?", 8, ["A parte decimal é ,08.", "Isso vale 8 centavos."]), np("Treino 3: Um livro custa R$12,95. Quantos centavos há na parte decimal?", 95, ["A parte decimal é ,95.", "Isso vale 95 centavos."])
+  ],
+  "g5-fraction-decimal-quarter": [
+    np("Treino 1: Escreva 2/4 como decimal.", .5, ["2/4 é um meio.", "Um meio é 0,5."]), np("Treino 2: Escreva 3/4 como decimal.", .75, ["Cada quarto vale 0,25.", "3 x 0,25 = 0,75."]), np("Treino 3: Escreva 5/4 como decimal.", 1.25, ["4/4 é um inteiro.", "Mais um quarto dá 1,25."])
+  ],
+  "g5-metric-centimeters": [
+    np("Treino 1: Quantos centímetros há em 5 metros?", 500, ["1 metro = 100 centímetros.", "5 x 100 = 500."]), np("Treino 2: Quantos centímetros há em 2,5 metros?", 250, ["Multiplique por 100.", "2,5 x 100 = 250."]), np("Treino 3: Quantos metros são 450 centímetros?", 4.5, ["Divida por 100.", "450 / 100 = 4,5."])
+  ],
+  "g5-fraction-review-journey": [
+    ep("Treino 1: Caminhe 1/3 de uma trilha e depois 1/6. Qual fração foi concluída?", ["1/2", "3/6"], ["1/3 = 2/6.", "2/6 + 1/6 = 3/6 = 1/2."]), ep("Treino 2: Pedale 2/5 de um caminho e depois 1/5. Qual fração foi concluída?", ["3/5"], ["Os denominadores já são iguais.", "2/5 + 1/5 = 3/5."]), ep("Treino 3: Reme 1/4 de um percurso e depois 3/8. Qual fração foi concluída?", ["5/8"], ["1/4 = 2/8.", "2/8 + 3/8 = 5/8."])
+  ],
+  "g5-freehand-circle-diameter": [
+    np("Treino 1: Um círculo tem raio de 3 cm. Qual é o diâmetro?", 6, ["O diâmetro é duas vezes o raio.", "2 x 3 = 6 cm."]), np("Treino 2: Um círculo tem raio de 7,5 cm. Qual é o diâmetro?", 15, ["Dobre o raio.", "2 x 7,5 = 15 cm."]), np("Treino 3: Um círculo tem diâmetro de 18 cm. Qual é o raio?", 9, ["O raio é metade do diâmetro.", "18 / 2 = 9 cm."])
+  ],
+  "g5-pentagon-perimeter": [
+    np("Treino 1: Um pentágono regular tem lados de 6 cm. Qual é o perímetro?", 30, ["Há 5 lados.", "5 x 6 = 30 cm."]), np("Treino 2: Um pentágono regular tem lados de 3,5 cm. Qual é o perímetro?", 17.5, ["Multiplique um lado por 5.", "3,5 x 5 = 17,5 cm."]), np("Treino 3: O perímetro é 40 cm. Quanto mede cada lado?", 8, ["Divida entre 5 lados iguais.", "40 / 5 = 8 cm."])
+  ],
+  "g5-symmetry-balance": [
+    np("Treino 1: Um ponto está 4 cm à esquerda do eixo. A que distância fica seu reflexo?", 4, ["Pontos refletidos ficam à mesma distância.", "A distância é 4 cm."]), np("Treino 2: Um ponto está 9,5 cm acima do eixo horizontal. A que distância fica o reflexo abaixo?", 9.5, ["Mantenha a mesma distância perpendicular.", "A distância é 9,5 cm."]), np("Treino 3: Dois pontos refletidos estão separados por 14 cm. A que distância cada um fica do eixo?", 7, ["O eixo fica no meio.", "14 / 2 = 7 cm."])
+  ],
+  "g5-greek-games-distance": [
+    np("Treino 1: Corra 5 voltas de 80 metros. Qual é a distância total?", 400, ["Multiplique voltas pela distância.", "5 x 80 = 400 m."]), np("Treino 2: Corra 6 voltas de 75 metros. Qual é a distância total?", 450, ["6 x 75 = 450.", "Total: 450 m."]), np("Treino 3: Um corredor percorre 600 metros em 5 voltas iguais. Quanto mede cada volta?", 120, ["Divida a distância pelas voltas.", "600 / 5 = 120 m."])
+  ],
+  "g5-ancient-measures": [
+    np("Treino 1: Use 1 côvado = 0,5 m. Quanto medem 8 côvados?", 4, ["Multiplique por 0,5.", "8 x 0,5 = 4 m."]), np("Treino 2: Quanto medem 15 côvados de 0,5 m?", 7.5, ["Cada côvado é meio metro.", "15 / 2 = 7,5 m."]), np("Treino 3: Uma corda tem 6 m. Quantos côvados de 0,5 m são?", 12, ["Conte meios metros em 6 metros.", "6 / 0,5 = 12."])
+  ],
+  "g6-real-world-prices": [
+    np("Treino 1: Some os preços R$18, R$7 e R$25.", 50, ["18 + 7 = 25.", "25 + 25 = 50."]), np("Treino 2: Some R$12,50, R$8,25 e R$4,25.", 25, ["Alinhe reais e centavos.", "12,50 + 8,25 + 4,25 = 25."]), np("Treino 3: Você tem R$60 e gasta R$17, R$14 e R$9. Quanto sobra?", 20, ["Total gasto: 40.", "60 - 40 = 20."])
+  ],
+  "g6-percent-half": [
+    np("Treino 1: Quanto é 50% de R$36?", 18, ["50% é metade.", "36 / 2 = 18."]), np("Treino 2: Quanto é 25% de R$80?", 20, ["25% é um quarto.", "80 / 4 = 20."]), np("Treino 3: Quanto é 75% de R$40?", 30, ["75% são três quartos.", "40 / 4 x 3 = 30."])
+  ],
+  "g6-fair-discount": [
+    np("Treino 1: Um item de R$40 tem 25% de desconto. Qual é o novo preço?", 30, ["25% de 40 é 10.", "40 - 10 = 30."]), np("Treino 2: Um item de R$75 tem 20% de desconto. Qual é o novo preço?", 60, ["20% de 75 é 15.", "75 - 15 = 60."]), np("Treino 3: Um item de R$120 tem 15% de desconto. Qual é o novo preço?", 102, ["15% de 120 é 18.", "120 - 18 = 102."])
+  ],
+  "g6-better-deal": [
+    np("Treino 1: Compare 4 canetas por R$12 e 6 por R$24. Qual é o menor preço unitário?", 3, ["12 / 4 = 3.", "24 / 6 = 4; menor: R$3."]), np("Treino 2: Compare 5 cadernos por R$35 e 3 por R$24. Qual é o menor preço unitário?", 7, ["35 / 5 = 7.", "24 / 3 = 8; menor: R$7."]), np("Treino 3: Compare 8 sacolas por R$36 e 5 por R$25. Qual é o menor preço unitário?", 4.5, ["36 / 8 = 4,50.", "25 / 5 = 5; menor: R$4,50."])
+  ],
+  "g6-cost-price-profit": [
+    np("Treino 1: Um item custa R$5 e é vendido por R$12. Qual é o lucro?", 7, ["Lucro = venda - custo.", "12 - 5 = 7."]), np("Treino 2: Um item custa R$8,50 e é vendido por R$14. Qual é o lucro?", 5.5, ["14 - 8,50 = 5,50."]), np("Treino 3: Um item é vendido por R$20 com lucro de R$6. Qual era o custo?", 14, ["Custo = venda - lucro.", "20 - 6 = 14."])
+  ],
+  "g6-simple-interest": [
+    np("Treino 1: Tome R$200 a 5% de juros simples por um ano. Qual é o total?", 210, ["5% de 200 é 10.", "200 + 10 = 210."]), np("Treino 2: Invista R$300 a 4% de juros simples por dois anos. Qual é o montante?", 324, ["Juros: 300 x 0,04 x 2 = 24.", "300 + 24 = 324."]), np("Treino 3: Tome R$500 a 3% de juros simples por três anos. Qual é o total?", 545, ["Juros: 500 x 0,03 x 3 = 45.", "500 + 45 = 545."])
+  ],
+  "g6-budget-challenge": [
+    np("Treino 1: Um orçamento de R$80 tem gastos de R$35, R$28 e R$22. Quanto ultrapassa?", 5, ["Os gastos somam 85.", "85 - 80 = 5."]), np("Treino 2: Um orçamento de R$100 tem gastos de R$40, R$27 e R$18. Quanto sobra?", 15, ["Os gastos somam 85.", "100 - 85 = 15."]), np("Treino 3: Um orçamento de R$150 tem gastos de R$62, R$49 e R$45. Quanto ultrapassa?", 6, ["Os gastos somam 156.", "156 - 150 = 6."])
+  ],
+  "g6-geometry-precision": [
+    np("Treino 1: Um círculo tem raio de 6 cm. Qual é o diâmetro?", 12, ["Diâmetro = 2 x raio.", "2 x 6 = 12 cm."]), np("Treino 2: Um círculo tem diâmetro de 22 cm. Qual é o raio?", 11, ["Raio = diâmetro / 2.", "22 / 2 = 11 cm."]), np("Treino 3: Um círculo tem raio de 4,25 cm. Qual é o diâmetro?", 8.5, ["Dobre o raio.", "4,25 x 2 = 8,5 cm."])
+  ],
+  "g6-business-order": [
+    np("Treino 1: Peça 30 sacolas a R$0,40 cada. Qual é o total?", 12, ["30 x 0,40 = 12."]), np("Treino 2: Peça 24 etiquetas a R$0,25 cada. Qual é o total?", 6, ["24 x 0,25 = 6."]), np("Treino 3: R$18 compram cadernos de R$1,50. Quantos podem ser pedidos?", 12, ["Divida o orçamento pelo preço unitário.", "18 / 1,50 = 12."])
+  ],
+  "g6-market-day-portfólio": [
+    np("Treino 1: Um produto é vendido por R$20. Com 15% de desconto, qual é o preço?", 17, ["15% de 20 é 3.", "20 - 3 = 17."]), np("Treino 2: Um produto custa R$9 e é vendido por R$15. Qual é o lucro?", 6, ["15 - 9 = 6."]), np("Treino 3: Venda 8 produtos por R$12 cada. Qual é a receita?", 96, ["Receita = quantidade x preço.", "8 x 12 = 96."])
+  ],
+});
+
 const sharedDbShape = {
   siteSlug: SITE_ID,
   subjectSlug: SUBJECT_ID,
