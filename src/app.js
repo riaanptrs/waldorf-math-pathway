@@ -65,13 +65,13 @@ const copy = {
     navMentalTricks: "Dicas",
     navRhythm: "Ritmo",
     navParent: "Notas para os pais",
-    heroEyebrow: "Prática online de matemática do 5º ao 9º ano",
+    heroEyebrow: "Prática online de matemática do 4º ao 9º ano",
     heroTitle: "Um caminho vivo por medida, dinheiro, porcentagens, razões, geometria e álgebra.",
     heroCopy:
-      "Uma trilha de aulas do 5º ao 9º ano com aritmética prática, medida, geometria, matemática financeira, frações, decimais, razões, números com sinal, fórmulas, Teorema de Pitágoras, crescimento, funções e álgebra. Os estudantes completam passos visíveis, corrigem o próprio trabalho e salvam o progresso para revisão dos pais.",
+      "Uma trilha de aulas do 4º ao 9º ano com aritmética prática, medida, geometria, matemática financeira, frações, decimais, razões, números com sinal, fórmulas, Teorema de Pitágoras, crescimento, funções e álgebra. Os estudantes completam passos visíveis, corrigem o próprio trabalho e salvam o progresso para revisão dos pais.",
     heroButton: "Começar a praticar",
     introEyebrow: "Primeiro passo",
-    introTitle: "Agora com blocos do 5º ao 9º ano",
+    introTitle: "Agora com blocos do 4º ao 9º ano",
     introCopy:
       "Esta trilha de matemática adapta blocos Waldorf em atividades online originais: no 5º ano, frações decimais, medidas e geometria à mão livre; no 6º ano, matemática financeira, descontos, orçamento e geometria precisa; no 7º ano, revisão aritmética, razões e álgebra inicial; no 8º ano, bases numéricas, Pitágoras, crescimento, proporções, mensuração e estereometria inicial; no 9º ano, álgebra I, funções, radicais, sistemas e modelos de crescimento.",
     accountEyebrow: "Cadastro compartilhado",
@@ -143,7 +143,7 @@ const copy = {
     dashboardTitle: "Progresso em matemática dos estudantes vinculados",
     note1Title: "Extração das lições",
     note1Copy:
-      "Os tópicos do 5º ao 9º ano são organizados a partir de objetivos Waldorf de matemática, depois reescritos como lições online originais com passos verificáveis e gabaritos.",
+      "Os tópicos do 4º ao 9º ano são organizados a partir de objetivos Waldorf de matemática, depois reescritos como lições online originais com passos verificáveis e gabaritos.",
     note2Title: "Ciclo de correção",
     note2Copy:
       "Respostas incorretas mostram uma dica de correção e ficam marcadas para revisão até que o estudante envie uma resposta correta.",
@@ -221,13 +221,13 @@ const copy = {
     navMentalTricks: "Tips",
     navRhythm: "Rhythm",
     navParent: "Parent Notes",
-    heroEyebrow: "Grade 5 through 9 online math practice",
+    heroEyebrow: "Grade 4 through 9 online math practice",
     heroTitle: "A living path through measure, money, percentages, ratios, geometry, and algebra.",
     heroCopy:
-      "A Grade 5 through 9 lesson path with practical arithmetic, measure, geometry, business math, fractions, decimals, ratios, signed numbers, formulas, Pythagorean theorem, growth, functions, and algebra. Students complete visible steps, self-correct, and save their work for parent review.",
+      "A Grade 4 through 9 lesson path with practical arithmetic, measure, geometry, business math, fractions, decimals, ratios, signed numbers, formulas, Pythagorean theorem, growth, functions, and algebra. Students complete visible steps, self-correct, and save their work for parent review.",
     heroButton: "Begin Practice",
     introEyebrow: "Step one",
-    introTitle: "Now with Grade 5 through Grade 9 blocks",
+    introTitle: "Now with Grade 4 through Grade 9 blocks",
     introCopy:
       "This math path adapts Waldorf math blocks into original online activities: Grade 5 decimal fractions, measurement, and freehand geometry; Grade 6 business math, discounts, budgeting, and precise geometry; Grade 7 arithmetic review, ratios, and early algebra; Grade 8 number bases, Pythagoras, growth, proportions, mensuration, and early stereometry; Grade 9 Algebra I, functions, radicals, systems, and growth models.",
     accountEyebrow: "Shared registration",
@@ -299,7 +299,7 @@ const copy = {
     dashboardTitle: "Math progress for linked learners",
     note1Title: "Lesson extraction",
     note1Copy:
-      "Grade 5 through 9 topics are sequenced from Waldorf math goals, then rewritten as original online lessons with checkable steps and answer keys.",
+      "Grade 4 through 9 topics are sequenced from Waldorf math goals, then rewritten as original online lessons with checkable steps and answer keys.",
     note2Title: "Correction loop",
     note2Copy:
       "Incorrect answers reveal a correction hint and remain marked for review until the student submits a correct answer.",
@@ -449,8 +449,8 @@ function applyLanguage() {
     ?.setAttribute(
       "content",
       language === "pt"
-        ? "Um percurso de matemática Waldorf para 5º ao 9º ano, com exercícios online sobre frações decimais, medida, matemática financeira, porcentagens, razões, números negativos, geometria, funções e álgebra."
-        : "A Waldorf-inspired Grade 5 through 9 math path with online exercises for decimal fractions, measurement, business math, percentages, ratios, negative numbers, geometry, functions, and algebra.",
+        ? "Um percurso de matemática Waldorf para 4º ao 9º ano, com exercícios online sobre frações, medida, matemática financeira, porcentagens, razões, números negativos, geometria, funções e álgebra."
+        : "A Waldorf-inspired Grade 4 through 9 math path with online exercises for fractions, measurement, business math, percentages, ratios, negative numbers, geometry, functions, and algebra.",
     );
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = t(element.dataset.i18n);

@@ -4,7 +4,7 @@ Last updated: 2026-08-29.
 
 ## Learning Flow
 
-- Grade 5 through Grade 9 lesson catalogue with grade filtering.
+- Grade 4 through Grade 9 lesson catalogue with grade filtering.
 - Student-facing rhythm: warm up, discover, practise, check, and reflect.
 - Methods and worked examples are optional support rather than pre-reading.
 - Incorrect answers receive progressively stronger help across three attempts.
@@ -14,6 +14,8 @@ Last updated: 2026-08-29.
 - Daily Fact Rhythm generates original balanced sets of 60 addition, subtraction, multiplication, and exact-division facts for Grades 5 and 6.
 - Learners can choose an untimed learning path or fluency timing, see only personal progress, and complete a relationship-based recovery round after mistakes.
 - Grade 5 now includes a ten-lesson Fraction Path: equivalence, reduction, like denominators, improper and mixed numbers, unlike denominators, comparison, multiplication with cancellation, division with reciprocals, and cumulative review.
+- Grade 4 now includes six original, Harrer-inspired foundation lessons: place-value regrouping, square measure, first fractions, fractions of quantities, remainders as fractions, and square-number arrays.
+- Grade 5 adds a concrete fraction-division measurement lesson and a fraction-to-decimal hundredths bridge; Grade 6 adds decimal place-value and percent-as-hundredths discoveries.
 - Fraction Path lessons use visual bars before formal methods and remain original rather than reproducing source workbook exercises.
 - Grade 7 now includes a twelve-lesson Ratios and Rates Path that develops ratio meaning, multi-part ratios, whole and decimal forms, reciprocals, sharing, similar figures, shadows, direct and inverse relationships, and lever balance.
 - Grade 7 ratio work deliberately uses multiplicative reasoning before formal Grade 8 proportion algorithms.
