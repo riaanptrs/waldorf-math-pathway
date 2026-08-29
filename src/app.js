@@ -457,6 +457,7 @@ function applyLanguage() {
   });
   languageInput.value = language;
   authForm.dataset.language = language;
+  window.dispatchEvent(new CustomEvent("waldorf-language-change", { detail: language }));
 }
 
 function readLocalProgress() {

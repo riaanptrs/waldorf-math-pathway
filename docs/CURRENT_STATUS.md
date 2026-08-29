@@ -11,6 +11,8 @@ Last updated: 2026-08-29.
 - Full guided answers are delayed until the learner has first received a noticing hint and a method hint.
 - Existing local and Supabase progress saving remains in place.
 - Every lesson now has at least one curated practice item in English and Portuguese; the 20 lessons that previously had none now have three each.
+- Daily Fact Rhythm generates original balanced sets of 60 addition, subtraction, multiplication, and exact-division facts for Grades 5 and 6.
+- Learners can choose an untimed learning path or fluency timing, see only personal progress, and complete a relationship-based recovery round after mistakes.
 
 ## Git
 

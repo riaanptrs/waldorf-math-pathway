@@ -26,6 +26,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Guided worksheet-style activities with Portuguese examples, step checks, and answer keys
 - Extra practice sets and a student reflection prompt after successful work
 - Three curated bilingual practice variations for each of the 20 foundational Grade 5 and early Grade 6 lessons that previously had no practice bank
+- Daily Fact Rhythm with 60 balanced original arithmetic facts, learning and fluency paths, optional timing, personal records, and a six-fact recovery round
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
 

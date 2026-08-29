@@ -252,6 +252,151 @@ main {
   padding-right: 4px;
 }
 
+.fact-rhythm {
+  margin: 0 0 32px;
+  padding: clamp(20px, 4vw, 34px);
+  border: 1px solid rgba(47, 75, 58, 0.22);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f4f8ef, #fff7ec);
+  box-shadow: var(--shadow);
+}
+
+.fact-rhythm__intro {
+  max-width: 780px;
+}
+
+.fact-rhythm__intro h3,
+.fact-results h3,
+.fact-recovery-panel h3 {
+  margin: 4px 0 10px;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+}
+
+.fact-rhythm__intro > p:last-child,
+.fact-gentle,
+.fact-results p,
+.fact-recovery-panel h3 {
+  font-family: Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.fact-setup {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.fact-setup fieldset {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid rgba(36, 49, 43, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 253, 250, 0.78);
+}
+
+.fact-setup legend {
+  padding: 0 5px;
+  color: var(--moss);
+  font-weight: 700;
+}
+
+.fact-setup label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fact-setup input[type="radio"] {
+  width: 18px;
+  min-height: 18px;
+}
+
+.fact-mode-note {
+  display: grid;
+  gap: 4px;
+  grid-column: 1 / -1;
+  padding: 12px 14px;
+  border-left: 4px solid var(--sky);
+  background: rgba(79, 142, 176, 0.1);
+}
+
+.fact-start {
+  justify-self: start;
+}
+
+.fact-session,
+.fact-results,
+.fact-recovery-panel {
+  display: grid;
+  gap: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.fact-session__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.fact-progress,
+.fact-timer {
+  font-size: 1.15rem;
+}
+
+.fact-timer {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--moss);
+  color: white;
+  font-variant-numeric: tabular-nums;
+}
+
+.fact-prompt {
+  margin: 6px 0 16px;
+  padding: clamp(18px, 5vw, 34px);
+  border: 1px solid rgba(209, 154, 63, 0.35);
+  border-radius: 8px;
+  background: #fffdf7;
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.fact-answer-form,
+.recovery-answer-form {
+  display: grid;
+  gap: 8px;
+}
+
+.fact-learning-feedback,
+.recovery-feedback,
+.recovery-hint {
+  min-height: 22px;
+  margin: 0;
+  color: #8a5928;
+  line-height: 1.45;
+}
+
+.fact-results__numbers {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-left: 4px solid var(--moss);
+  background: rgba(47, 111, 69, 0.08);
+}
+
+.fact-recovery-progress {
+  margin: 0;
+  font-weight: 700;
+}
+
 .lesson-filters {
   display: flex;
   align-items: center;
@@ -1182,6 +1327,14 @@ footer {
   .lesson-filters {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .fact-setup {
+    grid-template-columns: 1fr;
+  }
+
+  .fact-session__top {
+    align-items: flex-start;
   }
 
   .learning-path {
