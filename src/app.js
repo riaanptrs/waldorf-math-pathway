@@ -1515,7 +1515,7 @@ authForm.addEventListener("submit", async (event) => {
   }
 });
 
-languageInput.addEventListener("change", () => {
+languageInput.addEventListener("change", async () => {
   language = languageInput.value === "en" ? "en" : "pt";
   localStorage.setItem(LANGUAGE_KEY, language);
   applyLanguage();
@@ -1525,6 +1525,19 @@ languageInput.addEventListener("change", () => {
   renderReviewSheets();
   renderMentalTricks();
   renderAccount();
+  if (currentUser) {
+    const { data, error } = await supabase.auth.updateUser({
+      data: {
+        preferred_language: language,
+        learner_language: language,
+      },
+    });
+    if (error) {
+      setAccountStatus(t("saveFailed", translateAuthError(error)), "error");
+    } else if (data.user) {
+      currentUser = data.user;
+    }
+  }
 });
 
 signOutButton.addEventListener("click", async () => {
