@@ -427,15 +427,40 @@ main {
 }
 
 .learning-path li {
-  padding: 8px 6px;
   border-bottom: 3px solid rgba(47, 75, 58, 0.16);
   color: rgba(36, 49, 43, 0.62);
   text-align: center;
 }
 
+.learning-path button {
+  width: 100%;
+  padding: 9px 6px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.learning-path button:hover,
+.learning-path button:focus-visible {
+  background: rgba(169, 79, 85, 0.08);
+  color: var(--berry);
+  outline: 2px solid transparent;
+}
+
 .learning-path li.is-current {
   border-color: var(--berry);
   color: var(--berry);
+}
+
+[data-phase-section] {
+  scroll-margin-top: 20px;
+}
+
+[data-phase-section]:focus-visible {
+  outline: 3px solid rgba(79, 142, 176, 0.42);
+  outline-offset: 4px;
 }
 
 .lesson-card,
@@ -690,6 +715,7 @@ main {
   line-height: 1.55;
 }
 
+.warmup-card,
 .discovery-card,
 .reflection-card,
 .attempt-hint {
@@ -820,6 +846,21 @@ main {
   .graph-lab__content { grid-template-columns: 1fr; }
 }
 
+.warmup-card {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid rgba(79, 142, 176, 0.25);
+  border-radius: 8px;
+  background: rgba(79, 142, 176, 0.08);
+}
+
+.warmup-card h4,
+.warmup-card ol {
+  margin: 0;
+}
+
 .discovery-card > span {
   display: grid;
   flex: 0 0 34px;
@@ -843,8 +884,14 @@ main {
 
 .reflection-card {
   display: block;
+  margin-top: 20px;
   border-color: rgba(47, 111, 69, 0.25);
   background: rgba(47, 111, 69, 0.09);
+}
+
+.reflection-card.is-pending {
+  border-color: var(--line);
+  background: rgba(36, 49, 43, 0.04);
 }
 
 .reflection-card h4 {
@@ -1454,15 +1501,9 @@ footer {
   }
 
   .learning-path {
-    grid-template-columns: 1fr;
-  }
-
-  .learning-path li {
-    display: none;
-  }
-
-  .learning-path li.is-current {
-    display: block;
+    grid-template-columns: repeat(5, minmax(92px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 4px;
   }
 
   .quick-tutor__grid article {

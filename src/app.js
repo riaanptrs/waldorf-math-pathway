@@ -51,6 +51,8 @@ const lessonCount = document.querySelector(".lesson-count");
 const previousButton = document.querySelector(".lesson-prev");
 const nextButton = document.querySelector(".lesson-next");
 const gradeFilter = document.querySelector(".grade-filter");
+const learningPath = document.querySelector(".learning-path");
+const reflectionCard = document.querySelector(".reflection-card");
 
 const ACTIVE_LEARNER_KEY = "wep:active-learner";
 const LOCAL_PROGRESS_KEY = "waldorf-math:local-progress:v2";
@@ -105,6 +107,7 @@ const copy = {
     hintGuide: "Use os passos guiados e tente uma conta parecida antes de ver a resposta.",
     reflectionTitle: "Feche a aula com suas palavras",
     reflectionPrompt: "O que ajudou você a saber que a resposta fazia sentido? Diga em voz alta ou escreva no caderno.",
+    reflectionPending: "Conclua a conferência para abrir a reflexão final.",
     arithmeticReviewEyebrow: "Revisão aritmética",
     arithmeticReviewTitle: "Folhas de revisão com explicação guiada",
     arithmeticReviewIntro:
@@ -261,6 +264,7 @@ const copy = {
     hintGuide: "Use the guided steps and try a similar problem before seeing the answer.",
     reflectionTitle: "Close the lesson in your own words",
     reflectionPrompt: "What helped you know that your answer made sense? Say it aloud or write it in your notebook.",
+    reflectionPending: "Complete the check to open the final reflection.",
     arithmeticReviewEyebrow: "Arithmetic review",
     arithmeticReviewTitle: "Review sheets with guided explanations",
     arithmeticReviewIntro:
@@ -1114,6 +1118,25 @@ function renderMentalTricks() {
   `;
 }
 
+function setCurrentPhase(phase) {
+  learningPath?.querySelectorAll("li").forEach((item) => {
+    const button = item.querySelector("button[data-phase]");
+    const isCurrent = button?.dataset.phase === phase;
+    item.classList.toggle("is-current", isCurrent);
+    if (isCurrent) button.setAttribute("aria-current", "step");
+    else button?.removeAttribute("aria-current");
+  });
+}
+
+function navigateToPhase(phase) {
+  const target = document.querySelector(`[data-phase-section="${phase}"]`);
+  if (!target) return;
+  if (target.matches("details")) target.open = true;
+  setCurrentPhase(phase);
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+  target.focus({ preventScroll: true });
+}
+
 function renderExercise(lesson) {
   activeLesson = lesson;
   const displayLesson = lessonCopy(lesson);
@@ -1134,10 +1157,17 @@ function renderExercise(lesson) {
   answer.value = "";
   answer.placeholder = lesson.answerType === "expression" ? t("expressionPlaceholder") : t("numberPlaceholder");
   answer.inputMode = lesson.answerType === "expression" ? "text" : "decimal";
+  setCurrentPhase("discover");
+  reflectionCard.classList.add("is-pending");
+  reflectionCard.innerHTML = `<h4>${t("reflectionTitle")}</h4><p>${t("reflectionPending")}</p>`;
   body.innerHTML = `
     ${renderFractionVisual(displayLesson.visualModel)}
     ${renderRatioVisual(displayLesson.ratioModel)}
     ${renderGraphVisual(displayLesson.graphModel)}
+    <section class="warmup-card" data-phase-section="warmup" tabindex="-1">
+      <h4>${t("pathWarmup")}</h4>
+      <ol>${displayLesson.rhythm.map((step) => `<li>${step}</li>`).join("")}</ol>
+    </section>
     <section class="discovery-card">
       <span>1</span>
       <div><h4>${t("discoveryTitle")}</h4><p>${t("discoveryCopy")}</p></div>
@@ -1167,7 +1197,7 @@ function renderExercise(lesson) {
           </aside>`
         : ""
     }
-    <details class="practice-set">
+    <details class="practice-set" data-phase-section="practice" tabindex="-1">
       <summary>${t("extraPracticeTitle")}</summary>
       ${renderExtraPractice(displayLesson)}
     </details>
@@ -1376,6 +1406,7 @@ reviewProblemList?.addEventListener("click", (event) => {
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  setCurrentPhase("check");
   const value = answer.value.trim();
 
   if (value === "") {
@@ -1406,8 +1437,9 @@ form.addEventListener("submit", async (event) => {
       feedback.dataset.state = "correct";
       correction.hidden = true;
       hideAttemptTools();
-      body.querySelector(".reflection-card")?.remove();
-      body.insertAdjacentHTML("beforeend", `<section class="reflection-card"><h4>${t("reflectionTitle")}</h4><p>${t("reflectionPrompt")}</p></section>`);
+      reflectionCard.classList.remove("is-pending");
+      reflectionCard.innerHTML = `<h4>${t("reflectionTitle")}</h4><p>${t("reflectionPrompt")}</p>`;
+      setCurrentPhase("reflect");
     } else {
       lessonAttempts.set(activeLesson.id, (lessonAttempts.get(activeLesson.id) || 0) + 1);
       feedback.textContent =
@@ -1553,6 +1585,11 @@ languageInput.addEventListener("change", async () => {
       currentUser = data.user;
     }
   }
+});
+
+learningPath?.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-phase]");
+  if (button) navigateToPhase(button.dataset.phase);
 });
 
 signOutButton.addEventListener("click", async () => {

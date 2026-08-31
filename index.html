@@ -116,22 +116,24 @@
             </div>
 
             <ol class="learning-path" aria-label="Caminho da aula">
-              <li data-i18n="pathWarmup">Aquecer</li>
-              <li class="is-current" data-i18n="pathDiscover">Descobrir</li>
-              <li data-i18n="pathPractice">Praticar</li>
-              <li data-i18n="pathCheck">Conferir</li>
-              <li data-i18n="pathReflect">Refletir</li>
+              <li><button type="button" data-phase="warmup" data-i18n="pathWarmup">Aquecer</button></li>
+              <li class="is-current"><button type="button" data-phase="discover" data-i18n="pathDiscover" aria-current="step">Descobrir</button></li>
+              <li><button type="button" data-phase="practice" data-i18n="pathPractice">Praticar</button></li>
+              <li><button type="button" data-phase="check" data-i18n="pathCheck">Conferir</button></li>
+              <li><button type="button" data-phase="reflect" data-i18n="pathReflect">Refletir</button></li>
             </ol>
 
-            <p class="eyebrow exercise__question-label" data-i18n="questionLabel">Pergunta</p>
-            <p class="exercise__prompt"></p>
+            <section class="lesson-question" data-phase-section="discover" tabindex="-1">
+              <p class="eyebrow exercise__question-label" data-i18n="questionLabel">Pergunta</p>
+              <p class="exercise__prompt"></p>
+            </section>
             <div class="exercise__body"></div>
             <div class="lesson-nav" aria-label="Lesson navigation">
               <button class="button button--small lesson-prev" type="button" data-i18n="previousButton">Anterior</button>
               <button class="button button--small lesson-next" type="button" data-i18n="nextButton">Próxima</button>
             </div>
 
-            <form class="answer-form">
+            <form class="answer-form" data-phase-section="check" tabindex="-1">
               <p class="answer-form__question"></p>
               <label for="answer">Sua resposta</label>
               <div class="answer-form__row">
@@ -142,6 +144,10 @@
               <p class="correction" hidden></p>
               <div class="attempt-tools" hidden></div>
             </form>
+            <section class="reflection-card is-pending" data-phase-section="reflect" tabindex="-1">
+              <h4 data-i18n="reflectionTitle">Feche a aula com suas palavras</h4>
+              <p data-i18n="reflectionPending">Conclua a conferência para abrir a reflexão final.</p>
+            </section>
           </article>
         </div>
       </section>
@@ -252,7 +258,8 @@
     <script src="src/grade7-ratios.js?v=20260829-ratio-path"></script>
     <script src="src/grade8-proportions.js?v=20260829-grade8-proportions"></script>
     <script src="src/grade9-algebra.js?v=20260829-grade9-algebra"></script>
+    <script src="src/grade6-9-competency-path.js?v=20260831-competency-path"></script>
     <script src="src/fluency.js?v=20260829-daily-rhythm"></script>
-    <script type="module" src="src/app.js?v=20260831-brazilian-grade-labels"></script>
+    <script type="module" src="src/app.js?v=20260831-clickable-learning-path"></script>
   </body>
 </html>
