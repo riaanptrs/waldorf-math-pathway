@@ -35,6 +35,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Grade 6–9 Competency Labs with sixteen original bilingual diagnostic lessons covering durable arithmetic, percent change, irrational and Pythagorean reasoning, dimensional analysis, mensuration, algorithms, functions, systems, quadratic area models, and growth
 - Meaningful vertical-subtraction progression across Grades 3 and 4, plus an age-neutral recovery diagnostic linked from later-grade lessons
 - Developmental long-division pathway from Grade 4 sharing stories through Grade 5 efficient notation and Grade 6 decimal quotients, with a later-grade recovery diagnostic
+- Three-block Grade 4 fraction pathway grounded in varied wholes, observed equivalence, common denominators, simple multiplication, and a later-grade recovery diagnostic
 - Responsive table-and-coordinate-graph models that let learners see a relationship before applying its equation
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway

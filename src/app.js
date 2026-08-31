@@ -110,6 +110,7 @@ const copy = {
     reflectionPending: "Conclua a conferência para abrir a reflexão final.",
     subtractionRecoveryLink: "Revisar subtração passo a passo",
     divisionRecoveryLink: "Revisar divisão longa passo a passo",
+    fractionRecoveryLink: "Revisar frações desde o significado",
     foundationRecoveryCopy: "Esqueceu uma etapa fundamental? Escolha um diagnóstico curto e retome apenas o nível necessário.",
     arithmeticReviewEyebrow: "Revisão aritmética",
     arithmeticReviewTitle: "Folhas de revisão com explicação guiada",
@@ -270,6 +271,7 @@ const copy = {
     reflectionPending: "Complete the check to open the final reflection.",
     subtractionRecoveryLink: "Review subtraction step by step",
     divisionRecoveryLink: "Review long division step by step",
+    fractionRecoveryLink: "Review fractions from their meaning",
     foundationRecoveryCopy: "Forgot a foundational step? Choose a short diagnostic and revisit only the level you need.",
     arithmeticReviewEyebrow: "Arithmetic review",
     arithmeticReviewTitle: "Review sheets with guided explanations",
@@ -1202,6 +1204,7 @@ function renderExercise(lesson) {
             <div class="recovery-actions">
               <a class="button button--small button--ghost subtraction-recovery-link" href="#arithmetic-review">${t("subtractionRecoveryLink")}</a>
               <a class="button button--small button--ghost division-recovery-link" href="#arithmetic-review">${t("divisionRecoveryLink")}</a>
+              <a class="button button--small button--ghost fraction-recovery-link" href="#arithmetic-review">${t("fractionRecoveryLink")}</a>
             </div>
           </aside>`
         : ""
@@ -1509,6 +1512,11 @@ body.addEventListener("click", (event) => {
   const divisionRecovery = event.target.closest(".division-recovery-link");
   if (divisionRecovery) {
     activeReviewSheetId = "review-sheet-division-recovery";
+    renderReviewSheets();
+  }
+  const fractionRecovery = event.target.closest(".fraction-recovery-link");
+  if (fractionRecovery) {
+    activeReviewSheetId = "review-sheet-fraction-recovery";
     renderReviewSheets();
   }
   const checkExtra = event.target.closest(".check-extra");
