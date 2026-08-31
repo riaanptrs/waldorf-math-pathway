@@ -1117,7 +1117,7 @@ function renderMentalTricks() {
 function renderExercise(lesson) {
   activeLesson = lesson;
   const displayLesson = lessonCopy(lesson);
-  grade.textContent = `${displayLesson.grade} - ${displayLesson.block}`;
+  grade.textContent = `${gradeLabel(displayLesson.grade)} - ${displayLesson.block}`;
   title.textContent = displayLesson.title;
   time.textContent = displayLesson.time;
   prompt.textContent = displayLesson.prompt;
