@@ -3,8 +3,16 @@
   if (!root) return;
 
   const STORAGE_KEY = "waldorf-math:fact-rhythm:v1";
-  const TOTAL_FACTS = 60;
   const RECOVERY_SIZE = 6;
+  const GRADE_PROFILES = {
+    "1": { total: 20, operations: ["+", "−"] },
+    "2": { total: 40, operations: ["+", "−", "×", "÷"] },
+    "3": { total: 40, operations: ["+", "−", "×", "÷"] },
+    "4": { total: 60, operations: ["+", "−", "×", "÷"] },
+    "5": { total: 60, operations: ["+", "−", "×", "÷"] },
+    "6": { total: 60, operations: ["+", "−", "×", "÷"] },
+    "7": { total: 60, operations: ["+", "−", "×", "÷"] },
+  };
   const words = {
     pt: {
       eyebrow: "Ritmo diário de fatos",
@@ -13,8 +21,6 @@
       readiness: "Ainda estou aprendendo",
       fluency: "Quero praticar fluência",
       grade: "Ano",
-      grade5: "5º ano",
-      grade6: "6º ano",
       path: "Meu caminho hoje",
       time: "Ritmo",
       untimed: "Sem cronômetro",
@@ -24,7 +30,8 @@
       stop: "Encerrar agora",
       answer: "Sua resposta",
       submit: "Responder",
-      progress: (done) => `${done} de ${TOTAL_FACTS}`,
+      gradeName: (grade) => `${grade}º ano`,
+      progress: (done, total) => `${done} de ${total}`,
       remaining: "restantes",
       gentle: "Faça mentalmente quando puder. Pare se começar a ficar tenso ou cansativo.",
       finished: "Ritmo concluído",
@@ -50,8 +57,6 @@
       readiness: "I am still learning",
       fluency: "I want fluency practice",
       grade: "Grade",
-      grade5: "Grade 5",
-      grade6: "Grade 6",
       path: "My path today",
       time: "Rhythm",
       untimed: "No timer",
@@ -61,7 +66,8 @@
       stop: "Finish now",
       answer: "Your answer",
       submit: "Answer",
-      progress: (done) => `${done} of ${TOTAL_FACTS}`,
+      gradeName: (grade) => `Grade ${grade}`,
+      progress: (done, total) => `${done} of ${total}`,
       remaining: "remaining",
       gentle: "Work mentally when you can. Stop if it begins to feel tense or tiring.",
       finished: "Rhythm complete",
@@ -87,37 +93,74 @@
   let timerId = null;
   const t = (key, ...args) => typeof words[language][key] === "function" ? words[language][key](...args) : words[language][key];
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const pick = (values) => values[random(0, values.length - 1)];
+  const signed = (magnitude) => Math.random() < 0.5 ? magnitude : -magnitude;
 
   function makeFact(operation, gradeLevel) {
     let a;
     let b;
     let answer;
+    const grade = Number(gradeLevel);
+
+    if (grade === 1) {
+      if (operation === "+") {
+        a = random(0, 10);
+        b = random(0, 20 - a);
+        answer = a + b;
+      } else {
+        a = random(0, 20);
+        b = random(0, a);
+        answer = a - b;
+      }
+      return { a, b, operation, answer, prompt: `${a} ${operation} ${b}` };
+    }
+
+    if (grade === 7) {
+      if (operation === "+" || operation === "−") {
+        a = signed(random(1, 30));
+        b = signed(random(1, 20));
+        answer = operation === "+" ? a + b : a - b;
+      } else if (operation === "×") {
+        a = signed(random(2, 12));
+        b = signed(random(2, 12));
+        answer = a * b;
+      } else {
+        b = signed(random(2, 12));
+        answer = signed(random(2, 12));
+        a = b * answer;
+      }
+      return { a, b, operation, answer, prompt: `${a} ${operation} ${b}` };
+    }
+
+    const earlyTables = grade === 2 ? [2, 5, 10] : grade === 3 ? [2, 3, 4, 5, 10] : null;
     if (operation === "+") {
-      a = random(gradeLevel === "6" ? 12 : 3, gradeLevel === "6" ? 89 : 49);
-      b = random(2, gradeLevel === "6" ? 49 : 30);
+      const upper = grade === 2 ? 50 : grade === 3 ? 99 : grade === 4 ? 120 : grade === 6 ? 89 : 49;
+      a = random(grade === 2 ? 0 : 3, upper);
+      b = random(grade === 2 ? 0 : 2, grade === 2 ? 50 : grade === 3 ? 50 : grade === 4 ? 80 : grade === 6 ? 49 : 30);
       answer = a + b;
     } else if (operation === "−") {
-      answer = random(1, gradeLevel === "6" ? 49 : 30);
-      b = random(2, gradeLevel === "6" ? 49 : 30);
+      answer = random(0, grade === 2 ? 50 : grade === 3 ? 99 : grade === 4 ? 120 : grade === 6 ? 49 : 30);
+      b = random(0, grade === 2 ? 50 : grade === 3 ? 50 : grade === 4 ? 80 : grade === 6 ? 49 : 30);
       a = answer + b;
     } else if (operation === "×") {
-      a = random(gradeLevel === "6" ? 3 : 2, 12);
-      b = random(2, 12);
+      a = earlyTables ? pick(earlyTables) : random(grade === 6 ? 3 : 2, 12);
+      b = random(grade === 2 ? 1 : 2, grade === 2 ? 10 : 12);
       answer = a * b;
     } else {
-      b = random(2, 12);
-      answer = random(2, 12);
+      b = earlyTables ? pick(earlyTables) : random(2, 12);
+      answer = random(grade === 2 ? 1 : 2, grade === 2 ? 10 : 12);
       a = b * answer;
     }
     return { a, b, operation, answer, prompt: `${a} ${operation} ${b}` };
   }
 
   function generateFacts(gradeLevel) {
-    const operations = ["+", "−", "×", "÷"];
+    const profile = GRADE_PROFILES[gradeLevel] || GRADE_PROFILES["5"];
+    const operations = profile.operations;
     const facts = [];
     const seen = new Set();
     operations.forEach((operation) => {
-      while (facts.filter((fact) => fact.operation === operation).length < TOTAL_FACTS / 4) {
+      while (facts.filter((fact) => fact.operation === operation).length < profile.total / operations.length) {
         const fact = makeFact(operation, gradeLevel);
         if (!seen.has(fact.prompt)) {
           seen.add(fact.prompt);
@@ -163,7 +206,7 @@
       </div>
       <form class="fact-setup">
         <fieldset><legend>${t("path")}</legend><label><input type="radio" name="fact-path" value="learning" checked /> ${t("readiness")}</label><label><input type="radio" name="fact-path" value="fluency" /> ${t("fluency")}</label></fieldset>
-        <fieldset><legend>${t("grade")}</legend><label><input type="radio" name="fact-grade" value="5" checked /> ${t("grade5")}</label><label><input type="radio" name="fact-grade" value="6" /> ${t("grade6")}</label></fieldset>
+        <fieldset><legend>${t("grade")}</legend><div class="fact-grade-options">${Object.keys(GRADE_PROFILES).map((grade) => `<label><input type="radio" name="fact-grade" value="${grade}" ${grade === "1" ? "checked" : ""} /> ${t("gradeName", grade)}</label>`).join("")}</div></fieldset>
         <fieldset><legend>${t("time")}</legend><label><input type="radio" name="fact-time" value="0" checked /> ${t("untimed")}</label><label><input type="radio" name="fact-time" value="180" /> ${t("three")}</label><label><input type="radio" name="fact-time" value="150" /> ${t("twoHalf")}</label></fieldset>
         <div class="fact-mode-note"><strong>${t("readiness")}</strong><span>${t("modeHelp")}</span></div>
         <button class="button button--small fact-start" type="submit">${t("start")}</button>
@@ -175,7 +218,8 @@
     const gradeLevel = data.get("fact-grade");
     const path = data.get("fact-path");
     const seconds = path === "learning" ? 0 : Number(data.get("fact-time"));
-    session = { gradeLevel, path, mode: seconds, remaining: seconds, facts: generateFacts(gradeLevel), index: 0, correct: 0, mistakes: [] };
+    const facts = generateFacts(gradeLevel);
+    session = { gradeLevel, path, mode: seconds, remaining: seconds, facts, total: facts.length, index: 0, correct: 0, mistakes: [] };
     root.innerHTML = `<div class="fact-session">
       <div class="fact-session__top"><div><p class="eyebrow">${t("fluency")}</p><strong class="fact-progress"></strong></div><strong class="fact-timer"></strong></div>
       <p class="fact-gentle">${t("gentle")}</p>
@@ -200,7 +244,7 @@
 
   function renderFact() {
     const fact = session.facts[session.index];
-    root.querySelector(".fact-progress").textContent = t("progress", session.index);
+    root.querySelector(".fact-progress").textContent = t("progress", session.index, session.total);
     root.querySelector(".fact-timer").textContent = timerText();
     root.querySelector(".fact-prompt").textContent = `${fact.prompt} = ?`;
     root.querySelector(".fact-learning-feedback").textContent = "";
@@ -220,7 +264,7 @@
     if (isCorrect) session.correct += 1;
     else session.mistakes.push(fact);
     session.index += 1;
-    if (session.index >= TOTAL_FACTS) finishSession(); else renderFact();
+    if (session.index >= session.total) finishSession(); else renderFact();
   }
 
   function recoveryFacts() {

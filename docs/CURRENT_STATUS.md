@@ -1,17 +1,17 @@
 # Current Status
 
-Last updated: 2026-08-29.
+Last updated: 2026-08-31.
 
 ## Learning Flow
 
-- Grade 4 through Grade 9 lesson catalogue with grade filtering.
+- Grade 1 through Grade 9 lesson catalogue with grade filtering.
 - Student-facing rhythm: warm up, discover, practise, check, and reflect.
 - Methods and worked examples are optional support rather than pre-reading.
 - Incorrect answers receive progressively stronger help across three attempts.
 - Full guided answers are delayed until the learner has first received a noticing hint and a method hint.
 - Existing local and Supabase progress saving remains in place.
 - Every lesson now has at least one curated practice item in English and Portuguese; the 20 lessons that previously had none now have three each.
-- Daily Fact Rhythm generates original balanced sets of 60 addition, subtraction, multiplication, and exact-division facts for Grades 5 and 6.
+- Daily Fact Rhythm serves Grades 1–7 with age-appropriate sets: foundational addition and subtraction in Grade 1, selected early multiplication tables from Grade 2, broader arithmetic fluency through Grade 6, and signed-number facts in Grade 7.
 - Learners can choose an untimed learning path or fluency timing, see only personal progress, and complete a relationship-based recovery round after mistakes.
 - Grade 5 now includes a ten-lesson Fraction Path: equivalence, reduction, like denominators, improper and mixed numbers, unlike denominators, comparison, multiplication with cancellation, division with reciprocals, and cumulative review.
 - Grade 4 now includes six original, Harrer-inspired foundation lessons: place-value regrouping, square measure, first fractions, fractions of quantities, remainders as fractions, and square-number arrays.

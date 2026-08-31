@@ -1,6 +1,6 @@
 # Waldorf Math Pathway
 
-A first repository for a Waldorf-inspired Grade 4 through Grade 9 online math practice site.
+A first repository for a Waldorf-inspired Grade 1 through Grade 9 online math practice site.
 
 The goal is to create a child-friendly website similar in spirit to a Waldorf
 pathway: gentle lessons, practical arithmetic, story problems, and exercises
@@ -26,7 +26,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Guided worksheet-style activities with Portuguese examples, step checks, and answer keys
 - Extra practice sets and a student reflection prompt after successful work
 - Three curated bilingual practice variations for each of the 20 foundational Grade 5 and early Grade 6 lessons that previously had no practice bank
-- Daily Fact Rhythm with 60 balanced original arithmetic facts, learning and fluency paths, optional timing, personal records, and a six-fact recovery round
+- Daily Fact Rhythm for Grades 1–7, with age-appropriate operation sets, learning and fluency paths, optional timing, personal records, and a six-fact recovery round
 - Complete original Grade 5 Fraction Path with ten sequenced bilingual lessons, visual fraction bars, guided discovery, optional steps, and cumulative practice
 - Grade 4 foundation path inspired by Dorothy Harrer's developmental sequence: regrouping, square measure, fraction sharing, fractional remainders, and square-number patterns, all rewritten as original activities.
 - Complete original Grade 7 Ratios and Rates Path with twelve bilingual relationship-first lessons, visible ratio groups, similar figures, shadows, direct and inverse change, and lever balance
