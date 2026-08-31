@@ -109,7 +109,8 @@ const copy = {
     reflectionPrompt: "O que ajudou você a saber que a resposta fazia sentido? Diga em voz alta ou escreva no caderno.",
     reflectionPending: "Conclua a conferência para abrir a reflexão final.",
     subtractionRecoveryLink: "Revisar subtração passo a passo",
-    subtractionRecoveryCopy: "Esqueceu uma troca, a passagem pelo zero ou o alinhamento decimal? Abra um diagnóstico curto e retome apenas a etapa necessária.",
+    divisionRecoveryLink: "Revisar divisão longa passo a passo",
+    foundationRecoveryCopy: "Esqueceu uma etapa fundamental? Escolha um diagnóstico curto e retome apenas o nível necessário.",
     arithmeticReviewEyebrow: "Revisão aritmética",
     arithmeticReviewTitle: "Folhas de revisão com explicação guiada",
     arithmeticReviewIntro:
@@ -268,7 +269,8 @@ const copy = {
     reflectionPrompt: "What helped you know that your answer made sense? Say it aloud or write it in your notebook.",
     reflectionPending: "Complete the check to open the final reflection.",
     subtractionRecoveryLink: "Review subtraction step by step",
-    subtractionRecoveryCopy: "Forgot an exchange, passing through zero, or decimal alignment? Open a short diagnostic and revisit only the step you need.",
+    divisionRecoveryLink: "Review long division step by step",
+    foundationRecoveryCopy: "Forgot a foundational step? Choose a short diagnostic and revisit only the level you need.",
     arithmeticReviewEyebrow: "Arithmetic review",
     arithmeticReviewTitle: "Review sheets with guided explanations",
     arithmeticReviewIntro:
@@ -1196,8 +1198,11 @@ function renderExercise(lesson) {
     ${
       Number(displayLesson.grade.match(/\d+/)?.[0] || 0) >= 5
         ? `<aside class="subtraction-recovery-callout">
-            <p>${t("subtractionRecoveryCopy")}</p>
-            <a class="button button--small button--ghost subtraction-recovery-link" href="#arithmetic-review">${t("subtractionRecoveryLink")}</a>
+            <p>${t("foundationRecoveryCopy")}</p>
+            <div class="recovery-actions">
+              <a class="button button--small button--ghost subtraction-recovery-link" href="#arithmetic-review">${t("subtractionRecoveryLink")}</a>
+              <a class="button button--small button--ghost division-recovery-link" href="#arithmetic-review">${t("divisionRecoveryLink")}</a>
+            </div>
           </aside>`
         : ""
     }
@@ -1499,6 +1504,11 @@ body.addEventListener("click", (event) => {
   const subtractionRecovery = event.target.closest(".subtraction-recovery-link");
   if (subtractionRecovery) {
     activeReviewSheetId = "review-sheet-subtraction-recovery";
+    renderReviewSheets();
+  }
+  const divisionRecovery = event.target.closest(".division-recovery-link");
+  if (divisionRecovery) {
+    activeReviewSheetId = "review-sheet-division-recovery";
     renderReviewSheets();
   }
   const checkExtra = event.target.closest(".check-extra");

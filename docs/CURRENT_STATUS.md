@@ -27,6 +27,8 @@ Last updated: 2026-08-29.
 - The competency expectations and suggested revisit rhythm are documented in `docs/GRADE6_9_COMPETENCY_MAP.md`.
 - Grade 3 now develops vertical subtraction through alignment, one exchange, hundreds, and two exchanges; Grade 4 extends the pathway through zero, strategy choice, estimation, and addition checks.
 - A six-level Subtraction Recovery review is linked from every Grade 5–9 lesson so older learners can revisit only the missing prerequisite.
+- Grade 4 now introduces long division through fair-sharing stories and flexible partial quotients; Grade 5 compresses those ideas into efficient notation and two-digit divisors; Grade 6 continues into decimal and repeating quotients.
+- A six-level Long-Division Recovery review is available beside the subtraction recovery link in every Grade 5–9 lesson.
 
 ## Git
 

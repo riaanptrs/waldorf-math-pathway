@@ -912,6 +912,13 @@ main {
   line-height: 1.5;
 }
 
+.recovery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
 .reflection-card h4 {
   margin-bottom: 6px;
   color: var(--moss);
@@ -1537,6 +1544,11 @@ footer {
   }
 
   .subtraction-recovery-callout {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .recovery-actions {
     align-items: stretch;
     flex-direction: column;
   }
