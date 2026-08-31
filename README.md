@@ -33,6 +33,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Complete original Grade 8 Proportions and Graphs Path with ten bilingual lessons connecting constant rates, tables, equations, coordinate graphs, direct and inverse proportion, scale, and practical cost
 - Complete original Grade 9 Algebra I Foundations Path with thirteen bilingual lessons progressing from expression meaning through equations, formulas, inequalities, linear models, and graphical systems
 - Grade 6–9 Competency Labs with sixteen original bilingual diagnostic lessons covering durable arithmetic, percent change, irrational and Pythagorean reasoning, dimensional analysis, mensuration, algorithms, functions, systems, quadratic area models, and growth
+- Meaningful vertical-subtraction progression across Grades 3 and 4, plus an age-neutral recovery diagnostic linked from later-grade lessons
 - Responsive table-and-coordinate-graph models that let learners see a relationship before applying its equation
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway

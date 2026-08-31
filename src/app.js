@@ -108,6 +108,8 @@ const copy = {
     reflectionTitle: "Feche a aula com suas palavras",
     reflectionPrompt: "O que ajudou você a saber que a resposta fazia sentido? Diga em voz alta ou escreva no caderno.",
     reflectionPending: "Conclua a conferência para abrir a reflexão final.",
+    subtractionRecoveryLink: "Revisar subtração passo a passo",
+    subtractionRecoveryCopy: "Esqueceu uma troca, a passagem pelo zero ou o alinhamento decimal? Abra um diagnóstico curto e retome apenas a etapa necessária.",
     arithmeticReviewEyebrow: "Revisão aritmética",
     arithmeticReviewTitle: "Folhas de revisão com explicação guiada",
     arithmeticReviewIntro:
@@ -265,6 +267,8 @@ const copy = {
     reflectionTitle: "Close the lesson in your own words",
     reflectionPrompt: "What helped you know that your answer made sense? Say it aloud or write it in your notebook.",
     reflectionPending: "Complete the check to open the final reflection.",
+    subtractionRecoveryLink: "Review subtraction step by step",
+    subtractionRecoveryCopy: "Forgot an exchange, passing through zero, or decimal alignment? Open a short diagnostic and revisit only the step you need.",
     arithmeticReviewEyebrow: "Arithmetic review",
     arithmeticReviewTitle: "Review sheets with guided explanations",
     arithmeticReviewIntro:
@@ -1190,6 +1194,14 @@ function renderExercise(lesson) {
       </div>
     </details>
     ${
+      Number(displayLesson.grade.match(/\d+/)?.[0] || 0) >= 5
+        ? `<aside class="subtraction-recovery-callout">
+            <p>${t("subtractionRecoveryCopy")}</p>
+            <a class="button button--small button--ghost subtraction-recovery-link" href="#arithmetic-review">${t("subtractionRecoveryLink")}</a>
+          </aside>`
+        : ""
+    }
+    ${
       displayLesson.mathTip
         ? `<aside class="math-tip">
             <strong>${t("mathTipTitle")}</strong>
@@ -1484,6 +1496,11 @@ attemptTools.addEventListener("click", (event) => {
 });
 
 body.addEventListener("click", (event) => {
+  const subtractionRecovery = event.target.closest(".subtraction-recovery-link");
+  if (subtractionRecovery) {
+    activeReviewSheetId = "review-sheet-subtraction-recovery";
+    renderReviewSheets();
+  }
   const checkExtra = event.target.closest(".check-extra");
   if (checkExtra) checkExtraPracticeButton(checkExtra);
 });

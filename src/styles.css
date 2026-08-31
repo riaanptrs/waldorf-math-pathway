@@ -894,6 +894,24 @@ main {
   background: rgba(36, 49, 43, 0.04);
 }
 
+.subtraction-recovery-callout {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin: 18px 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(209, 154, 63, 0.35);
+  border-radius: 8px;
+  background: rgba(209, 154, 63, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.subtraction-recovery-callout p {
+  margin: 0;
+  line-height: 1.5;
+}
+
 .reflection-card h4 {
   margin-bottom: 6px;
   color: var(--moss);
@@ -1515,6 +1533,11 @@ footer {
   }
 
   .answer-form__row {
+    flex-direction: column;
+  }
+
+  .subtraction-recovery-callout {
+    align-items: stretch;
     flex-direction: column;
   }
 

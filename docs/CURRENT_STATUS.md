@@ -25,6 +25,8 @@ Last updated: 2026-08-29.
 - Grade 9 algebra lessons preserve a discovery-to-practice sequence, require checking in the original relationship, reuse responsive graphs where helpful, and provide bilingual progressive support after mistakes.
 - Grades 6–9 now include sixteen bilingual Competency Lab diagnostics. Each lesson targets a curriculum gap, provides guided intermediate checks, adds a second practice context, and asks learners to estimate or predict before calculating and verify afterward.
 - The competency expectations and suggested revisit rhythm are documented in `docs/GRADE6_9_COMPETENCY_MAP.md`.
+- Grade 3 now develops vertical subtraction through alignment, one exchange, hundreds, and two exchanges; Grade 4 extends the pathway through zero, strategy choice, estimation, and addition checks.
+- A six-level Subtraction Recovery review is linked from every Grade 5–9 lesson so older learners can revisit only the missing prerequisite.
 
 ## Git
 
