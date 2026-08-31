@@ -65,15 +65,15 @@ const copy = {
     navMentalTricks: "Dicas",
     navRhythm: "Ritmo",
     navParent: "Notas para os pais",
-    heroEyebrow: "Prática online de matemática do 4º ao 9º ano",
+    heroEyebrow: "Prática online de matemática do 1º ao 9º ano",
     heroTitle: "Um caminho vivo por medida, dinheiro, porcentagens, razões, geometria e álgebra.",
     heroCopy:
-      "Uma trilha de aulas do 4º ao 9º ano com aritmética prática, medida, geometria, matemática financeira, frações, decimais, razões, números com sinal, fórmulas, Teorema de Pitágoras, crescimento, funções e álgebra. Os estudantes completam passos visíveis, corrigem o próprio trabalho e salvam o progresso para revisão dos pais.",
+      "Uma trilha de aulas do 1º ao 9º ano que começa com números vivos, movimento, todo e partes e as quatro operações, seguindo por aritmética prática, medida, geometria, frações, decimais, razões e álgebra. Os estudantes completam passos visíveis, corrigem o próprio trabalho e salvam o progresso para revisão dos pais.",
     heroButton: "Começar a praticar",
     introEyebrow: "Primeiro passo",
-    introTitle: "Agora com blocos do 4º ao 9º ano",
+    introTitle: "Agora com um caminho vivo do 1º ao 9º ano",
     introCopy:
-      "Esta trilha de matemática adapta blocos Waldorf em atividades online originais: no 5º ano, frações decimais, medidas e geometria à mão livre; no 6º ano, matemática financeira, descontos, orçamento e geometria precisa; no 7º ano, revisão aritmética, razões e álgebra inicial; no 8º ano, bases numéricas, Pitágoras, crescimento, proporções, mensuração e estereometria inicial; no 9º ano, álgebra I, funções, radicais, sistemas e modelos de crescimento.",
+      "Esta trilha adapta blocos Waldorf em atividades originais. No 1º ano, a criança começa pelo todo, move objetos, descobre partes, encontra as quatro operações como relações e conta com ritmo. Os anos seguintes avançam por aritmética, medida, geometria, frações, matemática financeira, razões e álgebra.",
     accountEyebrow: "Cadastro compartilhado",
     accountTitle: "Entrar ou cadastrar",
     modeLabel: "Modo",
@@ -143,7 +143,7 @@ const copy = {
     dashboardTitle: "Progresso em matemática dos estudantes vinculados",
     note1Title: "Extração das lições",
     note1Copy:
-      "Os tópicos do 4º ao 9º ano são organizados a partir de objetivos Waldorf de matemática, depois reescritos como lições online originais com passos verificáveis e gabaritos.",
+      "Os tópicos do 1º ao 9º ano são organizados a partir de objetivos Waldorf de matemática, depois reescritos como lições online originais com passos verificáveis e gabaritos.",
     note2Title: "Ciclo de correção",
     note2Copy:
       "Respostas incorretas mostram uma dica de correção e ficam marcadas para revisão até que o estudante envie uma resposta correta.",
@@ -221,15 +221,15 @@ const copy = {
     navMentalTricks: "Tips",
     navRhythm: "Rhythm",
     navParent: "Parent Notes",
-    heroEyebrow: "Grade 4 through 9 online math practice",
+    heroEyebrow: "Grade 1 through 9 online math practice",
     heroTitle: "A living path through measure, money, percentages, ratios, geometry, and algebra.",
     heroCopy:
-      "A Grade 4 through 9 lesson path with practical arithmetic, measure, geometry, business math, fractions, decimals, ratios, signed numbers, formulas, Pythagorean theorem, growth, functions, and algebra. Students complete visible steps, self-correct, and save their work for parent review.",
+      "A Grade 1 through 9 lesson path beginning with living numbers, movement, whole-to-parts thinking, and the four operations, then continuing through practical arithmetic, measure, geometry, fractions, ratios, and algebra. Students complete visible steps, self-correct, and save their work for parent review.",
     heroButton: "Begin Practice",
     introEyebrow: "Step one",
-    introTitle: "Now with Grade 4 through Grade 9 blocks",
+    introTitle: "Now with a living Grade 1 through Grade 9 path",
     introCopy:
-      "This math path adapts Waldorf math blocks into original online activities: Grade 5 decimal fractions, measurement, and freehand geometry; Grade 6 business math, discounts, budgeting, and precise geometry; Grade 7 arithmetic review, ratios, and early algebra; Grade 8 number bases, Pythagoras, growth, proportions, mensuration, and early stereometry; Grade 9 Algebra I, functions, radicals, systems, and growth models.",
+      "This path adapts Waldorf math blocks into original activities. Grade 1 begins with the whole, movable objects, discovered parts, four related operations, and rhythmic counting. Later grades continue through arithmetic, measure, geometry, fractions, business math, ratios, and algebra.",
     accountEyebrow: "Shared registration",
     accountTitle: "Sign in or register",
     modeLabel: "Mode",
@@ -299,7 +299,7 @@ const copy = {
     dashboardTitle: "Math progress for linked learners",
     note1Title: "Lesson extraction",
     note1Copy:
-      "Grade 4 through 9 topics are sequenced from Waldorf math goals, then rewritten as original online lessons with checkable steps and answer keys.",
+      "Grade 1 through 9 topics are sequenced from Waldorf math goals, then rewritten as original online lessons with checkable steps and answer keys.",
     note2Title: "Correction loop",
     note2Copy:
       "Incorrect answers reveal a correction hint and remain marked for review until the student submits a correct answer.",
@@ -436,9 +436,14 @@ function renderGradeFilter() {
   if (!gradeFilter) return;
   gradeFilter.innerHTML = [
     `<option value="all">${t("allGrades")}</option>`,
-    ...availableGrades().map((item) => `<option value="${item}">${item}</option>`),
+    ...availableGrades().map((item) => `<option value="${item}">${gradeLabel(item)}</option>`),
   ].join("");
   gradeFilter.value = selectedGrade;
+}
+
+function gradeLabel(grade) {
+  const number = String(grade).match(/\d+/)?.[0];
+  return language === "pt" && number ? `${number}º ano` : grade;
 }
 
 function applyLanguage() {
@@ -449,8 +454,8 @@ function applyLanguage() {
     ?.setAttribute(
       "content",
       language === "pt"
-        ? "Um percurso de matemática Waldorf para 4º ao 9º ano, com exercícios online sobre frações, medida, matemática financeira, porcentagens, razões, números negativos, geometria, funções e álgebra."
-        : "A Waldorf-inspired Grade 4 through 9 math path with online exercises for fractions, measurement, business math, percentages, ratios, negative numbers, geometry, functions, and algebra.",
+        ? "Um percurso de matemática Waldorf para o 1º ao 9º ano, começando com números vivos, movimento, todo e partes e avançando por aritmética, medida, geometria, frações, razões e álgebra."
+        : "A Waldorf-inspired Grade 1 through 9 math path beginning with living numbers, movement, whole-to-parts thinking, and continuing through arithmetic, measurement, geometry, fractions, ratios, and algebra.",
     );
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = t(element.dataset.i18n);
@@ -543,6 +548,11 @@ const tutorSupport = {
       mistake: "Não leia outro sistema de numeração como se fosse sempre base dez. Cada posição tem um valor próprio.",
       check: "Expanda o número em valores de posição ou potências. A soma deve reconstruir o valor pedido.",
     },
+    {
+      test: /.*/,
+      mistake: "Não comece apenas pelo sinal da operação. Primeiro construa ou imagine o todo e identifique as partes que estão mudando.",
+      check: "Reconstrua o todo com objetos, desenho ou uma operação inversa. As partes devem voltar à quantidade inicial.",
+    },
   ],
   en: [
     {
@@ -575,6 +585,11 @@ const tutorSupport = {
       mistake: "Do not read another number system as if it were always base ten. Each position has its own value.",
       check: "Expand the number into place values or powers. The sum should rebuild the value you need.",
     },
+    {
+      test: /.*/,
+      mistake: "Do not begin with the operation sign alone. First build or imagine the whole and identify the parts that are changing.",
+      check: "Rebuild the whole with objects, a drawing, or an inverse operation. The parts should return to the starting quantity.",
+    },
   ],
 };
 
@@ -587,7 +602,7 @@ function lessonSearchText(lesson) {
 
 function tutorSupportFor(lesson) {
   const text = lessonSearchText(lesson);
-  const support = tutorSupport[language].find((item) => item.test.test(text)) || tutorSupport.en[0];
+  const support = tutorSupport[language].find((item) => item.test.test(text)) || tutorSupport[language].at(-1);
   return {
     mistake: support.mistake,
     check: support.check,
@@ -975,7 +990,7 @@ function renderList() {
       const stateLabel = state === "correct" ? t("stateCorrect") : state ? t("stateReview") : t("stateOpen");
       return `
         <button class="lesson-card" data-id="${lesson.id}" type="button">
-          <span>${displayLesson.grade} - ${displayLesson.block}</span>
+          <span>${gradeLabel(displayLesson.grade)} - ${displayLesson.block}</span>
           <strong>${displayLesson.title}</strong>
           <small>${displayLesson.time}</small>
           <em data-state="${state ?? "open"}">${stateLabel}</em>

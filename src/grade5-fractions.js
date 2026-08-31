@@ -123,9 +123,12 @@
   const insertAt = lessons.findIndex((lesson) => lesson.grade === "Grade 6");
   lessons.splice(insertAt < 0 ? lessons.length : insertAt, 0, ...fractionLessons);
   const grade5BlockOrder = ["Fraction Review", "Fraction Path", "Fractions to Decimals", "Decimal Fractions", "Metric Measure", "Freehand Geometry", "Symmetry", "Measurement", "Ancient Measures"];
-  const grade5Lessons = lessons.filter((lesson) => lesson.grade === "Grade 5").sort((a, b) => grade5BlockOrder.indexOf(a.block) - grade5BlockOrder.indexOf(b.block));
-  const laterLessons = lessons.filter((lesson) => lesson.grade !== "Grade 5");
-  lessons.splice(0, lessons.length, ...grade5Lessons, ...laterLessons);
+  lessons.sort((a, b) => {
+    const gradeDifference = Number(a.grade.match(/\d+/)?.[0] || 0) - Number(b.grade.match(/\d+/)?.[0] || 0);
+    if (gradeDifference !== 0) return gradeDifference;
+    if (a.grade === "Grade 5") return grade5BlockOrder.indexOf(a.block) - grade5BlockOrder.indexOf(b.block);
+    return 0;
+  });
   Object.assign(translations, pt);
   Object.assign(bank.en, practiceEn);
   Object.assign(bank.pt, practicePt);

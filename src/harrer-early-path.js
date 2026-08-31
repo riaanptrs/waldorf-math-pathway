@@ -109,7 +109,8 @@
     "g6-percent-hundred-grid": { prompt: "Pratique: escreva 45% como fração irredutível.", answerType: "expression", acceptedAnswers: ["9/20"], steps: ["Escreva 45/100.", "Divida por 5 para obter 9/20."] },
   };
 
-  lessons.unshift(...earlyLessons.filter((lesson) => lesson.grade === "Grade 4"));
+  const firstGrade5 = lessons.findIndex((lesson) => lesson.grade === "Grade 5");
+  lessons.splice(firstGrade5 < 0 ? lessons.length : firstGrade5, 0, ...earlyLessons.filter((lesson) => lesson.grade === "Grade 4"));
   const firstGrade6 = lessons.findIndex((lesson) => lesson.grade === "Grade 6");
   lessons.splice(firstGrade6 < 0 ? lessons.length : firstGrade6, 0, ...earlyLessons.filter((lesson) => lesson.grade === "Grade 5"));
   const firstGrade7 = lessons.findIndex((lesson) => lesson.grade === "Grade 7");
