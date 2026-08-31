@@ -100,7 +100,7 @@ const copy = {
     discoveryTitle: "Descubra antes de receber o método",
     discoveryCopy: "Leia a situação, faça uma estimativa e experimente um caminho próprio. Você pode abrir apoio se ficar preso.",
     supportSummary: "Preciso de uma lembrança ou exemplo",
-    guidedSupportSummary: "Quero resolver com passos guiados",
+    guidedSupportSummary: "Passos guiados da atividade principal",
     hintTitle: (attempt) => `Apoio ${attempt} de 3`,
     hintNotice: "Primeiro, observe isto:",
     hintMethod: "Agora experimente este caminho:",
@@ -180,7 +180,7 @@ const copy = {
     refresherMethod: "Método",
     workedTitle: "Como resolver esta conta, passo por passo",
     refresherExample: "Exemplo rápido",
-    showSteps: "Mostre os passos",
+    showSteps: "Resolva os passos da atividade principal",
     finalAnswer: "Resposta final depois dos passos",
     yourAnswer: "Sua resposta",
     expressionPlaceholder: "Exemplo: 10k - 14",
@@ -261,7 +261,7 @@ const copy = {
     discoveryTitle: "Discover before receiving the method",
     discoveryCopy: "Read the situation, make an estimate, and try your own path. Open support if you become stuck.",
     supportSummary: "I need a reminder or example",
-    guidedSupportSummary: "I want to solve with guided steps",
+    guidedSupportSummary: "Guided steps for the main activity",
     hintTitle: (attempt) => `Support ${attempt} of 3`,
     hintNotice: "First, notice this:",
     hintMethod: "Now try this path:",
@@ -341,7 +341,7 @@ const copy = {
     refresherMethod: "Method",
     workedTitle: "How to solve this, step by step",
     refresherExample: "Quick example",
-    showSteps: "Show the steps",
+    showSteps: "Solve the main activity steps",
     finalAnswer: "Final answer after the steps",
     yourAnswer: "Your answer",
     expressionPlaceholder: "Example: 10k - 14",
@@ -1217,10 +1217,6 @@ function renderExercise(lesson) {
           </aside>`
         : ""
     }
-    <details class="practice-set" data-phase-section="practice" tabindex="-1">
-      <summary>${t("extraPracticeTitle")}</summary>
-      ${renderExtraPractice(displayLesson)}
-    </details>
     ${
       displayLesson.guidedSteps?.length
         ? `<details class="guided-support"><summary>${t("guidedSupportSummary")}</summary><div class="guided-steps">
@@ -1239,6 +1235,10 @@ function renderExercise(lesson) {
           </div></details>`
         : ""
     }
+    <details class="practice-set" data-phase-section="practice" tabindex="-1">
+      <summary>${t("extraPracticeTitle")}</summary>
+      ${renderExtraPractice(displayLesson)}
+    </details>
   `;
 
   document.querySelectorAll(".lesson-card").forEach((card) => {
