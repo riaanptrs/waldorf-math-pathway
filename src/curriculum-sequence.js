@@ -7,10 +7,10 @@
     "Grade 3": ["Measure Through Work", "Number Shapes", "Place Value", "Meaningful Subtraction"],
     "Grade 4": ["Place Value", "Subtraction Strategies", "Long Division Stories", "Square Measure", "Number Patterns", "Fraction Beginnings", "Fractions Block 1", "Fractions Block 2", "Fractions Block 3"],
     "Grade 5": ["Efficient Long Division", "Fraction Review", "Fraction Path", "Fractions to Decimals", "Decimal Fractions", "Metric Measure", "Measurement", "Ancient Measures", "Freehand Geometry", "Symmetry"],
-    "Grade 6": ["Decimal System", "Division Beyond Whole Numbers", "Fractions", "Percents", "Fair Trade", "Discounts", "Unit Cost", "Business Math", "Interest", "Budgeting", "Market Day", "Portfolio", "Geometry", "Core Competency Lab"],
-    "Grade 7": ["Arithmetic Review", "Puzzles", "Divisibility", "Fractions", "Decimals", "Repeating Decimals", "Percents", "Business Math", "Ratios & Rates Path", "Ratios", "Rates", "Unit Cost", "Álgebra", "Formulas", "Reasoning Competency Lab"],
-    "Grade 8": ["Number Bases", "Scientific Notation", "Percent Growth", "Dimensional Analysis", "Proportions & Graphs Path", "Proportions", "Álgebra", "Pythagorean Theorem", "Mensuration", "Applied Competency Lab"],
-    "Grade 9": ["Algebra I Foundations Path", "Álgebra I", "Systems", "Exponents", "Radicals", "Linear Functions", "Coordinate Geometry", "Quadratics", "Growth Models", "Algebra Readiness Lab"],
+    "Grade 6": ["Decimal System", "Division Beyond Whole Numbers", "Fractions", "Percents", "Fair Trade", "Discounts", "Unit Cost", "Business Math", "Interest", "Budgeting", "Market Day", "Portfolio", "Geometry", "String, Shadow & Measure", "Core Competency Lab"],
+    "Grade 7": ["Arithmetic Review", "Puzzles", "Divisibility", "Fractions", "Decimals", "Repeating Decimals", "Percents", "Business Math", "Ratios & Rates Path", "Ratios", "Rates", "Unit Cost", "Geometry Through Shadow", "Álgebra", "Formulas", "Reasoning Competency Lab"],
+    "Grade 8": ["Number Bases", "Scientific Notation", "Percent Growth", "Dimensional Analysis", "Proportions & Graphs Path", "Proportions", "Álgebra", "Pythagorean Theorem", "Mensuration", "Solid & Curved Geometry", "Applied Competency Lab"],
+    "Grade 9": ["Algebra I Foundations Path", "Álgebra I", "Systems", "Exponents", "Radicals", "Linear Functions", "Coordinate Geometry", "Quadratics", "Growth Models", "Geometry of the Earth", "Algebra Readiness Lab"],
   };
 
   const lessonPriority = {

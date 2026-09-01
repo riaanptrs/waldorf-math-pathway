@@ -32,6 +32,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Complete original Grade 7 Ratios and Rates Path with twelve bilingual relationship-first lessons, visible ratio groups, similar figures, shadows, direct and inverse change, and lever balance
 - Complete original Grade 8 Proportions and Graphs Path with ten bilingual lessons connecting constant rates, tables, equations, coordinate graphs, direct and inverse proportion, scale, and practical cost
 - Complete original Grade 9 Algebra I Foundations Path with thirteen bilingual lessons progressing from expression meaning through equations, formulas, inequalities, linear models, and graphical systems
+- Original historical-geometry path using string, marked rope, shadow measurement, paper solids, cone sections, and an Earth-circumference model before formal calculation
 - Grade 6–9 Competency Labs with sixteen original bilingual diagnostic lessons covering durable arithmetic, percent change, irrational and Pythagorean reasoning, dimensional analysis, mensuration, algorithms, functions, systems, quadratic area models, and growth
 - Meaningful vertical-subtraction progression across Grades 3 and 4, plus an age-neutral recovery diagnostic linked from later-grade lessons
 - Developmental long-division pathway from Grade 4 sharing stories through Grade 5 efficient notation and Grade 6 decimal quotients, with a later-grade recovery diagnostic

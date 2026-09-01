@@ -43,6 +43,7 @@
     "g5-freehand-circle-diameter": { kind: "circle" },
     "g5-symmetry-balance": { kind: "symmetry" },
     "g6-geometry-precision": { kind: "circle" },
+    "g6-geometry-rope-right-angle": { kind: "triangle" },
     "g7-competency-pythagorean-leg": { kind: "triangle" },
     "g8-pythagorean-hypotenuse": { kind: "triangle" },
     "g8-competency-trapezoid-area": { kind: "area" },

@@ -17,6 +17,7 @@ const scripts = [
   "grade8-proportions.js",
   "grade9-algebra.js",
   "grade6-9-competency-path.js",
+  "geometry-story-path.js",
   "curriculum-sequence.js",
 ];
 

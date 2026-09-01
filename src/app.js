@@ -954,6 +954,17 @@ function renderGraphVisual(model) {
   </section>`;
 }
 
+function renderGeometryStory(model) {
+  if (!model) return "";
+  return `<section class="geometry-story" aria-labelledby="geometry-story-title">
+    <p class="eyebrow">${language === "pt" ? "História que vira construção" : "A story that becomes a construction"}</p>
+    <h4 id="geometry-story-title">${model.hook}</h4>
+    <p class="geometry-story__materials"><strong>${language === "pt" ? "Materiais" : "Materials"}:</strong> ${model.materials}</p>
+    <ol>${model.actions.map((action) => `<li>${action}</li>`).join("")}</ol>
+    <aside><strong>${language === "pt" ? "Observe antes de calcular" : "Observe before calculating"}:</strong> ${model.observe}</aside>
+  </section>`;
+}
+
 function hideAttemptTools() {
   attemptTools.hidden = true;
   attemptTools.innerHTML = "";
@@ -1342,6 +1353,7 @@ function renderExercise(lesson) {
     ${renderFractionVisual(displayLesson.visualModel)}
     ${renderRatioVisual(displayLesson.ratioModel)}
     ${renderGraphVisual(displayLesson.graphModel)}
+    ${renderGeometryStory(displayLesson.storyModel)}
     ${window.renderGeometryDiscovery?.(lesson, language) || ""}
     <section class="discovery-card">
       <span>1</span>

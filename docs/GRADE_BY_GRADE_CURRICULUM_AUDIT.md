@@ -1,7 +1,7 @@
 # Grade-by-Grade Curriculum Audit
 
 Audited: 2026-09-01
-Scope: the 178 learner lessons loaded by `index.html`, their displayed sequence, bilingual practice banks, answer metadata, support fields, and overall Waldorf developmental fit.
+Scope: the 184 learner lessons loaded by `index.html`, their displayed sequence, bilingual practice banks, answer metadata, support fields, and overall Waldorf developmental fit.
 
 ## Improvements implemented after the audit
 
@@ -10,7 +10,8 @@ Scope: the 178 learner lessons loaded by `index.html`, their displayed sequence,
 - Discovery invitations now respond to the mathematical domain instead of repeating one generic instruction: whole-and-parts language for fractions, covariation for ratios and rates, balance for algebra, embodied modelling for Grades 1–2, and prediction/invariance for geometry.
 - Reflection now asks for mathematical evidence appropriate to the topic rather than using the same closing question everywhere.
 - Every lesson now exposes a separate, collapsed facilitator card with purpose, an observation focus, and guidance about when to pause.
-- Ten geometry lessons now include bilingual predict–construct–interact–record studios while explicitly returning the learner to paper and physical materials.
+- Eleven geometry lessons now include bilingual predict–construct–interact–record studios while explicitly returning the learner to paper and physical materials.
+- Six original historical-geometry investigations now extend the pathway from practical tools to abstraction: a string-compass hexagon, a marked-rope right angle, shadow proportion, regular-solid nets, conic slices, and an Earth-circumference model. These use the developmental arc of *String, Straightedge and Shadow* as a reference without copying its prose or exercises.
 - Extra practice is now presented as entry, core practice, change of view, and cumulative return rather than one undifferentiated list.
 - Extra-practice answers use a three-attempt help ladder: attention or format check, one method step, then the worked path. Solutions no longer appear after the first mistake.
 - After opening a full guided answer, the learner is directed to a fresh parallel problem so supported work is followed by an opportunity for independent success.
@@ -23,7 +24,7 @@ It is not yet a complete Grade 1–9 curriculum. Most entries are short digital 
 
 ## Cross-grade findings
 
-- Strong: every one of the 178 lessons has a teacher aim, lesson rhythm, memory refresh, English practice, Portuguese practice, and Portuguese learner translation.
+- Strong: every one of the 184 lessons has a teacher aim, lesson rhythm, memory refresh, English practice, Portuguese practice, and Portuguese learner translation.
 - Partial: 115 lessons do not have interactive guided steps. They still have layered whole-lesson hints, but most practice items only check a final answer.
 - Partial: lesson quantity is uneven (8, 10, 16, 21, 24, 20, 32, 22, and 25 lessons by grade). Grade 7 is much denser than Grades 1 and 2.
 - Partial: the site says “warm up, discover, practise, check, reflect,” but the lesson catalogue entries generally supply a short rhythm and a problem rather than a complete story-led main lesson.

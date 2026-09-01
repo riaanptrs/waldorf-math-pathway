@@ -11,6 +11,7 @@ const lessonIds = [
   "g5-freehand-circle-diameter",
   "g5-symmetry-balance",
   "g6-geometry-precision",
+  "g6-geometry-rope-right-angle",
   "g7-competency-pythagorean-leg",
   "g8-pythagorean-hypotenuse",
   "g8-competency-trapezoid-area",
