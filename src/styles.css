@@ -1194,9 +1194,19 @@ main {
   background: rgba(47, 111, 69, 0.08);
 }
 
+.guided-step[data-state="correct"] input {
+  border-color: rgba(47, 111, 69, 0.68);
+  box-shadow: 0 0 0 3px rgba(47, 111, 69, 0.1);
+}
+
 .guided-step[data-state="try"] {
   border-color: rgba(154, 102, 48, 0.34);
   background: rgba(217, 154, 63, 0.1);
+}
+
+.guided-step[data-state="try"] input {
+  border-color: rgba(154, 102, 48, 0.62);
+  box-shadow: 0 0 0 3px rgba(217, 154, 63, 0.1);
 }
 
 .step-feedback {
@@ -1371,6 +1381,9 @@ select {
   background: #fff7ec;
   font-family: Arial, sans-serif;
 }
+
+.guided-step[data-state="correct"] .step-feedback { color: #2f6f45; font-weight: 700; }
+.guided-step[data-state="try"] .step-feedback { color: #8a5a29; }
 
 .review-worked-example > p {
   margin: 0;

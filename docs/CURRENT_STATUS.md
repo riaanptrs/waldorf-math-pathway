@@ -8,6 +8,7 @@ Last updated: 2026-08-31.
 - Student-facing rhythm: warm up, discover, practise, check, and reflect.
 - Methods and worked examples are optional support rather than pre-reading.
 - Incorrect answers receive progressively stronger help across three attempts.
+- Guided intermediate steps now validate independently: correct work is confirmed immediately, edited answers clear stale success at once, and an incorrect response appears after a short pause or when the learner leaves the field.
 - Full guided answers are delayed until the learner has first received a noticing hint and a method hint.
 - Existing local and Supabase progress saving remains in place.
 - Every lesson now has at least one curated practice item in English and Portuguese; the 20 lessons that previously had none now have three each.

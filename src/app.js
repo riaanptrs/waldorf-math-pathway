@@ -196,6 +196,8 @@ const copy = {
     expressionPlaceholder: "Exemplo: 10k - 14",
     numberPlaceholder: "Digite um número",
     stepCorrect: "Correto.",
+    stepCorrectImmediate: "Correto — continue para o próximo passo.",
+    stepTryImmediate: "Ainda não — confira este passo e tente novamente.",
     stepReview: "Revise este passo antes de continuar.",
     stepReviewWithAnswer: "Revise. Resposta correta:",
     noLearner: "Nenhum estudante está vinculado a esta conta de responsável ainda.",
@@ -378,6 +380,8 @@ const copy = {
     expressionPlaceholder: "Example: 10k - 14",
     numberPlaceholder: "Enter a number",
     stepCorrect: "Correct.",
+    stepCorrectImmediate: "Correct — continue to the next step.",
+    stepTryImmediate: "Not yet — check this step and try again.",
     stepReview: "Review this step before continuing.",
     stepReviewWithAnswer: "Review. Correct answer:",
     noLearner: "No learner is linked to this guardian account yet.",
@@ -437,6 +441,7 @@ let activeTrickGrade = "grade6";
 let activeTrickId = mentalTrickGuides.grade6?.[0]?.id || null;
 let selectedGrade = "all";
 const lessonAttempts = new Map();
+const guidedStepTimers = new WeakMap();
 
 function t(key, ...args) {
   const value = copy[language][key];
@@ -1016,6 +1021,40 @@ function checkExtraPracticeButton(button) {
   if (extraSolution) extraSolution.hidden = false;
 }
 
+function evaluateGuidedStepInput(input, showIncorrect = false) {
+  const index = Number(input.dataset.stepIndex);
+  const step = activeLesson.guidedSteps?.[index];
+  const row = input.closest(".guided-step");
+  const status = row?.querySelector(".step-feedback");
+  if (!step || !row || !status) return false;
+
+  const rawValue = input.value.trim();
+  if (!rawValue) {
+    delete row.dataset.state;
+    input.removeAttribute("aria-invalid");
+    status.textContent = "";
+    return false;
+  }
+
+  const isCorrect = checkValue(step, rawValue);
+  if (isCorrect) {
+    row.dataset.state = "correct";
+    input.setAttribute("aria-invalid", "false");
+    status.textContent = t("stepCorrectImmediate");
+    return true;
+  }
+
+  delete row.dataset.state;
+  input.removeAttribute("aria-invalid");
+  status.textContent = "";
+  if (showIncorrect) {
+    row.dataset.state = "try";
+    input.setAttribute("aria-invalid", "true");
+    status.textContent = t("stepTryImmediate");
+  }
+  return false;
+}
+
 function evaluateGuidedSteps(lesson) {
   if (!lesson.guidedSteps?.length) return { allCorrect: true, used: false, answers: [] };
 
@@ -1405,8 +1444,8 @@ function renderExercise(lesson) {
                 (step, index) => `
                   <label class="guided-step">
                     <span>${step.label}</span>
-                    <input data-step-index="${index}" autocomplete="off" />
-                    <small class="step-feedback" aria-live="polite"></small>
+                    <input data-step-index="${index}" autocomplete="off" inputmode="${step.answerType === "expression" ? "text" : "decimal"}" aria-describedby="step-feedback-${index}" />
+                    <small id="step-feedback-${index}" class="step-feedback" aria-live="polite"></small>
                   </label>
                 `,
               )
@@ -1695,6 +1734,26 @@ attemptTools.addEventListener("click", (event) => {
 
   const checkExtra = event.target.closest(".check-extra");
   if (checkExtra) checkExtraPracticeButton(checkExtra);
+});
+
+body.addEventListener("input", (event) => {
+  const input = event.target.closest("[data-step-index]");
+  if (!input) return;
+  const existingTimer = guidedStepTimers.get(input);
+  if (existingTimer) clearTimeout(existingTimer);
+  const isCorrect = evaluateGuidedStepInput(input, false);
+  if (!isCorrect && input.value.trim()) {
+    const timer = setTimeout(() => evaluateGuidedStepInput(input, true), 650);
+    guidedStepTimers.set(input, timer);
+  }
+});
+
+body.addEventListener("focusout", (event) => {
+  const input = event.target.closest("[data-step-index]");
+  if (!input) return;
+  const existingTimer = guidedStepTimers.get(input);
+  if (existingTimer) clearTimeout(existingTimer);
+  evaluateGuidedStepInput(input, true);
 });
 
 body.addEventListener("click", (event) => {
