@@ -99,6 +99,14 @@ const copy = {
     pathReflect: "Refletir",
     discoveryTitle: "Descubra antes de receber o método",
     discoveryCopy: "Leia a situação, faça uma estimativa e experimente um caminho próprio. Você pode abrir apoio se ficar preso.",
+    spiralTitle: "Lembre antes de começar",
+    spiralIntro: "Faça estas perguntas oralmente ou no caderno. Elas não bloqueiam a nova descoberta.",
+    spiralReveal: "Conferir depois de tentar",
+    guideCardTitle: "Para o adulto que acompanha",
+    guidePurpose: "Propósito de desenvolvimento",
+    guideObserve: "O que observar",
+    guidePause: "Quando fazer uma pausa",
+    guidePauseCopy: "Pare quando o objetivo da atividade estiver claro. Volte em outro dia se o apoio estiver substituindo o pensamento da criança.",
     supportSummary: "Preciso de uma lembrança ou exemplo",
     guidedSupportSummary: "Passos guiados da atividade principal",
     hintTitle: (attempt) => `Apoio ${attempt} de 3`,
@@ -131,6 +139,8 @@ const copy = {
     trickAnswer: "Resposta guiada",
     reviewSheetLabel: (number) => `Folha ${number}`,
     reviewProblemLabel: (number) => `Exercício ${number}`,
+    reviewWorkedExample: "Exemplo resolvido — leia antes de começar",
+    reviewWorkedExampleIntro: "Veja como resolver o primeiro exercício. Depois, use o mesmo cuidado nos exercícios restantes.",
     reviewCheck: "Verificar",
     reviewTryAgain: "Tentar de novo",
     reviewShowGuide: "Ver explicação guiada",
@@ -205,14 +215,25 @@ const copy = {
     tryAgainButton: "Tentar de novo",
     guidedAnswerButton: "Ver resposta guiada",
     guidedAnswerTitle: "Resposta guiada",
+    parallelRetryButton: "Resolver um problema novo sem a solução",
     correctAnswerLabel: "Resposta correta",
     mathTipTitle: "Dica de cálculo mental",
     extraPracticeTitle: "Treino extra",
     extraPracticeIntro: "Tente mais algumas contas parecidas para firmar o caminho.",
+    practiceEntry: "Entrada",
+    practiceCore: "Prática central",
+    practiceTransfer: "Mudança de olhar",
+    practiceReview: "Retorno cumulativo",
     extraAnswerLabel: "Resposta do treino extra",
     checkExtraButton: "Verificar treino",
-    extraCorrect: "Correto. Agora volte para a atividade principal.",
-    extraTry: "Ainda não. Veja o caminho guiado abaixo e tente a atividade principal outra vez.",
+    extraCorrect: "Correto. Continue enquanto o caminho estiver vivo; pare quando o propósito estiver firme.",
+    extraTry: "Ainda não.",
+    extraNoticeFormat: "Observe a forma pedida para a resposta antes de calcular novamente.",
+    extraNoticeSign: "Compare o sinal da resposta com a direção ou mudança descrita no problema.",
+    extraNoticeScale: "Compare sua resposta com 1 e faça uma estimativa da ordem de grandeza.",
+    extraNoticeGeneral: "Volte ao inteiro ou à relação original e confira o que cada número representa.",
+    extraMethodLead: "Agora experimente este primeiro passo:",
+    extraGuideLead: "Depois de estudar os passos, resolva o próximo item sem abrir a solução.",
     saveFailed: (message) => `A resposta foi verificada, mas o salvamento na nuvem falhou: ${message}`,
     enterCredentials: "Digite o e-mail do responsável e a senha.",
     signingIn: "Entrando pelo banco Waldorf compartilhado...",
@@ -260,6 +281,14 @@ const copy = {
     pathReflect: "Reflect",
     discoveryTitle: "Discover before receiving the method",
     discoveryCopy: "Read the situation, make an estimate, and try your own path. Open support if you become stuck.",
+    spiralTitle: "Remember before beginning",
+    spiralIntro: "Answer these aloud or in a notebook. They do not block the new discovery.",
+    spiralReveal: "Check after trying",
+    guideCardTitle: "For the accompanying adult",
+    guidePurpose: "Developmental purpose",
+    guideObserve: "What to observe",
+    guidePause: "When to pause",
+    guidePauseCopy: "Stop when the purpose of the activity is clear. Return another day if support is beginning to replace the learner's thinking.",
     supportSummary: "I need a reminder or example",
     guidedSupportSummary: "Guided steps for the main activity",
     hintTitle: (attempt) => `Support ${attempt} of 3`,
@@ -292,6 +321,8 @@ const copy = {
     trickAnswer: "Guided answer",
     reviewSheetLabel: (number) => `Sheet ${number}`,
     reviewProblemLabel: (number) => `Problem ${number}`,
+    reviewWorkedExample: "Worked example — read this before you begin",
+    reviewWorkedExampleIntro: "Study how the first problem is solved. Then use the same care on the remaining problems.",
     reviewCheck: "Check",
     reviewTryAgain: "Try again",
     reviewShowGuide: "See guided explanation",
@@ -366,14 +397,25 @@ const copy = {
     tryAgainButton: "Try again",
     guidedAnswerButton: "See guided answer",
     guidedAnswerTitle: "Guided answer",
+    parallelRetryButton: "Solve a fresh problem without the solution",
     correctAnswerLabel: "Correct answer",
     mathTipTitle: "Mental math tip",
     extraPracticeTitle: "Extra practice",
     extraPracticeIntro: "Try a few more similar problems to make the method steady.",
+    practiceEntry: "Entry",
+    practiceCore: "Core practice",
+    practiceTransfer: "Change of view",
+    practiceReview: "Cumulative return",
     extraAnswerLabel: "Extra practice answer",
     checkExtraButton: "Check practice",
-    extraCorrect: "Correct. Now return to the main activity.",
-    extraTry: "Not yet. Read the guided path below, then try the main activity again.",
+    extraCorrect: "Correct. Continue while the idea is alive; stop when the purpose is steady.",
+    extraTry: "Not yet.",
+    extraNoticeFormat: "Notice the requested answer form before calculating again.",
+    extraNoticeSign: "Compare the sign of your answer with the direction or change described in the problem.",
+    extraNoticeScale: "Compare your answer with 1 and estimate its order of magnitude.",
+    extraNoticeGeneral: "Return to the whole or original relationship and check what each number represents.",
+    extraMethodLead: "Now try this first step:",
+    extraGuideLead: "After studying the steps, solve the next item without opening its solution.",
     saveFailed: (message) => `The answer was checked, but cloud saving failed: ${message}`,
     enterCredentials: "Enter the guardian email and password.",
     signingIn: "Signing in through the shared Waldorf database...",
@@ -612,6 +654,68 @@ function lessonSearchText(lesson) {
     .toLowerCase();
 }
 
+function discoveryPromptFor(lesson) {
+  const text = lessonSearchText(lesson);
+  if (/geometry|area|circle|triangle|pythag|symmetr|volume|surface|distance/.test(text)) {
+    return language === "pt" ? "Antes de calcular, faça um esboço e preveja o que mudará e o que permanecerá verdadeiro." : "Before calculating, make a sketch and predict what will change and what will remain true.";
+  }
+  if (/fraction|decimal|percent/.test(text)) {
+    return language === "pt" ? "Primeiro nomeie o inteiro. Depois mostre a mesma quantidade com objetos, um desenho ou outra forma numérica." : "Name the whole first. Then show the same quantity with objects, a drawing, or another number form.";
+  }
+  if (/ratio|rate|proportion|speed|cost/.test(text)) {
+    return language === "pt" ? "Quais duas quantidades estão mudando? Preveja como uma delas deve mudar quando a outra muda." : "Which two quantities are changing? Predict how one should change when the other changes.";
+  }
+  if (/algebra|equation|expression|formula|function|quadratic/.test(text)) {
+    return language === "pt" ? "Leia a relação como uma história ou uma balança. O que precisa continuar igual enquanto você transforma a expressão?" : "Read the relationship as a story or a balance. What must remain equal while you transform it?";
+  }
+  if (/Grade [12]/.test(lesson.grade)) {
+    return language === "pt" ? "Construa, mova ou represente a situação com o corpo antes de escrever o número. O que você percebe?" : "Build, move, or act out the situation before writing a number. What do you notice?";
+  }
+  return language === "pt" ? "Faça uma estimativa, escolha um caminho e diga como poderá conferir sem repetir exatamente o mesmo cálculo." : "Estimate, choose a path, and say how you could check without simply repeating the same calculation.";
+}
+
+function reflectionPromptFor(lesson) {
+  const text = lessonSearchText(lesson);
+  if (/geometry|area|circle|triangle|pythag|symmetr|volume|surface|distance/.test(text)) {
+    return language === "pt" ? "O que mudou na sua construção e o que permaneceu verdadeiro? Registre com um desenho marcado e uma frase." : "What changed in your construction, and what remained true? Record it with a labelled drawing and one sentence.";
+  }
+  if (/fraction|decimal|percent/.test(text)) {
+    return language === "pt" ? "Mostre a mesma quantidade de duas maneiras e explique como você sabe que elas representam o mesmo inteiro." : "Show the same quantity in two forms and explain how you know they name the same part of the whole.";
+  }
+  if (/ratio|rate|proportion|algebra|equation|function/.test(text)) {
+    return language === "pt" ? "Explique qual relação permaneceu verdadeira e como você a verificou com os valores originais." : "Explain which relationship remained true and how you checked it with the original values.";
+  }
+  return language === "pt" ? "Qual caminho você escolheu, por que ele fez sentido e como uma operação inversa ou estimativa confirmou sua resposta?" : "Which path did you choose, why did it make sense, and how did an inverse operation or estimate confirm it?";
+}
+
+function previousLessonsFor(lesson) {
+  const index = lessons.findIndex((candidate) => candidate.id === lesson.id);
+  if (index <= 0) return [];
+  return lessons.slice(0, index).filter((candidate) => candidate.grade === lesson.grade).slice(-3).map(lessonCopy);
+}
+
+function renderSpiralRecall(lesson) {
+  const previous = previousLessonsFor(lesson);
+  if (!previous.length) return "";
+  return `<section class="spiral-recall" aria-labelledby="spiral-recall-title">
+    <h4 id="spiral-recall-title">${t("spiralTitle")}</h4>
+    <p>${t("spiralIntro")}</p>
+    <ol>${previous.map((item) => `<li><p>${item.prompt}</p><details><summary>${t("spiralReveal")}</summary><p>${item.correction}</p></details></li>`).join("")}</ol>
+  </section>`;
+}
+
+function renderFacilitatorCard(lesson) {
+  const support = tutorSupportFor(lesson);
+  return `<details class="facilitator-card">
+    <summary>${t("guideCardTitle")}</summary>
+    <div class="facilitator-card__content">
+      <p><strong>${t("guidePurpose")}:</strong> ${lesson.memoryRefresh?.idea || lesson.teacherAim}</p>
+      <p><strong>${t("guideObserve")}:</strong> ${support.check}</p>
+      <p><strong>${t("guidePause")}:</strong> ${t("guidePauseCopy")}</p>
+    </div>
+  </details>`;
+}
+
 function tutorSupportFor(lesson) {
   const text = lessonSearchText(lesson);
   const support = tutorSupport[language].find((item) => item.test.test(text)) || tutorSupport[language].at(-1);
@@ -727,8 +831,27 @@ function renderGuidedAnswer(lesson) {
       <p><strong>${t("correctAnswerLabel")}:</strong> ${correctAnswerText(lesson)}</p>
       ${renderSteps(displayLesson.memoryRefresh?.workedSteps)}
       <p>${displayLesson.correction}</p>
+      <button class="button button--small parallel-retry-button" type="button">${t("parallelRetryButton")}</button>
     </section>
   `;
+}
+
+function practiceRoleKey(index, count) {
+  if (index === 0) return "practiceEntry";
+  if (index <= Math.min(2, count - 1)) return "practiceCore";
+  if (index === count - 1) return "practiceReview";
+  return "practiceTransfer";
+}
+
+function practiceNoticeFor(practice, rawValue) {
+  if (practice.answerType === "number" && /[%/]/.test(rawValue)) return t("extraNoticeFormat");
+  const submitted = Number(rawValue.replace(",", "."));
+  const expected = Number(practice.answer);
+  if (Number.isFinite(submitted) && Number.isFinite(expected)) {
+    if (submitted !== 0 && expected !== 0 && Math.sign(submitted) !== Math.sign(expected)) return t("extraNoticeSign");
+    if ((Math.abs(expected) < 1 && Math.abs(submitted) >= 1) || (Math.abs(expected) >= 1 && Math.abs(submitted) < 1)) return t("extraNoticeScale");
+  }
+  return t("extraNoticeGeneral");
 }
 
 function renderExtraPractice(lesson, context = "lesson") {
@@ -743,7 +866,8 @@ function renderExtraPractice(lesson, context = "lesson") {
           .map((practice, index) => {
             const inputId = `extra-answer-${context}-${index}`;
             return `
-              <article class="extra-practice__item" data-practice-index="${index}">
+              <article class="extra-practice__item" data-practice-index="${index}" data-attempts="0">
+                <p class="practice-role">${t(practiceRoleKey(index, practiceItems.length))}</p>
                 <p class="extra-practice__prompt">${practice.prompt}</p>
                 <label for="${inputId}">${t("extraAnswerLabel")}</label>
                 <div class="answer-form__row">
@@ -782,6 +906,12 @@ function showAttemptTools() {
     </div>
     ${attempt >= 3 ? renderGuidedAnswer(activeLesson) : ""}
   `;
+}
+
+function renderDivisionLayout(problem) {
+  return problem.divisionLayout
+    ? `<pre class="division-layout" aria-label="${language === "pt" ? "Esquema da divisão" : "Division layout"}">${problem.divisionLayout}</pre>`
+    : "";
 }
 
 function renderFractionVisual(rows) {
@@ -847,12 +977,32 @@ function checkExtraPracticeButton(button) {
   }
 
   const isCorrect = checkValue(practice, value);
-  extraFeedback.textContent = isCorrect ? t("extraCorrect") : t("extraTry");
-  extraFeedback.dataset.state = isCorrect ? "correct" : "try";
-  if (extraSolution) extraSolution.hidden = isCorrect;
   if (isCorrect) {
-    answer.focus();
+    item.dataset.attempts = "0";
+    extraFeedback.textContent = t("extraCorrect");
+    extraFeedback.dataset.state = "correct";
+    if (extraSolution) extraSolution.hidden = true;
+    const nextInput = item.nextElementSibling?.querySelector(".extra-answer");
+    (nextInput || answer).focus();
+    return;
   }
+
+  const attempts = Number(item.dataset.attempts || 0) + 1;
+  item.dataset.attempts = String(attempts);
+  extraFeedback.dataset.state = "try";
+  if (attempts === 1) {
+    extraFeedback.textContent = `${t("extraTry")} ${practiceNoticeFor(practice, value)}`;
+    if (extraSolution) extraSolution.hidden = true;
+    return;
+  }
+  if (attempts === 2) {
+    const firstStep = practice.steps?.[0] || lessonCopy(activeLesson).memoryRefresh?.method?.[0] || tutorSupportFor(lessonCopy(activeLesson)).check;
+    extraFeedback.textContent = `${t("extraTry")} ${t("extraMethodLead")} ${firstStep}`;
+    if (extraSolution) extraSolution.hidden = true;
+    return;
+  }
+  extraFeedback.textContent = `${t("extraTry")} ${t("extraGuideLead")}`;
+  if (extraSolution) extraSolution.hidden = false;
 }
 
 function evaluateGuidedSteps(lesson) {
@@ -1032,12 +1182,26 @@ function renderReviewSheets() {
   reviewSheetNumber.textContent = t("reviewSheetLabel", activeSheet.number);
   reviewSheetTitle.textContent = localText(activeSheet.title);
   reviewSheetFocus.textContent = localText(activeSheet.focus);
-  reviewProblemList.innerHTML = activeSheet.problems
+  const [workedExample, ...studentProblems] = activeSheet.problems;
+  const workedExampleMarkup = workedExample
+    ? `<article class="review-worked-example" aria-labelledby="review-worked-example-title">
+        <p class="eyebrow" id="review-worked-example-title">${t("reviewWorkedExample")}</p>
+        <p>${t("reviewWorkedExampleIntro")}</p>
+        <div class="review-problem__top">
+          <span>${t("reviewProblemLabel", 1)}</span>
+          <strong>${reviewPrompt(workedExample)}</strong>
+        </div>
+        <p><strong>${t("correctAnswerLabel")}:</strong> ${reviewAnswerText(workedExample)}</p>
+        ${renderSteps(reviewSteps(workedExample))}
+        ${renderDivisionLayout(workedExample)}
+      </article>`
+    : "";
+  reviewProblemList.innerHTML = workedExampleMarkup + studentProblems
     .map(
       (problem, index) => `
         <article class="review-problem" data-problem-id="${problem.id}">
           <div class="review-problem__top">
-            <span>${t("reviewProblemLabel", index + 1)}</span>
+            <span>${t("reviewProblemLabel", index + 2)}</span>
             <strong>${reviewPrompt(problem)}</strong>
           </div>
           <div class="review-problem__controls">
@@ -1050,6 +1214,7 @@ function renderReviewSheets() {
           <div class="review-guide" hidden>
             <p><strong>${t("correctAnswerLabel")}:</strong> ${reviewAnswerText(problem)}</p>
             ${renderSteps(reviewSteps(problem))}
+            ${renderDivisionLayout(problem)}
           </div>
         </article>
       `,
@@ -1169,16 +1334,18 @@ function renderExercise(lesson) {
   reflectionCard.classList.add("is-pending");
   reflectionCard.innerHTML = `<h4>${t("reflectionTitle")}</h4><p>${t("reflectionPending")}</p>`;
   body.innerHTML = `
-    ${renderFractionVisual(displayLesson.visualModel)}
-    ${renderRatioVisual(displayLesson.ratioModel)}
-    ${renderGraphVisual(displayLesson.graphModel)}
     <section class="warmup-card" data-phase-section="warmup" tabindex="-1">
       <h4>${t("pathWarmup")}</h4>
       <ol>${displayLesson.rhythm.map((step) => `<li>${step}</li>`).join("")}</ol>
     </section>
+    ${renderSpiralRecall(lesson)}
+    ${renderFractionVisual(displayLesson.visualModel)}
+    ${renderRatioVisual(displayLesson.ratioModel)}
+    ${renderGraphVisual(displayLesson.graphModel)}
+    ${window.renderGeometryDiscovery?.(lesson, language) || ""}
     <section class="discovery-card">
       <span>1</span>
-      <div><h4>${t("discoveryTitle")}</h4><p>${t("discoveryCopy")}</p></div>
+      <div><h4>${t("discoveryTitle")}</h4><p>${discoveryPromptFor(displayLesson)}</p></div>
     </section>
     <details class="lesson-support">
       <summary>${t("supportSummary")}</summary>
@@ -1239,7 +1406,10 @@ function renderExercise(lesson) {
       <summary>${t("extraPracticeTitle")}</summary>
       ${renderExtraPractice(displayLesson)}
     </details>
+    ${renderFacilitatorCard(displayLesson)}
   `;
+
+  window.bindGeometryDiscovery?.(body);
 
   document.querySelectorAll(".lesson-card").forEach((card) => {
     card.classList.toggle("is-active", card.dataset.id === lesson.id);
@@ -1458,7 +1628,7 @@ form.addEventListener("submit", async (event) => {
       correction.hidden = true;
       hideAttemptTools();
       reflectionCard.classList.remove("is-pending");
-      reflectionCard.innerHTML = `<h4>${t("reflectionTitle")}</h4><p>${t("reflectionPrompt")}</p>`;
+      reflectionCard.innerHTML = `<h4>${t("reflectionTitle")}</h4><p>${reflectionPromptFor(lessonCopy(activeLesson))}</p>`;
       setCurrentPhase("reflect");
     } else {
       lessonAttempts.set(activeLesson.id, (lessonAttempts.get(activeLesson.id) || 0) + 1);
@@ -1496,6 +1666,18 @@ attemptTools.addEventListener("click", (event) => {
   if (showGuided) {
     const panel = attemptTools.querySelector('[data-panel="guided-answer"]');
     if (panel) panel.hidden = false;
+    return;
+  }
+
+  const parallelRetry = event.target.closest(".parallel-retry-button");
+  if (parallelRetry) {
+    const practiceSet = body.querySelector(".practice-set");
+    if (practiceSet) {
+      practiceSet.open = true;
+      setCurrentPhase("practice");
+      practiceSet.scrollIntoView({ behavior: "smooth", block: "start" });
+      practiceSet.querySelector(".extra-answer")?.focus({ preventScroll: true });
+    }
     return;
   }
 
