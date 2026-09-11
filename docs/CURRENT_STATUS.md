@@ -1,6 +1,13 @@
 # Current Status
 
-Last updated: 2026-08-31.
+Last updated: 2026-09-11.
+
+## Jarman teaching investigations
+
+- Added one original investigation per grade, Grades 1–8, in English and Portuguese: hidden parts, rotated arrays, measured remainders, fraction equivalence, unitary pricing, triangle-angle reasoning, area rearrangement, and a difference-of-squares model.
+- Each uses practical materials, an explanation prompt, optional support, intermediate checks and transfer practice in the existing lesson flow.
+- Source synthesis and sequence differences are documented in `docs/JARMAN_TEACHING_REVIEW.md`.
+- These additions are included in the September 11 GitHub Pages release. Database activity registration has not been performed.
 
 ## Learning Flow
 

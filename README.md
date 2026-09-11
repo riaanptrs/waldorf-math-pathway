@@ -43,6 +43,8 @@ linear functions, quadratics, coordinate geometry, and growth models.
 
 ## Curriculum Note
 
+Eight original bilingual hands-on investigations now extend Grades 1–8 using Ron Jarman's teaching approach. See [the grade-by-grade teaching review](docs/JARMAN_TEACHING_REVIEW.md) for key concepts, practical examples, source pages, and differences from the existing sequence.
+
 The initial exercise examples are original. Jamie York-style ideas or other
 published curriculum materials should be adapted only from notes you own, with
 permission, or by creating original exercises inspired by the same learning
