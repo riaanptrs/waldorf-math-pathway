@@ -97,7 +97,7 @@ const copy = {
     pathPractice: "Praticar",
     pathCheck: "Conferir",
     pathReflect: "Refletir",
-    discoveryTitle: "Descubra antes de receber o método",
+    discoveryTitle: "Experimente do seu jeito",
     discoveryCopy: "Leia a situação, faça uma estimativa e experimente um caminho próprio. Você pode abrir apoio se ficar preso.",
     spiralTitle: "Lembre antes de começar",
     spiralIntro: "Faça estas perguntas oralmente ou no caderno. Elas não bloqueiam a nova descoberta.",
@@ -191,7 +191,7 @@ const copy = {
     workedTitle: "Como resolver esta conta, passo por passo",
     refresherExample: "Exemplo rápido",
     showSteps: "Resolva os passos da atividade principal",
-    finalAnswer: "Resposta final depois dos passos",
+    finalAnswer: "Sua resposta à atividade principal",
     yourAnswer: "Sua resposta",
     expressionPlaceholder: "Exemplo: 10k - 14",
     numberPlaceholder: "Digite um número",
@@ -281,7 +281,7 @@ const copy = {
     pathPractice: "Practice",
     pathCheck: "Check",
     pathReflect: "Reflect",
-    discoveryTitle: "Discover before receiving the method",
+    discoveryTitle: "Try it your way",
     discoveryCopy: "Read the situation, make an estimate, and try your own path. Open support if you become stuck.",
     spiralTitle: "Remember before beginning",
     spiralIntro: "Answer these aloud or in a notebook. They do not block the new discovery.",
@@ -375,7 +375,7 @@ const copy = {
     workedTitle: "How to solve this, step by step",
     refresherExample: "Quick example",
     showSteps: "Solve the main activity steps",
-    finalAnswer: "Final answer after the steps",
+    finalAnswer: "Your answer to the main activity",
     yourAnswer: "Your answer",
     expressionPlaceholder: "Example: 10k - 14",
     numberPlaceholder: "Enter a number",
@@ -659,38 +659,37 @@ function lessonSearchText(lesson) {
     .toLowerCase();
 }
 
+function warmupFor(lesson) {
+  if (lesson.warmup?.length) return lesson.warmup;
+  const year = Number(String(lesson.grade).match(/\d+/)?.[0]);
+  if (year <= 2) return language === "pt"
+    ? ["Leia a pergunta com alguém, se precisar.", "Conte com suas palavras o que a pergunta pede.", "Separe os objetos ou o material indicado na atividade."]
+    : ["Read the question with someone if you need help.", "Say in your own words what the question asks.", "Gather the objects or materials named in the activity."];
+  return language === "pt"
+    ? ["Leia a pergunta e anote o que você precisa descobrir.", "Anote os números e as unidades que a pergunta fornece.", "Lembre de uma conta, desenho ou ideia que possa ajudar. Registre no caderno ou diga em voz alta."]
+    : ["Read the question and note what you need to find.", "Note the numbers and units the question gives you.", "Recall a calculation, drawing or idea that might help. Write it in your notebook or say it aloud."];
+}
+
 function discoveryPromptFor(lesson) {
-  const text = lessonSearchText(lesson);
-  if (/geometry|area|circle|triangle|pythag|symmetr|volume|surface|distance/.test(text)) {
-    return language === "pt" ? "Antes de calcular, faça um esboço e preveja o que mudará e o que permanecerá verdadeiro." : "Before calculating, make a sketch and predict what will change and what will remain true.";
-  }
-  if (/fraction|decimal|percent/.test(text)) {
-    return language === "pt" ? "Primeiro nomeie o inteiro. Depois mostre a mesma quantidade com objetos, um desenho ou outra forma numérica." : "Name the whole first. Then show the same quantity with objects, a drawing, or another number form.";
-  }
-  if (/ratio|rate|proportion|speed|cost/.test(text)) {
-    return language === "pt" ? "Quais duas quantidades estão mudando? Preveja como uma delas deve mudar quando a outra muda." : "Which two quantities are changing? Predict how one should change when the other changes.";
-  }
-  if (/algebra|equation|expression|formula|function|quadratic/.test(text)) {
-    return language === "pt" ? "Leia a relação como uma história ou uma balança. O que precisa continuar igual enquanto você transforma a expressão?" : "Read the relationship as a story or a balance. What must remain equal while you transform it?";
-  }
-  if (/Grade [12]/.test(lesson.grade)) {
-    return language === "pt" ? "Construa, mova ou represente a situação com o corpo antes de escrever o número. O que você percebe?" : "Build, move, or act out the situation before writing a number. What do you notice?";
-  }
-  return language === "pt" ? "Faça uma estimativa, escolha um caminho e diga como poderá conferir sem repetir exatamente o mesmo cálculo." : "Estimate, choose a path, and say how you could check without simply repeating the same calculation.";
+  if (lesson.discoveryPrompt) return lesson.discoveryPrompt;
+  const year = Number(String(lesson.grade).match(/\d+/)?.[0]);
+  if (year <= 2) return language === "pt"
+    ? "Experimente a atividade usando os objetos, movimentos ou desenhos pedidos. Conte o que percebeu e digite sua resposta abaixo. Peça ajuda para ler ou digitar, se precisar."
+    : "Try the activity with the objects, movements or drawings it asks for. Say what you noticed and enter your answer below. Ask for help reading or typing if needed.";
+  return language === "pt"
+    ? "Tente resolver a pergunta no caderno, com um desenho ou uma conta. Depois digite sua resposta abaixo. Se não souber como começar, abra o apoio ou os passos guiados."
+    : "Try solving the question in your notebook with a drawing or calculation. Then enter your answer below. If you do not know where to start, open the support or guided steps.";
 }
 
 function reflectionPromptFor(lesson) {
-  const text = lessonSearchText(lesson);
-  if (/geometry|area|circle|triangle|pythag|symmetr|volume|surface|distance/.test(text)) {
-    return language === "pt" ? "O que mudou na sua construção e o que permaneceu verdadeiro? Registre com um desenho marcado e uma frase." : "What changed in your construction, and what remained true? Record it with a labelled drawing and one sentence.";
-  }
-  if (/fraction|decimal|percent/.test(text)) {
-    return language === "pt" ? "Mostre a mesma quantidade de duas maneiras e explique como você sabe que elas representam o mesmo inteiro." : "Show the same quantity in two forms and explain how you know they name the same part of the whole.";
-  }
-  if (/ratio|rate|proportion|algebra|equation|function/.test(text)) {
-    return language === "pt" ? "Explique qual relação permaneceu verdadeira e como você a verificou com os valores originais." : "Explain which relationship remained true and how you checked it with the original values.";
-  }
-  return language === "pt" ? "Qual caminho você escolheu, por que ele fez sentido e como uma operação inversa ou estimativa confirmou sua resposta?" : "Which path did you choose, why did it make sense, and how did an inverse operation or estimate confirm it?";
+  if (lesson.reflectionPrompt) return lesson.reflectionPrompt;
+  const year = Number(String(lesson.grade).match(/\d+/)?.[0]);
+  if (year <= 2) return language === "pt"
+    ? "Mostre com objetos ou um desenho como encontrou a resposta. Conte para alguém o que descobriu."
+    : "Show with objects or a drawing how you found the answer. Tell someone what you discovered.";
+  return language === "pt"
+    ? "Explique no caderno como chegou à resposta e como sabe que ela responde à pergunta. Use suas contas ou um desenho para mostrar."
+    : "Explain in your notebook how you found the answer and how you know it answers the question. Use your calculations or a drawing to show this.";
 }
 
 function previousLessonsFor(lesson) {
@@ -1386,7 +1385,7 @@ function renderExercise(lesson) {
   body.innerHTML = `
     <section class="warmup-card" data-phase-section="warmup" tabindex="-1">
       <h4>${t("pathWarmup")}</h4>
-      <ol>${displayLesson.rhythm.map((step) => `<li>${step}</li>`).join("")}</ol>
+      <ol>${warmupFor(displayLesson).map((step) => `<li>${step}</li>`).join("")}</ol>
     </section>
     ${renderSpiralRecall(lesson)}
     ${renderFractionVisual(displayLesson.visualModel)}
@@ -1396,7 +1395,7 @@ function renderExercise(lesson) {
     ${window.renderGeometryDiscovery?.(lesson, language) || ""}
     <section class="discovery-card">
       <span>1</span>
-      <div><h4>${t("discoveryTitle")}</h4><p>${discoveryPromptFor(displayLesson)}</p></div>
+      <div><h4>${displayLesson.discoveryTitle || t("discoveryTitle")}</h4><p>${discoveryPromptFor(displayLesson)}</p></div>
     </section>
     <details class="lesson-support">
       <summary>${t("supportSummary")}</summary>
