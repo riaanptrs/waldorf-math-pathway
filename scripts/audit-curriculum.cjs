@@ -1,32 +1,4 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const vm = require("node:vm");
-
-const root = path.resolve(__dirname, "..");
-const scripts = [
-  "exercises.js",
-  "grade1-living-numbers.js",
-  "grade2-time-patterns-money.js",
-  "grade3-measure-place-value.js",
-  "grade3-4-subtraction-path.js",
-  "grade4-6-long-division-path.js",
-  "grade5-fractions.js",
-  "harrer-early-path.js",
-  "grade4-fraction-path.js",
-  "grade7-ratios.js",
-  "grade8-proportions.js",
-  "grade9-algebra.js",
-  "grade6-9-competency-path.js",
-  "geometry-story-path.js",
-  "jarman-investigations.js",
-  "curriculum-sequence.js",
-];
-
-const context = vm.createContext({ window: {} });
-for (const file of scripts) {
-  const source = fs.readFileSync(path.join(root, "src", file), "utf8");
-  vm.runInContext(source, context, { filename: file });
-}
+const { context } = require("./load-catalogue.cjs")();
 
 const lessons = context.window.lessons || [];
 const translations = context.window.lessonTranslations || {};

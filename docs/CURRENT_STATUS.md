@@ -1,6 +1,31 @@
 # Current Status
 
-Last updated: 2026-09-11.
+Last updated: 2026-09-29.
+
+## Completion release
+
+- The agreed teaching improvements are complete: **227 bilingual lessons**, **35 new lessons**, and **683 practice placements per language**. All lessons have at least three practice questions and teaching guidance. All 192 original main answers and progress keys are preserved.
+- Grade 7 now includes five lessons progressing through distribution, two binomials, squared sums, squared differences and conjugate brackets. The exact requested example `(2x + 2)²` is taught with a four-part model.
+- The shared database was restored. All **172 Grade 1–7 activities** are registered and active. **55 Grade 8–9 activities await explicit approval to extend the shared grade constraint from 7 to 9.** Automatic approval review rejected that schema change; it has not been applied.
+- All structural, bilingual, arithmetic, algebra, original-content-preservation and existing geometry checks pass. All 35 scripts pass syntax checks.
+- GitHub Pages publishes from `main` at the repository root. The completion record supersedes the initial phase counts and local-only delivery state below.
+- Details, teaching sequence, tests and cloud limitations: `docs/COURSE_COMPLETION_2026-09-29.md`.
+
+## Initial three-phase implementation (before the completion pass)
+
+- Completed the three implementation phases from the September 29 Jarman review in the local application: prerequisite sequences, practical projects/construction, and data/formula bridges.
+- Added 30 original lessons in English and Portuguese, each with practical materials, actions, warm-up, two guided checks, a specific observation/reflection prompt, and three authored practice items. The catalogue now has 222 lessons (196 in Grades 1–8).
+- Grade 2: four bundle/exchange lessons; the existing array investigation now also offers table-family work on later days.
+- Grade 4: two factor/multiple lessons before fractions; ribbon equivalence now precedes symbolic reduction.
+- Grade 5: four decimal-operation lessons, a compass bridge and a fraction-to-circle-chart activity.
+- Grades 1 and 3: number/form activities and a two-lesson garden project connecting perimeter, area, multiplication, remainders and money.
+- Grade 6: bisectors, parallel-line angles, a simple-interest formula/table bridge and bar-chart/pictogram work.
+- Grade 7: four signed-number foundations, a Pythagorean area proof and critical graph-scale comparison; the existing area investigation includes a perspective-drawing extension.
+- Grade 8: box/volume/density and locus investigations, introductory simultaneous equations and mean/median/mode. Existing cube-net work now extends to tetrahedra and octahedra.
+- New lessons distinguish introduction, practice and application. Their curated practice does not borrow unrelated questions. Existing lessons borrow only earlier same-grade/block practice; English and Portuguese now use the same canonical block for this selection.
+- New practice uses a conceptual hint on the second failed attempt and delays the complete solution to the third. Explicit prerequisite recall can return to earlier blocks and grades. This is not calendar-based scheduling or automatic conceptual-mastery assessment.
+- Validated 120 main/practice numerical answers independently, bilingual content, prerequisites, answer handling and existing geometry/clarity checks. Browser checks covered guest answer submission, Portuguese decimal commas, practice hints and English translation. See `docs/SEPTEMBER_29_IMPLEMENTATION.md` for the teaching and verification record.
+- Initial checks verified local guest saving. For the subsequent release and database state, see the completion release above. Physical work and explanations still require learner/adult review.
 
 ## Jarman teaching investigations
 
@@ -18,7 +43,7 @@ Last updated: 2026-09-11.
 - Guided intermediate steps now validate independently: correct work is confirmed immediately, edited answers clear stale success at once, and an incorrect response appears after a short pause or when the learner leaves the field.
 - Full guided answers are delayed until the learner has first received a noticing hint and a method hint.
 - Existing local and Supabase progress saving remains in place.
-- Every lesson now has at least one curated practice item in English and Portuguese; the 20 lessons that previously had none now have three each.
+- Every lesson now has at least three curated practice items in English and Portuguese, with core, application and cumulative-review roles.
 - Daily Fact Rhythm serves Grades 1–7 with age-appropriate sets: foundational addition and subtraction in Grade 1, selected early multiplication tables from Grade 2, broader arithmetic fluency through Grade 6, and signed-number facts in Grade 7.
 - Learners can choose an untimed learning path or fluency timing, see only personal progress, and complete a relationship-based recovery round after mistakes.
 - Grade 5 now includes a ten-lesson Fraction Path: equivalence, reduction, like denominators, improper and mixed numbers, unlike denominators, comparison, multiplication with cancellation, division with reciprocals, and cumulative review.

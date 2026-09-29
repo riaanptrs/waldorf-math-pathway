@@ -1,0 +1,35 @@
+(() => {
+  window.addLearningSequence(4, ["Factors and Multiples", "Fatores e Múltiplos"], "241–242", [
+    {
+      key: "factors-rectangles", title: ["Which Rectangles Can Twelve Make?", "Que Retângulos Doze Pode Formar?"],
+      warmup: [["Build 3 rows of 4 counters.", "Monte 3 fileiras de 4 peças."], ["Name a multiplication and a division for the same arrangement.", "Diga uma multiplicação e uma divisão para a mesma organização."]],
+      materials: ["18 counters and squared paper", "18 peças e papel quadriculado"],
+      invite: ["Find every rectangular arrangement of twelve without leaving a counter out.", "Encontre todas as organizações retangulares de doze sem deixar peças de fora."],
+      actions: [["Try rows of 1, 2, 3, 4, 5 and 6 with twelve counters. Which fit exactly?", "Experimente fileiras de 1, 2, 3, 4, 5 e 6 com doze peças. Quais encaixam exatamente?"], ["Draw each rectangle. A turned rectangle has the same pair of side lengths.", "Desenhe cada retângulo. Um retângulo girado tem o mesmo par de medidas dos lados."], ["List every row size that works. These are factors of twelve.", "Liste todos os tamanhos de fileira que funcionam. Eles são fatores de doze."]],
+      question: ["The factor pairs of 12 are 1 × 12, 2 × 6 and 3 × 4. How many different positive factors appear?", "Os pares de fatores de 12 são 1 × 12, 2 × 6 e 3 × 4. Quantos fatores positivos diferentes aparecem?"], answer: 6,
+      guided: [["What partner goes with 2 to make 12?", "Qual fator acompanha 2 para formar 12?", 6], ["What partner goes with 3?", "Qual fator acompanha 3?", 4]],
+      idea: ["A factor divides a whole number exactly; rectangle sides reveal factor pairs.", "Um fator divide um número inteiro exatamente; os lados dos retângulos revelam pares de fatores."],
+      method: [["Test whole-number row sizes for a remainder.", "Teste tamanhos inteiros de fileira e veja se sobra alguma peça."], ["Collect both sides of every factor pair without duplicates.", "Reúna os dois lados de cada par sem repetir valores."]],
+      example: ["8 has pairs 1 × 8 and 2 × 4, so its factors are 1, 2, 4, 8.", "8 tem pares 1 × 8 e 2 × 4; seus fatores são 1, 2, 4, 8."],
+      solution: ["1, 2, 3, 4, 6, 12 are six different factors.", "1, 2, 3, 4, 6, 12 são seis fatores diferentes."],
+      mistake: ["A factor must leave no remainder. Turning a rectangle does not create a new factor.", "Um fator não deixa resto. Girar o retângulo não cria outro fator."],
+      observe: ["Show why 3 is a factor of 12 and 5 is not. Then explain why every positive whole number has 1 as a factor.", "Mostre por que 3 é fator de 12 e 5 não é. Explique por que todo inteiro positivo tem 1 como fator."],
+      practice: [["18 has pairs 1 × 18, 2 × 9, 3 × 6. How many positive factors?", "18 tem pares 1 × 18, 2 × 9, 3 × 6. Quantos fatores positivos?", 6, "The factors are 1, 2, 3, 6, 9, 18.", "Os fatores são 1, 2, 3, 6, 9, 18."], ["Thirteen counters only make a 1 × 13 rectangle, including its turn. How many positive factors does 13 have?", "Treze peças só formam um retângulo 1 × 13, incluindo sua rotação. Quantos fatores positivos tem 13?", 2, "1 and 13: two factors. This makes 13 prime.", "1 e 13: dois fatores. Por isso 13 é primo."], ["The proper divisors of 6 are its positive factors except 6: 1, 2, 3. What is their sum?", "Os divisores próprios de 6 são seus fatores positivos exceto 6: 1, 2, 3. Qual é a soma?", 6, "1 + 2 + 3 = 6. Such a number is called perfect.", "1 + 2 + 3 = 6. Um número assim é chamado perfeito."]]
+    },
+    {
+      key: "multiples-shared-landings", title: ["Two Rhythms Meet Again", "Dois Ritmos Se Encontram"], recall: ["g4-factors-rectangles"],
+      warmup: [["Count by fours to 24.", "Conte de quatro em quatro até 24."], ["Count by sixes to 24.", "Conte de seis em seis até 24."]], materials: ["Number line from 0 to 30 and two colours", "Reta numérica de 0 a 30 e duas cores"],
+      invite: ["Where will jumps of four and jumps of six land together?", "Onde saltos de quatro e saltos de seis vão chegar juntos?"],
+      actions: [["Mark the landings of jumps of four from zero in one colour.", "Marque com uma cor as chegadas de saltos de quatro a partir do zero."], ["Mark jumps of six in another colour. Circle landings with both colours.", "Marque saltos de seis com outra cor. Circule as chegadas com as duas cores."], ["Build twelve counters as groups of four and as groups of six. Connect the common landing to both arrangements.", "Organize doze peças em grupos de quatro e em grupos de seis. Relacione a chegada comum às duas organizações."]],
+      question: ["What is the smallest positive number reached by both the fours and the sixes?", "Qual é o menor número positivo alcançado tanto pelos saltos de quatro como pelos de seis?"], answer: 12,
+      guided: [["What is the third multiple of 4?", "Qual é o terceiro múltiplo de 4?", 12], ["How many groups of 6 make 12?", "Quantos grupos de 6 formam 12?", 2]],
+      idea: ["Common multiples are totals that can be made from equal groups of either size.", "Múltiplos comuns são totais formados por grupos iguais de um tamanho ou do outro."],
+      method: [["List the positive multiples of each number.", "Liste os múltiplos positivos de cada número."], ["Find the first total appearing in both lists.", "Encontre o primeiro total que aparece nas duas listas."]],
+      example: ["Multiples of 3: 3, 6, 9, 12. Multiples of 4: 4, 8, 12. Their first shared positive total is 12.", "Múltiplos de 3: 3, 6, 9, 12. Múltiplos de 4: 4, 8, 12. O primeiro total positivo comum é 12."],
+      solution: ["4, 8, 12 and 6, 12 first meet at 12. Twenty-four also works, but is not the smallest.", "4, 8, 12 e 6, 12 se encontram primeiro em 12. Vinte e quatro também funciona, mas não é o menor."],
+      mistake: ["Factors divide a number; multiples are formed by multiplying it. Zero is excluded when finding the least positive common multiple.", "Fatores dividem um número; múltiplos são formados multiplicando-o. Excluímos zero ao buscar o menor múltiplo comum positivo."],
+      observe: ["Explain why 24 is a common multiple but 12 is the least positive one. Show both group sizes in the same total.", "Explique por que 24 é múltiplo comum, mas 12 é o menor positivo. Mostre os dois tamanhos de grupo no mesmo total."],
+      practice: [["Find the least positive common multiple of 3 and 5.", "Ache o menor múltiplo comum positivo de 3 e 5.", 15, "3, 6, 9, 12, 15 and 5, 10, 15 meet at 15.", "3, 6, 9, 12, 15 e 5, 10, 15 se encontram em 15."], ["Trays hold 4 or 8 seedlings. What is the smallest positive total that fills either kind with none left?", "Bandejas comportam 4 ou 8 mudas. Qual é o menor total positivo que enche qualquer tipo sem sobrar?", 8, "8 = 2 × 4 = 1 × 8. Multiplying 4 × 8 is unnecessary.", "8 = 2 × 4 = 1 × 8. Não é preciso multiplicar 4 × 8."], ["Twelve counters in rows of 3 make how many rows?", "Doze peças em fileiras de 3 formam quantas fileiras?", 4, "12 ÷ 3 = 4: a factor-pair check.", "12 ÷ 3 = 4: uma verificação do par de fatores."]]
+    }
+  ]);
+})();

@@ -1731,3 +1731,10 @@ footer {
 
   .geometry-workbench { grid-template-columns: 1fr; }
 }
+/* The four unsolved products stay visible while the learner reasons about area. */
+.algebra-area { width: 100%; max-width: 34rem; border-collapse: collapse; margin: 1.25rem 0; }
+.algebra-area caption { text-align: left; font-weight: 700; padding: 0 0 .65rem; }
+.algebra-area th, .algebra-area td { padding: .9rem .55rem; text-align: center; border: 1px solid #b7c5b1; }
+.algebra-area th { background: #e6ecdf; }
+.algebra-area td { background: #fff6dd; }
+.algebra-area tr:nth-child(2) td:first-of-type, .algebra-area tr:first-child td:nth-of-type(2) { background: #e6edf4; }

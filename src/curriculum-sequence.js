@@ -2,18 +2,22 @@
   const lessons = window.lessons || [];
 
   const blockOrder = {
-    "Grade 1": ["Living Numbers", "Whole and Parts", "Movement and Number", "Four Relationships"],
-    "Grade 2": ["Living Time", "Rhythm and Tables", "Number Patterns", "Money in Parts"],
-    "Grade 3": ["Measure Through Work", "Number Shapes", "Place Value", "Meaningful Subtraction"],
-    "Grade 4": ["Place Value", "Subtraction Strategies", "Long Division Stories", "Square Measure", "Number Patterns", "Fraction Beginnings", "Fractions Block 1", "Fractions Block 2", "Fractions Block 3"],
-    "Grade 5": ["Efficient Long Division", "Fraction Review", "Fraction Path", "Fractions to Decimals", "Decimal Fractions", "Metric Measure", "Measurement", "Ancient Measures", "Freehand Geometry", "Symmetry"],
-    "Grade 6": ["Decimal System", "Division Beyond Whole Numbers", "Fractions", "Percents", "Fair Trade", "Discounts", "Unit Cost", "Business Math", "Interest", "Budgeting", "Market Day", "Portfolio", "Geometry", "String, Shadow & Measure", "Core Competency Lab"],
-    "Grade 7": ["Arithmetic Review", "Puzzles", "Divisibility", "Fractions", "Decimals", "Repeating Decimals", "Percents", "Business Math", "Ratios & Rates Path", "Ratios", "Rates", "Unit Cost", "Geometry Through Shadow", "Álgebra", "Formulas", "Reasoning Competency Lab"],
-    "Grade 8": ["Number Bases", "Scientific Notation", "Percent Growth", "Dimensional Analysis", "Proportions & Graphs Path", "Proportions", "Álgebra", "Pythagorean Theorem", "Mensuration", "Solid & Curved Geometry", "Applied Competency Lab"],
+    "Grade 1": ["Living Numbers", "Whole and Parts", "Movement and Number", "Form and Movement", "Four Relationships"],
+    "Grade 2": ["Living Time", "Bundles and Exchanges", "Rhythm and Tables", "Number Patterns", "Money in Parts"],
+    "Grade 3": ["Measure Through Work", "Number Shapes", "Place Value", "Meaningful Subtraction", "Garden Project"],
+    "Grade 4": ["Place Value", "Subtraction Strategies", "Long Division Stories", "Square Measure", "Number Patterns", "Factors and Multiples", "Fraction Beginnings", "Fractions Block 1", "Fractions Block 2", "Fractions Block 3"],
+    "Grade 5": ["Efficient Long Division", "Fraction Review", "Fraction Path", "Fractions to Decimals", "Decimal Fractions", "Decimal Operations", "Metric Measure", "Measurement", "Ancient Measures", "Freehand Geometry", "Symmetry", "Construction Bridge", "Fractions in Data"],
+    "Grade 6": ["Decimal System", "Division Beyond Whole Numbers", "Fractions", "Percents", "Fair Trade", "Discounts", "Unit Cost", "Business Math", "Interest", "Budgeting", "Market Day", "Portfolio", "Construction Foundations", "Geometry", "String, Shadow & Measure", "Data and Graphs", "Core Competency Lab"],
+    "Grade 7": ["Arithmetic Review", "Puzzles", "Divisibility", "Fractions", "Decimals", "Repeating Decimals", "Percents", "Business Math", "Ratios & Rates Path", "Ratios", "Rates", "Unit Cost", "Geometry Through Shadow", "Signed Number Foundations", "Álgebra", "Algebra: Brackets and Squares", "Formulas", "Data and Interpretation", "Reasoning Competency Lab"],
+    "Grade 8": ["Number Bases", "Scientific Notation", "Percent Growth", "Dimensional Analysis", "Proportions & Graphs Path", "Proportions", "Álgebra", "First Systems", "Pythagorean Theorem", "Mensuration", "Solid & Curved Geometry", "Statistics", "Applied Competency Lab"],
     "Grade 9": ["Algebra I Foundations Path", "Álgebra I", "Systems", "Exponents", "Radicals", "Linear Functions", "Coordinate Geometry", "Quadratics", "Growth Models", "Geometry of the Earth", "Algebra Readiness Lab"],
   };
 
   const lessonPriority = {
+    "g4-fractions-equivalence-observe": 0,
+    "g4-jarman-same-ribbon-new-parts": 1,
+    "g4-fractions-reduce-same": 2,
+    "g4-fractions-like-denominators": 3,
     "g4-fraction-branches": 0,
     "g4-fraction-of-number": 1,
     "g4-remainder-as-fraction": 2,

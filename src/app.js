@@ -465,6 +465,7 @@ function lessonCopy(lesson) {
 }
 
 function extraPracticeFor(lesson) {
+  const canonical = lessons.find((candidate) => candidate.id === lesson.id) || lesson;
   const bank = extraPracticeBank[language] || extraPracticeBank.en || {};
   const items = [];
   const addPractice = (candidate) => {
@@ -477,8 +478,11 @@ function extraPracticeFor(lesson) {
   };
 
   addPractice(lesson);
+  if (lesson.curatedPracticeOnly) return items;
+  const lessonIndex = lessons.findIndex((candidate) => candidate.id === lesson.id);
   lessons
-    .filter((candidate) => candidate.id !== lesson.id && candidate.grade === lesson.grade && candidate.block === lesson.block)
+    .slice(0, Math.max(0, lessonIndex))
+    .filter((candidate) => candidate.id !== lesson.id && candidate.grade === canonical.grade && candidate.block === canonical.block)
     .forEach(addPractice);
   return items;
 }
@@ -550,6 +554,7 @@ function normalizeExpression(value) {
 }
 
 function checkValue(config, rawValue) {
+  if (config.polynomial) return window.checkExpandedPolynomial(config, rawValue);
   if (config.answerType === "expression") {
     const normalized = normalizeExpression(rawValue);
     return config.acceptedAnswers.some((accepted) => normalizeExpression(accepted) === normalized);
@@ -695,6 +700,9 @@ function reflectionPromptFor(lesson) {
 function previousLessonsFor(lesson) {
   const index = lessons.findIndex((candidate) => candidate.id === lesson.id);
   if (index <= 0) return [];
+  if (lesson.recallIds?.length) {
+    return lesson.recallIds.map((id) => lessons.slice(0, index).find((candidate) => candidate.id === id)).filter(Boolean).map(lessonCopy);
+  }
   return lessons.slice(0, index).filter((candidate) => candidate.grade === lesson.grade).slice(-3).map(lessonCopy);
 }
 
@@ -714,7 +722,8 @@ function renderFacilitatorCard(lesson) {
     <summary>${t("guideCardTitle")}</summary>
     <div class="facilitator-card__content">
       <p><strong>${t("guidePurpose")}:</strong> ${lesson.memoryRefresh?.idea || lesson.teacherAim}</p>
-      <p><strong>${t("guideObserve")}:</strong> ${support.check}</p>
+      <p><strong>${t("guideObserve")}:</strong> ${lesson.teacherObservation || support.check}</p>
+      ${lesson.teachingRhythm ? `<p>${lesson.teachingRhythm}</p>` : ""}
       <p><strong>${t("guidePause")}:</strong> ${t("guidePauseCopy")}</p>
     </div>
   </details>`;
@@ -724,8 +733,8 @@ function tutorSupportFor(lesson) {
   const text = lessonSearchText(lesson);
   const support = tutorSupport[language].find((item) => item.test.test(text)) || tutorSupport[language].at(-1);
   return {
-    mistake: support.mistake,
-    check: support.check,
+    mistake: lesson.tutorMistake || support.mistake,
+    check: lesson.tutorCheck || support.check,
   };
 }
 
@@ -871,7 +880,7 @@ function renderExtraPractice(lesson, context = "lesson") {
             const inputId = `extra-answer-${context}-${index}`;
             return `
               <article class="extra-practice__item" data-practice-index="${index}" data-attempts="0">
-                <p class="practice-role">${t(practiceRoleKey(index, practiceItems.length))}</p>
+                <p class="practice-role">${t(practice.role || practiceRoleKey(index, practiceItems.length))}</p>
                 <p class="extra-practice__prompt">${practice.prompt}</p>
                 <label for="${inputId}">${t("extraAnswerLabel")}</label>
                 <div class="answer-form__row">
@@ -969,6 +978,13 @@ function renderGeometryStory(model) {
   </section>`;
 }
 
+function renderAlgebraArea(model) {
+  if (!model) return "";
+  return `<table class="algebra-area"><caption>${model.caption}</caption>
+    <thead><tr><th scope="col">×</th>${model.columns.map(term => `<th scope="col">${term}</th>`).join("")}</tr></thead>
+    <tbody>${model.rows.map(row => `<tr><th scope="row">${row}</th>${model.columns.map(column => `<td>(${row}) × (${column})</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+}
+
 function hideAttemptTools() {
   attemptTools.hidden = true;
   attemptTools.innerHTML = "";
@@ -1011,7 +1027,7 @@ function checkExtraPracticeButton(button) {
     return;
   }
   if (attempts === 2) {
-    const firstStep = practice.steps?.[0] || lessonCopy(activeLesson).memoryRefresh?.method?.[0] || tutorSupportFor(lessonCopy(activeLesson)).check;
+    const firstStep = practice.hint || practice.steps?.[0] || lessonCopy(activeLesson).memoryRefresh?.method?.[0] || tutorSupportFor(lessonCopy(activeLesson)).check;
     extraFeedback.textContent = `${t("extraTry")} ${t("extraMethodLead")} ${firstStep}`;
     if (extraSolution) extraSolution.hidden = true;
     return;
@@ -1203,7 +1219,7 @@ function renderList() {
         <button class="lesson-card" data-id="${lesson.id}" type="button">
           <span>${gradeLabel(displayLesson.grade)} - ${displayLesson.block}</span>
           <strong>${displayLesson.title}</strong>
-          <small>${displayLesson.time}</small>
+          <small>${[displayLesson.time, displayLesson.learningStage].filter(Boolean).join(" · ")}</small>
           <em data-state="${state ?? "open"}">${stateLabel}</em>
         </button>
       `;
@@ -1364,7 +1380,7 @@ function renderExercise(lesson) {
   const displayLesson = lessonCopy(lesson);
   grade.textContent = `${gradeLabel(displayLesson.grade)} - ${displayLesson.block}`;
   title.textContent = displayLesson.title;
-  time.textContent = displayLesson.time;
+  time.textContent = [displayLesson.time, displayLesson.learningStage].filter(Boolean).join(" · ");
   prompt.textContent = displayLesson.prompt;
   const answerQuestionLabel = document.createElement("strong");
   answerQuestionLabel.textContent = t("answerPromptLabel");
@@ -1392,6 +1408,7 @@ function renderExercise(lesson) {
     ${renderRatioVisual(displayLesson.ratioModel)}
     ${renderGraphVisual(displayLesson.graphModel)}
     ${renderGeometryStory(displayLesson.storyModel)}
+    ${renderAlgebraArea(displayLesson.algebraAreaModel)}
     ${window.renderGeometryDiscovery?.(lesson, language) || ""}
     <section class="discovery-card">
       <span>1</span>
@@ -1890,6 +1907,8 @@ signOutButton.addEventListener("click", async () => {
 });
 
 async function initialise() {
+  const linkedLesson = lessonFromHash(window.location.hash);
+  if (linkedLesson) { activeLesson = linkedLesson; selectedGrade = linkedLesson.grade; }
   applyLanguage();
   renderGradeFilter();
   renderList();
@@ -1907,6 +1926,21 @@ async function initialise() {
     }
   }
 }
+
+function lessonFromHash(hash) {
+  const match = /^#practice:(g\d+-[a-z0-9-]+)$/.exec(hash);
+  return match ? lessons.find(lesson => lesson.id === match[1]) : null;
+}
+
+window.addEventListener("hashchange", () => {
+  const lesson = lessonFromHash(window.location.hash);
+  if (!lesson) return;
+  selectedGrade = lesson.grade;
+  renderGradeFilter();
+  renderList();
+  renderExercise(lesson);
+  document.getElementById("practice")?.scrollIntoView({ block: "start" });
+});
 
 supabase.auth.onAuthStateChange((event, session) => {
   if (event === "SIGNED_IN" && session?.user) {

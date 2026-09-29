@@ -43,6 +43,8 @@ linear functions, quadratics, coordinate geometry, and growth models.
 
 ## Curriculum Note
 
+The September 29 release adds 35 original bilingual lessons across Grades 1–8, including place-value exchanges, decimal operations, signed numbers, practical projects, constructions, statistics and a five-lesson Grade 7 bracket-algebra sequence covering `(2x + 2)²`. All 227 lessons have at least three curated practice questions, teaching guidance and conceptual hints. See [the completion record](docs/COURSE_COMPLETION_2026-09-29.md) for content, verification and the remaining Grade 8–9 cloud approval.
+
 Eight original bilingual hands-on investigations now extend Grades 1–8 using Ron Jarman's teaching approach. See [the grade-by-grade teaching review](docs/JARMAN_TEACHING_REVIEW.md) for key concepts, practical examples, source pages, and differences from the existing sequence.
 
 The initial exercise examples are original. Jamie York-style ideas or other
@@ -58,8 +60,8 @@ Algebra I preparation rather than copied book material.
 ## Suggested Next Steps
 
 1. Add Grade 9 pathways for quadratics, combinations and permutations, and Euclidean/descriptive geometry.
-2. Deepen the Grade 5 decimal fractions and freehand geometry block with drawing prompts.
+2. Extend the new decimal and construction lessons into longer classroom projects.
 3. Deepen the Grade 6 business math block with more interactive portfolio tasks.
-4. Add three to five curated practice variations to every lesson; do not generate them by merely changing numbers unless the mathematical conditions are checked.
+4. Use classroom observations to refine the existing core, application and cumulative practice sets.
 5. Add visual manipulatives for signed numbers, geometry, and early algebra.
 6. Record hints used and independent mastery in the learner portfolio once the shared database schema is ready.
