@@ -1917,6 +1917,8 @@ async function initialise() {
   renderMentalTricks();
   renderAccount();
 
+  if (linkedLesson) title.scrollIntoView({ block: "start" });
+
   const { data: { session } } = await supabase.auth.getSession();
   if (session?.user) {
     try {
@@ -1939,7 +1941,7 @@ window.addEventListener("hashchange", () => {
   renderGradeFilter();
   renderList();
   renderExercise(lesson);
-  document.getElementById("practice")?.scrollIntoView({ block: "start" });
+  title.scrollIntoView({ block: "start" });
 });
 
 supabase.auth.onAuthStateChange((event, session) => {
