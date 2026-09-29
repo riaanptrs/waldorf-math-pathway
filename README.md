@@ -43,7 +43,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 
 ## Curriculum Note
 
-The September 29 release adds 35 original bilingual lessons across Grades 1–8, including place-value exchanges, decimal operations, signed numbers, practical projects, constructions, statistics and a five-lesson Grade 7 bracket-algebra sequence covering `(2x + 2)²`. All 227 lessons have at least three curated practice questions, teaching guidance and conceptual hints. See [the completion record](docs/COURSE_COMPLETION_2026-09-29.md) for content, verification and the remaining Grade 8–9 cloud approval.
+The September 29 release adds 35 original bilingual lessons across Grades 1–8, including place-value exchanges, decimal operations, signed numbers, practical projects, constructions, statistics and a five-lesson Grade 7 bracket-algebra sequence covering `(2x + 2)²`. All 227 lessons have at least three curated practice questions, teaching guidance and conceptual hints, and all Grades 1–9 activity keys are registered in the shared cloud catalogue. See [the completion record](docs/COURSE_COMPLETION_2026-09-29.md) for content, verification and the approved database update.
 
 Eight original bilingual hands-on investigations now extend Grades 1–8 using Ron Jarman's teaching approach. See [the grade-by-grade teaching review](docs/JARMAN_TEACHING_REVIEW.md) for key concepts, practical examples, source pages, and differences from the existing sequence.
 

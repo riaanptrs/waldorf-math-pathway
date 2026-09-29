@@ -6,7 +6,7 @@ Last updated: 2026-09-29.
 
 - The agreed teaching improvements are complete: **227 bilingual lessons**, **35 new lessons**, and **683 practice placements per language**. All lessons have at least three practice questions and teaching guidance. All 192 original main answers and progress keys are preserved.
 - Grade 7 now includes five lessons progressing through distribution, two binomials, squared sums, squared differences and conjugate brackets. The exact requested example `(2x + 2)²` is taught with a four-part model.
-- The shared database was restored. All **172 Grade 1–7 activities** are registered and active. **55 Grade 8–9 activities await explicit approval to extend the shared grade constraint from 7 to 9.** Automatic approval review rejected that schema change; it has not been applied.
+- The shared database was restored. After explicit user approval, the reviewed migration extended the grade constraint to 1–9 and the full catalogue was registered. **All 227 activities are active**, including the remaining **55 Grade 8–9 activities**. Database keys, grades, titles and paths match the course with zero mismatches. The 40 shared non-math entries and access policies are unchanged; RLS remains enabled.
 - All structural, bilingual, arithmetic, algebra, original-content-preservation and existing geometry checks pass. All 35 scripts pass syntax checks.
 - GitHub Pages publishes from `main` at the repository root. The completion record supersedes the initial phase counts and local-only delivery state below.
 - Details, teaching sequence, tests and cloud limitations: `docs/COURSE_COMPLETION_2026-09-29.md`.
@@ -32,7 +32,7 @@ Last updated: 2026-09-29.
 - Added one original investigation per grade, Grades 1–8, in English and Portuguese: hidden parts, rotated arrays, measured remainders, fraction equivalence, unitary pricing, triangle-angle reasoning, area rearrangement, and a difference-of-squares model.
 - Each uses practical materials, an explanation prompt, optional support, intermediate checks and transfer practice in the existing lesson flow.
 - Source synthesis and sequence differences are documented in `docs/JARMAN_TEACHING_REVIEW.md`.
-- These additions are included in the September 11 GitHub Pages release. Database activity registration has not been performed.
+- These additions are included in the September 11 GitHub Pages release and are now registered in the cloud catalogue as part of the September 29 completion release.
 
 ## Learning Flow
 
