@@ -1,6 +1,13 @@
 # Current Status
 
-Last updated: 2026-09-29.
+Last updated: 2026-10-05.
+
+## Geometry course
+
+- Added a separate original bilingual 52-lesson geometry course: 4 Grade 5 preparation, 16 Grade 6, 16 Grade 7, 12 Grade 8 and 4 optional later extensions.
+- Entry: `geometry/index.html`, also linked from the existing practice catalogue. Includes constructions, shadow and Earth calculators, exact Pythagorean dissection, solids/nets, worked answers and printable static lessons.
+- The existing 227 lesson catalogue and cloud progress keys remain intact. The geometry course is released through GitHub Pages from `main` at `https://riaanptrs.github.io/waldorf-math-pathway/geometry/`. Cloud catalogue registration has not occurred.
+- Implementation and validation: `docs/GEOMETRY_COURSE_2026-10-05.md`.
 
 ## Completion release
 

@@ -1,0 +1,1411 @@
+{
+  "lessons": {
+    "G5-01": {
+      "id": "G5-01",
+      "title": "Finding shapes without forcing them",
+      "grade": 5,
+      "central_question": "What can we notice in a leaf, flower, shell or stone?",
+      "learning_objectives": [
+        "Distinguish an observed specimen from an ideal shape",
+        "Describe a visible repetition accurately"
+      ],
+      "prerequisites": [],
+      "duration_minutes": 45,
+      "book_pdf_page_ranges": [
+        [
+          13,
+          18
+        ]
+      ],
+      "further_research": "Which local specimens show useful variation?"
+    },
+    "G5-02": {
+      "id": "G5-02",
+      "title": "Symmetry you can move and fold",
+      "grade": 5,
+      "central_question": "How can we test whether two parts match?",
+      "learning_objectives": [
+        "Find a reflection line by folding",
+        "Distinguish a reflection from a turn"
+      ],
+      "prerequisites": [
+        "G5-01"
+      ],
+      "duration_minutes": 45,
+      "book_pdf_page_ranges": [
+        [
+          13,
+          18
+        ]
+      ],
+      "further_research": "Compare bilateral and rotational arrangements."
+    },
+    "G5-03": {
+      "id": "G5-03",
+      "title": "Sketching families of shapes",
+      "grade": 5,
+      "central_question": "What makes a triangle a triangle when we turn it?",
+      "learning_objectives": [
+        "Recognize figures in varied orientations",
+        "Compare curved and straight boundaries"
+      ],
+      "prerequisites": [
+        "G5-02"
+      ],
+      "duration_minutes": 45,
+      "book_pdf_page_ranges": [
+        [
+          15,
+          22
+        ]
+      ],
+      "further_research": "How can a drawing communicate its intended shape?"
+    },
+    "G5-04": {
+      "id": "G5-04",
+      "title": "A circle with one string",
+      "grade": 5,
+      "central_question": "What must stay unchanged while we draw?",
+      "learning_objectives": [
+        "Trace a fixed-distance circle",
+        "Explain the role of center and radius"
+      ],
+      "prerequisites": [
+        "G5-03"
+      ],
+      "duration_minutes": 45,
+      "book_pdf_page_ranges": [
+        [
+          21,
+          22
+        ]
+      ],
+      "further_research": "Compare string action with a compass hinge."
+    },
+    "G6-01": {
+      "id": "G6-01",
+      "title": "The tools and the language",
+      "grade": 6,
+      "central_question": "How can we give instructions someone else can repeat?",
+      "learning_objectives": [
+        "Use compass and straightedge with control",
+        "Distinguish point, segment, ray and line"
+      ],
+      "prerequisites": [],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          22,
+          22
+        ],
+        [
+          57,
+          57
+        ]
+      ],
+      "further_research": "How should accessible instructions describe a point without color?"
+    },
+    "G6-02": {
+      "id": "G6-02",
+      "title": "Constructing circles accurately",
+      "grade": 6,
+      "central_question": "Why does a compass draw a circle?",
+      "learning_objectives": [
+        "Construct and label a circle",
+        "Relate radius and diameter"
+      ],
+      "prerequisites": [
+        "G6-01"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          21,
+          21
+        ],
+        [
+          22,
+          22
+        ],
+        [
+          57,
+          57
+        ]
+      ],
+      "further_research": "What causes compass drift?"
+    },
+    "G6-03": {
+      "id": "G6-03",
+      "title": "Six equal steps around a circle",
+      "grade": 6,
+      "central_question": "Why does the radius fit six times around the circle as a chord?",
+      "learning_objectives": [
+        "Construct a regular hexagon by constant-radius steps",
+        "Explain the six equilateral triangles"
+      ],
+      "prerequisites": [
+        "G6-02"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          37,
+          37
+        ],
+        [
+          38,
+          38
+        ],
+        [
+          57,
+          57
+        ],
+        [
+          58,
+          58
+        ]
+      ],
+      "further_research": "How does a polygon’s perimeter approach a circle’s circumference?"
+    },
+    "G6-04": {
+      "id": "G6-04",
+      "title": "Triangles and stars inside the circle",
+      "grade": 6,
+      "central_question": "How do the same six points generate different figures?",
+      "learning_objectives": [
+        "Construct equilateral triangles from alternate vertices",
+        "Explain rotational repetition"
+      ],
+      "prerequisites": [
+        "G6-03"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          16,
+          16
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          37,
+          37
+        ],
+        [
+          58,
+          58
+        ]
+      ],
+      "further_research": "Which rotations map the hexagon to itself?"
+    },
+    "G6-05": {
+      "id": "G6-05",
+      "title": "A right angle made with rope",
+      "grade": 6,
+      "central_question": "How can we lay out a square corner outdoors?",
+      "learning_objectives": [
+        "Build a 3–4–5 triangle from equal intervals",
+        "Recognize the angle opposite the longest side"
+      ],
+      "prerequisites": [
+        "G6-04"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          29,
+          29
+        ],
+        [
+          31,
+          31
+        ],
+        [
+          57,
+          57
+        ]
+      ],
+      "further_research": "Why do intervals, rather than the number of visible knots, define lengths?"
+    },
+    "G6-06": {
+      "id": "G6-06",
+      "title": "Finding the midpoint without measuring",
+      "grade": 6,
+      "central_question": "How can equal distances find a center?",
+      "learning_objectives": [
+        "Construct a perpendicular bisector",
+        "Explain why its points are equally distant from endpoints"
+      ],
+      "prerequisites": [
+        "G6-05"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          30,
+          57
+        ]
+      ],
+      "further_research": "What changes if one arc radius is larger?"
+    },
+    "G6-07": {
+      "id": "G6-07",
+      "title": "Perpendiculars and parallels",
+      "grade": 6,
+      "central_question": "How do we construct directions that stay related?",
+      "learning_objectives": [
+        "Construct a perpendicular at a point on a line",
+        "Construct a parallel through a separate point"
+      ],
+      "prerequisites": [
+        "G6-06"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          31,
+          31
+        ],
+        [
+          32,
+          32
+        ],
+        [
+          57,
+          57
+        ],
+        [
+          59,
+          59
+        ]
+      ],
+      "further_research": "Why are parallel lines a plane relationship?"
+    },
+    "G6-08": {
+      "id": "G6-08",
+      "title": "Splitting an angle fairly",
+      "grade": 6,
+      "central_question": "How can we divide an angle into two equal parts?",
+      "learning_objectives": [
+        "Construct an angle bisector",
+        "Differentiate angle and segment bisection"
+      ],
+      "prerequisites": [
+        "G6-07"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          57,
+          60
+        ]
+      ],
+      "further_research": "What equal-sided triangles appear in the construction?"
+    },
+    "G6-09": {
+      "id": "G6-09",
+      "title": "Building squares and rectangles",
+      "grade": 6,
+      "central_question": "Which properties must we control?",
+      "learning_objectives": [
+        "Construct a square with a given side",
+        "Distinguish squares from general rectangles"
+      ],
+      "prerequisites": [
+        "G6-08"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          29,
+          29
+        ],
+        [
+          33,
+          33
+        ],
+        [
+          57,
+          57
+        ]
+      ],
+      "further_research": "Which properties are preserved when a square is rotated?"
+    },
+    "G6-10": {
+      "id": "G6-10",
+      "title": "Which triangles can we construct",
+      "grade": 6,
+      "central_question": "When do three given lengths meet?",
+      "learning_objectives": [
+        "Construct a triangle from three lengths",
+        "Classify it by side and angle properties"
+      ],
+      "prerequisites": [
+        "G6-09"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          57,
+          57
+        ],
+        [
+          60,
+          60
+        ],
+        [
+          66,
+          66
+        ]
+      ],
+      "further_research": "How are the two circle-intersection solutions related?"
+    },
+    "G6-11": {
+      "id": "G6-11",
+      "title": "Measuring turns and directions",
+      "grade": 6,
+      "central_question": "How can we measure an angle without being fooled by its arms?",
+      "learning_objectives": [
+        "Measure acute, right and obtuse angles",
+        "Interpret simple compass bearings"
+      ],
+      "prerequisites": [
+        "G6-10"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          37,
+          37
+        ],
+        [
+          40,
+          40
+        ],
+        [
+          57,
+          57
+        ],
+        [
+          59,
+          59
+        ]
+      ],
+      "further_research": "How can two scales on a protractor describe the same drawing?"
+    },
+    "G6-12": {
+      "id": "G6-12",
+      "title": "Keeping a shadow record",
+      "grade": 6,
+      "central_question": "What changes when the stick stays still?",
+      "learning_objectives": [
+        "Record shadow length and direction under consistent conditions",
+        "Describe an observed trend without inventing data"
+      ],
+      "prerequisites": [
+        "G6-11"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          24,
+          27
+        ]
+      ],
+      "further_research": "How does a same-clock-time shadow change over a month?"
+    },
+    "G6-13": {
+      "id": "G6-13",
+      "title": "Units and the boundary of a field",
+      "grade": 6,
+      "central_question": "Why must we agree on the unit?",
+      "learning_objectives": [
+        "Measure and compute perimeter",
+        "Compare nonstandard and standard units"
+      ],
+      "prerequisites": [
+        "G6-12"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          29,
+          32
+        ]
+      ],
+      "further_research": "How do we choose a useful unit size?"
+    },
+    "G6-14": {
+      "id": "G6-14",
+      "title": "Area is not perimeter",
+      "grade": 6,
+      "central_question": "How much ground fits inside the boundary?",
+      "learning_objectives": [
+        "Build rectangle area from square units",
+        "Compare equal-perimeter figures with different areas"
+      ],
+      "prerequisites": [
+        "G6-13"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          32,
+          32
+        ],
+        [
+          66,
+          66
+        ],
+        [
+          68,
+          68
+        ]
+      ],
+      "further_research": "Which rectangle maximizes area for this fixed perimeter?"
+    },
+    "G6-15": {
+      "id": "G6-15",
+      "title": "Design a small garden",
+      "grade": 6,
+      "central_question": "How can a drawing guide real construction?",
+      "learning_objectives": [
+        "Integrate scale, right angles, perimeter and area",
+        "Explain a design using measurements"
+      ],
+      "prerequisites": [
+        "G6-14"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          28,
+          34
+        ]
+      ],
+      "further_research": "How does a path reduce planting area without changing the outer boundary?"
+    },
+    "G6-16": {
+      "id": "G6-16",
+      "title": "A pattern that fits and a pattern that fails",
+      "grade": 6,
+      "central_question": "What can gaps teach us?",
+      "learning_objectives": [
+        "Test simple regular tilings",
+        "Explain a failed fit using angles or visible gaps"
+      ],
+      "prerequisites": [
+        "G6-15"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          70,
+          73
+        ]
+      ],
+      "further_research": "What changes if unlike polygons are mixed?"
+    },
+    "G7-01": {
+      "id": "G7-01",
+      "title": "When a picture is not enough",
+      "grade": 7,
+      "central_question": "What turns a convincing example into a reason?",
+      "learning_objectives": [
+        "Distinguish observation, conjecture and proof",
+        "Supply a reason for a simple angle statement"
+      ],
+      "prerequisites": [
+        "G6-10",
+        "G6-11"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          42,
+          42
+        ],
+        [
+          48,
+          48
+        ],
+        [
+          55,
+          55
+        ],
+        [
+          60,
+          60
+        ]
+      ],
+      "further_research": "How can one counterexample refute an all-cases claim?"
+    },
+    "G7-02": {
+      "id": "G7-02",
+      "title": "Why triangle angles make a straight angle",
+      "grade": 7,
+      "central_question": "How do parallel lines explain a triangle?",
+      "learning_objectives": [
+        "Use alternate interior angles",
+        "Justify the 180° triangle angle sum"
+      ],
+      "prerequisites": [
+        "G7-01"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          59,
+          60
+        ]
+      ],
+      "further_research": "How does a spherical triangle differ?"
+    },
+    "G7-03": {
+      "id": "G7-03",
+      "title": "Same shape at a different size",
+      "grade": 7,
+      "central_question": "What must remain unchanged in an enlargement?",
+      "learning_objectives": [
+        "Identify corresponding sides",
+        "Apply a scale factor consistently"
+      ],
+      "prerequisites": [
+        "G7-02"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          50,
+          50
+        ],
+        [
+          53,
+          53
+        ],
+        [
+          58,
+          58
+        ]
+      ],
+      "further_research": "Why does length scale differ from area scale?"
+    },
+    "G7-04": {
+      "id": "G7-04",
+      "title": "Measure a tree without climbing",
+      "grade": 7,
+      "central_question": "How can a smaller triangle measure a larger one?",
+      "learning_objectives": [
+        "Model simultaneous shadows with similar triangles",
+        "Calculate and check an unknown height"
+      ],
+      "prerequisites": [
+        "G7-03"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          49,
+          53
+        ]
+      ],
+      "further_research": "How should two disagreeing measurements be reported?"
+    },
+    "G7-05": {
+      "id": "G7-05",
+      "title": "The part of the shadow we cannot see",
+      "grade": 7,
+      "central_question": "Why is the pyramid problem harder than the pole problem?",
+      "learning_objectives": [
+        "Distinguish vertical and slant height",
+        "Include the hidden base distance in an aligned pyramid model"
+      ],
+      "prerequisites": [
+        "G7-04"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          49,
+          54
+        ]
+      ],
+      "further_research": "How does the correction change when the shadow points toward a corner?"
+    },
+    "G7-06": {
+      "id": "G7-06",
+      "title": "Cutting and sliding area",
+      "grade": 7,
+      "central_question": "Why does a slanted shape still have a simple area?",
+      "learning_objectives": [
+        "Derive parallelogram and triangle area",
+        "Identify perpendicular height"
+      ],
+      "prerequisites": [
+        "G7-05"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          32,
+          32
+        ],
+        [
+          67,
+          67
+        ],
+        [
+          68,
+          68
+        ]
+      ],
+      "further_research": "How can the same triangle use different base-height pairs?"
+    },
+    "G7-07": {
+      "id": "G7-07",
+      "title": "Measuring around and inside a circle",
+      "grade": 7,
+      "central_question": "Why do circumference and area use different formulas?",
+      "learning_objectives": [
+        "Estimate π from diameter and circumference",
+        "Distinguish C=2πr from A=πr²"
+      ],
+      "prerequisites": [
+        "G7-06"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          20,
+          20
+        ],
+        [
+          22,
+          22
+        ],
+        [
+          37,
+          37
+        ],
+        [
+          40,
+          40
+        ]
+      ],
+      "further_research": "Why does using a thicker string affect the estimate?"
+    },
+    "G7-08": {
+      "id": "G7-08",
+      "title": "Squares on the sides",
+      "grade": 7,
+      "central_question": "What pattern links the three squares of a right triangle?",
+      "learning_objectives": [
+        "Identify legs and hypotenuse in any orientation",
+        "Check the area relation in two cases"
+      ],
+      "prerequisites": [
+        "G7-07"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          65,
+          67
+        ]
+      ],
+      "further_research": "How can a diagram make units of area visible?"
+    },
+    "G7-09": {
+      "id": "G7-09",
+      "title": "A proof made from four triangles",
+      "grade": 7,
+      "central_question": "Why must the area relation hold for any right triangle?",
+      "learning_objectives": [
+        "Reconstruct a rearrangement proof",
+        "Explain both area invariance and the central square"
+      ],
+      "prerequisites": [
+        "G7-08"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          67,
+          69
+        ]
+      ],
+      "further_research": "Which earlier angle fact proves the central corners are 90°?"
+    },
+    "G7-10": {
+      "id": "G7-10",
+      "title": "Using the theorem wisely",
+      "grade": 7,
+      "central_question": "How do we choose the unknown before calculating?",
+      "learning_objectives": [
+        "Solve for a missing leg or hypotenuse",
+        "Check a proposed right-triangle side set"
+      ],
+      "prerequisites": [
+        "G7-09"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          65,
+          69
+        ]
+      ],
+      "further_research": "How could measurement error affect a right-angle check?"
+    },
+    "G7-11": {
+      "id": "G7-11",
+      "title": "A diagonal that fractions cannot capture",
+      "grade": 7,
+      "central_question": "What does √2 name?",
+      "learning_objectives": [
+        "Locate √2 between rational bounds",
+        "Distinguish exact value and approximation"
+      ],
+      "prerequisites": [
+        "G7-10"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          77,
+          79
+        ]
+      ],
+      "further_research": "What distinguishes repeating and nonrepeating infinite decimals?"
+    },
+    "G7-12": {
+      "id": "G7-12",
+      "title": "Ratios we can hear and arrange",
+      "grade": 7,
+      "central_question": "How do numbers connect sound and shape?",
+      "learning_objectives": [
+        "Compare simple string-length ratios",
+        "Build triangular and square number patterns"
+      ],
+      "prerequisites": [
+        "G7-11"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          75,
+          77
+        ]
+      ],
+      "further_research": "What physical conditions change string pitch besides length?"
+    },
+    "G7-13": {
+      "id": "G7-13",
+      "title": "The right angle hidden in a semicircle",
+      "grade": 7,
+      "central_question": "Why does one point moving on a circle preserve a right angle?",
+      "learning_objectives": [
+        "Construct a triangle on a diameter",
+        "Justify the semicircle theorem using equal radii"
+      ],
+      "prerequisites": [
+        "G7-12"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          59,
+          60
+        ]
+      ],
+      "further_research": "How does the proof work when the center lies on a triangle side?"
+    },
+    "G7-14": {
+      "id": "G7-14",
+      "title": "Constructing a root five rectangle",
+      "grade": 7,
+      "central_question": "Can we construct an exact irrational length?",
+      "learning_objectives": [
+        "Construct √5 from a 1-by-2 right triangle",
+        "Distinguish exact construction from decimal measurement"
+      ],
+      "prerequisites": [
+        "G7-13"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          83,
+          85
+        ]
+      ],
+      "further_research": "How can the semicircle’s diameter be √5 times the inscribed square side?"
+    },
+    "G7-15": {
+      "id": "G7-15",
+      "title": "A line divided in a special proportion",
+      "grade": 7,
+      "central_question": "What makes the golden division self-related?",
+      "learning_objectives": [
+        "State the short-long-whole relationship",
+        "Construct a golden rectangle from a square"
+      ],
+      "prerequisites": [
+        "G7-14"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          84,
+          89
+        ]
+      ],
+      "further_research": "Which pentagon diagonals reproduce this ratio?"
+    },
+    "G7-16": {
+      "id": "G7-16",
+      "title": "A small survey with reasons",
+      "grade": 7,
+      "central_question": "Can someone else reproduce our measurement?",
+      "learning_objectives": [
+        "Combine construction, similarity and calculation",
+        "Communicate assumptions and a reproducible method"
+      ],
+      "prerequisites": [
+        "G7-15"
+      ],
+      "duration_minutes": 75,
+      "book_pdf_page_ranges": [
+        [
+          28,
+          28
+        ],
+        [
+          34,
+          34
+        ],
+        [
+          49,
+          49
+        ],
+        [
+          60,
+          60
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          69,
+          69
+        ]
+      ],
+      "further_research": "Which change would most improve the reliability of this estimate?"
+    },
+    "G8-01": {
+      "id": "G8-01",
+      "title": "Building a chain of reasons",
+      "grade": 8,
+      "central_question": "Why did organizing geometry matter?",
+      "learning_objectives": [
+        "Distinguish definition, assumption and theorem",
+        "Order a short proof by dependencies"
+      ],
+      "prerequisites": [
+        "G7-02",
+        "G7-13"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          55,
+          55
+        ],
+        [
+          60,
+          60
+        ],
+        [
+          98,
+          98
+        ],
+        [
+          99,
+          99
+        ]
+      ],
+      "further_research": "Which assumptions are hidden in a familiar diagram?"
+    },
+    "G8-02": {
+      "id": "G8-02",
+      "title": "Why some regular polygons tile",
+      "grade": 8,
+      "central_question": "Can we predict whether a shape will fit?",
+      "learning_objectives": [
+        "Derive regular polygon interior angles",
+        "Classify single-type edge-to-edge regular tilings"
+      ],
+      "prerequisites": [
+        "G8-01"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          70,
+          71
+        ]
+      ],
+      "further_research": "What changes when two polygon types are allowed?"
+    },
+    "G8-03": {
+      "id": "G8-03",
+      "title": "From a flat net to a solid",
+      "grade": 8,
+      "central_question": "Which edges will meet when we fold?",
+      "learning_objectives": [
+        "Recognize valid cube and tetrahedron nets",
+        "Track face and edge adjacency"
+      ],
+      "prerequisites": [
+        "G8-02"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          71,
+          73
+        ]
+      ],
+      "further_research": "How many different cube nets can the class find without claiming completeness?"
+    },
+    "G8-04": {
+      "id": "G8-04",
+      "title": "Why exactly five regular convex solids",
+      "grade": 8,
+      "central_question": "What restricts the corners of a solid?",
+      "learning_objectives": [
+        "Use face-angle sums to list possible regular vertices",
+        "Connect the five possibilities to five solids"
+      ],
+      "prerequisites": [
+        "G8-03"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          71,
+          74
+        ]
+      ],
+      "further_research": "Why do the local possibilities also yield closed solids?"
+    },
+    "G8-05": {
+      "id": "G8-05",
+      "title": "Counting and pairing the solids",
+      "grade": 8,
+      "central_question": "How are faces and vertices connected?",
+      "learning_objectives": [
+        "Count V,E,F without omitting hidden parts",
+        "Identify cube–octahedron and dodecahedron–icosahedron dual pairs"
+      ],
+      "prerequisites": [
+        "G8-04"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          71,
+          74
+        ]
+      ],
+      "further_research": "Why is the tetrahedron self-dual?"
+    },
+    "G8-06": {
+      "id": "G8-06",
+      "title": "Wrapping a box and filling it",
+      "grade": 8,
+      "central_question": "Why do surface area and volume behave differently?",
+      "learning_objectives": [
+        "Compute surface area and volume of rectangular prisms",
+        "Use square and cubic units correctly"
+      ],
+      "prerequisites": [
+        "G8-05"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          71,
+          71
+        ],
+        [
+          74,
+          74
+        ],
+        [
+          91,
+          91
+        ],
+        [
+          94,
+          94
+        ]
+      ],
+      "further_research": "Which box needs less wrapping for the same volume?"
+    },
+    "G8-07": {
+      "id": "G8-07",
+      "title": "A pentagon with a reason",
+      "grade": 8,
+      "central_question": "How can golden proportion help construct fivefold symmetry?",
+      "learning_objectives": [
+        "Construct a regular pentagon from a verified procedure",
+        "Relate its diagonals to golden proportion"
+      ],
+      "prerequisites": [
+        "G7-15",
+        "G8-04"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          70,
+          70
+        ],
+        [
+          74,
+          74
+        ],
+        [
+          83,
+          83
+        ],
+        [
+          88,
+          88
+        ]
+      ],
+      "further_research": "Which similar triangles establish diagonal/side=φ?"
+    },
+    "G8-08": {
+      "id": "G8-08",
+      "title": "What does doubling a cube mean",
+      "grade": 8,
+      "central_question": "How do changes in length affect space?",
+      "learning_objectives": [
+        "Apply linear, area and volume scale factors",
+        "Explain the difference between double edge and double volume"
+      ],
+      "prerequisites": [
+        "G8-07"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          92,
+          93
+        ]
+      ],
+      "further_research": "How can a measuring approximation exist when an exact classical construction does not?"
+    },
+    "G8-09": {
+      "id": "G8-09",
+      "title": "Curves made by cutting a cone",
+      "grade": 8,
+      "central_question": "What changes when we tilt the cutting plane?",
+      "learning_objectives": [
+        "Recognize circle, ellipse, parabola and hyperbola as sections",
+        "Connect an ellipse to a constant-distance-sum construction"
+      ],
+      "prerequisites": [
+        "G8-08"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          92,
+          94
+        ]
+      ],
+      "further_research": "How can the cutting condition and the locus condition describe the same curve?"
+    },
+    "G8-10": {
+      "id": "G8-10",
+      "title": "Measuring the Earth with a shadow",
+      "grade": 8,
+      "central_question": "How does a local angle tell us a whole circumference?",
+      "learning_objectives": [
+        "Explain the parallel-ray angle relation",
+        "Calculate circumference from an arc and angle"
+      ],
+      "prerequisites": [
+        "G7-02",
+        "G7-04",
+        "G6-11"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          96,
+          98
+        ]
+      ],
+      "further_research": "How does a different stadion length alter the claimed modern accuracy?"
+    },
+    "G8-11": {
+      "id": "G8-11",
+      "title": "How certain is our answer",
+      "grade": 8,
+      "central_question": "Which measurement matters most?",
+      "learning_objectives": [
+        "Report a sensible estimate rather than false precision",
+        "Explore sensitivity to input error"
+      ],
+      "prerequisites": [
+        "G8-10"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          27,
+          27
+        ],
+        [
+          53,
+          53
+        ],
+        [
+          97,
+          97
+        ],
+        [
+          98,
+          98
+        ]
+      ],
+      "further_research": "How should uncertain angle and distance be combined responsibly?"
+    },
+    "G8-12": {
+      "id": "G8-12",
+      "title": "A geometry exhibition that teaches",
+      "grade": 8,
+      "central_question": "Can we help someone else see why a result is true?",
+      "learning_objectives": [
+        "Create a coherent mathematical demonstration",
+        "Distinguish story, observation, model and proof"
+      ],
+      "prerequisites": [
+        "G8-01",
+        "G8-06",
+        "G8-07",
+        "G8-10",
+        "G8-11"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          55,
+          55
+        ],
+        [
+          60,
+          60
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          99,
+          99
+        ]
+      ],
+      "further_research": "What unanswered question naturally follows the exhibit?"
+    },
+    "E-01": {
+      "id": "E-01",
+      "title": "Proving that root two is irrational",
+      "grade": "9–10 or readiness",
+      "central_question": "How can we rule out every fraction at once?",
+      "learning_objectives": [
+        "Follow a proof by contradiction",
+        "Explain why lowest terms matter"
+      ],
+      "prerequisites": [
+        "G7-11"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          77,
+          79
+        ]
+      ],
+      "further_research": "Can the method be adapted to √3?"
+    },
+    "E-02": {
+      "id": "E-02",
+      "title": "A second proof of Pythagoras",
+      "grade": "9–10 or readiness",
+      "central_question": "How can different proofs explain the same theorem?",
+      "learning_objectives": [
+        "Compare dissection and a Euclidean area proof",
+        "Track reasons across a longer argument"
+      ],
+      "prerequisites": [
+        "G7-09",
+        "G8-01"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          65,
+          65
+        ],
+        [
+          69,
+          69
+        ],
+        [
+          98,
+          98
+        ],
+        [
+          99,
+          99
+        ]
+      ],
+      "further_research": "Why might one proof be easier for a particular problem?"
+    },
+    "E-03": {
+      "id": "E-03",
+      "title": "Proportion beyond fraction notation",
+      "grade": "9–10 or readiness",
+      "central_question": "How can we compare magnitudes without assuming a common unit?",
+      "learning_objectives": [
+        "Explain commensurable and incommensurable lengths",
+        "Connect Eudoxus’s problem to geometric ratios"
+      ],
+      "prerequisites": [
+        "E-01",
+        "G7-15"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          83,
+          89
+        ]
+      ],
+      "further_research": "How did later definitions of real number change the language?"
+    },
+    "E-04": {
+      "id": "E-04",
+      "title": "Impossible under which rules",
+      "grade": "9–10 or readiness",
+      "central_question": "What would count as a solution?",
+      "learning_objectives": [
+        "State classical tool restrictions accurately",
+        "Distinguish exact, approximate and alternate-tool constructions"
+      ],
+      "prerequisites": [
+        "G8-08",
+        "G8-09",
+        "G8-01"
+      ],
+      "duration_minutes": 90,
+      "book_pdf_page_ranges": [
+        [
+          90,
+          95
+        ]
+      ],
+      "further_research": "How do origami axioms change what can be constructed?"
+    }
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Jamie York Academy, Curricula",
+      "url": "https://jamieyorkacademy.com/resources/curricula/",
+      "use": "Published school sequence: freehand Grade 5, constructions Grade 6, and later area, Pythagorean and solid work."
+    },
+    {
+      "id": "S2",
+      "title": "Jamie York Press, A Grades 1–8 Math Curriculum Overview",
+      "url": "https://www.jamieyorkpress.com/wp-content/uploads/2018/05/Math-Curriculum-Overview-grades-1-8.pdf",
+      "use": "One-page overview corroborating the general sequence. The fetched document heading differs from the search metadata; its grade-specific rows were read."
+    },
+    {
+      "id": "S3",
+      "title": "Waldorf Resources, Mathematics vertical curriculum",
+      "url": "https://www.waldorf-resources.org/en/vertical-curriculum/mathematics",
+      "use": "Allows late Grade 5 instruments and teacher judgment in sequencing. Used as an educational tradition’s own guidance, not as experimental proof of developmental claims."
+    },
+    {
+      "id": "S4",
+      "title": "Camellia Waldorf School, Sixth Grade",
+      "url": "https://www.camelliawaldorf.org/sixth-grade-waldorf-class",
+      "use": "School example of six- and twelvefold compass constructions in Grade 6."
+    },
+    {
+      "id": "S5",
+      "title": "Paraná, Official Grade 9 Mathematics Curricular Reference",
+      "url": "https://www.referencialcurriculardoparana.pr.gov.br/Matematica-9o-Ano",
+      "use": "Read official state reference with EF09MA12–14 similarity and Pythagorean expectations; not a full national alignment audit."
+    },
+    {
+      "id": "S6",
+      "title": "Stanford Encyclopedia of Philosophy, Pythagoras",
+      "url": "https://plato.stanford.edu/entries/pythagoras/",
+      "use": "Scholarly context for late and conflicting biographical traditions and southern Italian activity. Used for historical caution."
+    },
+    {
+      "id": "S7",
+      "title": "MacTutor, Eudoxus of Cnidus",
+      "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Eudoxus/",
+      "use": "University of St Andrews account locates Cnidus on the Resadiye peninsula and discusses Eudoxus’s work and uncertain relationships."
+    },
+    {
+      "id": "S8",
+      "title": "MacTutor, Eratosthenes",
+      "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Eratosthenes/",
+      "use": "University of St Andrews account describes the circumference model and uncertainty about the stadion length."
+    },
+    {
+      "id": "S9",
+      "title": "Chris Budd, Myths of maths: The golden ratio, Plus",
+      "url": "https://plus.maths.org/myths-maths-golden-ratio",
+      "use": "Mathematician’s discussion distinguishing genuine properties from weak Parthenon and human-body claims."
+    },
+    {
+      "id": "S10",
+      "title": "Euclid, Elements I.47, D. E. Joyce edition",
+      "url": "https://mathcs.clarku.edu/~djoyce/elements/bookI/propI47.html",
+      "use": "Primary mathematical text for the optional comparison with Euclid’s proof; not identical to Diggins’s rearrangement."
+    }
+  ]
+}
