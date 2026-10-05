@@ -68,10 +68,10 @@ const copy = {
     navRhythm: "Ritmo",
     navParent: "Notas para os pais",
     heroEyebrow: "Prática online de matemática do 1º ao 9º ano",
-    heroTitle: "Um caminho vivo por medida, dinheiro, porcentagens, razões, geometria e álgebra.",
-    heroCopy:
-      "Uma trilha de aulas do 1º ao 9º ano que começa com números vivos, movimento, todo e partes e as quatro operações, seguindo por aritmética prática, medida, geometria, frações, decimais, razões e álgebra. Os estudantes completam passos visíveis, corrigem o próprio trabalho e salvam o progresso para revisão dos pais.",
+    heroTitle: "Descubra a matemática, passo a passo.",
+    heroCopy: "Explore números, formas e ideias em atividades do 1º ao 9º ano. Escolha seu ano e comece: não é preciso criar uma conta.",
     heroButton: "Começar a praticar",
+    skipLink: "Ir para as atividades", searchLabel: "Buscar uma atividade", noResults: "Nenhuma atividade encontrada. Tente outra palavra ou outro ano.",
     introEyebrow: "Primeiro passo",
     introTitle: "Agora com um caminho vivo do 1º ao 9º ano",
     introCopy:
@@ -253,10 +253,10 @@ const copy = {
     navRhythm: "Rhythm",
     navParent: "Parent Notes",
     heroEyebrow: "Grade 1 through 9 online math practice",
-    heroTitle: "A living path through measure, money, percentages, ratios, geometry, and algebra.",
-    heroCopy:
-      "A Grade 1 through 9 lesson path beginning with living numbers, movement, whole-to-parts thinking, and the four operations, then continuing through practical arithmetic, measure, geometry, fractions, ratios, and algebra. Students complete visible steps, self-correct, and save their work for parent review.",
+    heroTitle: "Discover maths, one step at a time.",
+    heroCopy: "Explore numbers, shapes and ideas in activities for Grades 1–9. Choose your grade and begin: no account needed.",
     heroButton: "Begin Practice",
+    skipLink: "Skip to activities", searchLabel: "Find an activity", noResults: "No activities found. Try another word or grade.",
     introEyebrow: "Step one",
     introTitle: "Now with a living Grade 1 through Grade 9 path",
     introCopy:
@@ -526,6 +526,7 @@ function applyLanguage() {
     element.textContent = t(element.dataset.i18n);
   });
   languageInput.value = language;
+  document.querySelector("#site-language").value = language;
   authForm.dataset.language = language;
   window.dispatchEvent(new CustomEvent("waldorf-language-change", { detail: language }));
 }
@@ -1210,7 +1211,12 @@ async function saveLessonProgress(lesson, value, isCorrect) {
 }
 
 function renderList() {
-  const visibleLessons = filteredLessons();
+  const query = document.querySelector("#lesson-search").value;
+  const fold = text => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const visibleLessons = filteredLessons().filter(lesson => {
+    const display = lessonCopy(lesson);
+    return fold([display.title, display.block, lesson.id].join(" ")).includes(fold(query));
+  });
   lessonCount.textContent = t("lessonCount", visibleLessons.length);
   list.innerHTML = visibleLessons
     .map((lesson) => {
@@ -1218,7 +1224,7 @@ function renderList() {
       const state = getLessonProgress(lesson);
       const stateLabel = state === "correct" ? t("stateCorrect") : state ? t("stateReview") : t("stateOpen");
       return `
-        <button class="lesson-card" data-id="${lesson.id}" type="button">
+        <button class="lesson-card" data-id="${lesson.id}" type="button" aria-current="${lesson.id === activeLesson.id ? "true" : "false"}">
           <span>${gradeLabel(displayLesson.grade)} - ${displayLesson.block}</span>
           <strong>${displayLesson.title}</strong>
           <small>${[displayLesson.time, displayLesson.learningStage].filter(Boolean).join(" · ")}</small>
@@ -1226,7 +1232,7 @@ function renderList() {
         </button>
       `;
     })
-    .join("");
+    .join("") || `<p role="status">${t("noResults")}</p>`;
 }
 
 function renderReviewSheets() {
@@ -1482,6 +1488,7 @@ function renderExercise(lesson) {
 
   document.querySelectorAll(".lesson-card").forEach((card) => {
     card.classList.toggle("is-active", card.dataset.id === lesson.id);
+    card.setAttribute("aria-current", String(card.dataset.id === lesson.id));
   });
   const visibleLessons = filteredLessons();
   const visibleIndex = visibleLessons.findIndex((item) => item.id === lesson.id);
@@ -1577,7 +1584,10 @@ list.addEventListener("click", (event) => {
   if (!card) return;
   const nextLesson = lessons.find((lesson) => lesson.id === card.dataset.id);
   renderExercise(nextLesson);
-  answer.focus();
+  renderList();
+  const title = document.querySelector(".exercise__title");
+  title.tabIndex = -1;
+  title.focus();
 });
 
 gradeFilter?.addEventListener("change", () => {
@@ -1955,3 +1965,10 @@ supabase.auth.onAuthStateChange((event, session) => {
 });
 
 initialise().catch((error) => setAccountStatus(translateAuthError(error), "error"));
+
+// Keep the prominent language control connected to the existing preference handler.
+document.querySelector("#site-language").addEventListener("change", event => {
+  languageInput.value = event.target.value;
+  languageInput.dispatchEvent(new Event("change"));
+});
+document.querySelector("#lesson-search").addEventListener("input", renderList);

@@ -10,8 +10,10 @@
     <title>Trilha de Matemática Waldorf</title>
     <link rel="preload" href="public/learning-path.png" as="image" />
     <link rel="stylesheet" href="src/styles.css?v=20260929-complete" />
+    <link rel="stylesheet" href="src/ui.css?v=20261005" />
   </head>
   <body>
+    <a class="skip-link" href="#practice" data-i18n="skipLink">Ir para as atividades</a>
     <header class="hero">
       <img class="hero__image" src="public/learning-path.png" alt="" />
       <div class="hero__shade"></div>
@@ -21,6 +23,7 @@
           <span data-i18n="brand">Trilha de Matemática Waldorf</span>
         </a>
         <div class="topbar__links">
+          <label class="site-language"><span data-i18n="languageLabel">Idioma</span><select id="site-language"><option value="pt">Português</option><option value="en">English</option></select></label>
           <a href="#account" data-i18n="navAccount">Conta</a>
           <a href="#practice" data-i18n="navPractice">Praticar</a>
           <a href="#arithmetic-review" data-i18n="navArithmeticReview">Revisão</a>
@@ -30,68 +33,17 @@
         </div>
       </nav>
       <section class="hero__content" id="top">
-        <p class="eyebrow" data-i18n="heroEyebrow">Prática online de matemática do 4º ao 9º ano</p>
-        <h1 data-i18n="heroTitle">Um caminho vivo por medida, dinheiro, porcentagens, razões, geometria e álgebra.</h1>
+        <p class="eyebrow" data-i18n="heroEyebrow">Prática online de matemática do 1º ao 9º ano</p>
+        <h1 data-i18n="heroTitle">Descubra a matemática, passo a passo.</h1>
         <p class="hero__copy" data-i18n="heroCopy">
-          Uma trilha de aulas do 4º ao 9º ano com aritmética prática, medida, geometria, matemática financeira, frações, decimais, razões, números com sinal, fórmulas, Teorema de Pitágoras, crescimento, funções e álgebra. Os estudantes completam passos visíveis, corrigem o próprio trabalho e salvam o progresso para revisão dos pais.
+          Explore números, formas e ideias em atividades do 1º ao 9º ano. Escolha seu ano e comece: não é preciso criar uma conta.
         </p>
         <a class="button" href="#practice" data-i18n="heroButton">Começar a praticar</a>
+        <a class="button button--secondary" href="geometry/index.html" data-i18n="geometryCourseLink">Curso de Geometria · 52 aulas</a>
       </section>
     </header>
 
     <main>
-      <section class="intro band">
-        <div>
-          <p class="eyebrow" data-i18n="introEyebrow">Primeiro passo</p>
-          <h2 data-i18n="introTitle">Agora com blocos do 4º ao 9º ano</h2>
-        </div>
-        <p data-i18n="introCopy">
-          Esta trilha de matemática adapta blocos Waldorf em atividades online originais: no 5º ano, frações decimais, medidas e geometria à mão livre; no 6º ano, matemática financeira, descontos, orçamento e geometria precisa; no 7º ano, revisão aritmética, razões e álgebra inicial; no 8º ano, bases numéricas, Pitágoras, crescimento, proporções, mensuração e estereometria inicial; no 9º ano, álgebra I, funções, radicais, sistemas e modelos de crescimento.
-        </p>
-      </section>
-
-      <section class="account" id="account" aria-labelledby="account-title">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="accountEyebrow">Cadastro compartilhado</p>
-          <h2 id="account-title" data-i18n="accountTitle">Entrar ou cadastrar</h2>
-        </div>
-
-        <div class="account__layout">
-          <form class="auth-form" method="post" action="#">
-            <label for="auth-mode" data-i18n="modeLabel">Modo</label>
-            <select id="auth-mode" name="auth-mode">
-              <option value="login" data-i18n="modeLogin">Entrar</option>
-              <option value="register" data-i18n="modeRegister">Cadastrar</option>
-            </select>
-
-            <label for="username" data-i18n="emailLabel">Email do responsável</label>
-            <input id="username" name="username" type="email" autocomplete="email" />
-
-            <label for="password" data-i18n="passwordLabel">Senha</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" />
-
-            <label for="student-link" data-i18n="learnerLabel">Apelido do estudante</label>
-            <input id="student-link" name="student-link" autocomplete="off" />
-
-            <label for="language" data-i18n="languageLabel">Idioma do estudante</label>
-            <select id="language" name="language">
-              <option value="pt" selected>Português</option>
-              <option value="en">English</option>
-            </select>
-
-            <button class="button button--small" type="submit" data-i18n="continueButton">Continuar</button>
-          </form>
-
-          <div class="account-panel">
-            <p class="eyebrow" data-i18n="currentLearnerEyebrow">Estudante atual</p>
-            <h3 class="learner-name">Estudante visitante</h3>
-            <p class="account-status"></p>
-            <p class="db-badge"></p>
-            <button class="button button--small sign-out" type="button" hidden data-i18n="signOut">Sair</button>
-          </div>
-        </div>
-      </section>
-
       <section class="practice" id="practice" aria-labelledby="practice-title">
         <div class="section-heading">
           <p class="eyebrow" data-i18n="practiceEyebrow">Sala de prática</p>
@@ -101,6 +53,8 @@
           <div class="lesson-filters" aria-label="Filtros de atividades">
             <label for="grade-filter" data-i18n="gradeFilterLabel">Escolha o ano</label>
             <select id="grade-filter" class="grade-filter"></select>
+            <label for="lesson-search" data-i18n="searchLabel">Buscar uma atividade</label>
+            <input id="lesson-search" type="search" autocomplete="off" />
           </div>
         </div>
 
@@ -242,6 +196,58 @@
           </article>
         </div>
       </section>
+      <section class="intro band">
+        <div>
+          <p class="eyebrow" data-i18n="introEyebrow">Primeiro passo</p>
+          <h2 data-i18n="introTitle">Agora com blocos do 4º ao 9º ano</h2>
+        </div>
+        <p data-i18n="introCopy">
+          Esta trilha de matemática adapta blocos Waldorf em atividades online originais: no 5º ano, frações decimais, medidas e geometria à mão livre; no 6º ano, matemática financeira, descontos, orçamento e geometria precisa; no 7º ano, revisão aritmética, razões e álgebra inicial; no 8º ano, bases numéricas, Pitágoras, crescimento, proporções, mensuração e estereometria inicial; no 9º ano, álgebra I, funções, radicais, sistemas e modelos de crescimento.
+        </p>
+      </section>
+
+      <section class="account" id="account" aria-labelledby="account-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="accountEyebrow">Cadastro compartilhado</p>
+          <h2 id="account-title" data-i18n="accountTitle">Entrar ou cadastrar</h2>
+        </div>
+
+        <div class="account__layout">
+          <form class="auth-form" method="post" action="#">
+            <label for="auth-mode" data-i18n="modeLabel">Modo</label>
+            <select id="auth-mode" name="auth-mode">
+              <option value="login" data-i18n="modeLogin">Entrar</option>
+              <option value="register" data-i18n="modeRegister">Cadastrar</option>
+            </select>
+
+            <label for="username" data-i18n="emailLabel">Email do responsável</label>
+            <input id="username" name="username" type="email" autocomplete="email" />
+
+            <label for="password" data-i18n="passwordLabel">Senha</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" />
+
+            <label for="student-link" data-i18n="learnerLabel">Apelido do estudante</label>
+            <input id="student-link" name="student-link" autocomplete="off" />
+
+            <label for="language" data-i18n="languageLabel">Idioma do estudante</label>
+            <select id="language" name="language">
+              <option value="pt" selected>Português</option>
+              <option value="en">English</option>
+            </select>
+
+            <button class="button button--small" type="submit" data-i18n="continueButton">Continuar</button>
+          </form>
+
+          <div class="account-panel">
+            <p class="eyebrow" data-i18n="currentLearnerEyebrow">Estudante atual</p>
+            <h3 class="learner-name">Estudante visitante</h3>
+            <p class="account-status"></p>
+            <p class="db-badge"></p>
+            <button class="button button--small sign-out" type="button" hidden data-i18n="signOut">Sair</button>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer>
@@ -284,6 +290,6 @@
     <script src="src/practice-continuity.js?v=20260929"></script>
     <script src="src/geometry-discovery.js?v=20260901-geometry-studio"></script>
     <script src="src/fluency.js?v=20260831-grades1-7"></script>
-    <script type="module" src="src/app.js?v=20260929-complete"></script>
+    <script type="module" src="src/app.js?v=20261005-ui"></script>
   </body>
 </html>
