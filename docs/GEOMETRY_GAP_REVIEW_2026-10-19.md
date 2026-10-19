@@ -1,5 +1,7 @@
 # Geometry gap review and lesson plans — 19 October 2026
 
+Follow-up: the readable 249-page Jarman Markdown was subsequently supplied and directly reviewed. See [the follow-up review](JARMAN_GEOMETRY_FOLLOWUP_2026-10-19.md) for ten more plans, corrected current page references and the updated total of 26. The transfer limitation below describes the initial pass.
+
 ## Evidence and limits
 
 Reviewed the supplied `GeometryLessons.md` (87 captured PDF pages) against the existing 227-activity catalogue and the separate 52-lesson geometry course. The supplied matching PDF was available; page 33 was visually checked for its quadrilateral classification caveat and its proposed later cyclic/tangential extensions. The text extraction contains damaged OCR and missing figures: new diagrams, examples and activities are original, not reproductions. Source directions to teachers were treated as reference content, not instructions to the coding agent.

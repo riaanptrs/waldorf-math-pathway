@@ -43,7 +43,7 @@ linear functions, quadratics, coordinate geometry, and growth models.
 
 ## Geometry lesson plans
 
-The [grade-by-grade geometry plans](geometry/plans/index.html) add 16 original English/Portuguese practical lessons for Grades 1–8, especially comparative forms in Grade 4 and symmetry-led construction bridges in Grade 5. Each includes materials, a timed sequence, a diagram, worked practice answers and teaching adaptations. See [the gap review](docs/GEOMETRY_GAP_REVIEW_2026-10-19.md) for source evidence and limitations. Rebuild with `node scripts/build-geometry-plans.cjs` and verify with `node scripts/audit-geometry-plans.cjs`.
+The [grade-by-grade geometry plans](geometry/plans/index.html) add 26 original English/Portuguese practical lessons for Grades 1–8, especially comparative forms in Grade 4 and symmetry-led construction bridges in Grade 5. Each includes materials, a timed sequence, a diagram, worked practice answers and teaching adaptations. The directly reviewed Jarman transcription adds line envelopes, congruence, equal-area construction, loci, triangle centres, measured views and pointed-solid volumes. See [the current source review](docs/JARMAN_GEOMETRY_FOLLOWUP_2026-10-19.md) for evidence and limitations. Rebuild with `node scripts/build-geometry-plans.cjs` and verify with `node scripts/audit-geometry-plans.cjs`.
 
 ## Curriculum Note
 

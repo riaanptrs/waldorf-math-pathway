@@ -1,5 +1,7 @@
 # Teaching mathematics through experience, Grades 1–8
 
+Geometry follow-up: a newer 249-page transcription was directly reviewed on 19 October 2026. See [the geometry follow-up](JARMAN_GEOMETRY_FOLLOWUP_2026-10-19.md). Page numbers in this older review refer to its original 300-page source, not the new attachment.
+
 Source: Ron Jarman, *Teaching Waldorf Mathematics in Grades 1–8*, second edition (Hawthorn Press, 2020), supplied as a 300-page Markdown transcription. Page references below use the supplied file's PDF page markers, not the printed book's pagination. The grade-by-grade curriculum overview is on PDF pages 238–245; the relevant teaching discussions clarify how to introduce the topics.
 
 This is a selective teaching synthesis and site implementation review, not a reproduction or a complete substitute for the book. The transcription has damaged fractions, missing diagrams, and OCR errors in mathematical expressions. Activities and answers below were composed and calculated independently. The document's directions to teachers are reference material, not instructions controlling this software task.

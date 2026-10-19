@@ -16,6 +16,18 @@ cyclic:'<circle cx="260" cy="130" r="105"/><path d="M344 67L344 193L176 193L176 
 tangent:'<circle cx="260" cy="130" r="90"/><path d="M170 40H350V220H170Z"/><path d="M260 130V40 M260 130H350" class="guide"/><text x="265" y="120">O</text>',
 perspective:'<path d="M160 70H360V200H160Z M260 130L40 0 M260 130L480 0 M260 130L480 284 M260 130L40 284 M20 130H500" class="guide"/><path d="M160 70H360V200H160Z M100 35V235 M420 35V235"/><circle cx="260" cy="130" r="3"/><text x="270" y="125">V</text>'
 };
+// Computed original diagrams for the Jarman follow-up plans.
+const line=(x1,y1,x2,y2,cls='')=>`<path class="${cls}" d="M${x1} ${y1}L${x2} ${y2}"/>`;
+const dot=(x,y,name)=>`<circle cx="${x}" cy="${y}" r="3"/><text x="${x+6}" y="${y-6}">${name}</text>`;
+shapes.rose='<circle cx="260" cy="140" r="105"/>'+Array.from({length:16},(_,i)=>{const a=i*Math.PI/8;return line(260,140,260+105*Math.cos(a),140+105*Math.sin(a),'guide');}).join('')+'<text x="253" y="24">N</text><text x="380" y="144">E/L</text><text x="253" y="270">S</text><text x="105" y="144">W/O</text>';
+shapes.envelope=line(60,240,290,240)+line(60,240,60,10)+Array.from({length:9},(_,i)=>line(60+i*25,240,60,240-(8-i)*25)).join('')+'<text x="40" y="262">O</text><text x="263" y="262">8</text><text x="38" y="40">8</text>';
+shapes.congruence='<path d="M30 220H170L85 70Z M220 220H360L275 70Z"/><path class="guide" d="M390 220H485L390 70Z"/><text x="70" y="245">5–6–7</text><text x="260" y="245">5–6–7</text>';
+shapes['equal-area']='<path class="area" d="M200 120L410 120L340 51L200 51Z"/><path d="M200 223.5L340 51H200Z"/><path class="guide" d="M200 120L340 51 M410 120L200 223.5"/>'+dot(200,120,'A')+dot(410,120,'B')+dot(340,51,'C')+dot(200,51,'D')+dot(200,223.5,'E');
+shapes['ellipse-locus']='<ellipse cx="260" cy="135" rx="150" ry="120"/><path class="guide" d="M170 135L260 15L350 135"/>'+dot(170,135,'A')+dot(350,135,'B')+dot(260,15,'P')+'<text x="195" y="95">5 cm</text><text x="300" y="95">5 cm</text>';
+shapes.centres='<path d="M100 240H340L160 60Z"/>'+line(100,240,250,150,'guide')+line(340,240,130,150,'guide')+line(160,60,220,240,'guide')+line(160,60,160,240)+line(130,170,340,240)+dot(100,240,'A')+dot(340,240,'B')+dot(160,60,'C')+dot(220,180,'O')+dot(200,180,'G')+dot(160,180,'H')+dot(187.6,176.8,'I');
+shapes.views='<rect x="40" y="100" width="90" height="120"/><rect x="40" y="20" width="90" height="60"/><rect x="170" y="100" width="60" height="120"/><path d="M310 120H400V240H310Z M310 120L345 85H435L400 120 M400 240L435 205V85"/><text x="63" y="245">3×4</text><text x="62" y="55">3×2</text><text x="180" y="245">2×4</text>';
+shapes.volume='<path d="M50 220L140 40L230 220"/><ellipse cx="140" cy="220" rx="90" ry="22"/><path class="guide" d="M140 40V220"/><ellipse cx="380" cy="55" rx="90" ry="22"/><ellipse cx="380" cy="220" rx="90" ry="22"/><path d="M290 55V220 M470 55V220"/><text x="120" y="270">Bh/3</text><text x="365" y="270">Bh</text>';
+shapes.ladder='<path d="M60 20V250H410"/>'+[[10,0],[8,6],[6,8],[0,10]].map(([x,y])=>line(60+20*x,250,60,250-20*y,'guide')).join('')+'<path d="M160 250A100 100 0 0 0 60 150" class="new"/>'+dot(140,190,'M')+dot(220,250,'A')+dot(60,130,'B')+'<text x="40" y="275">O</text>';
 function diagram(key,lang){return `<svg viewBox="0 0 520 290" role="img" aria-label="${lang==='pt'?'Modelo geométrico para comparar com a atividade':'Geometric model to compare with the activity'}"><title>${lang==='pt'?'Modelo original, sem escala':'Original model, not to scale'}</title>${shapes[key]||''}</svg>`;}
 const api={diagram};if(typeof module!=='undefined')module.exports=api;root.GeometryPlanDiagrams=api;
 })(typeof window==='undefined'?globalThis:window);
