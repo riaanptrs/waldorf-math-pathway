@@ -41,6 +41,10 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
 
+## Geometry lesson plans
+
+The [grade-by-grade geometry plans](geometry/plans/index.html) add 16 original English/Portuguese practical lessons for Grades 1–8, especially comparative forms in Grade 4 and symmetry-led construction bridges in Grade 5. Each includes materials, a timed sequence, a diagram, worked practice answers and teaching adaptations. See [the gap review](docs/GEOMETRY_GAP_REVIEW_2026-10-19.md) for source evidence and limitations. Rebuild with `node scripts/build-geometry-plans.cjs` and verify with `node scripts/audit-geometry-plans.cjs`.
+
 ## Curriculum Note
 
 The September 29 release adds 35 original bilingual lessons across Grades 1–8, including place-value exchanges, decimal operations, signed numbers, practical projects, constructions, statistics and a five-lesson Grade 7 bracket-algebra sequence covering `(2x + 2)²`. All 227 lessons have at least three curated practice questions, teaching guidance and conceptual hints, and all Grades 1–9 activity keys are registered in the shared cloud catalogue. See [the completion record](docs/COURSE_COMPLETION_2026-09-29.md) for content, verification and the approved database update.

@@ -1,6 +1,12 @@
 # Current Status
 
-Last updated: 2026-10-05.
+Last updated: 2026-10-19.
+
+## Geometry lesson-plan expansion
+
+- Added 16 original bilingual practical plans across Grades 1–8 at `geometry/plans/index.html`, linked from the homepage and geometry course. The largest additions address Grade 4 comparative forms and Grade 5 symmetry-to-construction bridges.
+- Each plan includes timed teaching, materials, a diagram, three tasks with answers, observation criteria, support, extension and source notes. The existing 227 activities and 52 course lessons are preserved.
+- The Schuberth geometry attachments were reviewed. The newly attached large Jarman PDF could not be opened; earlier repository review informs its relevant placements. See `docs/GEOMETRY_GAP_REVIEW_2026-10-19.md` for evidence, coverage and checks.
 
 ## Geometry course
 
