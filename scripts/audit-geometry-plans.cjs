@@ -12,7 +12,7 @@ for(const id of ['',...plans.map(p=>p.id)]){
  const listeners={},main={innerHTML:''},select={value:'pt',addEventListener:(event,fn)=>listeners[event]=fn},label={},skip={};let saved='en';
  const document={body:{dataset:{plan:id}},documentElement:{},getElementById:k=>k==='course'?main:k==='plan-language'?select:label,querySelector:()=>skip};
  const context=vm.createContext({window:{},document,localStorage:{getItem:()=>saved,setItem:(k,v)=>saved=v}});
- for(const f of ['data.js','diagrams.js','render.js'])vm.runInContext(fs.readFileSync(path.join(dir,f),'utf8'),context);
+ for(const f of ['data.js','diagrams.js','../source-figures.js','render.js'])vm.runInContext(fs.readFileSync(path.join(dir,f),'utf8'),context);
  assert.equal(document.documentElement.lang,'en');assert(main.innerHTML.includes(id?plans.find(p=>p.id===id).title.en:'Geometry lesson plans by grade'));
  select.value='pt';listeners.change();assert.equal(document.documentElement.lang,'pt-BR');assert.equal(saved,'pt');assert(main.innerHTML.includes(id?plans.find(p=>p.id===id).title.pt:'Planos de geometria por ano'));
 }

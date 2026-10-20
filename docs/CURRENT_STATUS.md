@@ -1,6 +1,11 @@
 # Current Status
 
-Last updated: 2026-10-19.
+Last updated: 2026-10-20.
+
+## Geometry book diagrams
+
+- Restored all 117 image links from the new Schuberth Markdown using the matching PDF. Added 15 attributed, responsive figure groups in 19 placements across 18 existing lessons/plans, with original bilingual observation prompts.
+- Course and plan checks pass; browser layout testing was unavailable. Publication to the existing GitHub Pages site was approved on 20 October; deployment status is reported in the publishing chat. See `docs/GEOMETRY_IMAGES_2026-10-20.md` for scope, reproduction and verification.
 
 ## Geometry lesson-plan expansion
 

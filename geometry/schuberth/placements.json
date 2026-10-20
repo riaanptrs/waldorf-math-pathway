@@ -1,0 +1,323 @@
+{
+  "P4-01": [
+    {
+      "file": "movement.webp",
+      "page": 15,
+      "width": 643,
+      "height": 1239,
+      "label": "Figs. 1–2",
+      "alt": {
+        "en": "A circle changing into an ellipse",
+        "pt": "Uma circunferência se transforma em elipse"
+      },
+      "prompt": {
+        "en": "Trace both paths with a finger. A circle keeps one distance from its centre; an ellipse generally does not. The pictured oval is a form study, not a construction template.",
+        "pt": "Percorra os dois caminhos com o dedo. A circunferência mantém uma distância do centro; a elipse em geral não. O oval ilustrado é um estudo de forma, não um molde de construção."
+      }
+    }
+  ],
+  "P4-02": [
+    {
+      "file": "triangles.webp",
+      "page": 24,
+      "width": 900,
+      "height": 722,
+      "label": "Figs. 10–13",
+      "alt": {
+        "en": "Nested triangles, stars and six triangles around a point",
+        "pt": "Triângulos encaixados, estrelas e seis triângulos em torno de um ponto"
+      },
+      "prompt": {
+        "en": "Find a triangle in each pattern. In the six-part hexagon, compare each side with a radius. Sketch first; use an unchanged compass opening when exact equality is required.",
+        "pt": "Encontre um triângulo em cada padrão. No hexágono dividido em seis, compare cada lado com um raio. Esboce primeiro; use a mesma abertura do compasso quando for necessária igualdade exata."
+      }
+    }
+  ],
+  "G5-03": [
+    {
+      "file": "triangles.webp",
+      "page": 24,
+      "width": 900,
+      "height": 722,
+      "label": "Figs. 10–13",
+      "alt": {
+        "en": "Nested triangles, stars and six triangles around a point",
+        "pt": "Triângulos encaixados, estrelas e seis triângulos em torno de um ponto"
+      },
+      "prompt": {
+        "en": "Find a triangle in each pattern. In the six-part hexagon, compare each side with a radius. Sketch first; use an unchanged compass opening when exact equality is required.",
+        "pt": "Encontre um triângulo em cada padrão. No hexágono dividido em seis, compare cada lado com um raio. Esboce primeiro; use a mesma abertura do compasso quando for necessária igualdade exata."
+      }
+    }
+  ],
+  "G6-04": [
+    {
+      "file": "triangles.webp",
+      "page": 24,
+      "width": 900,
+      "height": 722,
+      "label": "Figs. 10–13",
+      "alt": {
+        "en": "Nested triangles, stars and six triangles around a point",
+        "pt": "Triângulos encaixados, estrelas e seis triângulos em torno de um ponto"
+      },
+      "prompt": {
+        "en": "Find a triangle in each pattern. In the six-part hexagon, compare each side with a radius. Sketch first; use an unchanged compass opening when exact equality is required.",
+        "pt": "Encontre um triângulo em cada padrão. No hexágono dividido em seis, compare cada lado com um raio. Esboce primeiro; use a mesma abertura do compasso quando for necessária igualdade exata."
+      }
+    }
+  ],
+  "P4-03": [
+    {
+      "file": "quadrilaterals.webp",
+      "page": 34,
+      "width": 932,
+      "height": 1317,
+      "label": "Figs. 28a–h",
+      "alt": {
+        "en": "Eight quadrilateral forms with symmetry lines",
+        "pt": "Oito formas de quadriláteros com eixos de simetria"
+      },
+      "prompt": {
+        "en": "Sort by properties rather than appearance: a square is also a rectangle and a rhombus. The crossed form needs separate treatment; use simple quadrilaterals for the 360° interior-angle sum.",
+        "pt": "Classifique pelas propriedades: um quadrado também é retângulo e losango. A forma cruzada exige tratamento separado; use quadriláteros simples para a soma interna de 360°."
+      }
+    }
+  ],
+  "P4-04": [
+    {
+      "file": "shadows.webp",
+      "page": 41,
+      "width": 964,
+      "height": 1388,
+      "label": "Figs. 40–41",
+      "alt": {
+        "en": "A ball casting shadows onto flat and curved surfaces",
+        "pt": "Uma esfera projeta sombras em superfícies planas e curvas"
+      },
+      "prompt": {
+        "en": "Compare the receiving surfaces before naming the shadow. An oblique shadow on a flat surface can be elliptical; a curved surface can distort it further. Keep the ball still and change one condition at a time.",
+        "pt": "Compare as superfícies antes de nomear a sombra. Uma sombra oblíqua em superfície plana pode ser elíptica; uma superfície curva pode deformá-la ainda mais. Mantenha a esfera parada e mude uma condição de cada vez."
+      }
+    }
+  ],
+  "G5-02": [
+    {
+      "file": "circle-symmetry.webp",
+      "page": 50,
+      "width": 531,
+      "height": 481,
+      "label": "Fig. 53",
+      "alt": {
+        "en": "Several reflection axes through a circle centre",
+        "pt": "Vários eixos de reflexão pelo centro de uma circunferência"
+      },
+      "prompt": {
+        "en": "The drawn axes are only examples. Every line through the centre is a reflection axis of a circle. Compare that with the two axes of two distinct equal circles.",
+        "pt": "Os eixos desenhados são exemplos. Toda reta pelo centro é eixo de reflexão de uma circunferência. Compare com os dois eixos de duas circunferências iguais e distintas."
+      }
+    }
+  ],
+  "P5-01": [
+    {
+      "file": "two-circles.webp",
+      "page": 52,
+      "width": 864,
+      "height": 1387,
+      "label": "Figs. 55a–f",
+      "alt": {
+        "en": "Pairs of circles and limiting symmetry cases",
+        "pt": "Pares de circunferências e casos-limite de simetria"
+      },
+      "prompt": {
+        "en": "For the midpoint construction choose two equal circles that intersect in two points: the radius must exceed half the distance between centres. Tangency gives only one point; separated circles give none. The straight lines below illustrate limiting cases.",
+        "pt": "Para construir o ponto médio, escolha duas circunferências iguais que se cortem em dois pontos: o raio deve superar metade da distância entre centros. Na tangência há só um ponto; separadas, nenhum. As retas inferiores ilustram casos-limite."
+      }
+    }
+  ],
+  "P5-03": [
+    {
+      "file": "nested-squares.webp",
+      "page": 56,
+      "width": 631,
+      "height": 637,
+      "label": "Fig. 64",
+      "alt": {
+        "en": "A sequence of squares joined at side midpoints",
+        "pt": "Uma sequência de quadrados unidos nos pontos médios dos lados"
+      },
+      "prompt": {
+        "en": "Choose one outer square and mark its four side midpoints. Joining them makes a square with half the area. Turning a square changes its orientation, not its shape.",
+        "pt": "Escolha um quadrado externo e marque os quatro pontos médios dos lados. Ao uni-los, surge um quadrado com metade da área. Girar o quadrado muda sua orientação, não sua forma."
+      }
+    }
+  ],
+  "G6-02": [
+    {
+      "file": "rosette.webp",
+      "page": 61,
+      "width": 348,
+      "height": 387,
+      "label": "Fig. 67",
+      "alt": {
+        "en": "Equal circles arranged as a sixfold rosette",
+        "pt": "Circunferências iguais organizadas em roseta de seis partes"
+      },
+      "prompt": {
+        "en": "Find the central circle and the six centres on its boundary. Keep the compass opening fixed. Six straight chords measure a hexagon perimeter, not the curved circumference.",
+        "pt": "Encontre a circunferência central e os seis centros sobre ela. Mantenha a abertura do compasso. Seis cordas retas medem o perímetro do hexágono, não o comprimento curvo da circunferência."
+      }
+    }
+  ],
+  "G6-03": [
+    {
+      "file": "rosette.webp",
+      "page": 61,
+      "width": 348,
+      "height": 387,
+      "label": "Fig. 67",
+      "alt": {
+        "en": "Equal circles arranged as a sixfold rosette",
+        "pt": "Circunferências iguais organizadas em roseta de seis partes"
+      },
+      "prompt": {
+        "en": "Find the central circle and the six centres on its boundary. Keep the compass opening fixed. Six straight chords measure a hexagon perimeter, not the curved circumference.",
+        "pt": "Encontre a circunferência central e os seis centros sobre ela. Mantenha a abertura do compasso. Seis cordas retas medem o perímetro do hexágono, não o comprimento curvo da circunferência."
+      }
+    }
+  ],
+  "G6-06": [
+    {
+      "file": "bisector.webp",
+      "page": 65,
+      "width": 835,
+      "height": 458,
+      "label": "Figs. 74–75",
+      "alt": {
+        "en": "Equal intersecting circles and a perpendicular bisector",
+        "pt": "Circunferências iguais que se cruzam e uma mediatriz"
+      },
+      "prompt": {
+        "en": "Identify the two original endpoints and the two circle intersections. Each intersection is equally far from the endpoints; the line through both intersections is their perpendicular bisector. The source letters may differ from this lesson.",
+        "pt": "Identifique os extremos originais e as duas interseções. Cada interseção está à mesma distância dos extremos; a reta pelas interseções é a mediatriz. As letras da fonte podem diferir das usadas nesta aula."
+      }
+    }
+  ],
+  "G6-07": [
+    {
+      "file": "perpendiculars.webp",
+      "page": 73,
+      "width": 947,
+      "height": 772,
+      "label": "Figs. 80–81",
+      "alt": {
+        "en": "Perpendicular constructions on differently oriented lines",
+        "pt": "Construções de perpendiculares em retas com orientações diferentes"
+      },
+      "prompt": {
+        "en": "Rotate the page and locate the right angle again. Perpendicular means meeting at 90°, even when neither line is horizontal. Match equal compass marks before joining points.",
+        "pt": "Gire a página e localize o ângulo reto novamente. Perpendicular significa encontrar-se a 90°, mesmo quando nenhuma reta é horizontal. Relacione as marcas iguais do compasso antes de unir pontos."
+      }
+    }
+  ],
+  "G6-08": [
+    {
+      "file": "angle-bisector.webp",
+      "page": 75,
+      "width": 831,
+      "height": 342,
+      "label": "Figs. 82a–b",
+      "alt": {
+        "en": "Bisecting an angle with arcs, then isolating the result",
+        "pt": "Bissecção de um ângulo com arcos e seu resultado"
+      },
+      "prompt": {
+        "en": "In the first drawing locate the two equal-radius arc steps. Compare the resulting ray in the second drawing. Equal distances from the vertex alone do not bisect an angle; the second pair of arcs locates the ray.",
+        "pt": "No primeiro desenho, localize as duas etapas de arcos com raios iguais. Compare a semirreta resultante no segundo. Só marcar distâncias iguais do vértice não divide o ângulo; o segundo par de arcos localiza a semirreta."
+      }
+    }
+  ],
+  "P6-01": [
+    {
+      "file": "angle-copy.webp",
+      "page": 78,
+      "width": 841,
+      "height": 350,
+      "label": "Figs. 86a–b",
+      "alt": {
+        "en": "An original angle and its transferred copy",
+        "pt": "Um ângulo original e sua cópia transferida"
+      },
+      "prompt": {
+        "en": "Name the original and copied vertices. Copy both the arc radius and the chord between its intersections with the rays. Reusing only the arc radius does not determine the angle.",
+        "pt": "Nomeie os vértices original e copiado. Transfira o raio do arco e a corda entre suas interseções com as semirretas. Reutilizar só o raio não determina o ângulo."
+      }
+    },
+    {
+      "file": "parallel.webp",
+      "page": 79,
+      "width": 859,
+      "height": 358,
+      "label": "Fig. 87",
+      "alt": {
+        "en": "A transversal crossing parallel lines with matching angles",
+        "pt": "Uma transversal corta paralelas com ângulos correspondentes"
+      },
+      "prompt": {
+        "en": "Match the corresponding angles at the two crossings. Equal corresponding angles establish parallel lines in a plane. Use your constructed angle, not a visual estimate from the resized image.",
+        "pt": "Relacione os ângulos correspondentes nos dois cruzamentos. Ângulos correspondentes iguais garantem paralelas em um plano. Use o ângulo construído, não uma estimativa visual da imagem redimensionada."
+      }
+    }
+  ],
+  "P6-02": [
+    {
+      "file": "middle-parallel.webp",
+      "page": 80,
+      "width": 936,
+      "height": 411,
+      "label": "Fig. 88",
+      "alt": {
+        "en": "A middle parallel between two parallel lines",
+        "pt": "Uma paralela intermediária entre duas paralelas"
+      },
+      "prompt": {
+        "en": "The slanted crossing is a construction aid. Check the halfway line using equal perpendicular distances to the outer lines; do not confuse an arbitrary slanted segment length with perpendicular separation.",
+        "pt": "A transversal inclinada auxilia a construção. Confira a reta intermediária pelas distâncias perpendiculares iguais às retas externas; não confunda um segmento inclinado qualquer com a separação perpendicular."
+      }
+    }
+  ],
+  "P5-04": [
+    {
+      "file": "area-dissection.webp",
+      "page": 82,
+      "width": 966,
+      "height": 327,
+      "label": "Fig. 90",
+      "alt": {
+        "en": "One square cut into four triangles and rearranged as two squares",
+        "pt": "Um quadrado recortado em quatro triângulos e reorganizado em dois quadrados"
+      },
+      "prompt": {
+        "en": "Track the same four pieces across both arrangements. The large square equals the sum of the two smaller squares in area. This illustrates the isosceles right-triangle case; it does not prove the theorem for every right triangle.",
+        "pt": "Acompanhe as mesmas quatro peças nas duas disposições. A área do quadrado grande é a soma das áreas dos dois menores. É o caso do triângulo retângulo isósceles; não demonstra o teorema para todo triângulo retângulo."
+      }
+    }
+  ],
+  "G7-08": [
+    {
+      "file": "area-dissection.webp",
+      "page": 82,
+      "width": 966,
+      "height": 327,
+      "label": "Fig. 90",
+      "alt": {
+        "en": "One square cut into four triangles and rearranged as two squares",
+        "pt": "Um quadrado recortado em quatro triângulos e reorganizado em dois quadrados"
+      },
+      "prompt": {
+        "en": "Track the same four pieces across both arrangements. The large square equals the sum of the two smaller squares in area. This illustrates the isosceles right-triangle case; it does not prove the theorem for every right triangle.",
+        "pt": "Acompanhe as mesmas quatro peças nas duas disposições. A área do quadrado grande é a soma das áreas dos dois menores. É o caso do triângulo retângulo isósceles; não demonstra o teorema para todo triângulo retângulo."
+      }
+    }
+  ]
+}

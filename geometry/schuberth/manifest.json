@@ -1,0 +1,241 @@
+{
+  "source": "GeometryLessons.pdf",
+  "sha256": "2151cd4b32a7ece1fb38e06f7a90915fdde9dfa4580200b4ca0f9fd15ab93563",
+  "figures": {
+    "movement": {
+      "page": 15,
+      "file": "movement.webp",
+      "width": 643,
+      "height": 1239,
+      "crop": [
+        113.05,
+        61.15,
+        327.549,
+        474.2
+      ],
+      "xrefs": [
+        34,
+        35
+      ]
+    },
+    "triangles": {
+      "page": 24,
+      "file": "triangles.webp",
+      "width": 900,
+      "height": 722,
+      "crop": [
+        60.2,
+        68.05,
+        360.056,
+        308.8
+      ],
+      "xrefs": [
+        62,
+        63,
+        64,
+        65
+      ]
+    },
+    "quadrilaterals": {
+      "page": 34,
+      "file": "quadrilaterals.webp",
+      "width": 932,
+      "height": 1317,
+      "crop": [
+        54.0,
+        79.5,
+        364.588,
+        518.65
+      ],
+      "xrefs": [
+        103
+      ]
+    },
+    "shadows": {
+      "page": 41,
+      "file": "shadows.webp",
+      "width": 964,
+      "height": 1388,
+      "crop": [
+        56.8,
+        76.2,
+        378.232,
+        538.85
+      ],
+      "xrefs": [
+        130,
+        131
+      ]
+    },
+    "circle-symmetry": {
+      "page": 50,
+      "file": "circle-symmetry.webp",
+      "width": 531,
+      "height": 481,
+      "crop": [
+        114.85,
+        271.6,
+        291.997,
+        432.0
+      ],
+      "xrefs": [
+        167
+      ]
+    },
+    "two-circles": {
+      "page": 52,
+      "file": "two-circles.webp",
+      "width": 864,
+      "height": 1387,
+      "crop": [
+        64.1,
+        68.2,
+        352.1,
+        530.45
+      ],
+      "xrefs": [
+        173
+      ]
+    },
+    "nested-squares": {
+      "page": 56,
+      "file": "nested-squares.webp",
+      "width": 631,
+      "height": 637,
+      "crop": [
+        104.65,
+        349.5,
+        315.037,
+        561.95
+      ],
+      "xrefs": [
+        197
+      ]
+    },
+    "rosette": {
+      "page": 61,
+      "file": "rosette.webp",
+      "width": 348,
+      "height": 387,
+      "crop": [
+        74.85,
+        72.0,
+        190.777,
+        201.1
+      ],
+      "xrefs": [
+        210
+      ]
+    },
+    "bisector": {
+      "page": 65,
+      "file": "bisector.webp",
+      "width": 835,
+      "height": 458,
+      "crop": [
+        77.05,
+        173.1,
+        355.506,
+        325.9
+      ],
+      "xrefs": [
+        225,
+        226
+      ]
+    },
+    "perpendiculars": {
+      "page": 73,
+      "file": "perpendiculars.webp",
+      "width": 947,
+      "height": 772,
+      "crop": [
+        70.0,
+        299.7,
+        385.8,
+        557.05
+      ],
+      "xrefs": [
+        249,
+        250
+      ]
+    },
+    "angle-bisector": {
+      "page": 75,
+      "file": "angle-bisector.webp",
+      "width": 831,
+      "height": 342,
+      "crop": [
+        80.45,
+        207.9,
+        357.287,
+        321.75
+      ],
+      "xrefs": [
+        256,
+        257
+      ]
+    },
+    "angle-copy": {
+      "page": 78,
+      "file": "angle-copy.webp",
+      "width": 841,
+      "height": 350,
+      "crop": [
+        60.2,
+        108.9,
+        340.463,
+        225.55
+      ],
+      "xrefs": [
+        267,
+        268
+      ]
+    },
+    "parallel": {
+      "page": 79,
+      "file": "parallel.webp",
+      "width": 859,
+      "height": 358,
+      "crop": [
+        81.55,
+        72.0,
+        368.024,
+        191.4
+      ],
+      "xrefs": [
+        271
+      ]
+    },
+    "middle-parallel": {
+      "page": 80,
+      "file": "middle-parallel.webp",
+      "width": 936,
+      "height": 411,
+      "crop": [
+        48.2,
+        72.0,
+        360.116,
+        208.9
+      ],
+      "xrefs": [
+        274
+      ]
+    },
+    "area-dissection": {
+      "page": 82,
+      "file": "area-dissection.webp",
+      "width": 966,
+      "height": 327,
+      "crop": [
+        52.85,
+        379.15,
+        374.718,
+        488.25
+      ],
+      "xrefs": [
+        280,
+        281
+      ]
+    }
+  }
+}

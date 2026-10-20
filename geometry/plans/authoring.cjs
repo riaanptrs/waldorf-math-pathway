@@ -353,4 +353,6 @@ const sources={
  S:'Ernst Schuberth, Geometry Lessons in the Waldorf School, Volume 2. Supplied 87-page PDF and Markdown; references use captured PDF page markers.',
  J:'Ron Jarman, Teaching Waldorf Mathematics in Grades 1–8. Directly reviewed geometry sections and grade overview in the supplied 249-page Markdown transcription, Teaching Waldorf Math grade 1 to 8 (2).md. References use its captured PDF page markers, not Kindle or older transcription pagination. OCR formulas and absent diagrams require caution; all examples and diagrams here are original and independently checked.'
 };
+const bookFigures=require('../schuberth/placements.json');
+for(const item of plans)item.bookFigures=bookFigures[item.id]||[];
 module.exports={plans,sources};
