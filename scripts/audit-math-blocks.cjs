@@ -2,12 +2,15 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const root=path.resolve(__dirname,'..'),dir=path.join(root,'math-blocks'),context=vm.createContext({window:{}});
 vm.runInContext(fs.readFileSync(path.join(dir,'data.js'),'utf8'),context);
 const data=JSON.parse(JSON.stringify(context.window.MathBlocksData)),R=require('../math-blocks/render.js'),M=require('../math-blocks/models.js');
-assert.equal(data.blocks.length,18);assert.equal(data.lessons.length,20);assert.equal(data.sources.length,8);
+assert.equal(data.blocks.length,21);assert.equal(data.lessons.length,30);assert.equal(data.sources.length,8);
 const catalogue=require('./load-catalogue.cjs')();assert.equal(catalogue.lessons.length,227);
-assert.equal(new Set(data.lessons.map(l=>l.id)).size,20);
+assert.equal(new Set(data.lessons.map(l=>l.id)).size,30);
 for(let grade=1;grade<=8;grade++)assert(data.blocks.some(b=>b.grade===grade));
-assert.equal(data.sources.find(s=>s.grade===6).scope,'cover-only');assert.equal(data.sources.find(s=>s.grade===6).pages,1);
-assert(data.blocks.filter(b=>b.grade===6).every(b=>!b.verified));assert(data.lessons.every(l=>l.grade!==6));
+assert.equal(data.sources.find(s=>s.grade===6).scope,'lesson-sequence-with-tracks');assert.equal(data.sources.find(s=>s.grade===6).pages,219);
+assert(data.blocks.filter(b=>b.grade===6).every(b=>b.verified));assert.equal(data.lessons.filter(l=>l.grade===6).length,10);
+const tracks=data.blocks.find(b=>b.id==='G6-TRACKS');assert.deepEqual(tracks.trackPhases.map(p=>p.weeks.length),[12,8,4]);
+for(const phase of tracks.trackPhases){assert(data.blocks.some(b=>b.id===phase.after));for(const week of phase.weeks){assert(week.title.en&&week.title.pt);for(const key of week.routes){assert(data.routes[key],key);if(phase.phase<3)assert(!['N6-07','N6-08','N6-09'].includes(key),'business/algebra practice before teaching');}}}
+const legacy=fs.readFileSync(path.join(dir,'G6-PENDING.html'),'utf8');assert(legacy.includes('data-block="G6-B1"'));assert(!legacy.includes('Fonte indisponível'));
 assert.equal(data.lessons.filter(l=>l.basis==='standards-expansion').length,2);
 for(const item of [...data.blocks,...data.lessons]){
  const source=data.sources.find(s=>s.grade===item.grade);
@@ -19,6 +22,13 @@ for(const b of data.blocks){
  for(const step of b.sequence){assert(step.topic.en&&step.topic.pt);for(const key of step.routes)assert(data.routes[key],b.id+' route '+key);}
 }
 const checks={
+ 'N6-01':[12/4,8**2-4*(2*6/2),40*5/8],
+ 'N6-02':[360/24,24/24,24*2], 'N6-03':[200-45,100,100-30],
+ 'N6-04':[25*6,90/6,150+6], 'N6-05':[20*9/5+32,(86-32)*5/9,32],
+ 'N6-06':[2400-(800+120+4*120+5*20*6),Math.round(5*1.609344*100)/100,400-25*6],
+ 'N6-07':[20*12-20*3-30,20*12-20*3-20*.5-20*12*.05,158-150],
+ 'N6-08':[10*15,1200-300-500-100-150-5000*.12/12,3*(500+100)],
+ 'N6-09':[21-8,31-4-18,42/6], 'N6-10':[360/24,24-1,24*23/2],
  'N1-01':[5+2,5-1,10-1], 'N1-02':[3*3,2*5,8], 'N2-01':[10%10,5*3,4*3],
  'N2-02':[9*8,7+2,9*0], 'N2-03':[19-16,2*8,3*5], 'N3-01':[60-45+10,50-20,60],
  'N3-02':[3*2,4*3,6-4], 'N4-01':[24*3,47*2,58*4], 'N4-02':[26*14,43*21,32*12],
@@ -72,7 +82,11 @@ for(const id of ['', 'teacher',...data.blocks.map(b=>b.id),...data.lessons.map(l
 }
 for(const value of ['',' ','.',',','0x10','Infinity','1e3','12abc','2,3,4'])assert.equal(R.parseAnswer(value),null);
 assert.equal(R.check('22,5',22.5),'correct');assert.equal(R.check('5.08',5.08),'correct');assert.equal(R.check('0',0),'correct');assert.equal(R.check('1',0),'retry');
+// Optional trip-credit example: interest is rounded to cents before each payment.
+let creditBalance=10000,totalPaid=0;const creditBalances=[],payments=[];
+while(creditBalance>0){creditBalance+=Math.round(creditBalance*.01);const payment=Math.min(4000,creditBalance);creditBalance-=payment;totalPaid+=payment;creditBalances.push(creditBalance);payments.push(payment);}
+assert.deepEqual(creditBalances,[6100,2161,0]);assert.deepEqual(payments,[4000,4000,2183]);assert.equal(totalPaid,10183);
 // Independent chord-cycle, angle, factor and base invariants.
 for(const [step,want]of [[5,16],[6,8],[7,16]]){const seen=new Set();let p=0;do{seen.add(p);p=(p+step)%16;}while(p);assert.equal(seen.size,want);}
 for(let n=0;n<=60;n++){const digits=[Math.floor(n/25),Math.floor(n%25/5),n%5];assert(digits.every(x=>x>=0&&x<5));assert.equal(digits[0]*25+digits[1]*5+digits[2],n);}
-console.log('18 block routes and 20 bilingual lessons: 60 independently checked answers, source limits, all static links, 40 language flows, interactive controls and answer handlers passed. Existing 227-lesson catalogue retained.');
+console.log('21 block routes and 30 bilingual lessons: 90 independently checked answers, full Grade 6 source and 24 weekly invitations, all static links, 53 language flows, interactive controls and answer handlers passed. Existing 227-lesson catalogue retained.');

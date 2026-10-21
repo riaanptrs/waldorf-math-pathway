@@ -9,8 +9,10 @@ captured PDF page markers, which differ from printed page labels. The source
 manifest at `math-blocks/sources.json` records the exact uploaded Markdown
 filenames, their SHA-256 hashes and their captured page counts.
 
-The Grade 6 upload is **only a one-page cover**. It cannot establish any Grade 6
-math sequence. The 79-page Grade 7 guide explicitly says on captured page 20
+The initial Grade 6 cover-only upload was superseded by the full 219-page
+`2023_Class_Six_FIX_w_track.md`. Its math sequence is now directly reviewed:
+geometry, money/travel, business/first algebra and the practice-track pages.
+The repeated Grade 7 upload is byte-identical to the earlier reviewed file. The 79-page Grade 7 guide explicitly says on captured page 20
 that it does not contain a mathematics block other than geometry; it points to
 separate recommendations. The 21-page Grade 8 guide names topics and includes
 an appendix; it is not a detailed daily math course. No missing source content,
@@ -27,7 +29,7 @@ to this agent. Full copyrighted texts, stories and artwork are not published.
 | 3 | Block 1: two-week review; integrated farming, Noah/measurement and building contexts in Blocks 3–6, including four weeks of formal measurement in Block 5; Block 8: three teaching weeks plus review. Pp. 21–25, 27–35, 57–101, 104–110, 121–131. | Recall familiar skills; useful measures and shared standards; dry/liquid measures, perimeter/area, square/cube/prime numbers; place value, carrying, borrowing, inverse checks, parity and rounding. | `G3-B1`, `G3-MEASURE`, `G3-B8`. Reuse measurement, subtraction, garden and place-value lessons. Add a timetable/elapsed-time extension and practical repeated-measure recipe lesson. Distinguish volume and mass. |
 | 4 | Block 4 and Block 7: four weeks each. Pp. 20, 22–23, 64–72, 91–100. | Review → long multiplication in several visits → division and two-digit divisors → checking, mean and prime factors. Then first fractions, equal parts and equivalence, remainders and fractional remainders. Keep a methods book. | `G4-B4`, `G4-B7`. Add three meaningful long-multiplication lessons, early mean and prime factor trees. Reuse division and first fractions. Existing unlike-denominator/multiplication fraction work is optional beyond Nielsen's introductory Grade 4 block. |
 | 5 | Block 1: one math-review week; Block 2: three fraction weeks; Block 5: four geometry weeks; Block 7: four weeks in overview, three detailed weeks. Pp. 19–25, 27–35, 48–57, 114–135, 150–159. | Review readiness; fraction equivalents/reducing, forms, unlike denominators, comparison, multiplication/cancellation, division; freehand forms and vocabulary into compass construction; decimals via money/fractions, operations, measurement conversion and practical review. | `G5-B1`, `G5-B2`, `G5-B5`, `G5-B7`. Reuse the full Fraction Path, decimal operations and geometry plans. Add twelvefold construction, circle/tangent vocabulary and customary-to-metric ruler conversion. Preserve source timing discrepancy instead of inventing an extra detailed week. |
-| 6 | One cover page only. | No source math blocks or teaching rationale available. | `G6-PENDING` links the existing arithmetic, business and construction routes as an interim course, explicitly unverified against Nielsen. Await full source. |
+| 6 | Three four-week main blocks: Block 1 geometry, Block 5 money/travel, Block 8 business/first algebra; practice tracks follow each. Captured pp. 19–27, 28–44, 95–107, 146–152, 168–219. | Next-day deepening, personal methods book, geometry pattern/precision, connected travel and business projects, gentle unknowns. Practice is 60 minutes weekly, not daily. | `G6-B1`, `G6-B5`, `G6-B8`, `G6-TRACKS`. Ten new supplements fill actual gaps; existing arithmetic, percent, interest and construction are reused. Twenty-four original weekly invitations follow the stated 12/8/4 durations; conflicting source sheet numbering is labelled. |
 | 7 | Three-week geometry block and general practice guidance. Pp. 17–20, 55–72; broader pre-algebra named in chart p. 78. | Exact angles, relationships, copying/bisecting, area/shear/formulas, SSS/SAS/ASA, pentagons/golden proportion, Pythagorean area, circles and nature. About one hour of known-skill weekly practice outside math blocks is suggested for Classes 6–8. | `G7-GEO`, `G7-PRACTICE`. Reuse constructions, proofs and triangle plans; add sixteen-point chord patterns. Existing ratio, signed-number and algebra routes are a separate adaptation, not a verified source daily course. Missing visuals limit exact reconstruction of the source oval artwork. |
 | 8 | Broad math section p. 15; ten combined math/geometry weeks in appendix pp. 17–18. | Practical math, percentages, equations, number bases, geometric drawing; appendix adds sets, solids, measurement/loci and broader standards connections. | `G8-ARITH`, `G8-GEO`. Reuse percent/proportion/function/system/solid/locus lessons; add base-five and sets. Probability and sphere volume are **optional original standards-column expansions**, not supplied Nielsen lesson prescriptions. No claim of full standards alignment. |
 
@@ -60,7 +62,7 @@ and may be extended for readiness and recall.
 Daily routine differs by age: Grades 1–3 use movement, oral facts, games and
 practical contexts rather than a new requirement for daily written sheets.
 Grades 4–5 use a few familiar problems (the Class 5 guidance specifies 2–4).
-The Class 7 guidance distributes roughly 60 minutes a week outside math blocks
+The Class 6 and Class 7 guidance distributes roughly 60 minutes a week outside math blocks
 across school days: 20/15/12 minutes for 3/4/5 days. This is a planning suggestion,
 not mandatory screen time or timed competition.
 
@@ -72,7 +74,7 @@ replace copyrighted gnome stories while keeping whole-to-parts and recall.
 
 ## Nonduplicating additions
 
-The 20 new bilingual supplement lessons contain 60 independently verified
+The 30 new bilingual supplement lessons contain 90 independently verified
 numeric questions with reasoning, original scenarios and original models:
 
 | Grade | New lessons | Gap filled |
@@ -82,12 +84,12 @@ numeric questions with reasoning, original scenarios and original models:
 | 3 | N3-01–02 | Practical elapsed time; repeated measures and recipe scaling without premature fraction algorithms. |
 | 4 | N4-01–05 | One-digit, two-digit and zero-containing long multiplication; mean as equal redistribution; prime factor trees. |
 | 5 | N5-01–03 | Sixfold-to-twelvefold construction; exact inch/cm relationship; concentric-circle, secant and tangent vocabulary. |
-| 6 | None pending source | Existing course links only. |
+| 6 | N6-01–10 | Nested polygon patterns, Archimedean spiral, ledger, currency/temperature conversion, trip project, sales-channel costs, business reports, first unknowns and 24-point chord web. |
 | 7 | N7-01 | Repeated angle bisection and sixteen-point chord circuits, with prediction and construction reasoning. |
 | 8 | N8-01–04 | Sets and base-five; optional standards-column probability and sphere-volume expansions. |
 
-The 18 block routes reuse the existing 227 main activities, 52 geometry lessons
-and 26 geometry plans. They are not 18 newly invented source blocks. A repeated
+The 21 block routes reuse the existing 227 main activities, 52 geometry lessons
+and 26 geometry plans. They are not 21 newly invented source blocks. A repeated
 link across review and later application opens the same lesson. The pathway
 explicitly says to sample readiness and skip secure content, rather than require
 repeating it. Source-vs-site placement differences are labelled: Grade 4 two-digit
@@ -115,15 +117,15 @@ registration, learner records or database policies were changed.
 
 Entry: `math-blocks/index.html`, linked from the main homepage and Grade 1–8
 facilitator cards. `teacher.html` explains rationale, online adaptations,
-source limits and overlap. Each of the 18 block pages provides source rationale,
-ordered existing/new lesson links and practical observation. Twenty individual
+source limits and overlap. Each of the 21 block pages provides source rationale,
+ordered existing/new lesson links and practical observation. Thirty individual
 lesson pages provide bilingual instruction and controllable mathematical models.
 
 Edit `math-blocks/blocks.json`, `lessons.json`, `models.js` and `render.js`;
 rebuild with `node scripts/build-math-blocks.cjs`.
 
-Passed: `audit-math-blocks.cjs` (60 independent numeric answers, source-range
-bounds, source-gap labels, static links, 40 actual bootstrap/language-switch
+Passed: `audit-math-blocks.cjs` (90 independent numeric answers, source-range
+bounds, source-gap labels, static links, 53 actual bootstrap/language-switch
 flows, model controls and form submission/feedback), existing learning-sequence,
 lesson-clarity, curriculum, geometry course, geometry plans, geometry book,
 geometry studio and historical investigation audits, JavaScript syntax and
@@ -137,4 +139,10 @@ This does not replace or weaken the original test. A separate command-level
 snapshot comparison verifies preservation of the current 227-lesson catalogue.
 
 Publication uses the existing GitHub Pages repository; its deployment result is
-reported in the chat. Grade 6 remains an explicit evidence gap after publication.
+reported in the chat. Grade 6 now has full source coverage; Grade 7/8 outline limits remain explicit.
+The complete pathway is committed locally and publication is awaiting explicit
+user approval after the earlier automatic-review rejection. No deployment of
+this pathway is claimed.
+
+For the Grade 6 source replacement, track-numbering discrepancy and detailed
+new lesson map, see [the Grade 6 follow-up](NIELSEN_GRADE6_FOLLOWUP_2026-10-21.md).

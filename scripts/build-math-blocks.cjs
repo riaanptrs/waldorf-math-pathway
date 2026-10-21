@@ -14,4 +14,6 @@ function page(id){const deep=id.startsWith('N'),p=deep?'../':'',title=routes[id]
 fs.writeFileSync(path.join(dir,'data.js'),'window.MathBlocksData = '+JSON.stringify(data)+';\n');
 fs.mkdirSync(path.join(dir,'lessons'),{recursive:true});
 for(const id of ['', 'teacher',...blocks.map(x=>x.id),...lessons.map(x=>x.id)])fs.writeFileSync(path.join(dir,id?(id.startsWith('N')?'lessons/':'')+id+'.html':'index.html'),page(id));
+// Preserve the old provisional URL as an alias for the now verified geometry block.
+fs.writeFileSync(path.join(dir,'G6-PENDING.html'),page('G6-B1').replace('</head>','<link rel="canonical" href="G6-B1.html"></head>'));
 console.log(`Built ${blocks.length} block routes, ${lessons.length} bilingual gap lessons, teacher guide and overview.`);

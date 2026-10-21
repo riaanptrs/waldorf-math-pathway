@@ -21,6 +21,16 @@ function setup(l){switch(kind(l)){
  case 'base':return {min:0,max:60,value:17,label:['Quantity in decimal','Quantidade decimal']};
  case 'probability':return {min:0,max:20,value:7,label:['Blue results in 20 supplied draws','Resultados azuis em 20 retiradas fornecidas']};
  case 'sphere':return {min:1,max:6,value:3,label:['Radius in centimetres','Raio em centímetros']};
+ case 'nested':return {min:3,max:12,value:8,label:['Sides of the regular midpoint polygon','Lados do polígono regular de pontos médios']};
+ case 'archimedean':return {min:1,max:4,value:2,label:['Radial gain per full turn (cm)','Aumento radial por volta completa (cm)']};
+ case 'ledger':return {min:10,max:90,step:5,value:45,label:['Pretend purchase in reais','Compra fictícia em reais']};
+ case 'exchange':return {min:5,max:50,value:25,label:['Euros to convert at R$6 per euro','Euros a converter por R$6 cada']};
+ case 'temperature':return {min:-10,max:40,value:20,label:['Temperature reading in Celsius','Leitura de temperatura em Celsius']};
+ case 'trip':return {min:2,max:6,value:4,label:['Nights; days are one more','Noites; dias são uma unidade a mais']};
+ case 'channels':return {min:5,max:40,step:5,value:20,label:['Bookmarks sold','Marcadores vendidos']};
+ case 'business':return {min:50,max:150,step:10,value:100,label:['Monthly bookmarks sold','Marcadores vendidos no mês']};
+ case 'unknown':return {min:1,max:15,value:7,label:['Try a value for y in 6y = 42','Teste um valor para y em 6y = 42']};
+ case 'chord-web':return {min:12,max:24,step:12,value:24,label:['Equal points on the circle','Pontos igualmente espaçados na circunferência']};
  case 'tangent':return {min:0,max:5,value:4,label:['Line distance from centre (radius = 4)','Distância da reta ao centro (raio = 4)']};
  default:throw Error('Unknown model '+kind(l));
 }}
@@ -88,6 +98,40 @@ function picture(l,lang,value){
  }else if(k==='probability'){
   for(let i=0;i<20;i++)body+=`<circle cx="${50+i%10*39}" cy="${75+Math.floor(i/10)*65}" r="12" class="${i<n?'fill':'empty'}"/>`;
   text=t('Model: 25%. Supplied sample: ','Modelo: 25%. Amostra fornecida: ')+fmt(n/20*100,lang)+'%';body+=label(65,215,t('This changes the sample, not a random draw.','Isto muda a amostra, não faz sorteio.'));
+ }else if(k==='nested'){
+  for(const [sides,cx,q]of [[n,115,.5],[4,345,.25]]){
+   let points=Array.from({length:sides},(_,i)=>[cx+82*Math.cos(2*Math.PI*i/sides-Math.PI/2),125+82*Math.sin(2*Math.PI*i/sides-Math.PI/2)]);
+   for(let round=0;round<7;round++){body+=`<polygon points="${points.map(p=>p.join(',')).join(' ')}" class="${round%2?'chord':''}"/>`;points=points.map((p,i)=>p.map((v,k)=>(1-q)*v+q*points[(i+1)%sides][k]));}
+  }
+  body+=label(35,245,t('Midpoint rule','Regra dos pontos médios'))+label(270,245,t('Quarter-point rule','Regra dos quartos'));text=t('Repeat the same fraction of each side; track one corner through the levels.','Repita a mesma fração de cada lado; acompanhe um canto pelas etapas.');
+ }else if(k==='archimedean'){
+  const cx=225,cy=130,rmax=30*n;
+  for(let t=1;t<=3;t++)body+=ring(cx,cy,10*n*t);
+  for(let i=0;i<24;i++){const a=i*Math.PI/12;body+=line(cx,cy,cx+rmax*Math.cos(a),cy+rmax*Math.sin(a),'alternate');}
+  const points=[];for(let i=0;i<=720;i++){const turns=3*i/720,a=turns*2*Math.PI,r=10*n*turns;points.push([cx+r*Math.cos(a),cy+r*Math.sin(a)]);}
+  body+=`<polyline points="${points.map(p=>p.join(',')).join(' ')}" class="chord"/>`;
+  text=t('After 0, 1, 2, 3 turns, radii in cm: ','Após 0, 1, 2, 3 voltas, raios em cm: ')+[0,n,2*n,3*n].join(', ');
+ }else if(k==='ledger'){
+  body=label(25,45,t('Debit example: bank starts at R$200','Exemplo de débito: saldo inicial R$200'))+label(25,85,t('After purchase: R$','Após compra: R$')+(200-n))+label(25,140,t('Separate credit example: bank R$100','Exemplo separado de crédito: saldo R$100'))+label(25,180,t('Debt before repayment: R$','Dívida antes de pagar: R$')+n)+label(25,220,t('Bank after full repayment: R$','Saldo após pagar tudo: R$')+(100-n));text=t('The same purchase changes different records; credit is an obligation.','A mesma compra muda registros diferentes; crédito é obrigação.');
+ }else if(k==='exchange'){
+  body=label(35,55,`€${n} × R$6/€ = R$${6*n}`)+label(35,105,`R$${6*n} ÷ (R$6/€) = €${n}`)+label(35,170,t('With one fixed R$6 fee: R$','Com tarifa fixa única de R$6: R$')+(6*n+6));text=t('Fictional classroom rate, not a live quote.','Taxa fictícia de aula, não cotação atual.');
+ }else if(k==='temperature'){
+  const f=n*9/5+32;body=label(50,65,`${n}°C`)+label(285,65,`${fmt(f,lang)}°F`)+line(80,85,80,230)+line(320,85,320,230)+dot(80,230-(n+10)*2.5,7)+dot(320,230-(n+10)*2.5,7);text=`F = (${n} × 9/5) + 32 = ${fmt(f,lang)}; C = (${fmt(f,lang)} − 32) × 5/9 = ${n}`;
+ }else if(k==='trip'){
+  const room=120*n,food=20*(n+1)*6,total=800+120+room+food,left=2400-total;
+  body=label(25,40,t('Return travel: R$800; local travel: R$120','Ida e volta: R$800; transporte local: R$120'))+label(25,85,t('Nights: ','Noites: ')+n+` × R$120 = R$${room}`)+label(25,130,t('Food days: ','Dias de alimentação: ')+(n+1)+` × €20 × R$6/€ = R$${food}`)+label(25,180,t('Total: R$','Total: R$')+total)+label(25,225,t('Budget minus total: R$','Limite menos total: R$')+left);text=t('The €25 optional activity is not included in this model total.','A atividade opcional de €25 não está incluída neste total do modelo.');
+ }else if(k==='channels'){
+  const revenue=12*n,market=9*n-30,online=7.9*n;
+  body=label(35,45,t('Sales: R$','Vendas: R$')+revenue)+label(35,95,t('Materials: R$','Materiais: R$')+(3*n))+label(35,150,t('Market profit: R$','Lucro da feira: R$')+fmt(market,lang))+label(35,205,t('Online profit: R$','Lucro online: R$')+fmt(online,lang));text=t('Market: one R$30 fee. Online: R$0.50 per item and 5% of sales.','Feira: tarifa única R$30. Online: R$0,50 por item e 5% das vendas.');
+ }else if(k==='business'){
+  const revenue=12*n,materials=3*n,profit=revenue-materials-500-100-150-50;
+  body=label(30,40,t('Sales: R$','Vendas: R$')+revenue)+label(30,80,t('Materials: R$','Materiais: R$')+materials)+label(30,120,t('Rent + utilities + helper: R$750','Aluguel + contas + ajudante: R$750'))+label(30,160,t('Monthly simple interest: R$50','Juros simples no mês: R$50'))+label(30,205,t('Profit after these costs: R$','Lucro após esses custos: R$')+profit);text=t('Reserve target: R$1800. Loan principal is not sales revenue.','Meta de reserva: R$1800. Principal emprestado não é faturamento.');
+ }else if(k==='unknown'){
+  body=label(140,55,'6y = 42')+label(70,115,`y = ${n} → 6 × ${n} = ${6*n}`)+label(130,185,`${6*n} ${6*n===42?'=':6*n<42?'<':'>'} 42`);text=6*n===42?t('This value satisfies the original equation.','Este valor satisfaz a equação original.'):t('Try another value, then substitute to check.','Teste outro valor e substitua para conferir.');
+ }else if(k==='chord-web'){
+  const point=i=>[225+100*Math.cos(i*2*Math.PI/n-Math.PI/2),130+100*Math.sin(i*2*Math.PI/n-Math.PI/2)];
+  body+=ring(225,130,100);for(let i=0;i<n;i++){body+=dot(...point(i),2);for(let j=i+1;j<n;j++)body+=line(...point(i),...point(j),i%2?'alternate':'chord');}
+  text=t('Sector angle: ','Ângulo do setor: ')+(360/n)+'° · '+t('Distinct chords: ','Cordas distintas: ')+n*(n-1)/2;
  }else if(k==='sphere'){
   const r=30+n*10;body=ring(225,130,r)+`<ellipse cx="225" cy="130" rx="${r}" ry="${r/3}" class="alternate"/>`+dot(225,130,3)+line(225,130,225+r,130)+label(235,115,'r = '+n+' cm');text=`V = (4/3)π × ${n}³ = (${4*n**3}/3)π cm³`;
  }else if(k==='tangent'){

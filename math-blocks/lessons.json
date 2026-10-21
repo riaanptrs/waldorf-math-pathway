@@ -1229,6 +1229,985 @@
     "basis": "source-informed"
   },
   {
+    "id": "N5-03",
+    "grade": 5,
+    "pages": "121–123",
+    "basis": "source-informed",
+    "model": "tangent",
+    "title": {
+      "en": "A line meeting a circle",
+      "pt": "Uma reta encontra a circunferência"
+    },
+    "goal": {
+      "en": "Distinguish a centre, radius, diameter, concentric circles, secant and tangent on a labelled drawing.",
+      "pt": "Distinguir centro, raio, diâmetro, circunferências concêntricas, secante e tangente num desenho identificado."
+    },
+    "story": {
+      "en": "A circular garden has a straight path nearby. Move a paper strip across a drawn circle and notice how many boundary points it meets.",
+      "pt": "Um jardim circular tem uma trilha reta por perto. Mova uma tira de papel sobre uma circunferência desenhada e observe quantos pontos da borda ela encontra."
+    },
+    "steps": [
+      {
+        "en": "Draw two circles with the same centre and different radii. Label the centre O, one radius and a diameter; explain what concentric means.",
+        "pt": "Desenhe duas circunferências com mesmo centro e raios diferentes. Identifique centro O, raio e diâmetro; explique concêntricas."
+      },
+      {
+        "en": "Move a straight strip from outside the larger circle inward. Look for no crossing, one contact and two crossings. Sketch the three cases.",
+        "pt": "Mova uma tira reta de fora para dentro da circunferência maior. Procure nenhum encontro, um contato e dois cruzamentos. Desenhe os três casos."
+      },
+      {
+        "en": "At the one-contact position, join O to the contact point. Fold or check a right angle between this radius and the tangent. Label your own drawing instead of copying a term list.",
+        "pt": "Na posição de um contato, una O ao ponto de contato. Dobre ou confira um ângulo reto entre raio e tangente. Identifique seu desenho em vez de copiar lista de termos."
+      }
+    ],
+    "explain": {
+      "en": "A secant line meets a circle in two points; a tangent line in the plane meets it at one point and is perpendicular to the radius there. Concentric circles share a centre, not necessarily a radius. A diameter is twice the radius. A thick pencil mark only approximates exact contact.",
+      "pt": "Uma reta secante encontra a circunferência em dois pontos; uma tangente no plano encontra em um e é perpendicular ao raio nesse ponto. Circunferências concêntricas compartilham centro, não necessariamente raio. O diâmetro é o dobro do raio. Uma marca grossa só aproxima o contato exato."
+    },
+    "worked": {
+      "en": "For radius 4 cm, the diameter is 8 cm. A tangent at the top of the circle is perpendicular to the radius drawn up from O.",
+      "pt": "Para raio 4 cm, o diâmetro é 8 cm. Uma tangente no topo é perpendicular ao raio que sobe de O."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "How many points does a secant meet?",
+          "pt": "Em quantos pontos uma secante encontra a circunferência?"
+        },
+        "answer": 2,
+        "solution": {
+          "en": "Two boundary crossings define a secant.",
+          "pt": "Dois cruzamentos com a borda definem uma secante."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the angle in degrees between a tangent and its contact radius?",
+          "pt": "Qual é o ângulo em graus entre tangente e raio do contato?"
+        },
+        "answer": 90,
+        "solution": {
+          "en": "They are perpendicular: 90°.",
+          "pt": "São perpendiculares: 90°."
+        }
+      },
+      {
+        "q": {
+          "en": "Radius 3.5 cm: what is the diameter in centimetres?",
+          "pt": "Raio 3,5 cm: qual é o diâmetro em centímetros?"
+        },
+        "answer": 7,
+        "solution": {
+          "en": "2 × 3.5 = 7 cm.",
+          "pt": "2 × 3,5 = 7 cm."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to label their own drawing, explain the number of intersections and identify the radius associated with a tangent.",
+      "pt": "Peça que identifique seu desenho, explique a quantidade de encontros e localize o raio associado à tangente."
+    },
+    "recall": {
+      "en": "Recall what stays unchanged when drawing a circle with a fixed string.",
+      "pt": "Retome o que fica constante ao desenhar uma circunferência com barbante fixo."
+    },
+    "links": [
+      "G5-04",
+      "g5-freehand-circle-diameter"
+    ]
+  },
+  {
+    "id": "N6-01",
+    "grade": 6,
+    "title": {
+      "en": "A repeated rule makes a turning pattern",
+      "pt": "Uma regra repetida cria um padrão que gira"
+    },
+    "pages": "35–39",
+    "model": "nested",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Extend midpoint polygons to quarter-point squares and explain the repeated shrink-and-turn rule.",
+      "pt": "Ampliar polígonos de pontos médios para quadrados de quartos e explicar a regra repetida de redução e giro."
+    },
+    "story": {
+      "en": "A tile designer repeats one instruction at every side of a square. Moving the mark from the midpoint to a quarter-point changes the pattern. Predict what changes before drawing.",
+      "pt": "Uma pessoa desenha ladrilhos repetindo uma instrução em cada lado do quadrado. Mudar do ponto médio para um quarto do lado muda o padrão. Preveja a mudança antes de desenhar."
+    },
+    "steps": [
+      {
+        "en": "Recall the linked midpoint-square activity rather than repeating the whole lesson. Construct a regular triangle, square, hexagon or octagon and connect its side midpoints through several rounds.",
+        "pt": "Retome a atividade ligada de quadrados de pontos médios sem repetir toda a aula. Construa triângulo regular, quadrado, hexágono ou octógono e una pontos médios em várias etapas."
+      },
+      {
+        "en": "For the source’s dodecagon-ray method, keep twelve rays 30° apart. Start at a point on one ray, drop a perpendicular to the next ray, and repeat from each new foot to the following ray. Check each right angle. This is a separate construction from joining polygon midpoints.",
+        "pt": "Para o método de semirretas do dodecágono da fonte, mantenha doze semirretas a 30°. Comece num ponto de uma, baixe perpendicular à próxima e repita de cada pé para a semirreta seguinte. Confira cada ângulo reto. É construção separada da união de pontos médios."
+      },
+      {
+        "en": "For a separate square, walk clockwise and mark a quarter of each side from the starting vertex. Join the four marks. Repeat the same instruction on the new square.",
+        "pt": "Num quadrado separado, percorra no sentido horário e marque um quarto de cada lado a partir do vértice inicial. Una as quatro marcas. Repita a instrução no novo quadrado."
+      },
+      {
+        "en": "Track corresponding corners through the nested shapes with a coloured line. Compare the turning patterns and explain which instruction was held fixed. Keep one construction with its guide marks.",
+        "pt": "Acompanhe cantos correspondentes nas formas encaixadas com uma linha colorida. Compare os giros e explique qual instrução permaneceu fixa. Guarde uma construção com suas marcas."
+      }
+    ],
+    "explain": {
+      "en": "For an outer square of side s, the quarter-point square has area 5/8 of the outer area: four corner triangles remove 3/8. Repeating the same proportion on similar shapes creates constant scale and turn. Our straight-segment pattern is not an exact smooth logarithmic spiral, and the missing source artwork is not reconstructed. In the twelve-ray construction, equal ray gaps repeat the same right-triangle shape, so the radial distances keep the same proportion. The model previews midpoint polygons and quarter-point squares; use paper for the separate perpendicular-ray construction.",
+      "pt": "Para quadrado externo de lado s, o quadrado dos quartos tem 5/8 da área externa: quatro triângulos dos cantos retiram 3/8. Repetir a mesma proporção em formas semelhantes cria escala e giro constantes. Nosso padrão de segmentos não é espiral logarítmica suave exata nem reconstrução da arte ausente. Na construção de doze semirretas, intervalos angulares iguais repetem a forma do triângulo retângulo, mantendo a mesma proporção radial. O modelo mostra polígonos de pontos médios e quadrados de quartos; use papel para a construção separada de perpendiculares entre semirretas."
+    },
+    "worked": {
+      "en": "For side 8 cm, area is 64 cm². Corner legs are 2 and 6 cm; each corner triangle has area 6 cm². Four remove 24, leaving 40 cm². A second quarter-point round leaves 40 × 5/8 = 25 cm².",
+      "pt": "Para lado 8 cm, a área é 64 cm². Catetos dos cantos são 2 e 6 cm; cada triângulo tem 6 cm². Quatro retiram 24, deixando 40 cm². Outra etapa de quartos deixa 40 × 5/8 = 25 cm²."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "What is one quarter of a 12 cm side, in cm?",
+          "pt": "Quanto é um quarto de um lado de 12 cm, em cm?"
+        },
+        "answer": 3,
+        "solution": {
+          "en": "12 ÷ 4 = 3 cm.",
+          "pt": "12 ÷ 4 = 3 cm."
+        }
+      },
+      {
+        "q": {
+          "en": "An 8 cm square loses four corner triangles of area 6 cm² each. What area remains?",
+          "pt": "Um quadrado de 8 cm perde quatro triângulos de 6 cm². Qual área resta?"
+        },
+        "answer": 40,
+        "solution": {
+          "en": "8² − 4 × 6 = 64 − 24 = 40 cm².",
+          "pt": "8² − 4 × 6 = 64 − 24 = 40 cm²."
+        }
+      },
+      {
+        "q": {
+          "en": "The next quarter-point square keeps 5/8 of 40 cm². What is its area?",
+          "pt": "O próximo quadrado dos quartos mantém 5/8 de 40 cm². Qual é a área?"
+        },
+        "answer": 25,
+        "solution": {
+          "en": "40 × 5/8 = 25 cm².",
+          "pt": "40 × 5/8 = 25 cm²."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to state the exact marking rule and compare two constructions. A clean drawing alone does not show the rule was understood.",
+      "pt": "Peça que declare a regra exata de marcação e compare duas construções. Um desenho limpo sozinho não demonstra compreensão da regra."
+    },
+    "recall": {
+      "en": "Rebuild one midpoint square from memory, then describe how a quarter-point rule differs.",
+      "pt": "Reconstrua de memória um quadrado de pontos médios e descreva a diferença da regra dos quartos."
+    },
+    "links": [
+      "P5-03",
+      "P5-02",
+      "N5-01"
+    ]
+  },
+  {
+    "id": "N6-02",
+    "grade": 6,
+    "title": {
+      "en": "A spiral with equal radial gains",
+      "pt": "Uma espiral com aumentos radiais iguais"
+    },
+    "pages": "33–34,40",
+    "model": "archimedean",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Distinguish equal radial increase from proportional shrinking using an original Archimedean spiral model.",
+      "pt": "Distinguir aumento radial igual de redução proporcional com um modelo original de espiral de Arquimedes."
+    },
+    "story": {
+      "en": "A maker wants a winding line whose distance from the centre gains the same amount on every full turn. How would that differ from nested shapes that keep a fraction of their previous size?",
+      "pt": "Uma pessoa quer uma linha enrolada cuja distância ao centro aumente a mesma quantidade em cada volta. Como isso difere de formas encaixadas que mantêm uma fração do tamanho anterior?"
+    },
+    "steps": [
+      {
+        "en": "Recall twelve equal 30° sectors from the earlier circle. Bisect them to make twenty-four 15° sectors; draw several equally spaced concentric guide circles.",
+        "pt": "Retome doze setores iguais de 30° da circunferência anterior. Divida-os para obter vinte e quatro setores de 15°; trace circunferências-guia concêntricas igualmente espaçadas."
+      },
+      {
+        "en": "Use the rule r = gain per turn × angle/360°. Mark points on successive rays, increasing radius by the same amount for every 15° step. Join smoothly after checking the points.",
+        "pt": "Use r = aumento por volta × ângulo/360°. Marque pontos nas semirretas sucessivas, aumentando o raio pelo mesmo valor a cada passo de 15°. Una suavemente após conferir os pontos."
+      },
+      {
+        "en": "Compare with the previous nested pattern. Record equal-turn radial readings. Change the gain per turn and predict how the spacing will change.",
+        "pt": "Compare com o padrão encaixado anterior. Registre leituras radiais em voltas iguais. Mude o aumento por volta e preveja como o espaçamento mudará."
+      }
+    ],
+    "explain": {
+      "en": "An Archimedean spiral has equal radial gains for equal angle changes. With r = aθ and θ starting at zero, this model reaches the centre. Proportional shrinking is a different rule. A finite hand drawing cannot establish the limiting behaviour of every spiral. The model is original, not a reconstruction of the missing source picture.",
+      "pt": "Uma espiral de Arquimedes tem aumentos radiais iguais para mudanças angulares iguais. Com r = aθ começando em zero, este modelo chega ao centro. Redução proporcional é outra regra. Um desenho finito não estabelece o comportamento-limite de toda espiral. O modelo é original, não reconstrução da imagem ausente."
+    },
+    "worked": {
+      "en": "If radius gains 24 mm per turn, a 15° step is 1/24 of a turn and gains 1 mm. After two full turns radius is 48 mm.",
+      "pt": "Se o raio aumenta 24 mm por volta, um passo de 15° é 1/24 de volta e aumenta 1 mm. Após duas voltas o raio é 48 mm."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "How many degrees in one of 24 equal sectors?",
+          "pt": "Quantos graus tem um de 24 setores iguais?"
+        },
+        "answer": 15,
+        "solution": {
+          "en": "360 ÷ 24 = 15°.",
+          "pt": "360 ÷ 24 = 15°."
+        }
+      },
+      {
+        "q": {
+          "en": "With gain 24 mm per full turn, what is the gain per 15° step, in mm?",
+          "pt": "Com aumento de 24 mm por volta, quanto aumenta por passo de 15°, em mm?"
+        },
+        "answer": 1,
+        "solution": {
+          "en": "24 ÷ 24 = 1 mm.",
+          "pt": "24 ÷ 24 = 1 mm."
+        }
+      },
+      {
+        "q": {
+          "en": "At 24 mm gained per turn, what radius follows two full turns from zero?",
+          "pt": "Com 24 mm por volta, qual é o raio após duas voltas a partir de zero?"
+        },
+        "answer": 48,
+        "solution": {
+          "en": "2 × 24 = 48 mm.",
+          "pt": "2 × 24 = 48 mm."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask which quantity changes by equal amounts and which angle interval is being compared. Keep radial units and angle units distinct.",
+      "pt": "Pergunte qual grandeza muda em quantidades iguais e qual intervalo angular se compara. Distinga unidades radiais e angulares."
+    },
+    "recall": {
+      "en": "Describe the fixed fraction in yesterday’s nested pattern before comparing a constant radial gain.",
+      "pt": "Descreva a fração fixa do padrão encaixado anterior antes de comparar aumento radial constante."
+    },
+    "links": [
+      "N6-01",
+      "N5-01",
+      "G6-08"
+    ]
+  },
+  {
+    "id": "N6-03",
+    "grade": 6,
+    "title": {
+      "en": "Payment choices and a running balance",
+      "pt": "Formas de pagar e um saldo acompanhado"
+    },
+    "pages": "95–103",
+    "model": "ledger",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Distinguish the value of a payment, available funds and an amount borrowed while keeping a simple ledger.",
+      "pt": "Distinguir valor de pagamento, recursos disponíveis e empréstimo mantendo um registro simples."
+    },
+    "story": {
+      "en": "A pretend market accepts tokens, an account payment or a promise to repay. The same item can have the same price while each payment method changes different records.",
+      "pt": "Um mercado de brincadeira aceita fichas, pagamento de conta ou promessa de devolver. O mesmo item pode ter o mesmo preço, mas cada forma altera registros diferentes."
+    },
+    "steps": [
+      {
+        "en": "Exchange pretend goods and discuss why a commonly accepted unit helps people compare value. Inspect or design a fictional token; do not assume all money followed a single historical sequence.",
+        "pt": "Troque bens de brincadeira e discuta como uma unidade aceita ajuda a comparar valor. Examine ou desenhe uma ficha fictícia; não suponha que todo dinheiro seguiu uma única sequência histórica."
+      },
+      {
+        "en": "Make a paper account ledger: opening balance, money in, money out and closing balance. Enter a debit purchase once. A pending cheque should also be allowed for rather than spent again.",
+        "pt": "Faça registro de conta: saldo inicial, entradas, saídas e saldo final. Registre uma compra no débito uma vez. Reserve também um cheque pendente em vez de gastar de novo."
+      },
+      {
+        "en": "In a separate column record a fictional credit purchase as debt. Explain that borrowing is not income, and paying a credit bill moves money out and reduces debt. Use the existing percent/interest lesson next.",
+        "pt": "Noutra coluna registre uma compra fictícia a crédito como dívida. Explique que empréstimo não é renda e que pagar a fatura retira dinheiro e reduz dívida. Use depois a aula existente de porcentagem/juros."
+      }
+    ],
+    "explain": {
+      "en": "A ledger tracks a flow of funds. Credit can leave the bank balance unchanged at purchase but adds an obligation. Payment timing, fees and overdraft rules vary, so these classroom amounts are stated assumptions, not banking promises.",
+      "pt": "Um registro acompanha fluxo de recursos. Crédito pode deixar o saldo bancário igual na compra, mas acrescenta obrigação. Prazos, tarifas e regras variam; estes valores são hipóteses didáticas declaradas, não promessas bancárias."
+    },
+    "worked": {
+      "en": "Start with R$200 and pay R$45 by debit: bank balance R$155. In a separate example, start with R$100 and buy R$30 on credit: bank balance stays R$100, debt becomes R$30. Paying the full R$30 later leaves R$70 and no debt, ignoring fees and interest.",
+      "pt": "Comece com R$200 e pague R$45 no débito: saldo R$155. Noutro exemplo, comece com R$100 e compre R$30 a crédito: saldo continua R$100 e dívida vira R$30. Pagar os R$30 depois deixa R$70 e nenhuma dívida, sem tarifas ou juros."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Start with R$200 and pay R$45 by debit. What bank balance remains?",
+          "pt": "Comece com R$200 e pague R$45 no débito. Qual saldo resta?"
+        },
+        "answer": 155,
+        "solution": {
+          "en": "200 − 45 = R$155.",
+          "pt": "200 − 45 = R$155."
+        }
+      },
+      {
+        "q": {
+          "en": "Start with R$100. A separate R$30 credit purchase has not been repaid. What is the bank balance?",
+          "pt": "Comece com R$100. Uma compra separada de R$30 no crédito ainda não foi paga. Qual é o saldo bancário?"
+        },
+        "answer": 100,
+        "solution": {
+          "en": "The bank balance is still R$100; debt is R$30.",
+          "pt": "O saldo continua R$100; a dívida é R$30."
+        }
+      },
+      {
+        "q": {
+          "en": "Now pay that R$30 debt from the R$100 bank balance, with no fees. What balance remains?",
+          "pt": "Pague agora a dívida de R$30 do saldo de R$100, sem tarifas. Qual saldo resta?"
+        },
+        "answer": 70,
+        "solution": {
+          "en": "100 − 30 = R$70; debt becomes zero.",
+          "pt": "100 − 30 = R$70; a dívida zera."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to name what each column records and distinguish debt from income. A completed classroom form uses invented details only.",
+      "pt": "Peça que nomeie o conteúdo de cada coluna e distinga dívida de renda. Um formulário didático usa apenas dados inventados."
+    },
+    "recall": {
+      "en": "Recall the difference between a price and the money available to pay it.",
+      "pt": "Retome a diferença entre preço e dinheiro disponível para pagar."
+    },
+    "links": [
+      "g6-budget-challenge",
+      "g6-percent-hundred-grid",
+      "g6-simple-interest"
+    ]
+  },
+  {
+    "id": "N6-04",
+    "grade": 6,
+    "title": {
+      "en": "Exchange money in the right direction",
+      "pt": "Troque moeda na direção correta"
+    },
+    "pages": "103–107",
+    "model": "exchange",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Use a labelled exchange rate in both directions and account for a stated fee.",
+      "pt": "Usar uma taxa de câmbio identificada nas duas direções e incluir tarifa declarada."
+    },
+    "story": {
+      "en": "Our pretend trip uses the classroom rate €1 = R$6. A museum ticket costs €25. Estimate its cost in reais before calculating.",
+      "pt": "Nossa viagem de brincadeira usa a taxa didática €1 = R$6. Uma entrada custa €25. Estime o custo em reais antes de calcular."
+    },
+    "steps": [
+      {
+        "en": "Write the rate with units: 6 reais per euro. Use a table with euros and reais side by side.",
+        "pt": "Escreva a taxa com unidades: 6 reais por euro. Use tabela com euros e reais lado a lado."
+      },
+      {
+        "en": "Multiply euros by 6 to obtain reais; divide reais by 6 to obtain euros. Check that the inverse conversion rebuilds the original amount.",
+        "pt": "Multiplique euros por 6 para obter reais; divida reais por 6 para obter euros. Confira que a inversa reconstrói o valor original."
+      },
+      {
+        "en": "Add a stated fixed fee only once and compare total cost. Put the rate, its direction and the fee in the trip notebook.",
+        "pt": "Acrescente uma tarifa fixa declarada apenas uma vez e compare custo total. Registre taxa, direção e tarifa no caderno da viagem."
+      }
+    ],
+    "explain": {
+      "en": "The units determine the operation. €25 × R$6/€ = R$150, while R$90 ÷ (R$6/€) = €15. This rate is fictional and fixed for the exercise; real buy/sell rates and fees may differ.",
+      "pt": "As unidades determinam a operação. €25 × R$6/€ = R$150; R$90 ÷ (R$6/€) = €15. A taxa é fictícia e fixa no exercício; taxas de compra/venda e tarifas reais podem diferir."
+    },
+    "worked": {
+      "en": "A €25 ticket costs R$150 at the given rate. With one R$6 conversion fee, total cost is R$156.",
+      "pt": "Uma entrada de €25 custa R$150 na taxa dada. Com uma tarifa de conversão de R$6, o total é R$156."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "At €1 = R$6, how many reais are €25 before fees?",
+          "pt": "Com €1 = R$6, quantos reais são €25 antes de tarifas?"
+        },
+        "answer": 150,
+        "solution": {
+          "en": "25 × 6 = R$150.",
+          "pt": "25 × 6 = R$150."
+        }
+      },
+      {
+        "q": {
+          "en": "At the same rate, R$90 buys how many euros before fees?",
+          "pt": "Na mesma taxa, R$90 compram quantos euros antes de tarifas?"
+        },
+        "answer": 15,
+        "solution": {
+          "en": "90 ÷ 6 = €15.",
+          "pt": "90 ÷ 6 = €15."
+        }
+      },
+      {
+        "q": {
+          "en": "Add one R$6 fee to the R$150 ticket conversion. What is the total in reais?",
+          "pt": "Acrescente uma tarifa de R$6 à conversão de R$150. Qual o total em reais?"
+        },
+        "answer": 156,
+        "solution": {
+          "en": "150 + 6 = R$156.",
+          "pt": "150 + 6 = R$156."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to label both sides of the rate and explain the operation. Changing currency changes the numeric reading, not the purchased item.",
+      "pt": "Peça que identifique os dois lados da taxa e explique a operação. Mudar a moeda muda a leitura numérica, não o item comprado."
+    },
+    "recall": {
+      "en": "Recall a unit-price calculation and name which unit you obtain after multiplying.",
+      "pt": "Retome cálculo de preço unitário e diga qual unidade se obtém ao multiplicar."
+    },
+    "links": [
+      "g6-better-deal",
+      "g5-jarman-one-first"
+    ]
+  },
+  {
+    "id": "N6-05",
+    "grade": 6,
+    "title": {
+      "en": "Two scales for the same temperature",
+      "pt": "Duas escalas para a mesma temperatura"
+    },
+    "pages": "103–105",
+    "model": "temperature",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Convert Celsius and Fahrenheit while distinguishing a temperature reading from a temperature change.",
+      "pt": "Converter Celsius e Fahrenheit distinguindo leitura de temperatura e variação."
+    },
+    "story": {
+      "en": "A pretend weather report gives 20°C, but a traveller’s thermometer uses Fahrenheit. Both thermometers describe the same weather.",
+      "pt": "Uma previsão de brincadeira dá 20°C, mas o termômetro de uma pessoa usa Fahrenheit. Ambos descrevem o mesmo tempo."
+    },
+    "steps": [
+      {
+        "en": "Mark water’s freezing readings, 0°C and 32°F, and boiling readings at standard pressure, 100°C and 212°F. Compare the sizes of the intervals.",
+        "pt": "Marque o congelamento da água, 0°C e 32°F, e a ebulição à pressão padrão, 100°C e 212°F. Compare os tamanhos dos intervalos."
+      },
+      {
+        "en": "Use F = (9/5)C + 32 for a reading. Reverse in the correct order: C = (5/9)(F − 32). Test one familiar value first.",
+        "pt": "Use F = (9/5)C + 32 para uma leitura. Inverta na ordem correta: C = (5/9)(F − 32). Teste primeiro um valor conhecido."
+      },
+      {
+        "en": "Record a packing decision using an invented forecast, then convert back to check. For a change in temperature, compare differences without adding 32.",
+        "pt": "Registre uma decisão sobre roupas com previsão inventada e converta de volta para conferir. Para variação de temperatura, compare diferenças sem somar 32."
+      }
+    ],
+    "explain": {
+      "en": "The scales have different zero readings and different step sizes. A change of 10°C is a change of 18°F; a reading of 10°C is 50°F. Keeping that distinction prevents a common formula error.",
+      "pt": "As escalas têm zeros e tamanhos de passo diferentes. Variação de 10°C é variação de 18°F; leitura de 10°C é 50°F. Essa distinção evita erro comum de fórmula."
+    },
+    "worked": {
+      "en": "20 × 9/5 + 32 = 68°F. Reversing: (68 − 32) × 5/9 = 20°C.",
+      "pt": "20 × 9/5 + 32 = 68°F. Na inversa: (68 − 32) × 5/9 = 20°C."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Convert a reading of 20°C to °F.",
+          "pt": "Converta uma leitura de 20°C em °F."
+        },
+        "answer": 68,
+        "solution": {
+          "en": "20 × 9/5 + 32 = 68°F.",
+          "pt": "20 × 9/5 + 32 = 68°F."
+        }
+      },
+      {
+        "q": {
+          "en": "Convert a reading of 86°F to °C.",
+          "pt": "Converta uma leitura de 86°F em °C."
+        },
+        "answer": 30,
+        "solution": {
+          "en": "(86 − 32) × 5/9 = 30°C.",
+          "pt": "(86 − 32) × 5/9 = 30°C."
+        }
+      },
+      {
+        "q": {
+          "en": "What Fahrenheit reading corresponds to 0°C?",
+          "pt": "Qual leitura Fahrenheit corresponde a 0°C?"
+        },
+        "answer": 32,
+        "solution": {
+          "en": "0 × 9/5 + 32 = 32°F.",
+          "pt": "0 × 9/5 + 32 = 32°F."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask why adding 32 is needed for a reading and why subtracting 32 comes first in the inverse.",
+      "pt": "Pergunte por que somar 32 é necessário para leitura e por que subtrair 32 vem primeiro na inversa."
+    },
+    "recall": {
+      "en": "Recall how a formula uses a letter for a measured quantity.",
+      "pt": "Retome como uma fórmula usa letra para uma grandeza medida."
+    },
+    "links": [
+      "g6-interest-formula-table",
+      "g5-metric-centimeters"
+    ]
+  },
+  {
+    "id": "N6-06",
+    "grade": 6,
+    "title": {
+      "en": "One trip, one complete budget",
+      "pt": "Uma viagem, um orçamento completo"
+    },
+    "pages": "95,103–107",
+    "model": "trip",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Combine travel costs, currencies and units in a coherent budget and explain a revision.",
+      "pt": "Reunir custos de viagem, moedas e unidades num orçamento coerente e explicar uma revisão."
+    },
+    "story": {
+      "en": "Plan a pretend five-day, four-night trip within R$2400. Use the supplied prices first; choosing a different destination later tests whether the method transfers.",
+      "pt": "Planeje viagem de brincadeira de cinco dias e quatro noites por até R$2400. Use primeiro os preços fornecidos; depois outro destino testa a transferência do método."
+    },
+    "steps": [
+      {
+        "en": "Make a classroom travel booklet with invented names: dates, route, a picture and a list of necessary costs. Include travel documents or care of pets as separate lines if your scenario needs them.",
+        "pt": "Faça caderno de viagem didático com nomes inventados: datas, rota, desenho e lista de custos necessários. Inclua documentos ou cuidado de animais em linhas separadas se o cenário precisar."
+      },
+      {
+        "en": "Use R$800 return travel, R$120 local transport, four nights at R$120 and food at €20 per day for five days. Convert at €1 = R$6 before adding all lines.",
+        "pt": "Use R$800 de ida e volta, R$120 de transporte local, quatro noites de R$120 e alimentação de €20 por dia em cinco dias. Converta com €1 = R$6 antes de somar."
+      },
+      {
+        "en": "Compare the total with the budget. Add a €25 activity, check what remains, and revise a cost if needed. Use 1 mile = 1.609344 km to compare a stated route, and the temperature lesson to plan clothes.",
+        "pt": "Compare total e limite. Acrescente atividade de €25, confira o restante e revise um custo se necessário. Use 1 milha = 1,609344 km para comparar rota declarada e a aula de temperatura para planejar roupas."
+      }
+    ],
+    "explain": {
+      "en": "Only amounts in the same currency can be added. A per-night cost and a per-day cost need different counts. The booklet is a mathematical simulation; no booking, payment or real identity form is required. For an optional credit extension, state a monthly rate and payment rule first. A classroom balance table is a model, not a bank quote.",
+      "pt": "Só valores na mesma moeda podem ser somados. Custos por noite e por dia precisam de contagens diferentes. O caderno é simulação matemática; não exige reserva, pagamento nem formulário de identidade real. Para ampliação opcional de crédito, declare antes taxa mensal e regra de pagamento. Uma tabela didática de saldo é modelo, não cotação bancária."
+    },
+    "worked": {
+      "en": "800 + 120 + 4 × 120 + 5 × 20 × 6 = R$2000, leaving R$400. The €25 activity costs R$150, leaving R$250. Five miles is 8.04672 km, about 8.05 km. Optional credit example: start with R$100 debt; add 1% monthly interest, round to cents, then pay R$40 or the smaller amount still owed. Balances after payments are R$61.00, R$21.61 and R$0. The final payment is R$21.83; total paid R$101.83. No new purchases or fees are included.",
+      "pt": "800 + 120 + 4 × 120 + 5 × 20 × 6 = R$2000, restando R$400. A atividade de €25 custa R$150, restando R$250. Cinco milhas são 8,04672 km, cerca de 8,05 km. Exemplo opcional de crédito: comece com dívida de R$100; acrescente juros mensais de 1%, arredonde para centavos e pague R$40 ou o valor menor ainda devido. Saldos após pagar são R$61,00, R$21,61 e R$0. A última parcela é R$21,83; total pago R$101,83. Não há novas compras nem tarifas."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Before adding the activity, how many reais remain from R$2400?",
+          "pt": "Antes da atividade, quantos reais restam de R$2400?"
+        },
+        "answer": 400,
+        "solution": {
+          "en": "2400 − 2000 = R$400.",
+          "pt": "2400 − 2000 = R$400."
+        }
+      },
+      {
+        "q": {
+          "en": "Convert 5 miles to km using 1.609344 km per mile, rounded to two decimals.",
+          "pt": "Converta 5 milhas em km usando 1,609344 km por milha, com duas casas decimais."
+        },
+        "answer": 8.05,
+        "solution": {
+          "en": "5 × 1.609344 = 8.04672 ≈ 8.05 km.",
+          "pt": "5 × 1,609344 = 8,04672 ≈ 8,05 km."
+        }
+      },
+      {
+        "q": {
+          "en": "After adding the €25 activity at R$6 per euro, how many reais remain?",
+          "pt": "Depois de acrescentar a atividade de €25 a R$6 por euro, quantos reais restam?"
+        },
+        "answer": 250,
+        "solution": {
+          "en": "400 − 25 × 6 = R$250.",
+          "pt": "400 − 25 × 6 = R$250."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Review the complete budget, currency directions and assumptions. Ask for a cheaper alternative and then a second trip with different numbers.",
+      "pt": "Avalie orçamento completo, direções do câmbio e hipóteses. Peça alternativa mais barata e depois outra viagem com números diferentes."
+    },
+    "recall": {
+      "en": "Recall yesterday’s conversion rate and name the destination currency before calculating.",
+      "pt": "Retome a taxa de ontem e diga a moeda de destino antes de calcular."
+    },
+    "links": [
+      "N6-04",
+      "N6-05",
+      "g6-budget-challenge"
+    ]
+  },
+  {
+    "id": "N6-07",
+    "grade": 6,
+    "title": {
+      "en": "One product, two ways to sell",
+      "pt": "Um produto, duas formas de vender"
+    },
+    "pages": "146–148",
+    "model": "channels",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Separate unit costs, fixed fees and percentage fees when comparing sales channels.",
+      "pt": "Separar custos unitários, tarifas fixas e percentuais ao comparar canais de venda."
+    },
+    "story": {
+      "en": "A pretend bookmark workshop can sell at a market or through an online stall. The selling price is the same, but the costs differ.",
+      "pt": "Uma oficina fictícia de marcadores pode vender numa feira ou numa loja online. O preço é igual, mas os custos diferem."
+    },
+    "steps": [
+      {
+        "en": "Make a sample paper bookmark and list every stated cost. Use classroom figures: price R$12 and materials R$3 per sold item.",
+        "pt": "Faça marcador de papel e liste os custos declarados. Use valores didáticos: preço R$12 e material R$3 por item vendido."
+      },
+      {
+        "en": "Market: one R$30 fee for the whole event. Online stall: R$0.50 per sold item plus 5% of sales. Calculate gross sales and each expense separately for 20 sold items.",
+        "pt": "Feira: tarifa única de R$30 no evento. Loja online: R$0,50 por item vendido e 5% das vendas. Calcule faturamento e cada despesa separadamente para 20 itens vendidos."
+      },
+      {
+        "en": "Compare profits and change the number sold. Describe what is omitted, such as delivery or tax, then add a stated cost for a new version of the problem.",
+        "pt": "Compare lucros e mude a quantidade vendida. Descreva omissões, como entrega ou tributo, e acrescente custo declarado para nova versão do problema."
+      }
+    ],
+    "explain": {
+      "en": "For n items, market profit is 12n − 3n − 30. Online profit is 12n − 3n − 0.50n − 0.05(12n). These are fictional channel prices, not current charges from a named platform. Gross sales, expenses and profit are distinct.",
+      "pt": "Para n itens, lucro da feira é 12n − 3n − 30. Na loja online é 12n − 3n − 0,50n − 0,05(12n). São preços fictícios, não tarifas atuais de plataforma nomeada. Faturamento, despesas e lucro são diferentes."
+    },
+    "worked": {
+      "en": "20 items bring R$240. Market expenses are R$60 + R$30, giving R$150 profit. Online expenses are R$60 + R$10 + R$12, giving R$158 profit.",
+      "pt": "20 itens faturam R$240. Despesas da feira são R$60 + R$30, dando lucro R$150. Online são R$60 + R$10 + R$12, dando lucro R$158."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "What is the market profit from 20 sold items?",
+          "pt": "Qual o lucro da feira com 20 itens vendidos?"
+        },
+        "answer": 150,
+        "solution": {
+          "en": "240 − 60 − 30 = R$150.",
+          "pt": "240 − 60 − 30 = R$150."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the online profit from the same 20 items?",
+          "pt": "Qual o lucro online dos mesmos 20 itens?"
+        },
+        "answer": 158,
+        "solution": {
+          "en": "240 − 60 − 10 − 12 = R$158.",
+          "pt": "240 − 60 − 10 − 12 = R$158."
+        }
+      },
+      {
+        "q": {
+          "en": "How much greater is the online profit in this example?",
+          "pt": "Quanto o lucro online supera o da feira neste exemplo?"
+        },
+        "answer": 8,
+        "solution": {
+          "en": "158 − 150 = R$8. Different quantities can change which channel is better.",
+          "pt": "158 − 150 = R$8. Outras quantidades podem mudar qual canal é melhor."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask which fee is charged once and which depends on sales. Keep a short report with assumptions so a later product can be compared fairly.",
+      "pt": "Pergunte qual tarifa se cobra uma vez e qual depende das vendas. Mantenha relatório curto com hipóteses para comparar outro produto de modo justo."
+    },
+    "recall": {
+      "en": "Recall unit cost, sale price and profit from the existing business lesson.",
+      "pt": "Retome custo unitário, preço e lucro da aula comercial existente."
+    },
+    "links": [
+      "g6-cost-price-profit",
+      "g6-fair-discount"
+    ]
+  },
+  {
+    "id": "N6-08",
+    "grade": 6,
+    "title": {
+      "en": "A growing workshop keeps two kinds of records",
+      "pt": "Uma oficina em crescimento mantém dois registros"
+    },
+    "pages": "148–151",
+    "model": "business",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Read a simple profit-and-loss report while distinguishing profit, cash borrowing and a reserve.",
+      "pt": "Ler relatório simples de resultado distinguindo lucro, empréstimo em dinheiro e reserva."
+    },
+    "story": {
+      "en": "The bookmark workshop is considering a shared shop and a helper. Before choosing, it needs a plan and a realistic report, not just a total of sales.",
+      "pt": "A oficina de marcadores considera loja compartilhada e ajudante. Antes de escolher, precisa de plano e relatório realista, não só total de vendas."
+    },
+    "steps": [
+      {
+        "en": "Write a one-page plan: product, customers, suppliers, selling channel, stated costs, who does the work and what local rules an adult would investigate. Use invented classroom paperwork.",
+        "pt": "Escreva plano de uma página: produto, clientes, fornecedores, canal, custos declarados, quem trabalha e regras locais que um adulto pesquisaria. Use papéis didáticos inventados."
+      },
+      {
+        "en": "For one month use 100 items at R$12, materials R$3 each, rent R$500, utilities R$100 and a helper for ten hours at R$15. Build a report before any loan or reserve.",
+        "pt": "Num mês use 100 itens de R$12, materiais de R$3 cada, aluguel R$500, contas R$100 e ajudante por dez horas a R$15. Faça relatório antes de empréstimo ou reserva."
+      },
+      {
+        "en": "Add an assumed R$5000 loan at simple 12% yearly interest for one month, with no principal repayment yet. Compare cash received with profit, and plan a reserve for three months of rent and utilities.",
+        "pt": "Acrescente empréstimo hipotético de R$5000 a juros simples anuais de 12% por um mês, sem amortização ainda. Compare dinheiro recebido e lucro; planeje reserva de três meses de aluguel e contas."
+      }
+    ],
+    "explain": {
+      "en": "Sales are R$1200. Materials and operating expenses total R$1050, leaving R$150 before interest. Interest is 5000 × 0.12/12 = R$50, leaving R$100 profit in this simplified model. Borrowed principal increases cash and debt, not earned profit. Setting aside a reserve changes available cash, not the operating cost of this month.",
+      "pt": "Vendas são R$1200. Materiais e despesas operacionais somam R$1050, deixando R$150 antes de juros. Juros são 5000 × 0,12/12 = R$50, restando lucro de R$100 neste modelo simples. Principal emprestado aumenta caixa e dívida, não lucro. Separar reserva muda caixa disponível, não o custo operacional do mês."
+    },
+    "worked": {
+      "en": "Helper: 10 × 15 = R$150. Profit: 1200 − 300 − 500 − 100 − 150 − 50 = R$100. Reserve: 3 × (500 + 100) = R$1800.",
+      "pt": "Ajudante: 10 × 15 = R$150. Lucro: 1200 − 300 − 500 − 100 − 150 − 50 = R$100. Reserva: 3 × (500 + 100) = R$1800."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "What is the helper’s pay for ten hours at R$15?",
+          "pt": "Quanto recebe o ajudante por dez horas a R$15?"
+        },
+        "answer": 150,
+        "solution": {
+          "en": "10 × 15 = R$150.",
+          "pt": "10 × 15 = R$150."
+        }
+      },
+      {
+        "q": {
+          "en": "After all stated costs and R$50 interest, what profit remains?",
+          "pt": "Após todos os custos declarados e R$50 de juros, qual lucro resta?"
+        },
+        "answer": 100,
+        "solution": {
+          "en": "1200 − 300 − 500 − 100 − 150 − 50 = R$100.",
+          "pt": "1200 − 300 − 500 − 100 − 150 − 50 = R$100."
+        }
+      },
+      {
+        "q": {
+          "en": "What reserve covers three months of R$500 rent and R$100 utilities?",
+          "pt": "Que reserva cobre três meses de aluguel de R$500 e contas de R$100?"
+        },
+        "answer": 1800,
+        "solution": {
+          "en": "3 × (500 + 100) = R$1800.",
+          "pt": "3 × (500 + 100) = R$1800."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to explain why a loan is not profit and whether the proposed shop is affordable from these assumptions. Assess the plan, report and reasoning together.",
+      "pt": "Peça que explique por que empréstimo não é lucro e se a loja cabe nas hipóteses. Avalie plano, relatório e raciocínio em conjunto."
+    },
+    "recall": {
+      "en": "Rebuild the previous channel’s sales-minus-expenses report before adding new costs.",
+      "pt": "Reconstrua o relatório de vendas menos despesas do canal anterior antes de acrescentar custos."
+    },
+    "links": [
+      "N6-07",
+      "g6-simple-interest",
+      "g6-business-order",
+      "g6-market-day-portfólio"
+    ]
+  },
+  {
+    "id": "N6-09",
+    "grade": 6,
+    "title": {
+      "en": "A blank space becomes a letter",
+      "pt": "Um espaço vazio vira letra"
+    },
+    "pages": "151–152,205–206,211–218",
+    "model": "unknown",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Use a letter for an unknown in simple addition, subtraction, three-term and multiplication relationships.",
+      "pt": "Usar letra para incógnita em relações simples de adição, subtração, três termos e multiplicação."
+    },
+    "story": {
+      "en": "A workshop knows the total but one part of its order is hidden. A blank and a letter can ask exactly the same question.",
+      "pt": "Uma oficina conhece o total, mas uma parte do pedido está escondida. Um espaço vazio e uma letra podem fazer a mesma pergunta."
+    },
+    "steps": [
+      {
+        "en": "Build a whole with counters and hide one part: □ + 8 = 21. Replace the blank with x without changing the relationship.",
+        "pt": "Monte o todo com fichas e esconda uma parte: □ + 8 = 21. Troque o espaço por x sem mudar a relação."
+      },
+      {
+        "en": "Move the unknown to different positions, and try three-term relations such as 31 − x − 4 = 18. Check a proposed number in the original expression.",
+        "pt": "Mude a posição da incógnita e tente relações de três termos, como 31 − x − 4 = 18. Confira o número na expressão original."
+      },
+      {
+        "en": "Make equal groups for 6y = 42. Explain why the adjacent letter means multiplication here and why it is different from an x used as a name. Write a small order story and its equation.",
+        "pt": "Faça grupos iguais para 6y = 42. Explique por que a letra junto significa multiplicação aqui e como difere de x como nome. Escreva pequena história de pedido e sua equação."
+      }
+    ],
+    "explain": {
+      "en": "The letter names the missing quantity. Substitution checks the original relationship: for 31 − x − 4 = 18, x = 9 gives 31 − 9 − 4 = 18. Do not assume every subtraction equation is solved by subtracting the two visible numbers in their written order. This is a Grade 6 introduction, before the existing deeper Grade 7 algebra path.",
+      "pt": "A letra nomeia a quantidade ausente. Substituir confere a relação original: em 31 − x − 4 = 18, x = 9 dá 31 − 9 − 4 = 18. Não suponha que toda equação de subtração se resolve subtraindo números visíveis na ordem escrita. É introdução do 6º ano, antes do caminho mais profundo do 7º."
+    },
+    "worked": {
+      "en": "x + 8 = 21 → x = 13, checked by 13 + 8 = 21. For 6y = 42, y = 7, checked by 6 × 7 = 42.",
+      "pt": "x + 8 = 21 → x = 13, conferido por 13 + 8 = 21. Em 6y = 42, y = 7, conferido por 6 × 7 = 42."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Find x in x + 8 = 21.",
+          "pt": "Encontre x em x + 8 = 21."
+        },
+        "answer": 13,
+        "solution": {
+          "en": "21 − 8 = 13; check 13 + 8 = 21.",
+          "pt": "21 − 8 = 13; confira 13 + 8 = 21."
+        }
+      },
+      {
+        "q": {
+          "en": "Find x in 31 − x − 4 = 18.",
+          "pt": "Encontre x em 31 − x − 4 = 18."
+        },
+        "answer": 9,
+        "solution": {
+          "en": "31 − 4 = 27; 27 − x = 18 gives x = 9. Check the original.",
+          "pt": "31 − 4 = 27; 27 − x = 18 dá x = 9. Confira a original."
+        }
+      },
+      {
+        "q": {
+          "en": "Find y in 6y = 42.",
+          "pt": "Encontre y em 6y = 42."
+        },
+        "answer": 7,
+        "solution": {
+          "en": "42 ÷ 6 = 7; check 6 × 7 = 42.",
+          "pt": "42 ÷ 6 = 7; confira 6 × 7 = 42."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask for an object model, a matching equation and a substitution check. Accept different solving strategies that keep the relationship valid.",
+      "pt": "Peça modelo de objetos, equação correspondente e conferência por substituição. Aceite estratégias diferentes que preservem a relação."
+    },
+    "recall": {
+      "en": "Recall a hidden-part problem and explain how the same unknown can be named with a letter.",
+      "pt": "Retome problema de parte escondida e explique como nomear a mesma incógnita com letra."
+    },
+    "links": [
+      "g1-jarman-hidden-whole",
+      "g6-interest-formula-table"
+    ]
+  },
+  {
+    "id": "N6-10",
+    "grade": 6,
+    "title": {
+      "en": "Every pair of points makes one chord",
+      "pt": "Cada par de pontos faz uma corda"
+    },
+    "pages": "33–34,41",
+    "model": "chord-web",
+    "basis": "source-informed",
+    "goal": {
+      "en": "Construct twenty-four equal divisions and distinguish an all-pairs chord web from a single stepping path.",
+      "pt": "Construir vinte e quatro divisões iguais e distinguir rede de todas as cordas de um caminho de saltos."
+    },
+    "story": {
+      "en": "A circular art design has twenty-four marked points. Each point is connected to every other one. How can we keep track without drawing the same chord twice?",
+      "pt": "Um desenho circular tem vinte e quatro pontos. Cada um se liga a todos os outros. Como acompanhar sem traçar a mesma corda duas vezes?"
+    },
+    "steps": [
+      {
+        "en": "Start with the linked twelve-sector construction and bisect every central sector to get twenty-four equal sectors. Keep one guide drawing.",
+        "pt": "Comece com a construção ligada de doze setores e divida cada ângulo central ao meio para obter vinte e quatro setores iguais. Guarde um desenho-guia."
+      },
+      {
+        "en": "Number points 0–23. From point 0 draw to all later points; from point 1 draw only to points with larger labels, and continue. Choose colours for groups of points.",
+        "pt": "Numere de 0 a 23. Do ponto 0 ligue a todos os posteriores; do ponto 1 só a rótulos maiores, e continue. Escolha cores para grupos de pontos."
+      },
+      {
+        "en": "Compare the full web with a smaller 12-point version or the linked single-step star path. Count connections from one point, then reason about the full total.",
+        "pt": "Compare a rede completa com versão menor de 12 pontos ou caminho de estrela ligado. Conte ligações de um ponto e depois raciocine sobre o total."
+      }
+    ],
+    "explain": {
+      "en": "Each of 24 points has 23 partners. Counting 24 × 23 counts every segment twice, once from each end, so there are 276 distinct chords, including diameters. The coloured web is an original schematic; its apparent curves are visual patterns, not newly constructed circles.",
+      "pt": "Cada um dos 24 pontos tem 23 parceiros. Contar 24 × 23 conta cada segmento duas vezes, uma por extremo; portanto há 276 cordas distintas, incluindo diâmetros. A rede colorida é esquema original; curvas aparentes são padrões visuais, não novas circunferências construídas."
+    },
+    "worked": {
+      "en": "Central sector: 360 ÷ 24 = 15°. Distinct chords: 24 × 23 ÷ 2 = 276. With 12 points there are 12 × 11 ÷ 2 = 66.",
+      "pt": "Setor central: 360 ÷ 24 = 15°. Cordas distintas: 24 × 23 ÷ 2 = 276. Com 12 pontos há 12 × 11 ÷ 2 = 66."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "How many degrees in each of 24 equal sectors?",
+          "pt": "Quantos graus em cada um de 24 setores iguais?"
+        },
+        "answer": 15,
+        "solution": {
+          "en": "360 ÷ 24 = 15°.",
+          "pt": "360 ÷ 24 = 15°."
+        }
+      },
+      {
+        "q": {
+          "en": "How many partners does a single point have among 24 points?",
+          "pt": "Quantos parceiros um ponto tem entre 24 pontos?"
+        },
+        "answer": 23,
+        "solution": {
+          "en": "It connects to the other 23, not itself.",
+          "pt": "Ele se liga aos outros 23, não a si mesmo."
+        }
+      },
+      {
+        "q": {
+          "en": "How many distinct chords connect all pairs of 24 points?",
+          "pt": "Quantas cordas distintas ligam todos os pares de 24 pontos?"
+        },
+        "answer": 276,
+        "solution": {
+          "en": "24 × 23 ÷ 2 = 276 because each pair was counted twice.",
+          "pt": "24 × 23 ÷ 2 = 276 porque cada par foi contado duas vezes."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to demonstrate double counting with four points first. Use a prepared diagram or smaller web if the full drawing is tiring.",
+      "pt": "Peça que mostre dupla contagem primeiro com quatro pontos. Use diagrama pronto ou rede menor se o desenho completo cansar."
+    },
+    "recall": {
+      "en": "Recall why bisecting each 30° sector doubles the number of divisions.",
+      "pt": "Retome por que dividir cada setor de 30° ao meio dobra a quantidade de divisões."
+    },
+    "links": [
+      "N5-01",
+      "G6-08",
+      "N2-01"
+    ]
+  },
+  {
     "id": "N7-01",
     "title": {
       "en": "Sixteen points, three star paths",
@@ -1577,94 +2556,6 @@
       "g8-data-typical-value"
     ],
     "basis": "standards-expansion"
-  },
-  {
-    "id": "N5-03",
-    "grade": 5,
-    "pages": "121–123",
-    "basis": "source-informed",
-    "model": "tangent",
-    "title": {
-      "en": "A line meeting a circle",
-      "pt": "Uma reta encontra a circunferência"
-    },
-    "goal": {
-      "en": "Distinguish a centre, radius, diameter, concentric circles, secant and tangent on a labelled drawing.",
-      "pt": "Distinguir centro, raio, diâmetro, circunferências concêntricas, secante e tangente num desenho identificado."
-    },
-    "story": {
-      "en": "A circular garden has a straight path nearby. Move a paper strip across a drawn circle and notice how many boundary points it meets.",
-      "pt": "Um jardim circular tem uma trilha reta por perto. Mova uma tira de papel sobre uma circunferência desenhada e observe quantos pontos da borda ela encontra."
-    },
-    "steps": [
-      {
-        "en": "Draw two circles with the same centre and different radii. Label the centre O, one radius and a diameter; explain what concentric means.",
-        "pt": "Desenhe duas circunferências com mesmo centro e raios diferentes. Identifique centro O, raio e diâmetro; explique concêntricas."
-      },
-      {
-        "en": "Move a straight strip from outside the larger circle inward. Look for no crossing, one contact and two crossings. Sketch the three cases.",
-        "pt": "Mova uma tira reta de fora para dentro da circunferência maior. Procure nenhum encontro, um contato e dois cruzamentos. Desenhe os três casos."
-      },
-      {
-        "en": "At the one-contact position, join O to the contact point. Fold or check a right angle between this radius and the tangent. Label your own drawing instead of copying a term list.",
-        "pt": "Na posição de um contato, una O ao ponto de contato. Dobre ou confira um ângulo reto entre raio e tangente. Identifique seu desenho em vez de copiar lista de termos."
-      }
-    ],
-    "explain": {
-      "en": "A secant line meets a circle in two points; a tangent line in the plane meets it at one point and is perpendicular to the radius there. Concentric circles share a centre, not necessarily a radius. A diameter is twice the radius. A thick pencil mark only approximates exact contact.",
-      "pt": "Uma reta secante encontra a circunferência em dois pontos; uma tangente no plano encontra em um e é perpendicular ao raio nesse ponto. Circunferências concêntricas compartilham centro, não necessariamente raio. O diâmetro é o dobro do raio. Uma marca grossa só aproxima o contato exato."
-    },
-    "worked": {
-      "en": "For radius 4 cm, the diameter is 8 cm. A tangent at the top of the circle is perpendicular to the radius drawn up from O.",
-      "pt": "Para raio 4 cm, o diâmetro é 8 cm. Uma tangente no topo é perpendicular ao raio que sobe de O."
-    },
-    "practice": [
-      {
-        "q": {
-          "en": "How many points does a secant meet?",
-          "pt": "Em quantos pontos uma secante encontra a circunferência?"
-        },
-        "answer": 2,
-        "solution": {
-          "en": "Two boundary crossings define a secant.",
-          "pt": "Dois cruzamentos com a borda definem uma secante."
-        }
-      },
-      {
-        "q": {
-          "en": "What is the angle in degrees between a tangent and its contact radius?",
-          "pt": "Qual é o ângulo em graus entre tangente e raio do contato?"
-        },
-        "answer": 90,
-        "solution": {
-          "en": "They are perpendicular: 90°.",
-          "pt": "São perpendiculares: 90°."
-        }
-      },
-      {
-        "q": {
-          "en": "Radius 3.5 cm: what is the diameter in centimetres?",
-          "pt": "Raio 3,5 cm: qual é o diâmetro em centímetros?"
-        },
-        "answer": 7,
-        "solution": {
-          "en": "2 × 3.5 = 7 cm.",
-          "pt": "2 × 3,5 = 7 cm."
-        }
-      }
-    ],
-    "observe": {
-      "en": "Ask the learner to label their own drawing, explain the number of intersections and identify the radius associated with a tangent.",
-      "pt": "Peça que identifique seu desenho, explique a quantidade de encontros e localize o raio associado à tangente."
-    },
-    "recall": {
-      "en": "Recall what stays unchanged when drawing a circle with a fixed string.",
-      "pt": "Retome o que fica constante ao desenhar uma circunferência com barbante fixo."
-    },
-    "links": [
-      "G5-04",
-      "g5-freehand-circle-diameter"
-    ]
   },
   {
     "id": "N8-04",

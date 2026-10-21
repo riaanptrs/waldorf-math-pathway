@@ -931,71 +931,627 @@
     "verified": true
   },
   {
-    "id": "G6-PENDING",
+    "id": "G6-B1",
     "grade": 6,
     "title": {
-      "en": "Grade 6 · Source still needed",
-      "pt": "6º ano · Fonte ainda necessária"
+      "en": "Block 1 · Geometry, patterns and precision",
+      "pt": "Bloco 1 · Geometria, padrões e precisão"
     },
     "when": {
-      "en": "Existing course routes; source sequence unverified",
-      "pt": "Rotas existentes; sequência da fonte não verificada"
+      "en": "Four weeks, followed by the first practice track",
+      "pt": "Quatro semanas, seguidas do primeiro percurso de prática"
     },
-    "pages": "1 (cover only)",
+    "pages": "19–25,28–44",
     "why": {
-      "en": "The uploaded Grade 6 file contains a single cover page. It provides no math blocks, rationale or teaching sequence to map.",
-      "pt": "O arquivo enviado do 6º ano contém só uma capa. Não oferece blocos matemáticos, justificativa nem sequência para mapear."
+      "en": "Review and deepen the learner’s own constructions before adding new pattern rules. Daily recall now asks for a deeper explanation, not simply retelling.",
+      "pt": "Revisar e aprofundar construções próprias antes de acrescentar regras de padrões. A retomada diária agora pede explicação mais profunda, não só recontagem."
     },
     "how": {
-      "en": "No detailed Grade 6 Nielsen method is inferred from this cover or from another author’s material.",
-      "pt": "Nenhum método detalhado de Nielsen para o 6º ano é inferido desta capa ou de material de outro autor."
+      "en": "Review circle terms, triangles, hexagons and dodecagons; divide into 24 sectors. Explore nested polygon/spiral patterns, the Archimedean spiral and a 24-point web, then exact angles, angle relationships, copying and bisection.",
+      "pt": "Revisar termos, triângulos, hexágonos e dodecágonos; dividir em 24 setores. Explorar padrões de polígonos/espirais, espiral de Arquimedes e rede de 24 pontos, depois ângulos exatos, relações, cópia e bissecção."
     },
     "online": {
-      "en": "Use the existing decimal, percentage, business and construction paths as a clearly labelled interim route. Replace this source gap only after reviewing the full volume.",
-      "pt": "Use os caminhos existentes de decimais, porcentagens, negócios e construções como rota provisória claramente identificada. Substitua esta lacuna só após revisar o volume completo."
+      "en": "Reuse the Grade 5 bridges and existing constructions. Add original models for repeated polygon rules, equal radial gains and all-pairs chords. Keep predictions, guide marks, personal art and a method note. Seated drawing or a prepared diagram can replace tiring fine work.",
+      "pt": "Reutilize pontes do 5º ano e construções existentes. Acrescente modelos originais de regras de polígonos, aumentos radiais iguais e cordas entre todos os pares. Preserve previsões, marcas, arte pessoal e nota de método. Desenho sentado ou diagrama pronto substitui esforço fino cansativo."
     },
     "sequence": [
       {
         "topic": {
-          "en": "Existing arithmetic foundations",
-          "pt": "Fundamentos aritméticos existentes"
+          "en": "Review terms, circles and triangles",
+          "pt": "Revise termos, circunferências e triângulos"
         },
         "routes": [
-          "g6-decimal-place-system",
-          "g6-competency-fraction-decimal-bridge",
-          "g6-percent-hundred-grid"
+          "N5-03",
+          "G6-02",
+          "G6-10"
         ]
       },
       {
         "topic": {
-          "en": "Existing practical business math",
-          "pt": "Matemática comercial prática existente"
+          "en": "Review sixfold and twelvefold constructions",
+          "pt": "Revise construções em seis e doze partes"
         },
         "routes": [
-          "g6-cost-price-profit",
-          "g6-simple-interest",
+          "G6-03",
+          "N5-01"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Polygon patterns and different spirals",
+          "pt": "Padrões de polígonos e espirais diferentes"
+        },
+        "routes": [
+          "P5-03",
+          "N6-01",
+          "N6-02"
+        ]
+      },
+      {
+        "topic": {
+          "en": "A 24-point web connecting all pairs",
+          "pt": "Rede de 24 pontos ligando todos os pares"
+        },
+        "routes": [
+          "N6-10"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Exact angles and their conditions",
+          "pt": "Ângulos exatos e suas condições"
+        },
+        "routes": [
+          "G6-08",
+          "P5-02",
+          "G6-07"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Copy, bisect and explain; then begin Track 1",
+          "pt": "Copie, divida ao meio e explique; depois inicie percurso 1"
+        },
+        "routes": [
+          "G6-06",
+          "P6-01",
+          "G6-08"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Companion pictures and videos were not supplied. The diagrams are original adaptations, not reconstructions of source artwork. A straight-segment turning pattern is distinguished from an exact smooth logarithmic spiral.",
+      "pt": "Imagens e vídeos acompanhantes não foram fornecidos. Os diagramas são adaptações originais, não reconstruções da arte da fonte. Padrão de segmentos que gira é distinguido de espiral logarítmica suave exata."
+    },
+    "verified": true
+  },
+  {
+    "id": "G6-B5",
+    "grade": 6,
+    "title": {
+      "en": "Block 5 · Money and a make-believe journey",
+      "pt": "Bloco 5 · Dinheiro e viagem de brincadeira"
+    },
+    "when": {
+      "en": "Four weeks; followed by the middle practice track",
+      "pt": "Quatro semanas; seguidas do percurso intermediário"
+    },
+    "pages": "19–26,95–107",
+    "why": {
+      "en": "Money becomes meaningful through a connected project: compare value, keep funds in view, then make and revise a complete trip budget.",
+      "pt": "Dinheiro ganha sentido num projeto conectado: comparar valor, acompanhar recursos e depois fazer e revisar orçamento completo de viagem."
+    },
+    "how": {
+      "en": "Discuss exchange and the purposes of money; budget, compare cheque/debit/credit, introduce percent and simple-interest assumptions. Plan a pretend trip with documents, travel, accommodation, weather, currencies, meals, activities and distance conversions; reflect and plan a second trip.",
+      "pt": "Discutir troca e funções do dinheiro; orçar, comparar cheque/débito/crédito, introduzir porcentagem e hipóteses de juros simples. Planejar viagem fictícia com documentos, deslocamento, hospedagem, clima, moedas, refeições, atividades e conversões; refletir e planejar outra."
+    },
+    "online": {
+      "en": "Use invented prices, a paper travel booklet and original models; no real booking or identity form is needed. Reuse percent, interest, budget and unit-price lessons. Add the missing ledger, exchange-direction, temperature and integrated travel work. Keep all assumptions labelled and check units before operations.",
+      "pt": "Use preços inventados, caderno de viagem e modelos originais; não é preciso reservar nem preencher identidade real. Reutilize aulas de porcentagem, juros, orçamento e preço unitário. Acrescente registro financeiro, direção do câmbio, temperatura e viagem integrada. Identifique hipóteses e confira unidades antes de operar."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Value, payment forms and a ledger",
+          "pt": "Valor, formas de pagamento e registro"
+        },
+        "routes": [
+          "N6-03",
           "g6-budget-challenge"
         ]
       },
       {
         "topic": {
-          "en": "Existing construction readiness",
-          "pt": "Prontidão de construção existente"
+          "en": "Percent and simple interest as stated models",
+          "pt": "Porcentagem e juros simples como modelos declarados"
         },
         "routes": [
-          "G6-06",
-          "G6-07",
-          "G6-08",
-          "P6-01",
-          "P6-02"
+          "g6-percent-hundred-grid",
+          "g6-fair-discount",
+          "g6-simple-interest"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Choose dates, compare costs and prepare a trip booklet",
+          "pt": "Escolha datas, compare custos e prepare caderno de viagem"
+        },
+        "routes": [
+          "g6-better-deal",
+          "N6-06"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Weather and currency conversions",
+          "pt": "Conversões de clima e moeda"
+        },
+        "routes": [
+          "N6-05",
+          "N6-04"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Complete the trip, revise and transfer to another destination",
+          "pt": "Complete a viagem, revise e transfira para outro destino"
+        },
+        "routes": [
+          "N6-06"
         ]
       }
     ],
     "note": {
-      "en": "Source order is preserved; repeat a session when the learner needs it.",
-      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+      "en": "The trip is a mathematical simulation using fictional prices and a fixed classroom exchange rate. Source finance examples simplify interest; they do not describe every bank’s real repayment rules. Money history is discussed as context without repeating unverified origin claims.",
+      "pt": "A viagem é simulação matemática com preços fictícios e câmbio didático fixo. Exemplos financeiros da fonte simplificam juros; não descrevem regras reais de todo banco. A história do dinheiro é contexto sem repetir origens não verificadas."
     },
-    "verified": false
+    "verified": true
+  },
+  {
+    "id": "G6-B8",
+    "grade": 6,
+    "title": {
+      "en": "Block 8 · A small business and first algebra",
+      "pt": "Bloco 8 · Pequeno negócio e primeira álgebra"
+    },
+    "when": {
+      "en": "Four weeks; followed by the closing practice track",
+      "pt": "Quatro semanas; seguidas do percurso final"
+    },
+    "pages": "19–27,146–152",
+    "why": {
+      "en": "Build a connected record of decisions rather than isolated sums: cost, price, selling channel, profit, plans, resources and an unknown quantity.",
+      "pt": "Construir registro conectado de decisões em vez de contas isoladas: custo, preço, canal, lucro, planos, recursos e quantidade desconhecida."
+    },
+    "how": {
+      "en": "Start a small craft business, compare market and online selling, add a product and calculate reports. Consider a plan, premises, a loan and a helper, then compare another business idea. Finish with blanks becoming letters, three-term equations, simple multiplication and word problems.",
+      "pt": "Começar pequeno negócio artesanal, comparar feira e venda online, acrescentar produto e calcular relatórios. Considerar plano, espaço, empréstimo e ajudante, depois outra ideia de negócio. Terminar com espaços virando letras, equações de três termos, multiplicação simples e problemas."
+    },
+    "online": {
+      "en": "Our original bookmark workshop reuses existing cost/price/profit and business-writing tasks. Add channel fees and a profit/cash/reserve report. Research or describe local requirements as a classroom task without actual registration, loans or hiring. Introduce unknowns gently before the existing Grade 7 algebra path.",
+      "pt": "Nossa oficina original de marcadores reutiliza custo/preço/lucro e escrita comercial existentes. Acrescente tarifas de canais e relatório de lucro/caixa/reserva. Pesquise ou descreva exigências locais em atividade didática, sem registro, empréstimo ou contratação reais. Introduza incógnitas suavemente antes da álgebra existente do 7º ano."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Product, costs and two selling channels",
+          "pt": "Produto, custos e dois canais de venda"
+        },
+        "routes": [
+          "g6-cost-price-profit",
+          "N6-07"
+        ]
+      },
+      {
+        "topic": {
+          "en": "More products, month reports and a business plan",
+          "pt": "Mais produtos, relatórios do mês e plano de negócio"
+        },
+        "routes": [
+          "N6-08",
+          "g6-business-order"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Space, loan interest, helper and reserve",
+          "pt": "Espaço, juros, ajudante e reserva"
+        },
+        "routes": [
+          "g6-simple-interest",
+          "N6-08"
+        ]
+      },
+      {
+        "topic": {
+          "en": "A year later: compare another idea and present evidence",
+          "pt": "Um ano depois: compare outra ideia e apresente evidências"
+        },
+        "routes": [
+          "g6-market-day-portfólio",
+          "N6-08"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Blanks, letters, three terms, equal groups and stories",
+          "pt": "Espaços, letras, três termos, grupos iguais e histórias"
+        },
+        "routes": [
+          "N6-09"
+        ]
+      }
+    ],
+    "note": {
+      "en": "The source’s named-platform fees are historical examples. New lessons use explicitly fictional fee schedules. Loan principal, operating profit and a cash reserve are kept separate.",
+      "pt": "Tarifas de plataformas nomeadas na fonte são exemplos históricos. Novas aulas usam tarifas explicitamente fictícias. Principal emprestado, lucro operacional e reserva de caixa ficam separados."
+    },
+    "verified": true
+  },
+  {
+    "id": "G6-TRACKS",
+    "grade": 6,
+    "title": {
+      "en": "Practice tracks · Keep the learning alive",
+      "pt": "Percursos de prática · Mantenha a aprendizagem viva"
+    },
+    "when": {
+      "en": "12 weeks after geometry, 8 after money, 4 after business; flexible review time",
+      "pt": "12 semanas após geometria, 8 após dinheiro, 4 após negócios; revisão flexível"
+    },
+    "pages": "19–22,168–219",
+    "why": {
+      "en": "Space practice after the relevant main block so earlier skills remain available without turning each day into a full new-topic lesson.",
+      "pt": "Distribuir prática após o bloco principal pertinente para manter habilidades anteriores sem fazer de cada dia outra aula completa de assunto novo."
+    },
+    "how": {
+      "en": "The guidance specifies 60 minutes weekly, divided across school days, with one source sheet lasting a week. Use methods-book reminders and next-day deepening. Skills grow from earlier arithmetic to construction/money and then first algebra.",
+      "pt": "A orientação especifica 60 minutos semanais divididos pelos dias, com uma folha da fonte durando uma semana. Usar lembretes do caderno de métodos e aprofundamento no dia seguinte. Habilidades avançam de aritmética anterior para construção/dinheiro e depois primeira álgebra."
+    },
+    "online": {
+      "en": "The original weekly plan below reuses course lessons and questions, not copyrighted worksheets. In a four-day week, use about 15 minutes daily: recall, one or two known questions, a practical check and a brief explanation. Do not finish every linked activity in one sitting.",
+      "pt": "O plano semanal original abaixo reutiliza aulas e perguntas do curso, não fichas protegidas. Em quatro dias, use cerca de 15 minutos por dia: retomada, uma ou duas perguntas conhecidas, conferência prática e breve explicação. Não termine todas as atividades ligadas de uma vez."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "After Block 1: earlier arithmetic and completed geometry",
+          "pt": "Após bloco 1: aritmética anterior e geometria já feita"
+        },
+        "routes": [
+          "g5-fractions-path-review",
+          "g5-decimal-join-lengths",
+          "N6-01",
+          "N6-02"
+        ]
+      },
+      {
+        "topic": {
+          "en": "After Block 5: money, conversions and construction recall",
+          "pt": "Após bloco 5: dinheiro, conversões e retomada de construções"
+        },
+        "routes": [
+          "N6-03",
+          "N6-04",
+          "N6-05",
+          "N6-06",
+          "G6-07"
+        ]
+      },
+      {
+        "topic": {
+          "en": "After Block 8: first algebra and business explanations",
+          "pt": "Após bloco 8: primeira álgebra e explicações comerciais"
+        },
+        "routes": [
+          "N6-09",
+          "N6-07",
+          "N6-08"
+        ]
+      }
+    ],
+    "note": {
+      "en": "The source says 12/8/4 practice weeks but numbers its sheets 1–12, 13–21 (nine sheets) and 22–25; some middle-page headers also say twelve. This plan follows the stated 12/8/4 durations and groups review topics into eight middle weeks. Allow extra review time if needed; no exact source-sheet-to-week equivalence is claimed.",
+      "pt": "A fonte diz 12/8/4 semanas, mas numera fichas 1–12, 13–21 (nove fichas) e 22–25; alguns cabeçalhos intermediários também dizem doze. O plano segue as durações declaradas 12/8/4 e agrupa tópicos em oito semanas intermediárias. Reserve revisão extra se necessário; não afirmamos equivalência exata entre ficha e semana."
+    },
+    "verified": true,
+    "trackPhases": [
+      {
+        "phase": 1,
+        "title": {
+          "en": "Track 1 · After geometry",
+          "pt": "Percurso 1 · Após geometria"
+        },
+        "after": "G6-B1",
+        "weeks": [
+          {
+            "week": 1,
+            "title": {
+              "en": "Roman marks and one whole",
+              "pt": "Numerais romanos e um todo"
+            },
+            "routes": [
+              "N1-01",
+              "g1-four-paths-twelve"
+            ]
+          },
+          {
+            "week": 2,
+            "title": {
+              "en": "Time, calendar and money",
+              "pt": "Tempo, calendário e dinheiro"
+            },
+            "routes": [
+              "N3-01",
+              "g2-money-change"
+            ]
+          },
+          {
+            "week": 3,
+            "title": {
+              "en": "Measures and conversions",
+              "pt": "Medidas e conversões"
+            },
+            "routes": [
+              "g5-metric-centimeters",
+              "N5-02"
+            ]
+          },
+          {
+            "week": 4,
+            "title": {
+              "en": "Squares, cubes and primes",
+              "pt": "Quadrados, cubos e primos"
+            },
+            "routes": [
+              "g3-square-cube-build",
+              "N4-05"
+            ]
+          },
+          {
+            "week": 5,
+            "title": {
+              "en": "Addition and subtraction checks",
+              "pt": "Conferências de adição e subtração"
+            },
+            "routes": [
+              "g4-subtraction-estimate-check",
+              "g3-addition-regrouping"
+            ]
+          },
+          {
+            "week": 6,
+            "title": {
+              "en": "Long multiplication and division",
+              "pt": "Multiplicação e divisão longas"
+            },
+            "routes": [
+              "N4-02",
+              "g5-division-two-digit-divisor"
+            ]
+          },
+          {
+            "week": 7,
+            "title": {
+              "en": "Like-denominator fractions",
+              "pt": "Frações de denominadores iguais"
+            },
+            "routes": [
+              "g5-fractions-common-denominator",
+              "g5-fractions-improper-to-mixed"
+            ]
+          },
+          {
+            "week": 8,
+            "title": {
+              "en": "Reduce and multiply fractions",
+              "pt": "Reduza e multiplique frações"
+            },
+            "routes": [
+              "g5-fractions-reduce-gcf",
+              "g5-fractions-multiply-cancel"
+            ]
+          },
+          {
+            "week": 9,
+            "title": {
+              "en": "Unlike pieces and division meaning",
+              "pt": "Partes diferentes e sentido da divisão"
+            },
+            "routes": [
+              "g5-fractions-unlike-denominators",
+              "g5-fraction-division-sharing"
+            ]
+          },
+          {
+            "week": 10,
+            "title": {
+              "en": "Decimals in money and measure",
+              "pt": "Decimais em dinheiro e medidas"
+            },
+            "routes": [
+              "g5-decimal-hundredths-money",
+              "g5-decimal-price-length"
+            ]
+          },
+          {
+            "week": 11,
+            "title": {
+              "en": "Decimal operations and checking",
+              "pt": "Operações decimais e conferência"
+            },
+            "routes": [
+              "g5-decimal-ribbon-remainder",
+              "g5-decimal-count-pieces"
+            ]
+          },
+          {
+            "week": 12,
+            "title": {
+              "en": "Completed geometry and a personal method card",
+              "pt": "Geometria concluída e cartão pessoal de método"
+            },
+            "routes": [
+              "N6-01",
+              "N6-02",
+              "N6-10"
+            ]
+          }
+        ]
+      },
+      {
+        "phase": 2,
+        "title": {
+          "en": "Track 2 · After money and travel",
+          "pt": "Percurso 2 · Após dinheiro e viagem"
+        },
+        "after": "G6-B5",
+        "weeks": [
+          {
+            "week": 1,
+            "title": {
+              "en": "Payment records and percent",
+              "pt": "Registros de pagamento e porcentagem"
+            },
+            "routes": [
+              "N6-03",
+              "g6-percent-hundred-grid"
+            ]
+          },
+          {
+            "week": 2,
+            "title": {
+              "en": "Exchange and an inverse check",
+              "pt": "Câmbio e conferência inversa"
+            },
+            "routes": [
+              "N6-04",
+              "g6-better-deal"
+            ]
+          },
+          {
+            "week": 3,
+            "title": {
+              "en": "Exact angles and copies",
+              "pt": "Ângulos exatos e cópias"
+            },
+            "routes": [
+              "G6-08",
+              "P6-01"
+            ]
+          },
+          {
+            "week": 4,
+            "title": {
+              "en": "Temperature readings and changes",
+              "pt": "Leituras e variações de temperatura"
+            },
+            "routes": [
+              "N6-05",
+              "g5-metric-centimeters"
+            ]
+          },
+          {
+            "week": 5,
+            "title": {
+              "en": "Geometric reasons and missing angles",
+              "pt": "Razões geométricas e ângulos ausentes"
+            },
+            "routes": [
+              "G6-07",
+              "G6-08"
+            ]
+          },
+          {
+            "week": 6,
+            "title": {
+              "en": "Unit conversions and repeated measures",
+              "pt": "Conversões de unidades e medidas repetidas"
+            },
+            "routes": [
+              "N5-02",
+              "N3-02"
+            ]
+          },
+          {
+            "week": 7,
+            "title": {
+              "en": "Trip budget and a revised choice",
+              "pt": "Orçamento de viagem e escolha revisada"
+            },
+            "routes": [
+              "N6-06",
+              "N6-04"
+            ]
+          },
+          {
+            "week": 8,
+            "title": {
+              "en": "Mixed review selected from evidence",
+              "pt": "Revisão mista escolhida pela observação"
+            },
+            "routes": [
+              "g5-fractions-path-review",
+              "N6-06"
+            ]
+          }
+        ]
+      },
+      {
+        "phase": 3,
+        "title": {
+          "en": "Track 3 · After business and algebra",
+          "pt": "Percurso 3 · Após negócios e álgebra"
+        },
+        "after": "G6-B8",
+        "weeks": [
+          {
+            "week": 1,
+            "title": {
+              "en": "Blanks and letters in different positions",
+              "pt": "Espaços e letras em posições diferentes"
+            },
+            "routes": [
+              "N6-09"
+            ]
+          },
+          {
+            "week": 2,
+            "title": {
+              "en": "Three-term equations with checks",
+              "pt": "Equações de três termos com conferências"
+            },
+            "routes": [
+              "N6-09",
+              "g4-subtraction-estimate-check"
+            ]
+          },
+          {
+            "week": 3,
+            "title": {
+              "en": "Multiplication as an unknown group size",
+              "pt": "Multiplicação como tamanho desconhecido de grupo"
+            },
+            "routes": [
+              "N6-09",
+              "g5-division-place-value-shortcut"
+            ]
+          },
+          {
+            "week": 4,
+            "title": {
+              "en": "Business story, equation and report",
+              "pt": "História comercial, equação e relatório"
+            },
+            "routes": [
+              "N6-09",
+              "N6-07",
+              "N6-08"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "G7-GEO",

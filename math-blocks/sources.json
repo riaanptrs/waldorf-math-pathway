@@ -36,10 +36,12 @@
   },
   {
     "grade": 6,
-    "file": "Class_6_PDF_cover.md",
-    "pages": 1,
-    "sha256": "0a0892dadba54a38f82e37a4562a46ba386a6507b74375a84a025bab2142ec54",
-    "scope": "cover-only"
+    "file": "2023_Class_Six_FIX_w_track.md",
+    "pages": 219,
+    "sha256": "44394ae55ab003dfbeb8a6d8c9a6a9a37a3dc4d44a4c080f3e692b2e58b4b5d4",
+    "scope": "lesson-sequence-with-tracks",
+    "replaces_file": "Class_6_PDF_cover.md",
+    "authors": "Melisa Nielsen"
   },
   {
     "grade": 7,
