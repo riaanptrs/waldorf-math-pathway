@@ -41,6 +41,10 @@ linear functions, quadratics, coordinate geometry, and growth models.
 - Waldorf-inspired visual direction
 - Supabase Auth and progress saving through the same guardian/learner tables as Waldorf English Pathway
 
+## Math blocks by grade
+
+The [math block pathway](math-blocks/index.html) maps the supplied Waldorf Essentials guidance for Grades 1–8 into 18 routes, reusing existing topics and adding 20 original bilingual lessons for identified gaps. The [teacher guide](math-blocks/teacher.html) explains the rationale and online adaptations. Grade 6 is awaiting its full source; the supplied file is only a cover. Grade 7/8 source limits and optional standards expansions are labelled. See [the source map](docs/NIELSEN_MATH_BLOCK_MAP_2026-10-21.md). Rebuild with `node scripts/build-math-blocks.cjs` and check with `node scripts/audit-math-blocks.cjs`.
+
 ## Geometry lesson plans
 
 The [grade-by-grade geometry plans](geometry/plans/index.html) add 26 original English/Portuguese practical lessons for Grades 1–8, especially comparative forms in Grade 4 and symmetry-led construction bridges in Grade 5. Each includes materials, a timed sequence, a diagram, worked practice answers and teaching adaptations. The directly reviewed Jarman transcription adds line envelopes, congruence, equal-area construction, loci, triangle centres, measured views and pointed-solid volumes. See [the current source review](docs/JARMAN_GEOMETRY_FOLLOWUP_2026-10-19.md) for evidence and limitations. Rebuild with `node scripts/build-geometry-plans.cjs` and verify with `node scripts/audit-geometry-plans.cjs`.

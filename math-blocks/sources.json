@@ -1,0 +1,58 @@
+[
+  {
+    "grade": 1,
+    "file": "ClassONEfinalDIGITAL (1).md",
+    "pages": 182,
+    "sha256": "22e806aa50f8c786856c46f02a0169b9ae43d979a71213b532aeee4c35d712f8",
+    "scope": "lesson-sequence"
+  },
+  {
+    "grade": 2,
+    "file": "ClassTwoDigitalSquished (1).md",
+    "pages": 139,
+    "sha256": "4251ba1b09fe1229320f18bf421684aea6ed58099dd5c67c5a48217c62599f4e",
+    "scope": "lesson-sequence"
+  },
+  {
+    "grade": 3,
+    "file": "2023_Class_3_ebook (1).md",
+    "pages": 170,
+    "sha256": "ed69834ea5e039032e76e26c60d33c8df985ab488c2e725f5cad12cb11a8625f",
+    "scope": "lesson-sequence"
+  },
+  {
+    "grade": 4,
+    "file": "Grade_4_curriculum_FINAL (1).md",
+    "pages": 250,
+    "sha256": "3ab6588e6a6932cdd764d5afd29ffe3f69e850f7abba0ef064cd65c0c84005ed",
+    "scope": "lesson-sequence"
+  },
+  {
+    "grade": 5,
+    "file": "2022_Class_5_final_digital (1).md",
+    "pages": 237,
+    "sha256": "19c186e53b2ab5b2986081c1ad0810277ac8a4e9fdd08d3000e5ceb96155e610",
+    "scope": "lesson-sequence"
+  },
+  {
+    "grade": 6,
+    "file": "Class_6_PDF_cover.md",
+    "pages": 1,
+    "sha256": "0a0892dadba54a38f82e37a4562a46ba386a6507b74375a84a025bab2142ec54",
+    "scope": "cover-only"
+  },
+  {
+    "grade": 7,
+    "file": "2024_Final_Class_7 (1).md",
+    "pages": 79,
+    "sha256": "a38c2157a0d5f5770dea356b525e711802129d99b28c858a272ee97cb5ab4da8",
+    "scope": "geometry-plus-guidance"
+  },
+  {
+    "grade": 8,
+    "file": "Grade8plus (2).md",
+    "pages": 21,
+    "sha256": "a2311bd523b073fc80391f82ba83d8a3df3ea7ef14014737a88d435358a3034a",
+    "scope": "outline"
+  }
+]

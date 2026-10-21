@@ -92,6 +92,7 @@ const copy = {
     practiceTitle: "Escolha a atividade de hoje",
     geometryCourseLink: "Curso de Geometria · 52 aulas",
     geometryPlansLink: "Planos de Geometria · 1º ao 8º ano",
+    mathBlocksLink: "Blocos de Matemática · 1º ao 8º ano",
     gradeFilterLabel: "Escolha o ano",
     allGrades: "Todos os anos",
     pathWarmup: "Aquecer",
@@ -278,6 +279,7 @@ const copy = {
     practiceTitle: "Choose today's activity",
     geometryCourseLink: "Geometry Course · 52 lessons",
     geometryPlansLink: "Geometry Lesson Plans · Grades 1–8",
+    mathBlocksLink: "Math Blocks · Grades 1–8",
     gradeFilterLabel: "Choose a grade",
     allGrades: "All grades",
     pathWarmup: "Warm up",
@@ -729,6 +731,7 @@ function renderFacilitatorCard(lesson) {
       <p><strong>${t("guidePurpose")}:</strong> ${lesson.memoryRefresh?.idea || lesson.teacherAim}</p>
       <p><strong>${t("guideObserve")}:</strong> ${lesson.teacherObservation || support.check}</p>
       ${lesson.teachingRhythm ? `<p>${lesson.teachingRhythm}</p>` : ""}
+      ${Number.parseInt(lesson.grade.replace(/\D/g, ""), 10) <= 8 ? `<p><a href="math-blocks/index.html#grade-${Number.parseInt(lesson.grade.replace(/\D/g, ""), 10)}">${t("mathBlocksLink")}</a></p>` : ""}
       <p><strong>${t("guidePause")}:</strong> ${t("guidePauseCopy")}</p>
     </div>
   </details>`;

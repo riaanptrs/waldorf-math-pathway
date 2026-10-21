@@ -1,0 +1,1757 @@
+[
+  {
+    "id": "N1-01",
+    "title": {
+      "en": "Marks that tell a quantity",
+      "pt": "Marcas que contam uma quantidade"
+    },
+    "grade": 1,
+    "pages": "95–104",
+    "model": "roman",
+    "goal": {
+      "en": "Recognise I–X by connecting marks with real collections.",
+      "pt": "Reconhecer I–X ligando marcas a coleções reais."
+    },
+    "story": {
+      "en": "A trail keeper needs labels for baskets of one to ten stones. Find a different collection each day before making its label.",
+      "pt": "Quem cuida de uma trilha precisa de etiquetas para cestos com uma a dez pedras. Encontre uma coleção diferente por dia antes de fazer sua etiqueta."
+    },
+    "steps": [
+      {
+        "en": "Choose one number today. Clap or tap it, collect that many objects, and make a drawing.",
+        "pt": "Escolha um número hoje. Bata palmas ou toque essa quantidade, reúna objetos e desenhe."
+      },
+      {
+        "en": "Make the numeral with sticks or pencil: I, II, III, IV, V, VI, VII, VIII, IX, X. Notice the group of five in V.",
+        "pt": "Faça o numeral com palitos ou lápis: I, II, III, IV, V, VI, VII, VIII, IX, X. Observe o grupo de cinco em V."
+      },
+      {
+        "en": "Return tomorrow: hide the label, rebuild the collection, then make the label again. Spread the ten numbers over about two weeks.",
+        "pt": "Volte amanhã: esconda a etiqueta, reconstrua a coleção e faça a etiqueta novamente. Distribua os dez números por cerca de duas semanas."
+      }
+    ],
+    "explain": {
+      "en": "These marks name quantities; they are not pictures of objects. In the usual subtractive notation IV is one before five and IX is one before ten. IIII also appears on some clocks; we use IV consistently here.",
+      "pt": "As marcas nomeiam quantidades; não são desenhos de objetos. Na notação subtrativa usual, IV é um antes de cinco e IX um antes de dez. IIII também aparece em alguns relógios; aqui usamos IV."
+    },
+    "worked": {
+      "en": "VI names six: five and one. Build six stones and compare VI with IV, which names four.",
+      "pt": "VI nomeia seis: cinco e um. Monte seis pedras e compare VI com IV, que nomeia quatro."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "How many objects does VII name?",
+          "pt": "Quantos objetos VII nomeia?"
+        },
+        "answer": 7,
+        "solution": {
+          "en": "V + II represents 5 + 2 = 7.",
+          "pt": "V + II representa 5 + 2 = 7."
+        }
+      },
+      {
+        "q": {
+          "en": "How many does IV name?",
+          "pt": "Quantos IV nomeia?"
+        },
+        "answer": 4,
+        "solution": {
+          "en": "IV is one before V: 5 − 1 = 4.",
+          "pt": "IV é um antes de V: 5 − 1 = 4."
+        }
+      },
+      {
+        "q": {
+          "en": "Build IX. How many objects do you need?",
+          "pt": "Monte IX. De quantos objetos precisa?"
+        },
+        "answer": 9,
+        "solution": {
+          "en": "IX names nine, one before ten.",
+          "pt": "IX nomeia nove, um antes de dez."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the child to match two unfamiliar labels with collections and explain the difference between IV and VI. Accept spoken answers.",
+      "pt": "Peça que a criança relacione duas etiquetas a coleções e explique a diferença entre IV e VI. Aceite respostas orais."
+    },
+    "recall": {
+      "en": "What collection did we build yesterday? Rebuild it before looking at its numeral.",
+      "pt": "Que coleção montamos ontem? Reconstrua antes de olhar o numeral."
+    },
+    "links": [],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N1-02",
+    "title": {
+      "en": "A museum of one through ten",
+      "pt": "Um museu de um a dez"
+    },
+    "grade": 1,
+    "pages": "127–135",
+    "model": "counters",
+    "goal": {
+      "en": "Discover quantities in surroundings, pictures and arrangements before writing digits.",
+      "pt": "Descobrir quantidades no ambiente, em desenhos e arranjos antes de escrever algarismos."
+    },
+    "story": {
+      "en": "Our little museum has ten shelves. On each visit, find something that belongs on just one shelf. The five shelf connects to the existing Five lesson.",
+      "pt": "Nosso pequeno museu tem dez prateleiras. A cada visita, encontre algo para uma delas. A prateleira do cinco se conecta à aula existente sobre o cinco."
+    },
+    "steps": [
+      {
+        "en": "Explore one or two quantities per session: one whole stone, a pair, three corners, four corners; use the linked Five lesson for five.",
+        "pt": "Explore uma ou duas quantidades por sessão: uma pedra inteira, um par, três cantos, quatro cantos; use a aula ligada para o cinco."
+      },
+      {
+        "en": "Continue with six counters in two rows, seven marks for a week, eight corners on a stop-sign drawing, nine as three rows and ten as two groups of five.",
+        "pt": "Continue com seis fichas em duas fileiras, sete marcas de uma semana, oito cantos num desenho de placa de parada, nove em três fileiras e dez em dois grupos de cinco."
+      },
+      {
+        "en": "Change the arrangement, recount, draw it and then write the digit and the Roman label. Explain why the quantity did not change.",
+        "pt": "Mude o arranjo, reconte, desenhe e só depois escreva o algarismo e o numeral romano. Explique por que a quantidade não mudou."
+      }
+    ],
+    "explain": {
+      "en": "A number can have many useful arrangements and associations. A drawn square has four corners, but a collection of four need not be square. These are observations, not claims that every natural example has an exact geometric form.",
+      "pt": "Um número pode ter muitos arranjos e associações úteis. Um quadrado desenhado tem quatro cantos, mas uma coleção de quatro não precisa ser quadrada. São observações, não afirmações de que todo exemplo natural tem forma geométrica exata."
+    },
+    "worked": {
+      "en": "Nine counters can be a 3 by 3 array or a row of nine. Moving the counters does not add or remove any.",
+      "pt": "Nove fichas podem formar três fileiras de três ou uma fileira de nove. Mover as fichas não acrescenta nem retira nenhuma."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Three rows of three counters contain how many?",
+          "pt": "Três fileiras de três fichas contêm quantas?"
+        },
+        "answer": 9,
+        "solution": {
+          "en": "3 + 3 + 3 = 9. Count once to check.",
+          "pt": "3 + 3 + 3 = 9. Conte para conferir."
+        }
+      },
+      {
+        "q": {
+          "en": "Two groups of five contain how many?",
+          "pt": "Dois grupos de cinco contêm quantas?"
+        },
+        "answer": 10,
+        "solution": {
+          "en": "5 + 5 = 10.",
+          "pt": "5 + 5 = 10."
+        }
+      },
+      {
+        "q": {
+          "en": "Eight counters are rearranged without adding or removing. How many now?",
+          "pt": "Oito fichas mudam de posição sem acrescentar nem retirar. Quantas há agora?"
+        },
+        "answer": 8,
+        "solution": {
+          "en": "The arrangement changes; the collection still contains eight.",
+          "pt": "O arranjo muda; a coleção continua com oito."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Look for matching objects, spoken number, drawing and symbol. Return to a smaller collection if one-to-one counting is uncertain.",
+      "pt": "Observe a relação entre objetos, número falado, desenho e símbolo. Volte a uma coleção menor se a contagem um a um ainda for incerta."
+    },
+    "recall": {
+      "en": "Recall yesterday’s collection and make a new arrangement with the same number.",
+      "pt": "Retome a coleção de ontem e faça outro arranjo com a mesma quantidade."
+    },
+    "links": [
+      "g1-number-quality-five"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N2-01",
+    "title": {
+      "en": "A multiplication path around a circle",
+      "pt": "Um caminho de multiplicação na roda"
+    },
+    "grade": 2,
+    "pages": "94–96",
+    "model": "circle",
+    "goal": {
+      "en": "Connect spoken skip counting, a reference table and a visible units-digit pattern.",
+      "pt": "Ligar contagem ritmada, tabela de consulta e padrão visível dos algarismos das unidades."
+    },
+    "story": {
+      "en": "A gardener walks around ten numbered gates. Each equal jump leaves a pencil trail. First walk or tap the count; then discover the picture.",
+      "pt": "Uma pessoa caminha por dez portões numerados no jardim. Cada salto igual deixa um traço. Primeiro caminhe ou toque a contagem; depois descubra o desenho."
+    },
+    "steps": [
+      {
+        "en": "Say the twos table while tapping or moving comfortably. Make a ring with labels 0–9 on paper.",
+        "pt": "Diga a tabuada do dois enquanto toca ou se move confortavelmente. Faça no papel uma roda com rótulos de 0 a 9."
+      },
+      {
+        "en": "List 0, 2, 4, 6, 8, 10. Join the units digits 0→2→4→6→8→0. Ten lands at 0 because we record only its units digit.",
+        "pt": "Liste 0, 2, 4, 6, 8, 10. Una as unidades 0→2→4→6→8→0. Dez chega ao 0 porque registramos só a unidade."
+      },
+      {
+        "en": "Choose a second table. Predict before drawing, then make a reference card showing products as well as the picture.",
+        "pt": "Escolha outra tabuada. Preveja antes de desenhar e faça um cartão de consulta com os produtos e o desenho."
+      }
+    ],
+    "explain": {
+      "en": "The circle records units digits, not the full products. A returning path does not mean the product becomes zero. Reference cards support learning and may remain available during practice.",
+      "pt": "A roda registra as unidades, não os produtos completos. Voltar ao início não significa que o produto virou zero. Cartões de consulta ajudam a aprender e podem permanecer disponíveis na prática."
+    },
+    "worked": {
+      "en": "For the threes: 0, 3, 6, 9, 12, 15 give units digits 0, 3, 6, 9, 2, 5.",
+      "pt": "Para o três: 0, 3, 6, 9, 12, 15 dão unidades 0, 3, 6, 9, 2, 5."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "In the twos path, what units digit follows 8?",
+          "pt": "No caminho do dois, qual unidade vem após 8?"
+        },
+        "answer": 0,
+        "solution": {
+          "en": "The next product is 10, whose units digit is 0.",
+          "pt": "O próximo produto é 10, cuja unidade é 0."
+        }
+      },
+      {
+        "q": {
+          "en": "What full product gives the fifth jump in the threes table?",
+          "pt": "Qual produto completo corresponde ao quinto salto do três?"
+        },
+        "answer": 15,
+        "solution": {
+          "en": "5 × 3 = 15. The circle shows its units digit 5.",
+          "pt": "5 × 3 = 15. A roda mostra sua unidade 5."
+        }
+      },
+      {
+        "q": {
+          "en": "Recall equal groups: four groups of three contain how many?",
+          "pt": "Retome grupos iguais: quatro grupos de três contêm quantos?"
+        },
+        "answer": 12,
+        "solution": {
+          "en": "3 + 3 + 3 + 3 = 12.",
+          "pt": "3 + 3 + 3 + 3 = 12."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Have the learner explain one line using its full product. A pleasing pattern alone does not demonstrate table knowledge.",
+      "pt": "Peça que explique um traço usando o produto completo. Um padrão bonito sozinho não demonstra conhecimento da tabuada."
+    },
+    "recall": {
+      "en": "Tap yesterday’s table with the card turned over, then use it to check.",
+      "pt": "Toque a tabuada de ontem com o cartão virado e use-o para conferir."
+    },
+    "links": [
+      "g2-times-table-patterns"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N2-02",
+    "title": {
+      "en": "Find and test the nines pattern",
+      "pt": "Encontre e teste o padrão do nove"
+    },
+    "grade": 2,
+    "pages": "100–101",
+    "model": "nines",
+    "goal": {
+      "en": "Notice the nines pattern, test it and keep the value of the whole product distinct from its digit sum.",
+      "pt": "Observar o padrão do nove, testá-lo e distinguir o produto inteiro da soma dos algarismos."
+    },
+    "story": {
+      "en": "A workshop packs nine seeds in each bag. Its labels show a curious pattern. Can we predict a label and then check with real groups?",
+      "pt": "Uma oficina embala nove sementes por saco. Suas etiquetas mostram um padrão curioso. Podemos prever uma etiqueta e conferir com grupos reais?"
+    },
+    "steps": [
+      {
+        "en": "Make one to three groups of nine with counters or drawings. Say the products in rhythm.",
+        "pt": "Faça de um a três grupos de nove com fichas ou desenhos. Diga os produtos em ritmo."
+      },
+      {
+        "en": "Write products from 9 × 1 to 9 × 10. Add the digits of each positive product; repeat if the sum has two digits.",
+        "pt": "Escreva os produtos de 9 × 1 a 9 × 10. Some os algarismos de cada produto positivo; repita se a soma tiver dois algarismos."
+      },
+      {
+        "en": "Try 9 × 12 and explain why 108 is still 108 even though 1 + 0 + 8 = 9. Check multiplication using a known table.",
+        "pt": "Teste 9 × 12 e explique por que 108 continua sendo 108, embora 1 + 0 + 8 = 9. Confira a multiplicação com uma tabuada conhecida."
+      }
+    ],
+    "explain": {
+      "en": "Positive whole-number multiples of nine have repeated digit sum nine. Zero is an exception: 9 × 0 = 0. This pattern is a useful check, but a matching digit sum does not prove a multiplication answer is correct.",
+      "pt": "Múltiplos inteiros positivos de nove têm soma repetida dos algarismos igual a nove. Zero é exceção: 9 × 0 = 0. O padrão ajuda a conferir, mas uma soma de algarismos compatível não prova que o produto esteja correto."
+    },
+    "worked": {
+      "en": "9 × 14 = 126; 1 + 2 + 6 = 9. The product is 126, not 9.",
+      "pt": "9 × 14 = 126; 1 + 2 + 6 = 9. O produto é 126, não 9."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Find 9 × 8.",
+          "pt": "Calcule 9 × 8."
+        },
+        "answer": 72,
+        "solution": {
+          "en": "10 × 8 − 8 = 80 − 8 = 72.",
+          "pt": "10 × 8 − 8 = 80 − 8 = 72."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the digit sum of 72?",
+          "pt": "Qual é a soma dos algarismos de 72?"
+        },
+        "answer": 9,
+        "solution": {
+          "en": "7 + 2 = 9.",
+          "pt": "7 + 2 = 9."
+        }
+      },
+      {
+        "q": {
+          "en": "What is 9 × 0?",
+          "pt": "Quanto é 9 × 0?"
+        },
+        "answer": 0,
+        "solution": {
+          "en": "Zero groups contain zero objects; the positive-multiple rule excludes zero.",
+          "pt": "Zero grupos contêm zero objetos; a regra de múltiplos positivos exclui zero."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to distinguish the product, its digits and their sum. If needed return to nine counters.",
+      "pt": "Peça que distinga produto, algarismos e soma. Se necessário, volte às nove fichas."
+    },
+    "recall": {
+      "en": "Recall a nines fact by making ten equal groups and removing one group.",
+      "pt": "Retome um fato do nove fazendo dez grupos iguais e retirando um."
+    },
+    "links": [],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N2-03",
+    "title": {
+      "en": "Which collection is greater?",
+      "pt": "Qual coleção é maior?"
+    },
+    "grade": 2,
+    "pages": "101",
+    "model": "compare",
+    "goal": {
+      "en": "Use <, > and = to describe quantities and explain the comparison.",
+      "pt": "Usar <, > e = para descrever quantidades e explicar a comparação."
+    },
+    "story": {
+      "en": "Two friends gather seeds. One has more containers, but does that mean more seeds? Count the contents before deciding.",
+      "pt": "Duas pessoas recolhem sementes. Uma tem mais recipientes, mas isso significa mais sementes? Conte o conteúdo antes de decidir."
+    },
+    "steps": [
+      {
+        "en": "Make a collection of 16 and a collection of 19 using tens and ones. Pair objects to find what is left unmatched.",
+        "pt": "Faça uma coleção de 16 e outra de 19 usando dezenas e unidades. Forme pares para achar o que ficou sem par."
+      },
+      {
+        "en": "Place the open end of the symbol toward the greater quantity: 16 < 19. Read it aloud.",
+        "pt": "Coloque a abertura do símbolo para a quantidade maior: 16 < 19. Leia em voz alta."
+      },
+      {
+        "en": "Swap the collections and read 19 > 16. Make two differently arranged collections of 18 and write =.",
+        "pt": "Troque as coleções de lugar e leia 19 > 16. Faça duas coleções de 18 em arranjos diferentes e escreva =."
+      }
+    ],
+    "explain": {
+      "en": "More groups do not necessarily mean more objects. Compare the whole quantities. Equal collections can have different arrangements.",
+      "pt": "Mais grupos não significam necessariamente mais objetos. Compare as quantidades inteiras. Coleções iguais podem ter arranjos diferentes."
+    },
+    "worked": {
+      "en": "Two baskets of 8 contain 16; three baskets of 5 contain 15. So 16 > 15 even though two is less than three.",
+      "pt": "Dois cestos de 8 contêm 16; três de 5 contêm 15. Assim, 16 > 15, embora dois seja menor que três."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "How many more seeds are in 19 than in 16?",
+          "pt": "Quantas sementes 19 tem a mais que 16?"
+        },
+        "answer": 3,
+        "solution": {
+          "en": "Pair sixteen; three remain unmatched.",
+          "pt": "Forme dezesseis pares; sobram três."
+        }
+      },
+      {
+        "q": {
+          "en": "Two baskets of 8 hold how many?",
+          "pt": "Dois cestos de 8 contêm quantas?"
+        },
+        "answer": 16,
+        "solution": {
+          "en": "8 + 8 = 16.",
+          "pt": "8 + 8 = 16."
+        }
+      },
+      {
+        "q": {
+          "en": "Three baskets of 5 hold how many?",
+          "pt": "Três cestos de 5 contêm quantas?"
+        },
+        "answer": 15,
+        "solution": {
+          "en": "5 + 5 + 5 = 15.",
+          "pt": "5 + 5 + 5 = 15."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to write and say both directions of one comparison. Check quantity reasoning before symbol memory.",
+      "pt": "Peça que escreva e fale uma comparação nas duas direções. Confira o raciocínio sobre quantidades antes da memória dos símbolos."
+    },
+    "recall": {
+      "en": "Recall equal groups from the previous table lesson.",
+      "pt": "Retome os grupos iguais da aula de tabuada."
+    },
+    "links": [],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N3-01",
+    "title": {
+      "en": "A useful day on the clock",
+      "pt": "Um dia útil no relógio"
+    },
+    "grade": 3,
+    "pages": "25–27",
+    "model": "clock",
+    "goal": {
+      "en": "Read a practical timetable and find elapsed minutes by crossing an hour.",
+      "pt": "Ler uma rotina prática e descobrir minutos decorridos passando pela hora cheia."
+    },
+    "story": {
+      "en": "At a small garden workshop, watering starts at 9:40 and ends at 10:15. Draw the two clocks before deciding how long it took.",
+      "pt": "Numa pequena oficina de jardinagem, a rega começa às 9h40 e termina às 10h15. Desenhe os dois relógios antes de decidir a duração."
+    },
+    "steps": [
+      {
+        "en": "Review the two clock hands using the linked Grade 2 lessons. Make a timetable from familiar events.",
+        "pt": "Revise os dois ponteiros usando as aulas ligadas do 2º ano. Faça uma rotina de acontecimentos conhecidos."
+      },
+      {
+        "en": "Jump from 9:40 to 10:00, then from 10:00 to 10:15. Show the jumps on a time line or movable paper clock.",
+        "pt": "Salte de 9h40 a 10h e depois de 10h a 10h15. Mostre os saltos numa linha do tempo ou relógio de papel."
+      },
+      {
+        "en": "Invent a second same-morning task. Ask a partner to read both clocks and find its duration.",
+        "pt": "Invente outra tarefa na mesma manhã. Peça que alguém leia os dois relógios e encontre a duração."
+      }
+    ],
+    "explain": {
+      "en": "Minutes regroup in sixties, not hundreds. From :40 to the next hour is 20 minutes. An elapsed-time answer measures an interval, while a clock reading names a moment.",
+      "pt": "Minutos se agrupam em sessentas, não em centenas. De :40 à próxima hora são 20 minutos. A duração mede um intervalo; o horário nomeia um instante."
+    },
+    "worked": {
+      "en": "9:40→10:00 is 20 min; 10:00→10:15 is 15 min. Total 35 min.",
+      "pt": "9h40→10h são 20 min; 10h→10h15 são 15 min. Total: 35 min."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "From 8:45 to 9:10, how many minutes?",
+          "pt": "De 8h45 a 9h10, quantos minutos?"
+        },
+        "answer": 25,
+        "solution": {
+          "en": "15 minutes to 9:00 and 10 more: 25.",
+          "pt": "15 minutos até 9h e mais 10: 25."
+        }
+      },
+      {
+        "q": {
+          "en": "From 11:20 to 11:50, how many minutes?",
+          "pt": "De 11h20 a 11h50, quantos minutos?"
+        },
+        "answer": 30,
+        "solution": {
+          "en": "50 − 20 = 30 minutes.",
+          "pt": "50 − 20 = 30 minutos."
+        }
+      },
+      {
+        "q": {
+          "en": "How many minutes make one hour?",
+          "pt": "Quantos minutos formam uma hora?"
+        },
+        "answer": 60,
+        "solution": {
+          "en": "One complete minute-hand turn covers 60 minutes.",
+          "pt": "Uma volta completa do ponteiro dos minutos cobre 60 minutos."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to explain each jump and tell whether an answer is a time or a duration.",
+      "pt": "Peça que explique cada salto e diga se a resposta é um horário ou uma duração."
+    },
+    "recall": {
+      "en": "Show yesterday’s start time on a clock before looking at the timetable.",
+      "pt": "Mostre no relógio o início de ontem antes de olhar a rotina."
+    },
+    "links": [
+      "g2-clock-whole-hours",
+      "g2-clock-five-minute-steps"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N3-02",
+    "title": {
+      "en": "Measure a recipe before making more",
+      "pt": "Meça uma receita antes de fazer mais"
+    },
+    "grade": 3,
+    "pages": "91–95",
+    "model": "recipe",
+    "goal": {
+      "en": "Experience repeated measures and scaling through a small practical task.",
+      "pt": "Vivenciar medidas repetidas e ampliação numa tarefa prática pequena."
+    },
+    "story": {
+      "en": "A pretend bakery uses three small scoops for one tray. Two trays are needed. Plan the scoops before filling anything.",
+      "pt": "Uma padaria de brincadeira usa três medidas pequenas por bandeja. São necessárias duas bandejas. Planeje as medidas antes de encher algo."
+    },
+    "steps": [
+      {
+        "en": "Use a scoop and dry counters or safe containers. Agree that a full cup holds four of these equal scoops. Do not assume this is the size of every real cup.",
+        "pt": "Use uma medida e fichas secas ou recipientes seguros. Combine que um copo cheio comporta quatro dessas medidas iguais. Não suponha que todo copo real tenha esse tamanho."
+      },
+      {
+        "en": "Model one tray using three scoops. Make a second equal set; count the total, then group scoops into full cups.",
+        "pt": "Represente uma bandeja com três medidas. Faça outro conjunto igual, conte o total e agrupe em copos cheios."
+      },
+      {
+        "en": "Record a picture recipe for two trays. If baking for real, use a trusted recipe and let an adult handle heat. A dry model completes the math task.",
+        "pt": "Registre uma receita desenhada para duas bandejas. Se cozinhar de verdade, use uma receita conhecida e deixe o calor com um adulto. O modelo seco completa a tarefa matemática."
+      }
+    ],
+    "explain": {
+      "en": "Doubling a recipe doubles every ingredient, not just the first one. Here a scoop is a quarter of the agreed cup because four equal scoops fill it. Measuring volume does not tell you mass without knowing the ingredient.",
+      "pt": "Dobrar uma receita dobra cada ingrediente, não apenas o primeiro. Aqui a medida é um quarto do copo combinado porque quatro medidas iguais o enchem. Medir volume não informa a massa sem conhecer o ingrediente."
+    },
+    "worked": {
+      "en": "Two trays use 3 + 3 = 6 scoops: one full cup of four scoops and two scoops left.",
+      "pt": "Duas bandejas usam 3 + 3 = 6 medidas: um copo de quatro medidas e duas medidas restantes."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Three scoops per tray: how many for two trays?",
+          "pt": "Três medidas por bandeja: quantas para duas?"
+        },
+        "answer": 6,
+        "solution": {
+          "en": "3 × 2 = 6 scoops.",
+          "pt": "3 × 2 = 6 medidas."
+        }
+      },
+      {
+        "q": {
+          "en": "Four equal scoops fill one cup. How many fill three cups?",
+          "pt": "Quatro medidas iguais enchem um copo. Quantas enchem três?"
+        },
+        "answer": 12,
+        "solution": {
+          "en": "4 + 4 + 4 = 12 scoops.",
+          "pt": "4 + 4 + 4 = 12 medidas."
+        }
+      },
+      {
+        "q": {
+          "en": "Six scoops grouped into one full cup leave how many scoops?",
+          "pt": "Seis medidas agrupadas num copo cheio deixam quantas medidas?"
+        },
+        "answer": 2,
+        "solution": {
+          "en": "6 − 4 = 2 scoops remain.",
+          "pt": "6 − 4 = 2 medidas restam."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Check that the child repeats equal measures and scales each item. No formal fraction-operation rule is needed.",
+      "pt": "Confira se a criança repete medidas iguais e amplia cada item. Não é necessária regra formal de operações com frações."
+    },
+    "recall": {
+      "en": "Recall how many of our small measures fill the chosen whole.",
+      "pt": "Retome quantas medidas pequenas enchem o todo escolhido."
+    },
+    "links": [
+      "g3-capacity-kitchen",
+      "g3-mass-market-scale"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N4-01",
+    "title": {
+      "en": "Multiply one place at a time",
+      "pt": "Multiplique uma posição de cada vez"
+    },
+    "grade": 4,
+    "pages": "65–67",
+    "model": {
+      "kind": "multiply",
+      "a": 36,
+      "b": 4
+    },
+    "goal": {
+      "en": "Connect partial products, exchanges and written long multiplication.",
+      "pt": "Ligar produtos parciais, trocas e multiplicação escrita."
+    },
+    "story": {
+      "en": "A print shop packs 4 bundles of 36 cards. Draw a rectangle or bundles before choosing a written method.",
+      "pt": "Uma gráfica embala 4 pacotes de 36 cartões. Desenhe um retângulo ou pacotes antes de escolher um método escrito."
+    },
+    "steps": [
+      {
+        "en": "Review tens, ones and exchanging ten ones. Estimate the total before calculating.",
+        "pt": "Revise dezenas, unidades e a troca de dez unidades. Estime o total antes de calcular."
+      },
+      {
+        "en": "Split the multiplier into tens and ones; split the other factor if helpful. Draw each partial rectangle and label its value.",
+        "pt": "Separe o multiplicador em dezenas e unidades; separe o outro fator se ajudar. Desenhe cada retângulo parcial e identifique seu valor."
+      },
+      {
+        "en": "Write the partial products in columns, preserving zeros as place holders. Add, then check with the estimate and an inverse division. Record your own method card.",
+        "pt": "Escreva os produtos parciais em colunas, preservando zeros nas posições. Some e confira com a estimativa e uma divisão inversa. Registre seu próprio cartão de método."
+      }
+    ],
+    "explain": {
+      "en": "A row for tens counts tens: multiplying by 20 gives twice the product by 10. A zero marks an empty place; removing it changes the number. Exchanges carry value to the next place, not an unexplained extra digit.",
+      "pt": "Uma linha das dezenas conta dezenas: multiplicar por 20 dá o dobro do produto por 10. Zero marca uma posição vazia; retirá-lo muda o número. Trocas levam valor à próxima posição, não um algarismo extra sem explicação."
+    },
+    "worked": {
+      "en": "30 × 4 + 6 × 4 = 120 + 24 = 144",
+      "pt": "30 × 4 + 6 × 4 = 120 + 24 = 144"
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Calculate 24 × 3.",
+          "pt": "Calcule 24 × 3."
+        },
+        "answer": 72,
+        "solution": {
+          "en": "24 × 3 = 72. Check: 72 ÷ 3 = 24.",
+          "pt": "24 × 3 = 72. Confira: 72 ÷ 3 = 24."
+        }
+      },
+      {
+        "q": {
+          "en": "Calculate 47 × 2.",
+          "pt": "Calcule 47 × 2."
+        },
+        "answer": 94,
+        "solution": {
+          "en": "47 × 2 = 94. Check: 94 ÷ 2 = 47.",
+          "pt": "47 × 2 = 94. Confira: 94 ÷ 2 = 47."
+        }
+      },
+      {
+        "q": {
+          "en": "Calculate 58 × 4.",
+          "pt": "Calcule 58 × 4."
+        },
+        "answer": 232,
+        "solution": {
+          "en": "58 × 4 = 232. Check: 232 ÷ 4 = 58.",
+          "pt": "58 × 4 = 232. Confira: 232 ÷ 4 = 58."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to name the value of each row and justify any exchange. Offer one or two problems at a time and revisit on a second day.",
+      "pt": "Peça que nomeie o valor de cada linha e justifique cada troca. Ofereça um ou dois problemas de cada vez e retome em outro dia."
+    },
+    "recall": {
+      "en": "Rebuild yesterday’s example with bundles before consulting the method card.",
+      "pt": "Reconstrua o exemplo de ontem com feixes antes de consultar o cartão."
+    },
+    "links": [
+      "g3-addition-regrouping"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N4-02",
+    "title": {
+      "en": "Every row has a place value",
+      "pt": "Cada linha tem valor posicional"
+    },
+    "grade": 4,
+    "pages": "65–67",
+    "model": {
+      "kind": "multiply",
+      "a": 34,
+      "b": 23
+    },
+    "goal": {
+      "en": "Connect partial products, exchanges and written long multiplication.",
+      "pt": "Ligar produtos parciais, trocas e multiplicação escrita."
+    },
+    "story": {
+      "en": "A print shop packs 23 bundles of 34 cards. Draw a rectangle or bundles before choosing a written method.",
+      "pt": "Uma gráfica embala 23 pacotes de 34 cartões. Desenhe um retângulo ou pacotes antes de escolher um método escrito."
+    },
+    "steps": [
+      {
+        "en": "Review tens, ones and exchanging ten ones. Estimate the total before calculating.",
+        "pt": "Revise dezenas, unidades e a troca de dez unidades. Estime o total antes de calcular."
+      },
+      {
+        "en": "Split the multiplier into tens and ones; split the other factor if helpful. Draw each partial rectangle and label its value.",
+        "pt": "Separe o multiplicador em dezenas e unidades; separe o outro fator se ajudar. Desenhe cada retângulo parcial e identifique seu valor."
+      },
+      {
+        "en": "Write the partial products in columns, preserving zeros as place holders. Add, then check with the estimate and an inverse division. Record your own method card.",
+        "pt": "Escreva os produtos parciais em colunas, preservando zeros nas posições. Some e confira com a estimativa e uma divisão inversa. Registre seu próprio cartão de método."
+      }
+    ],
+    "explain": {
+      "en": "A row for tens counts tens: multiplying by 20 gives twice the product by 10. A zero marks an empty place; removing it changes the number. Exchanges carry value to the next place, not an unexplained extra digit.",
+      "pt": "Uma linha das dezenas conta dezenas: multiplicar por 20 dá o dobro do produto por 10. Zero marca uma posição vazia; retirá-lo muda o número. Trocas levam valor à próxima posição, não um algarismo extra sem explicação."
+    },
+    "worked": {
+      "en": "34 × 3 + 34 × 20 = 102 + 680 = 782",
+      "pt": "34 × 3 + 34 × 20 = 102 + 680 = 782"
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Calculate 26 × 14.",
+          "pt": "Calcule 26 × 14."
+        },
+        "answer": 364,
+        "solution": {
+          "en": "26 × 14 = 364. Check: 364 ÷ 14 = 26.",
+          "pt": "26 × 14 = 364. Confira: 364 ÷ 14 = 26."
+        }
+      },
+      {
+        "q": {
+          "en": "Calculate 43 × 21.",
+          "pt": "Calcule 43 × 21."
+        },
+        "answer": 903,
+        "solution": {
+          "en": "43 × 21 = 903. Check: 903 ÷ 21 = 43.",
+          "pt": "43 × 21 = 903. Confira: 903 ÷ 21 = 43."
+        }
+      },
+      {
+        "q": {
+          "en": "Calculate 32 × 12.",
+          "pt": "Calcule 32 × 12."
+        },
+        "answer": 384,
+        "solution": {
+          "en": "32 × 12 = 384. Check: 384 ÷ 12 = 32.",
+          "pt": "32 × 12 = 384. Confira: 384 ÷ 12 = 32."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to name the value of each row and justify any exchange. Offer one or two problems at a time and revisit on a second day.",
+      "pt": "Peça que nomeie o valor de cada linha e justifique cada troca. Ofereça um ou dois problemas de cada vez e retome em outro dia."
+    },
+    "recall": {
+      "en": "Rebuild yesterday’s example with bundles before consulting the method card.",
+      "pt": "Reconstrua o exemplo de ontem com feixes antes de consultar o cartão."
+    },
+    "links": [
+      "N4-01"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N4-03",
+    "title": {
+      "en": "Keep the empty places visible",
+      "pt": "Mantenha visíveis as posições vazias"
+    },
+    "grade": 4,
+    "pages": "67",
+    "model": {
+      "kind": "multiply",
+      "a": 206,
+      "b": 14
+    },
+    "goal": {
+      "en": "Connect partial products, exchanges and written long multiplication.",
+      "pt": "Ligar produtos parciais, trocas e multiplicação escrita."
+    },
+    "story": {
+      "en": "A print shop packs 14 bundles of 206 cards. Draw a rectangle or bundles before choosing a written method.",
+      "pt": "Uma gráfica embala 14 pacotes de 206 cartões. Desenhe um retângulo ou pacotes antes de escolher um método escrito."
+    },
+    "steps": [
+      {
+        "en": "Review tens, ones and exchanging ten ones. Estimate the total before calculating.",
+        "pt": "Revise dezenas, unidades e a troca de dez unidades. Estime o total antes de calcular."
+      },
+      {
+        "en": "Split the multiplier into tens and ones; split the other factor if helpful. Draw each partial rectangle and label its value.",
+        "pt": "Separe o multiplicador em dezenas e unidades; separe o outro fator se ajudar. Desenhe cada retângulo parcial e identifique seu valor."
+      },
+      {
+        "en": "Write the partial products in columns, preserving zeros as place holders. Add, then check with the estimate and an inverse division. Record your own method card.",
+        "pt": "Escreva os produtos parciais em colunas, preservando zeros nas posições. Some e confira com a estimativa e uma divisão inversa. Registre seu próprio cartão de método."
+      }
+    ],
+    "explain": {
+      "en": "A row for tens counts tens: multiplying by 20 gives twice the product by 10. A zero marks an empty place; removing it changes the number. Exchanges carry value to the next place, not an unexplained extra digit.",
+      "pt": "Uma linha das dezenas conta dezenas: multiplicar por 20 dá o dobro do produto por 10. Zero marca uma posição vazia; retirá-lo muda o número. Trocas levam valor à próxima posição, não um algarismo extra sem explicação."
+    },
+    "worked": {
+      "en": "206 × 4 + 206 × 10 = 824 + 2060 = 2884",
+      "pt": "206 × 4 + 206 × 10 = 824 + 2060 = 2884"
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Calculate 105 × 12.",
+          "pt": "Calcule 105 × 12."
+        },
+        "answer": 1260,
+        "solution": {
+          "en": "105 × 12 = 1260. Check: 1260 ÷ 12 = 105.",
+          "pt": "105 × 12 = 1260. Confira: 1260 ÷ 12 = 105."
+        }
+      },
+      {
+        "q": {
+          "en": "Calculate 302 × 13.",
+          "pt": "Calcule 302 × 13."
+        },
+        "answer": 3926,
+        "solution": {
+          "en": "302 × 13 = 3926. Check: 3926 ÷ 13 = 302.",
+          "pt": "302 × 13 = 3926. Confira: 3926 ÷ 13 = 302."
+        }
+      },
+      {
+        "q": {
+          "en": "Calculate 240 × 15.",
+          "pt": "Calcule 240 × 15."
+        },
+        "answer": 3600,
+        "solution": {
+          "en": "240 × 15 = 3600. Check: 3600 ÷ 15 = 240.",
+          "pt": "240 × 15 = 3600. Confira: 3600 ÷ 15 = 240."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to name the value of each row and justify any exchange. Offer one or two problems at a time and revisit on a second day.",
+      "pt": "Peça que nomeie o valor de cada linha e justifique cada troca. Ofereça um ou dois problemas de cada vez e retome em outro dia."
+    },
+    "recall": {
+      "en": "Rebuild yesterday’s example with bundles before consulting the method card.",
+      "pt": "Reconstrua o exemplo de ontem com feixes antes de consultar o cartão."
+    },
+    "links": [
+      "N4-02"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N4-04",
+    "title": {
+      "en": "A fair share of uneven collections",
+      "pt": "Uma partilha justa de coleções desiguais"
+    },
+    "grade": 4,
+    "pages": "69–70",
+    "model": "mean",
+    "goal": {
+      "en": "Find a mean as equal redistribution before using sum divided by count.",
+      "pt": "Encontrar a média por redistribuição igual antes de usar soma dividida pela quantidade."
+    },
+    "story": {
+      "en": "Three worktables hold 4, 7 and 10 counters. Without adding or losing counters, make the tables equally supplied.",
+      "pt": "Três mesas têm 4, 7 e 10 fichas. Sem acrescentar nem perder fichas, deixe as mesas com a mesma quantidade."
+    },
+    "steps": [
+      {
+        "en": "Build the three collections. Move counters from a larger pile to a smaller one.",
+        "pt": "Monte as três coleções. Mova fichas de uma pilha maior para uma menor."
+      },
+      {
+        "en": "Count the unchanged total and the number of groups. Compare fair sharing with adding then dividing.",
+        "pt": "Conte o total que se conservou e o número de grupos. Compare a partilha justa com somar e depois dividir."
+      },
+      {
+        "en": "Write a method card with your own example, then test it on four new piles. Distinguish the mean from the largest value.",
+        "pt": "Escreva um cartão de método com um exemplo seu e teste em quatro novas pilhas. Distinga a média do maior valor."
+      }
+    ],
+    "explain": {
+      "en": "The mean is the common value each group would have if the total were shared equally. It need not be one of the original values. Averages can hide differences, so keep the original collections visible.",
+      "pt": "A média é o valor que cada grupo teria se o total fosse repartido igualmente. Ela não precisa ser um dos valores originais. Médias podem esconder diferenças; mantenha as coleções originais visíveis."
+    },
+    "worked": {
+      "en": "4 + 7 + 10 = 21 counters; 21 ÷ 3 = 7 at each table.",
+      "pt": "4 + 7 + 10 = 21 fichas; 21 ÷ 3 = 7 em cada mesa."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Find the mean of 3, 6 and 9.",
+          "pt": "Encontre a média de 3, 6 e 9."
+        },
+        "answer": 6,
+        "solution": {
+          "en": "18 ÷ 3 = 6.",
+          "pt": "18 ÷ 3 = 6."
+        }
+      },
+      {
+        "q": {
+          "en": "Find the mean of 5, 5, 9 and 9.",
+          "pt": "Encontre a média de 5, 5, 9 e 9."
+        },
+        "answer": 7,
+        "solution": {
+          "en": "28 ÷ 4 = 7.",
+          "pt": "28 ÷ 4 = 7."
+        }
+      },
+      {
+        "q": {
+          "en": "Three piles with mean 8 contain how many in total?",
+          "pt": "Três pilhas com média 8 contêm quantas fichas no total?"
+        },
+        "answer": 24,
+        "solution": {
+          "en": "3 × 8 = 24.",
+          "pt": "3 × 8 = 24."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask what is conserved while redistributing. A later Grade 8 lesson compares mean with median and outliers; do not duplicate that lesson here.",
+      "pt": "Pergunte o que se conserva na redistribuição. Uma aula posterior do 8º ano compara média, mediana e valores extremos; não a repita aqui."
+    },
+    "recall": {
+      "en": "Recall yesterday’s division by rebuilding the whole from equal groups.",
+      "pt": "Retome a divisão de ontem reconstruindo o todo a partir de grupos iguais."
+    },
+    "links": [
+      "g4-division-share-big-whole"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N4-05",
+    "title": {
+      "en": "Different factor trees, the same building blocks",
+      "pt": "Árvores diferentes, os mesmos fatores básicos"
+    },
+    "grade": 4,
+    "pages": "70",
+    "model": "factor",
+    "goal": {
+      "en": "Break a whole number into prime factors and verify by rebuilding it.",
+      "pt": "Decompor um inteiro em fatores primos e verificar reconstruindo-o."
+    },
+    "story": {
+      "en": "A pack of 36 counters can become 4 packs of 9 or 6 packs of 6. Keep unpacking composite groups until only prime building blocks remain.",
+      "pt": "Um pacote de 36 fichas pode virar 4 pacotes de 9 ou 6 de 6. Continue decompondo grupos compostos até restarem apenas fatores primos."
+    },
+    "steps": [
+      {
+        "en": "Recall factors using rectangle arrays. Choose a factor pair of 36 and draw two branches.",
+        "pt": "Retome fatores com retângulos de fichas. Escolha um par de fatores de 36 e desenhe dois ramos."
+      },
+      {
+        "en": "Split every composite factor again. Stop at primes, which have exactly two positive factors. One is not prime.",
+        "pt": "Decomponha novamente cada fator composto. Pare nos primos, que têm exatamente dois divisores positivos. Um não é primo."
+      },
+      {
+        "en": "Try a different first pair. Sort the final primes, multiply them to check and enter your own example in the method book.",
+        "pt": "Tente outro par inicial. Ordene os primos finais, multiplique para conferir e registre um exemplo seu no caderno de métodos."
+      }
+    ],
+    "explain": {
+      "en": "Factor branches multiply to rebuild their parent; they are not added. Different valid trees give the same prime factors with the same repetitions. This extends the existing factor-rectangle lesson rather than replacing it.",
+      "pt": "Os ramos se multiplicam para reconstruir o número de origem; não são somados. Árvores válidas diferentes dão os mesmos fatores primos com as mesmas repetições. Isso amplia a aula existente de retângulos de fatores."
+    },
+    "worked": {
+      "en": "36 = 4 × 9 = 2 × 2 × 3 × 3, also 36 = 6 × 6 = (2 × 3) × (2 × 3).",
+      "pt": "36 = 4 × 9 = 2 × 2 × 3 × 3; também 36 = 6 × 6 = (2 × 3) × (2 × 3)."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "What is the largest prime factor of 30?",
+          "pt": "Qual é o maior fator primo de 30?"
+        },
+        "answer": 5,
+        "solution": {
+          "en": "30 = 2 × 3 × 5.",
+          "pt": "30 = 2 × 3 × 5."
+        }
+      },
+      {
+        "q": {
+          "en": "How many factors of 2 occur in the prime factorization of 24?",
+          "pt": "Quantos fatores 2 aparecem na fatoração prima de 24?"
+        },
+        "answer": 3,
+        "solution": {
+          "en": "24 = 2 × 2 × 2 × 3: three factors of 2.",
+          "pt": "24 = 2 × 2 × 2 × 3: três fatores 2."
+        }
+      },
+      {
+        "q": {
+          "en": "Rebuild 2 × 2 × 3 × 3.",
+          "pt": "Reconstrua 2 × 2 × 3 × 3."
+        },
+        "answer": 36,
+        "solution": {
+          "en": "4 × 9 = 36.",
+          "pt": "4 × 9 = 36."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask why 1 and a composite factor are not final prime leaves. Check both the tree and the rebuilt product.",
+      "pt": "Pergunte por que 1 e um fator composto não são folhas primas finais. Confira a árvore e o produto reconstruído."
+    },
+    "recall": {
+      "en": "Recall a factor rectangle and say both factors before drawing a tree.",
+      "pt": "Retome um retângulo e diga seus dois fatores antes de desenhar a árvore."
+    },
+    "links": [
+      "g4-factors-rectangles",
+      "g3-prime-arrangements"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N5-01",
+    "title": {
+      "en": "Twelve marks from six equal steps",
+      "pt": "Doze marcas de seis passos iguais"
+    },
+    "grade": 5,
+    "pages": "129–135",
+    "model": "rosette",
+    "goal": {
+      "en": "Extend a sixfold construction to twelve equal sectors through angle bisection.",
+      "pt": "Ampliar uma construção de seis partes para doze setores iguais por bissecção de ângulos."
+    },
+    "story": {
+      "en": "A window design needs twelve evenly spaced points. Measuring twelve separate angles could accumulate errors. Can six known sectors give a more reasoned start?",
+      "pt": "Um desenho de janela precisa de doze pontos igualmente espaçados. Medir doze ângulos separados pode acumular erros. Seis setores conhecidos podem dar um início justificado?"
+    },
+    "steps": [
+      {
+        "en": "Complete the linked six-step circle construction first. Keep all compass marks. Identify the six 60° central angles.",
+        "pt": "Complete primeiro a construção ligada de seis passos na circunferência. Preserve as marcas e identifique os seis ângulos centrais de 60°."
+      },
+      {
+        "en": "Bisect each central angle: draw one equal-radius arc across both rays, then intersect equal-radius arcs from its two crossings; join the centre to that intersection and extend to the circle.",
+        "pt": "Divida cada ângulo central: trace um arco que cruze as duas semirretas; das duas interseções trace arcos de raios iguais, una o centro ao cruzamento e prolongue até a circunferência."
+      },
+      {
+        "en": "Join neighbouring points into a dodecagon. Design an original coloured pattern, then write why the twelve sectors are equal.",
+        "pt": "Una os pontos vizinhos num dodecágono. Faça um padrão de cores seu e escreva por que os doze setores são iguais."
+      }
+    ],
+    "explain": {
+      "en": "Six equal sectors fill 360°. Bisecting every 60° sector gives twelve 30° sectors. Equal central angles in one circle cut equal chords. This is an optional Grade 5 instrument bridge; the existing Grade 6 entry remains available.",
+      "pt": "Seis setores iguais completam 360°. Dividir cada setor de 60° ao meio dá doze setores de 30°. Ângulos centrais iguais numa circunferência determinam cordas iguais. É uma ponte opcional de instrumentos no 5º ano; a entrada existente do 6º continua disponível."
+    },
+    "worked": {
+      "en": "360 ÷ 6 = 60°; 60 ÷ 2 = 30°; 12 × 30° = 360°.",
+      "pt": "360 ÷ 6 = 60°; 60 ÷ 2 = 30°; 12 × 30° = 360°."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "How many degrees in one of twelve equal sectors?",
+          "pt": "Quantos graus tem um de doze setores iguais?"
+        },
+        "answer": 30,
+        "solution": {
+          "en": "360 ÷ 12 = 30°.",
+          "pt": "360 ÷ 12 = 30°."
+        }
+      },
+      {
+        "q": {
+          "en": "Bisect 60°. What is each half in degrees?",
+          "pt": "Divida 60° ao meio. Quantos graus tem cada parte?"
+        },
+        "answer": 30,
+        "solution": {
+          "en": "60 ÷ 2 = 30°.",
+          "pt": "60 ÷ 2 = 30°."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the angle sum at the centre of the full design?",
+          "pt": "Qual é a soma dos ângulos no centro do desenho completo?"
+        },
+        "answer": 360,
+        "solution": {
+          "en": "One complete turn is 360°.",
+          "pt": "Uma volta completa tem 360°."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Review compass handling, equal sectors and reasoning separately from colouring. An adult should supervise sharp tools; a printed diagram and verbal explanation are alternatives.",
+      "pt": "Avalie uso do compasso, setores iguais e raciocínio separadamente da pintura. Um adulto deve supervisionar pontas; desenho impresso e explicação oral são alternativas."
+    },
+    "recall": {
+      "en": "Rebuild six equal radius steps before adding any new marks.",
+      "pt": "Reconstrua seis passos iguais ao raio antes de acrescentar marcas."
+    },
+    "links": [
+      "g5-compass-radius-steps",
+      "G6-08"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N5-02",
+    "title": {
+      "en": "Two rulers for the same length",
+      "pt": "Duas réguas para o mesmo comprimento"
+    },
+    "grade": 5,
+    "pages": "156–158",
+    "model": "ruler",
+    "goal": {
+      "en": "Convert between customary and metric lengths using a stated exact relationship.",
+      "pt": "Converter comprimentos entre sistemas usando uma relação exata declarada."
+    },
+    "story": {
+      "en": "A craft instruction gives inches, but our ruler uses centimetres. We need the same physical length, not just a different number.",
+      "pt": "Uma instrução de artesanato usa polegadas, mas nossa régua usa centímetros. Precisamos do mesmo comprimento físico, não apenas de outro número."
+    },
+    "steps": [
+      {
+        "en": "Recall metre-to-centimetre conversion. Put two labelled paper scales alongside the same strip.",
+        "pt": "Retome a conversão entre metro e centímetro. Coloque duas escalas de papel identificadas junto à mesma tira."
+      },
+      {
+        "en": "Use the defined relation 1 inch = 2.54 cm. Multiply inches by 2.54; divide centimetres by 2.54 to reverse. Estimate first.",
+        "pt": "Use a relação definida 1 polegada = 2,54 cm. Multiplique polegadas por 2,54; divida centímetros por 2,54 para voltar. Estime antes."
+      },
+      {
+        "en": "Compare 4 inches with 10 cm and decide whether they are exactly equal. Make a conversion method card with units at each step.",
+        "pt": "Compare 4 polegadas com 10 cm e decida se são exatamente iguais. Faça um cartão de conversão com as unidades em cada etapa."
+      }
+    ],
+    "explain": {
+      "en": "The units change while the length stays fixed. A rounded conversion can be useful, but mark it as approximate. Cups and gallons vary by convention; this lesson uses only the stated inch definition.",
+      "pt": "As unidades mudam enquanto o comprimento fica fixo. Uma conversão arredondada pode ser útil, mas deve ser marcada como aproximada. Copos e galões variam conforme a convenção; esta aula usa apenas a definição declarada de polegada."
+    },
+    "worked": {
+      "en": "4 in × 2.54 cm/in = 10.16 cm, so four inches is slightly more than ten centimetres.",
+      "pt": "4 pol × 2,54 cm/pol = 10,16 cm; quatro polegadas são um pouco mais que dez centímetros."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "Convert 2 inches to centimetres.",
+          "pt": "Converta 2 polegadas em centímetros."
+        },
+        "answer": 5.08,
+        "solution": {
+          "en": "2 × 2.54 = 5.08 cm.",
+          "pt": "2 × 2,54 = 5,08 cm."
+        }
+      },
+      {
+        "q": {
+          "en": "Convert 12.7 cm to inches.",
+          "pt": "Converta 12,7 cm em polegadas."
+        },
+        "answer": 5,
+        "solution": {
+          "en": "12.7 ÷ 2.54 = 5 inches.",
+          "pt": "12,7 ÷ 2,54 = 5 polegadas."
+        }
+      },
+      {
+        "q": {
+          "en": "How many centimetres are in 0.5 m?",
+          "pt": "Quantos centímetros há em 0,5 m?"
+        },
+        "answer": 50,
+        "solution": {
+          "en": "0.5 × 100 = 50 cm.",
+          "pt": "0,5 × 100 = 50 cm."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask which quantity stays unchanged and why the numeric reading differs. Check unit labels and the inverse calculation.",
+      "pt": "Pergunte qual grandeza se conserva e por que o número muda. Confira unidades e cálculo inverso."
+    },
+    "recall": {
+      "en": "Recall a metric conversion and estimate whether an inch is longer or shorter than a centimetre.",
+      "pt": "Retome uma conversão métrica e estime se uma polegada é maior ou menor que um centímetro."
+    },
+    "links": [
+      "g5-metric-centimeters",
+      "g5-decimal-price-length"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N7-01",
+    "title": {
+      "en": "Sixteen points, three star paths",
+      "pt": "Dezesseis pontos, três caminhos de estrelas"
+    },
+    "grade": 7,
+    "pages": "67–72",
+    "model": "star",
+    "goal": {
+      "en": "Connect repeated angle bisection, construction and a predictable chord pattern.",
+      "pt": "Ligar bissecções repetidas de ângulos, construção e um padrão previsível de cordas."
+    },
+    "story": {
+      "en": "A designer labels sixteen points around a circular window. Joining every fifth point makes a path. Will it visit every point before returning?",
+      "pt": "Uma pessoa desenha uma janela circular com dezesseis pontos. Ligar de cinco em cinco faz um caminho. Ele visita todos os pontos antes de voltar?"
+    },
+    "steps": [
+      {
+        "en": "Construct perpendicular diameters, then bisect each 90° angle to 45° and bisect again to 22.5°. Label 0–15. A prepared circle is available in the model.",
+        "pt": "Construa diâmetros perpendiculares, divida cada ângulo de 90° para 45° e depois para 22,5°. Numere 0–15. O modelo fornece uma circunferência preparada."
+      },
+      {
+        "en": "Predict a step-5 path; list each visited label before drawing. Repeat for steps 6 and 7 using a second colour.",
+        "pt": "Preveja um caminho de passo 5; liste os rótulos visitados antes de desenhar. Repita para passos 6 e 7 com outra cor."
+      },
+      {
+        "en": "Compare paths, keep construction marks in one copy and make a finished art version in another. Describe a real natural specimen without assuming it is mathematically perfect.",
+        "pt": "Compare caminhos, preserve marcas numa cópia e faça outra versão artística. Descreva um exemplar natural sem supor perfeição matemática."
+      }
+    ],
+    "explain": {
+      "en": "A full turn divided into sixteen equal sectors gives 22.5°. Step 6 visits only eight points before returning to zero, so start at an unvisited point to complete the second circuit. Steps 5 and 7 each visit all sixteen. Screen previews illustrate the rule; paper construction is separate evidence.",
+      "pt": "Uma volta dividida em dezesseis setores iguais dá 22,5°. O passo 6 visita só oito pontos antes de voltar ao zero; comece num ponto não visitado para completar o segundo circuito. Passos 5 e 7 visitam os dezesseis. A tela ilustra a regra; a construção no papel é outra evidência."
+    },
+    "worked": {
+      "en": "For step 6: 0→6→12→2→8→14→4→10→0. The odd labels form the other circuit.",
+      "pt": "Para passo 6: 0→6→12→2→8→14→4→10→0. Os rótulos ímpares formam o outro circuito."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "What is each sector angle in degrees?",
+          "pt": "Qual é o ângulo de cada setor em graus?"
+        },
+        "answer": 22.5,
+        "solution": {
+          "en": "360 ÷ 16 = 22.5°.",
+          "pt": "360 ÷ 16 = 22,5°."
+        }
+      },
+      {
+        "q": {
+          "en": "How many points does the step-6 circuit from zero visit?",
+          "pt": "Quantos pontos o circuito de passo 6 a partir do zero visita?"
+        },
+        "answer": 8,
+        "solution": {
+          "en": "It returns after eight distinct points.",
+          "pt": "Ele retorna após oito pontos distintos."
+        }
+      },
+      {
+        "q": {
+          "en": "Bisect a right angle twice. What angle remains?",
+          "pt": "Divida um ângulo reto ao meio duas vezes. Qual é o resultado?"
+        },
+        "answer": 22.5,
+        "solution": {
+          "en": "90 ÷ 2 ÷ 2 = 22.5°.",
+          "pt": "90 ÷ 2 ÷ 2 = 22,5°."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask for a prediction, a point list and an angle reason. Do not grade only the finished star. The egg-like variation in the source needs its missing diagram; no reconstructed source drawing is claimed.",
+      "pt": "Peça previsão, lista de pontos e justificativa do ângulo. Não avalie apenas a estrela pronta. A variação oval da fonte depende do diagrama ausente; não afirmamos reconstruí-lo."
+    },
+    "recall": {
+      "en": "Construct or explain a 45° angle before beginning the sixteen-point design.",
+      "pt": "Construa ou explique um ângulo de 45° antes de começar o desenho de dezesseis pontos."
+    },
+    "links": [
+      "G6-08",
+      "P5-02"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N8-01",
+    "title": {
+      "en": "One collection, two sorting rules",
+      "pt": "Uma coleção, duas regras de classificação"
+    },
+    "grade": 8,
+    "pages": "17–18",
+    "model": "sets",
+    "goal": {
+      "en": "Describe an intersection and union using explicit rules and count overlaps only once.",
+      "pt": "Descrever interseção e união por regras explícitas e contar sobreposições uma vez."
+    },
+    "story": {
+      "en": "A design studio labels cards 1 through 12. One circle holds even numbers, another holds multiples of three. Some cards belong to both.",
+      "pt": "Um estúdio numera cartões de 1 a 12. Uma roda recebe pares, outra múltiplos de três. Alguns cartões pertencem às duas."
+    },
+    "steps": [
+      {
+        "en": "Write the universe 1–12. Test every card against both rules and sort into both, one only or neither.",
+        "pt": "Escreva o universo de 1 a 12. Teste cada cartão nas duas regras e classifique em ambos, só um ou nenhum."
+      },
+      {
+        "en": "Name the overlap as the intersection. Name everything in either circle as the union. Explain why shared cards are not counted twice.",
+        "pt": "Nomeie a sobreposição como interseção e tudo que está em ao menos uma roda como união. Explique por que cartões comuns não são contados duas vezes."
+      },
+      {
+        "en": "Invent a new pair of rules and test every member of the chosen universe. Record the rules before drawing circles.",
+        "pt": "Invente outro par de regras e teste cada elemento do universo escolhido. Registre as regras antes de desenhar rodas."
+      }
+    ],
+    "explain": {
+      "en": "For A = {2,4,6,8,10,12} and B = {3,6,9,12}, the intersection is {6,12}. The union contains 6 + 4 − 2 = 8 members. Neither is relative to the chosen universe; here it is {1,5,7,11}.",
+      "pt": "Para A = {2,4,6,8,10,12} e B = {3,6,9,12}, a interseção é {6,12}. A união contém 6 + 4 − 2 = 8 elementos. Nenhum depende do universo escolhido; aqui é {1,5,7,11}."
+    },
+    "worked": {
+      "en": "Counting A and B separately counts 6 and 12 twice. Subtract the overlap once to get eight in the union.",
+      "pt": "Contar A e B separadamente conta 6 e 12 duas vezes. Subtraia a sobreposição uma vez para obter oito na união."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "How many cards belong to both rules?",
+          "pt": "Quantos cartões pertencem às duas regras?"
+        },
+        "answer": 2,
+        "solution": {
+          "en": "6 and 12 satisfy both.",
+          "pt": "6 e 12 satisfazem ambas."
+        }
+      },
+      {
+        "q": {
+          "en": "How many belong to at least one rule?",
+          "pt": "Quantos pertencem a ao menos uma regra?"
+        },
+        "answer": 8,
+        "solution": {
+          "en": "6 + 4 − 2 = 8.",
+          "pt": "6 + 4 − 2 = 8."
+        }
+      },
+      {
+        "q": {
+          "en": "How many belong to neither rule in 1–12?",
+          "pt": "Quantos não pertencem a nenhuma regra de 1 a 12?"
+        },
+        "answer": 4,
+        "solution": {
+          "en": "12 − 8 = 4.",
+          "pt": "12 − 8 = 4."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask for a reason for every overlap card and one excluded card. This is an original full lesson expanding the brief set-theory topic in the guide.",
+      "pt": "Peça justificativa para cada cartão na interseção e um excluído. É uma aula original que amplia o breve tópico de conjuntos do guia."
+    },
+    "recall": {
+      "en": "Recall even numbers and multiples before drawing the sorting diagram.",
+      "pt": "Retome pares e múltiplos antes de desenhar o diagrama."
+    },
+    "links": [
+      "g7-divisibility-check"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N8-02",
+    "title": {
+      "en": "Trade five for one in the next place",
+      "pt": "Troque cinco por um na próxima posição"
+    },
+    "grade": 8,
+    "pages": "15,17–18",
+    "model": "base",
+    "goal": {
+      "en": "Build base-five place value by exchange and compare it with decimal and binary.",
+      "pt": "Construir valor posicional na base cinco por trocas e comparar com decimal e binário."
+    },
+    "story": {
+      "en": "A packer makes a larger bundle whenever five smaller units collect. The labels look familiar, but 10 in this system does not mean ten objects.",
+      "pt": "Uma pessoa faz um pacote maior sempre que reúne cinco unidades menores. Os rótulos parecem conhecidos, mas 10 nesse sistema não significa dez objetos."
+    },
+    "steps": [
+      {
+        "en": "Build 17 counters. Exchange every five ones for a five; every five fives would make a twenty-five.",
+        "pt": "Monte 17 fichas. Troque cada cinco unidades por um cinco; cada cinco cincos formariam um vinte e cinco."
+      },
+      {
+        "en": "Label columns 25, 5, 1. Record the digits and attach the base label: 32₅ = 17₁₀. Only digits 0–4 belong in base five.",
+        "pt": "Identifique colunas 25, 5, 1. Registre algarismos e base: 32₅ = 17₁₀. Só os algarismos de 0 a 4 pertencem à base cinco."
+      },
+      {
+        "en": "Add one to 44₅ using bundles. Explain each exchange and compare with adding one to 99 in decimal.",
+        "pt": "Some um a 44₅ usando feixes. Explique cada troca e compare com somar um a 99 na base decimal."
+      }
+    ],
+    "explain": {
+      "en": "In base b, moving one place left multiplies the unit by b. The number of objects is independent of its numeral. In base five, 44₅ is 4 × 5 + 4 = 24 and the next number is 100₅ = 25.",
+      "pt": "Na base b, mover uma posição à esquerda multiplica a unidade por b. A quantidade de objetos independe do numeral. Na base cinco, 44₅ é 4 × 5 + 4 = 24 e o próximo número é 100₅ = 25."
+    },
+    "worked": {
+      "en": "32₅ = 3 fives + 2 ones = 15 + 2 = 17₁₀.",
+      "pt": "32₅ = 3 cincos + 2 unidades = 15 + 2 = 17₁₀."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "What decimal number is 24₅?",
+          "pt": "Qual número decimal é 24₅?"
+        },
+        "answer": 14,
+        "solution": {
+          "en": "2 × 5 + 4 = 14.",
+          "pt": "2 × 5 + 4 = 14."
+        }
+      },
+      {
+        "q": {
+          "en": "How many objects does 100₅ name?",
+          "pt": "Quantos objetos 100₅ nomeia?"
+        },
+        "answer": 25,
+        "solution": {
+          "en": "One group of 25, no fives and no ones.",
+          "pt": "Um grupo de 25, nenhum cinco e nenhuma unidade."
+        }
+      },
+      {
+        "q": {
+          "en": "After 44₅ + 1₅, what decimal quantity do you have?",
+          "pt": "Após 44₅ + 1₅, qual quantidade decimal você tem?"
+        },
+        "answer": 25,
+        "solution": {
+          "en": "24 + 1 = 25; the base-five result is 100₅.",
+          "pt": "24 + 1 = 25; na base cinco o resultado é 100₅."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to unpack a numeral and explain why digit 5 cannot be used in base five. This extends the existing binary lesson to another base.",
+      "pt": "Peça que decomponha um numeral e explique por que o algarismo 5 não é usado na base cinco. Isso amplia a aula binária existente para outra base."
+    },
+    "recall": {
+      "en": "Recall binary columns and explain why ten objects can have different written names.",
+      "pt": "Retome as colunas binárias e explique por que dez objetos podem ter nomes escritos diferentes."
+    },
+    "links": [
+      "g8-binary-place-value"
+    ],
+    "basis": "source-informed"
+  },
+  {
+    "id": "N8-03",
+    "title": {
+      "en": "A fair spinner and a recorded experiment",
+      "pt": "Uma roleta justa e um experimento registrado"
+    },
+    "grade": 8,
+    "pages": "18 (standards column)",
+    "model": "probability",
+    "goal": {
+      "en": "Distinguish predicted probability from observed frequency using a stated fair model.",
+      "pt": "Distinguir probabilidade prevista de frequência observada usando um modelo justo declarado."
+    },
+    "story": {
+      "en": "A game spinner has four equal sectors, one marked blue. Before trying the game, decide what the model predicts and what a short experiment can actually tell us.",
+      "pt": "Uma roleta tem quatro setores iguais, um azul. Antes de jogar, decida o que o modelo prevê e o que um experimento curto pode mostrar."
+    },
+    "steps": [
+      {
+        "en": "Draw four equal sectors or make four same-size cards, one blue. State the fairness assumption before predicting.",
+        "pt": "Desenhe quatro setores iguais ou faça quatro cartões iguais, um azul. Declare a hipótese de justiça antes de prever."
+      },
+      {
+        "en": "Predict the blue share. Draw one card, replace it, mix and repeat 20 times. Record every result; a supplied sample is an alternative.",
+        "pt": "Preveja a parte azul. Tire um cartão, recoloque, misture e repita 20 vezes. Registre todos os resultados; uma amostra fornecida é alternativa."
+      },
+      {
+        "en": "Compare the model with the observed blue count. Pool two trials and compare again without claiming the counts must match the prediction.",
+        "pt": "Compare o modelo com a contagem azul observada. Junte dois experimentos e compare novamente sem afirmar que as contagens devem coincidir com a previsão."
+      }
+    ],
+    "explain": {
+      "en": "Under the fair model, P(blue) = 1/4 = 25%. A trial can differ. In the supplied sample of 20 draws, 7 blue results give 35% observed frequency. Neither forces the next draw to be a particular colour.",
+      "pt": "No modelo justo, P(azul) = 1/4 = 25%. Um experimento pode diferir. Na amostra fornecida de 20 retiradas, 7 azuis dão frequência observada de 35%. Nenhum obriga a próxima retirada a ter certa cor."
+    },
+    "worked": {
+      "en": "7 blue results in 20 draws give 7 ÷ 20 × 100 = 35%, compared with a model value of 25%.",
+      "pt": "7 azuis em 20 retiradas dão 7 ÷ 20 × 100 = 35%, comparados com 25% do modelo."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "What is the model probability as a percentage?",
+          "pt": "Qual é a probabilidade do modelo em porcentagem?"
+        },
+        "answer": 25,
+        "solution": {
+          "en": "1 ÷ 4 × 100 = 25%.",
+          "pt": "1 ÷ 4 × 100 = 25%."
+        }
+      },
+      {
+        "q": {
+          "en": "Six blue results in twenty draws give what observed percentage?",
+          "pt": "Seis azuis em vinte retiradas dão qual porcentagem observada?"
+        },
+        "answer": 30,
+        "solution": {
+          "en": "6 ÷ 20 × 100 = 30%.",
+          "pt": "6 ÷ 20 × 100 = 30%."
+        }
+      },
+      {
+        "q": {
+          "en": "Two experiments give 7 and 5 blue results, each from 20 draws. How many blue results altogether?",
+          "pt": "Dois experimentos dão 7 e 5 azuis, cada um de 20 retiradas. Quantos azuis ao todo?"
+        },
+        "answer": 12,
+        "solution": {
+          "en": "7 + 5 = 12 out of 40 draws.",
+          "pt": "7 + 5 = 12 em 40 retiradas."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask for the fairness assumption and a comparison of prediction with evidence. This optional lesson expands the guide’s standards column; it is not a detailed Nielsen teaching prescription.",
+      "pt": "Peça a hipótese de justiça e uma comparação entre previsão e evidência. Esta aula opcional amplia a coluna de padrões do guia; não é uma prescrição detalhada de Nielsen."
+    },
+    "recall": {
+      "en": "Recall the meanings of one quarter and percent before running the experiment.",
+      "pt": "Retome os significados de um quarto e porcentagem antes do experimento."
+    },
+    "links": [
+      "g6-percent-hundred-grid",
+      "g8-data-typical-value"
+    ],
+    "basis": "standards-expansion"
+  },
+  {
+    "id": "N5-03",
+    "grade": 5,
+    "pages": "121–123",
+    "basis": "source-informed",
+    "model": "tangent",
+    "title": {
+      "en": "A line meeting a circle",
+      "pt": "Uma reta encontra a circunferência"
+    },
+    "goal": {
+      "en": "Distinguish a centre, radius, diameter, concentric circles, secant and tangent on a labelled drawing.",
+      "pt": "Distinguir centro, raio, diâmetro, circunferências concêntricas, secante e tangente num desenho identificado."
+    },
+    "story": {
+      "en": "A circular garden has a straight path nearby. Move a paper strip across a drawn circle and notice how many boundary points it meets.",
+      "pt": "Um jardim circular tem uma trilha reta por perto. Mova uma tira de papel sobre uma circunferência desenhada e observe quantos pontos da borda ela encontra."
+    },
+    "steps": [
+      {
+        "en": "Draw two circles with the same centre and different radii. Label the centre O, one radius and a diameter; explain what concentric means.",
+        "pt": "Desenhe duas circunferências com mesmo centro e raios diferentes. Identifique centro O, raio e diâmetro; explique concêntricas."
+      },
+      {
+        "en": "Move a straight strip from outside the larger circle inward. Look for no crossing, one contact and two crossings. Sketch the three cases.",
+        "pt": "Mova uma tira reta de fora para dentro da circunferência maior. Procure nenhum encontro, um contato e dois cruzamentos. Desenhe os três casos."
+      },
+      {
+        "en": "At the one-contact position, join O to the contact point. Fold or check a right angle between this radius and the tangent. Label your own drawing instead of copying a term list.",
+        "pt": "Na posição de um contato, una O ao ponto de contato. Dobre ou confira um ângulo reto entre raio e tangente. Identifique seu desenho em vez de copiar lista de termos."
+      }
+    ],
+    "explain": {
+      "en": "A secant line meets a circle in two points; a tangent line in the plane meets it at one point and is perpendicular to the radius there. Concentric circles share a centre, not necessarily a radius. A diameter is twice the radius. A thick pencil mark only approximates exact contact.",
+      "pt": "Uma reta secante encontra a circunferência em dois pontos; uma tangente no plano encontra em um e é perpendicular ao raio nesse ponto. Circunferências concêntricas compartilham centro, não necessariamente raio. O diâmetro é o dobro do raio. Uma marca grossa só aproxima o contato exato."
+    },
+    "worked": {
+      "en": "For radius 4 cm, the diameter is 8 cm. A tangent at the top of the circle is perpendicular to the radius drawn up from O.",
+      "pt": "Para raio 4 cm, o diâmetro é 8 cm. Uma tangente no topo é perpendicular ao raio que sobe de O."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "How many points does a secant meet?",
+          "pt": "Em quantos pontos uma secante encontra a circunferência?"
+        },
+        "answer": 2,
+        "solution": {
+          "en": "Two boundary crossings define a secant.",
+          "pt": "Dois cruzamentos com a borda definem uma secante."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the angle in degrees between a tangent and its contact radius?",
+          "pt": "Qual é o ângulo em graus entre tangente e raio do contato?"
+        },
+        "answer": 90,
+        "solution": {
+          "en": "They are perpendicular: 90°.",
+          "pt": "São perpendiculares: 90°."
+        }
+      },
+      {
+        "q": {
+          "en": "Radius 3.5 cm: what is the diameter in centimetres?",
+          "pt": "Raio 3,5 cm: qual é o diâmetro em centímetros?"
+        },
+        "answer": 7,
+        "solution": {
+          "en": "2 × 3.5 = 7 cm.",
+          "pt": "2 × 3,5 = 7 cm."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to label their own drawing, explain the number of intersections and identify the radius associated with a tangent.",
+      "pt": "Peça que identifique seu desenho, explique a quantidade de encontros e localize o raio associado à tangente."
+    },
+    "recall": {
+      "en": "Recall what stays unchanged when drawing a circle with a fixed string.",
+      "pt": "Retome o que fica constante ao desenhar uma circunferência com barbante fixo."
+    },
+    "links": [
+      "G5-04",
+      "g5-freehand-circle-diameter"
+    ]
+  },
+  {
+    "id": "N8-04",
+    "grade": 8,
+    "pages": "18 (standards column)",
+    "basis": "standards-expansion",
+    "model": "sphere",
+    "title": {
+      "en": "A sphere, its radius and its volume",
+      "pt": "Uma esfera, seu raio e seu volume"
+    },
+    "goal": {
+      "en": "Apply the sphere-volume formula with units and predict how changing radius affects volume.",
+      "pt": "Aplicar a fórmula do volume da esfera com unidades e prever o efeito de mudar o raio."
+    },
+    "story": {
+      "en": "A workshop compares solid spherical models with radii of 2 cm and 4 cm. Does doubling the radius require twice as much material? Predict before calculating.",
+      "pt": "Uma oficina compara modelos esféricos sólidos de raios 2 cm e 4 cm. Dobrar o raio exige o dobro do material? Preveja antes de calcular."
+    },
+    "steps": [
+      {
+        "en": "Identify the centre and a radius on a ball or the supplied schematic. Compare radius with diameter. A flat circle is not the solid sphere.",
+        "pt": "Identifique centro e raio numa bola ou no esquema. Compare raio e diâmetro. Uma circunferência plana não é a esfera sólida."
+      },
+      {
+        "en": "Use the supplied formula V = (4/3)πr³. Label radius in centimetres and volume in cubic centimetres. Estimate and substitute the radius carefully.",
+        "pt": "Use a fórmula fornecida V = (4/3)πr³. Identifique raio em centímetros e volume em centímetros cúbicos. Estime e substitua o raio com cuidado."
+      },
+      {
+        "en": "Calculate with two radii, then compare the ratio. Use a cube model to explain why doubling all lengths multiplies volume by eight. Record the formula and a worked example in your methods book.",
+        "pt": "Calcule com dois raios e compare a razão. Use modelo de cubo para explicar por que dobrar todos os comprimentos multiplica o volume por oito. Registre fórmula e exemplo no caderno de métodos."
+      }
+    ],
+    "explain": {
+      "en": "The formula is supplied here, not proved by the drawing. Cubing a length produces cubic units; scaling radius by k scales volume by k³. Keep π for an exact expression or state the approximation you use. This is sphere volume, not surface area.",
+      "pt": "A fórmula é fornecida aqui, não demonstrada pelo desenho. Elevar comprimento ao cubo produz unidades cúbicas; multiplicar o raio por k multiplica volume por k³. Preserve π para expressão exata ou declare a aproximação usada. É volume, não área da superfície."
+    },
+    "worked": {
+      "en": "Radius 3 cm gives V = (4/3)π × 27 = 36π cm³. With π ≈ 3.14 this is 113.04 cm³. Radius 6 cm gives eight times this volume.",
+      "pt": "Raio de 3 cm dá V = (4/3)π × 27 = 36π cm³. Com π ≈ 3,14, são 113,04 cm³. Raio 6 cm dá volume oito vezes maior."
+    },
+    "practice": [
+      {
+        "q": {
+          "en": "For radius 3 cm and π ≈ 3.14, what is volume in cm³?",
+          "pt": "Para raio 3 cm e π ≈ 3,14, qual é o volume em cm³?"
+        },
+        "answer": 113.04,
+        "solution": {
+          "en": "(4/3) × 3.14 × 27 = 113.04 cm³.",
+          "pt": "(4/3) × 3,14 × 27 = 113,04 cm³."
+        }
+      },
+      {
+        "q": {
+          "en": "If radius doubles, by what factor does volume grow?",
+          "pt": "Se o raio dobra, por qual fator o volume cresce?"
+        },
+        "answer": 8,
+        "solution": {
+          "en": "2³ = 8; the same (4/3)π factor occurs in both volumes.",
+          "pt": "2³ = 8; o mesmo fator (4/3)π aparece nos dois volumes."
+        }
+      },
+      {
+        "q": {
+          "en": "A sphere has diameter 10 cm. What is its radius in cm?",
+          "pt": "Uma esfera tem diâmetro 10 cm. Qual é o raio em cm?"
+        },
+        "answer": 5,
+        "solution": {
+          "en": "Radius is half the diameter: 10 ÷ 2 = 5 cm.",
+          "pt": "Raio é metade do diâmetro: 10 ÷ 2 = 5 cm."
+        }
+      }
+    ],
+    "observe": {
+      "en": "Ask the learner to distinguish a radius from a diameter, justify cubic units and label a numerical approximation. This expands the standards appendix, not a detailed source lesson.",
+      "pt": "Peça que distinga raio e diâmetro, justifique unidades cúbicas e identifique aproximação numérica. É ampliação do apêndice de padrões, não de uma aula detalhada da fonte."
+    },
+    "recall": {
+      "en": "Recall volume scaling for a cube before considering a sphere.",
+      "pt": "Retome a escala de volume de um cubo antes de considerar a esfera."
+    },
+    "links": [
+      "G8-08",
+      "g8-cylinder-volume"
+    ]
+  }
+]

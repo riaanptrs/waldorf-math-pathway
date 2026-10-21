@@ -1,6 +1,12 @@
 # Current Status
 
-Last updated: 2026-10-20.
+Last updated: 2026-10-21.
+
+## Nielsen math-block pathway
+
+- Added a source-based Grade 1–8 map with 18 block routes and 20 original bilingual supplement lessons (60 practice questions), linking existing topics instead of duplicating the 227-lesson catalogue. Entry: `math-blocks/index.html`.
+- Grade 6 upload is only a cover; its interim route is explicitly unverified. Grade 7 provides geometry and practice guidance, and Grade 8 is an outline with broader standards connections. Two Grade 8 lessons are labelled optional standards expansions.
+- New blocks include source rationale, online adaptation, ordered links, practical work, next-day recall, interactive models and adult observation. The source review, gap decisions and verification are in `docs/NIELSEN_MATH_BLOCK_MAP_2026-10-21.md`.
 
 ## Geometry book diagrams
 

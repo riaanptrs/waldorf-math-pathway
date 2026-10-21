@@ -1,0 +1,1336 @@
+[
+  {
+    "id": "G1-B4",
+    "grade": 1,
+    "title": {
+      "en": "Block 4 · First number marks",
+      "pt": "Bloco 4 · Primeiras marcas numéricas"
+    },
+    "when": {
+      "en": "About two weeks",
+      "pt": "Cerca de duas semanas"
+    },
+    "pages": "17–20,95–104",
+    "why": {
+      "en": "Connect a lived quantity with a meaningful sign before treating the sign as an abstract answer. The source begins with Roman numerals.",
+      "pt": "Ligar uma quantidade vivida a um símbolo com sentido antes de tratá-lo como resposta abstrata. A fonte começa com numerais romanos."
+    },
+    "how": {
+      "en": "Offer one number riddle or observation at a time, then draw, model or paint and write the mark. Keep movement and counting in the day.",
+      "pt": "Oferecer um enigma ou observação numérica de cada vez, depois desenhar, modelar ou pintar e escrever a marca. Manter movimento e contagem no dia."
+    },
+    "online": {
+      "en": "An adult reads the original trail prompt; the child builds a real collection before opening the screen model. Spread the mark sequence across days.",
+      "pt": "Um adulto lê o convite original da trilha; a criança monta uma coleção real antes de abrir o modelo na tela. Distribua a sequência por vários dias."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "I–X through collections and marks",
+          "pt": "I–X por coleções e marcas"
+        },
+        "routes": [
+          "N1-01"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Count and move; revisit tens and ones orally",
+          "pt": "Conte e mova; retome dezenas e unidades oralmente"
+        },
+        "routes": [
+          "g1-number-garden-twenty",
+          "g1-rhythm-counting-twos"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G1-B7",
+    "grade": 1,
+    "title": {
+      "en": "Block 7 · Number qualities and four processes",
+      "pt": "Bloco 7 · Qualidades dos números e quatro operações"
+    },
+    "when": {
+      "en": "Four weeks plus one review week",
+      "pt": "Quatro semanas e uma de revisão"
+    },
+    "pages": "18,21,127–142",
+    "why": {
+      "en": "Begin from a whole and allow several valid decompositions. Nielsen presents the four operations as connected relationships rather than four isolated courses.",
+      "pt": "Começar pelo todo e permitir várias decomposições válidas. Nielsen apresenta as quatro operações como relações conectadas, não cursos isolados."
+    },
+    "how": {
+      "en": "Review Roman marks; explore 1–10 through observations and shapes. Introduce all four operations in a shared story, then focus on each and return to whole-to-parts problems.",
+      "pt": "Revisar numerais romanos; explorar 1–10 em observações e formas. Introduzir as quatro operações numa história comum, focar cada uma e voltar a problemas do todo às partes."
+    },
+    "online": {
+      "en": "Use number portraits and the existing twelve-counter lesson as the shared opening. Tell an original gathering story, move counters, then choose one existing operation lesson. Oral responses and drawings can replace typing.",
+      "pt": "Use retratos numéricos e a aula existente de doze fichas como abertura comum. Conte uma história original de coleta, mova fichas e escolha uma aula existente de operação. Respostas orais e desenhos podem substituir digitação."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Number qualities, drawing and symbols",
+          "pt": "Qualidades, desenho e símbolos"
+        },
+        "routes": [
+          "N1-02",
+          "g1-number-quality-five"
+        ]
+      },
+      {
+        "topic": {
+          "en": "One whole, four connected processes",
+          "pt": "Um todo, quatro operações conectadas"
+        },
+        "routes": [
+          "g1-four-paths-twelve"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Explore each relationship; do not demand a page of sums",
+          "pt": "Explore cada relação; não exija uma página de contas"
+        },
+        "routes": [
+          "g1-addition-gathering",
+          "g1-subtraction-reveals-part",
+          "g1-multiplication-equal-groups",
+          "g1-division-fair-sharing"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Open whole-to-parts review",
+          "pt": "Revisão aberta do todo às partes"
+        },
+        "routes": [
+          "g1-whole-parts-eight",
+          "g1-jarman-hidden-whole"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G2-B5",
+    "grade": 2,
+    "title": {
+      "en": "Block 5 · The passage of time",
+      "pt": "Bloco 5 · A passagem do tempo"
+    },
+    "when": {
+      "en": "Four weeks",
+      "pt": "Quatro semanas"
+    },
+    "pages": "21,23,72–78",
+    "why": {
+      "en": "Meet time as a cycle and a lived duration before reading clock symbols. Calendar, seasons and family events give the units meaning.",
+      "pt": "Encontrar tempo como ciclo e duração vivida antes de ler símbolos do relógio. Calendário, estações e acontecimentos familiares dão sentido às unidades."
+    },
+    "how": {
+      "en": "Work through months, weekdays, seasons and review before making an analog clock. Use daily events, practise minutes and discuss before/after noon as needed.",
+      "pt": "Trabalhar meses, dias da semana, estações e revisão antes de fazer um relógio analógico. Usar acontecimentos diários, praticar minutos e discutir antes/depois do meio-dia conforme necessário."
+    },
+    "online": {
+      "en": "Create one family calendar drawing and a movable paper clock. Reuse the existing time lessons in source order. Observe local weather and seasons; do not import Northern Hemisphere dates unchanged.",
+      "pt": "Crie um calendário familiar desenhado e um relógio de papel móvel. Reutilize as aulas de tempo na ordem da fonte. Observe clima e estações locais; não importe datas do hemisfério norte sem adaptação."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Months and the year",
+          "pt": "Meses e ano"
+        },
+        "routes": [
+          "g2-calendar-months"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Weekdays and daily rhythm",
+          "pt": "Dias da semana e ritmo diário"
+        },
+        "routes": [
+          "g2-week-passage"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Local seasons and changing observations",
+          "pt": "Estações locais e observações das mudanças"
+        },
+        "routes": [
+          "g2-seasons-cycle"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Clock hands, hours and minutes",
+          "pt": "Ponteiros, horas e minutos"
+        },
+        "routes": [
+          "g2-clock-whole-hours",
+          "g2-clock-five-minute-steps"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G2-B8",
+    "grade": 2,
+    "title": {
+      "en": "Block 8 · Tables, patterns and money",
+      "pt": "Bloco 8 · Tabuadas, padrões e dinheiro"
+    },
+    "when": {
+      "en": "Two weeks of number work, one of money, one of review",
+      "pt": "Duas semanas de números, uma de dinheiro e uma de revisão"
+    },
+    "pages": "21,24,94–103",
+    "why": {
+      "en": "Move from rhythmic facts to reference tools and visible patterns. Keep the whole-to-parts view when comparing numbers and dividing a currency unit.",
+      "pt": "Passar de fatos ritmados a ferramentas de consulta e padrões visíveis. Manter o todo às partes ao comparar números e dividir uma unidade monetária."
+    },
+    "how": {
+      "en": "Recall all four processes; make table wheels and a table chart; explore number components, parity, nines and comparison. Handle money, then observe what needs another visit.",
+      "pt": "Retomar as quatro operações; fazer rodas e tabela de tabuadas; explorar componentes, paridade, noves e comparação. Manipular dinheiro e depois observar o que precisa de retomada."
+    },
+    "online": {
+      "en": "Alternate oral movement, an original circle drawing and the existing array lesson. Keep reference cards available. Localise money to reais and count value rather than number of coins. Assessment informs a next step, without ranking or speed requirements.",
+      "pt": "Alterne movimento oral, desenho original da roda e a aula existente de arranjos. Mantenha cartões de consulta. Adapte para reais e conte valor, não quantidade de moedas. A avaliação informa o próximo passo, sem classificação nem exigência de velocidade."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Table wheels, chart and string-art patterns",
+          "pt": "Rodas, tabela e padrões de linhas"
+        },
+        "routes": [
+          "g2-times-table-patterns",
+          "N2-01",
+          "g2-jarman-turn-the-array"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Rich number and equal shares",
+          "pt": "Número rico e partes iguais"
+        },
+        "routes": [
+          "g2-rich-number-twelve"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Parity, nines and comparison",
+          "pt": "Paridade, noves e comparação"
+        },
+        "routes": [
+          "g2-odd-even-pairs",
+          "N2-02",
+          "N2-03"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Money from the whole unit to change",
+          "pt": "Dinheiro da unidade inteira ao troco"
+        },
+        "routes": [
+          "g2-money-one-real",
+          "g2-money-change",
+          "g2-bundles-shop-check"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G3-B1",
+    "grade": 3,
+    "title": {
+      "en": "Block 1 · Recall before extending",
+      "pt": "Bloco 1 · Retome antes de ampliar"
+    },
+    "when": {
+      "en": "Two weeks of review",
+      "pt": "Duas semanas de revisão"
+    },
+    "pages": "21–22,25–35",
+    "why": {
+      "en": "Find what is secure and what needs rebuilding; the review is information, not a reason to rush or repeat everything.",
+      "pt": "Descobrir o que está firme e o que precisa ser reconstruído; a revisão informa, não exige pressa nem repetição de tudo."
+    },
+    "how": {
+      "en": "Revisit months, time, tables and four processes, then comparison and money. Continue movement and practical counting through the year.",
+      "pt": "Retomar meses, tempo, tabuadas e quatro operações, depois comparação e dinheiro. Continuar movimento e contagem prática durante o ano."
+    },
+    "online": {
+      "en": "Use linked earlier lessons only for a brief observation. Move on when the child can model and explain; use the new timetable extension after clock readiness.",
+      "pt": "Use aulas anteriores ligadas apenas para uma breve observação. Avance quando a criança representar e explicar; use a nova ampliação de rotina após a prontidão com relógios."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Calendar and practical clock recall",
+          "pt": "Retomada de calendário e relógio prático"
+        },
+        "routes": [
+          "g2-calendar-months",
+          "g2-clock-five-minute-steps",
+          "N3-01"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Tables, comparison and four-process recall",
+          "pt": "Retomada de tabuadas, comparação e quatro operações"
+        },
+        "routes": [
+          "g2-times-table-patterns",
+          "N2-03",
+          "g1-four-paths-twelve"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Money and change",
+          "pt": "Dinheiro e troco"
+        },
+        "routes": [
+          "g2-money-change"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G3-MEASURE",
+    "grade": 3,
+    "title": {
+      "en": "Blocks 3–6 · Measure through useful work",
+      "pt": "Blocos 3–6 · Meça por trabalho útil"
+    },
+    "when": {
+      "en": "Integrated farming/building; Block 5 has four math weeks",
+      "pt": "Integração com cultivo/construção; bloco 5 tem quatro semanas de matemática"
+    },
+    "pages": "21,23,57–79,80–101,104–110",
+    "why": {
+      "en": "Practical work connects subjects: a useful length, measured ingredient or planned structure gives arithmetic a purpose.",
+      "pt": "O trabalho prático liga matérias: comprimento útil, ingrediente medido ou estrutura planejada dão propósito à aritmética."
+    },
+    "how": {
+      "en": "Move from body-based and historical measures to a shared standard; use dry and liquid measures, perimeter and area, then squares, cubes and primes. Farming and house-building supply contexts.",
+      "pt": "Passar de medidas corporais e históricas a um padrão comum; usar medidas secas e líquidas, perímetro e área, depois quadrados, cubos e primos. Cultivo e construção dão contexto."
+    },
+    "online": {
+      "en": "Use a desk model, containers and a small garden plan. Distinguish mass from volume explicitly. Historical or religious stories are optional context; all mathematics uses original practical scenarios and stated units.",
+      "pt": "Use modelo de mesa, recipientes e um pequeno plano de jardim. Distinga massa e volume explicitamente. Histórias religiosas ou históricas são contexto opcional; a matemática usa situações práticas originais e unidades declaradas."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Body measures, agreed standards and planning",
+          "pt": "Medidas corporais, padrões combinados e planejamento"
+        },
+        "routes": [
+          "g3-measure-common-standard",
+          "g3-jarman-measure-before-cutting"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Dry ingredients, mass and repeated scoops",
+          "pt": "Ingredientes secos, massa e medidas repetidas"
+        },
+        "routes": [
+          "g3-mass-market-scale",
+          "N3-02"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Liquid capacity",
+          "pt": "Capacidade líquida"
+        },
+        "routes": [
+          "g3-capacity-kitchen"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Perimeter, area and a useful plan",
+          "pt": "Perímetro, área e plano útil"
+        },
+        "routes": [
+          "g3-perimeter-garden",
+          "g3-area-floor-squares",
+          "g3-garden-boundary-bed",
+          "P3-01"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Squares, cubes and prime arrangements",
+          "pt": "Quadrados, cubos e arranjos primos"
+        },
+        "routes": [
+          "g3-square-cube-build",
+          "g3-prime-arrangements"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G3-B8",
+    "grade": 3,
+    "title": {
+      "en": "Block 8 · Place value and exchanges",
+      "pt": "Bloco 8 · Valor posicional e trocas"
+    },
+    "when": {
+      "en": "Three teaching weeks and one review week",
+      "pt": "Três semanas de ensino e uma de revisão"
+    },
+    "pages": "21,24,121–131",
+    "why": {
+      "en": "A written algorithm should record meaningful exchanges, and inverse operations let a child check their own work.",
+      "pt": "Um algoritmo escrito deve registrar trocas com sentido; operações inversas permitem conferir o próprio trabalho."
+    },
+    "how": {
+      "en": "Build a place-value collection, practise it, then introduce carrying and borrowing gradually. Check with inverse operations and finish with parity, rounding and review.",
+      "pt": "Construir coleção de valor posicional, praticá-la e depois introduzir reagrupamento e decomposição gradualmente. Conferir com inversas e terminar com paridade, arredondamento e revisão."
+    },
+    "online": {
+      "en": "Use the existing exchange and subtraction pathways with counters before columns. Trade ten units for one in the next place. The transcription’s story says nine in one passage; the mathematical exchange here is ten.",
+      "pt": "Use caminhos existentes de trocas e subtração com fichas antes das colunas. Troque dez unidades por uma da posição seguinte. Uma passagem da transcrição diz nove; aqui a troca matemática é de dez."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Place value and regrouped addition",
+          "pt": "Valor posicional e adição com trocas"
+        },
+        "routes": [
+          "g3-place-value-exchange",
+          "g3-addition-regrouping"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Subtraction from simple alignment to exchanges",
+          "pt": "Subtração de alinhamento simples às trocas"
+        },
+        "routes": [
+          "g3-subtraction-no-exchange",
+          "g3-subtraction-open-ten",
+          "g3-subtraction-open-hundred",
+          "g3-subtraction-two-exchanges"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Check inverses, parity and rounding",
+          "pt": "Confira inversas, paridade e arredondamento"
+        },
+        "routes": [
+          "g3-subtraction-ungrouping",
+          "g2-odd-even-pairs",
+          "g3-round-nearest-ten"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G4-B4",
+    "grade": 4,
+    "title": {
+      "en": "Block 4 · Written methods with reasons",
+      "pt": "Bloco 4 · Métodos escritos com razões"
+    },
+    "when": {
+      "en": "Four weeks: review, multiplication/division, extensions, review",
+      "pt": "Quatro semanas: revisão, multiplicação/divisão, ampliações e revisão"
+    },
+    "pages": "20,22,64–72",
+    "why": {
+      "en": "Confidence grows from prepared examples, modest practice and a personal methods book. Multiplication/division are connected checks, not unrelated rules.",
+      "pt": "A confiança cresce com exemplos preparados, prática moderada e caderno pessoal de métodos. Multiplicação e divisão se conferem, não são regras isoladas."
+    },
+    "how": {
+      "en": "Review Grade 3. Teach long multiplication in several visits, long division, two-digit divisors, checking, a simple mean and prime factoring. Record a worked method and revisit it.",
+      "pt": "Revisar o 3º ano. Ensinar multiplicação longa em várias visitas, divisão longa, divisores de dois algarismos, conferência, média simples e fatoração prima. Registrar um método resolvido e retomá-lo."
+    },
+    "online": {
+      "en": "Fill the actual multiplication gap with three new sessions, then reuse division routes. Two-digit division already has a Grade 5 route; use it here only after readiness rather than creating another copy. Add mean and factor-tree lessons as extensions of existing sharing/factor work.",
+      "pt": "Preencha a lacuna real de multiplicação com três novas sessões e reutilize divisões. Divisão com dois algarismos já tem rota no 5º ano; use-a aqui só após prontidão em vez de criar cópia. Acrescente média e árvores como ampliações da partilha e fatores existentes."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Review exchanges, estimation and subtraction",
+          "pt": "Revise trocas, estimativa e subtração"
+        },
+        "routes": [
+          "g4-subtraction-estimate-check",
+          "g4-place-value-regrouping"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Long multiplication: one digit, tens, zeros",
+          "pt": "Multiplicação longa: um algarismo, dezenas, zeros"
+        },
+        "routes": [
+          "N4-01",
+          "N4-02",
+          "N4-03"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Long division and inverse checking",
+          "pt": "Divisão longa e conferência inversa"
+        },
+        "routes": [
+          "g4-division-share-big-whole",
+          "g4-division-story-columns",
+          "g4-division-flexible-chunks",
+          "g5-division-two-digit-divisor"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Averages as sharing; prime factors as building blocks",
+          "pt": "Médias como partilha; fatores primos como componentes"
+        },
+        "routes": [
+          "N4-04",
+          "g4-factors-rectangles",
+          "N4-05"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G4-B7",
+    "grade": 4,
+    "title": {
+      "en": "Block 7 · First fractions and remainder meanings",
+      "pt": "Bloco 7 · Primeiras frações e sentidos do resto"
+    },
+    "when": {
+      "en": "Four weeks",
+      "pt": "Quatro semanas"
+    },
+    "pages": "20,23,91–100",
+    "why": {
+      "en": "Begin with a meaningful whole and equal parts. Fraction notation names a quantity; equivalence and fractional remainders prepare fuller operations in Grade 5.",
+      "pt": "Começar com um todo significativo e partes iguais. A notação nomeia quantidades; equivalência e restos fracionários preparam operações mais completas no 5º ano."
+    },
+    "how": {
+      "en": "Review, name numerator and denominator, share practical wholes, find fractions of time/collections, introduce equivalent fractions, then long division with remainders and fractional answers.",
+      "pt": "Revisar, nomear numerador e denominador, repartir todos práticos, achar frações de tempo/coleções, introduzir equivalentes e depois dividir com restos e respostas fracionárias."
+    },
+    "online": {
+      "en": "Use the existing beginning-fraction path and equal-size visual strips. The site’s later Grade 4 unlike-denominator and multiplication lessons remain optional extensions; they are not presented as Nielsen’s required Block 7 sequence.",
+      "pt": "Use o caminho inicial existente e tiras visuais do mesmo tamanho. Aulas posteriores do 4º ano de denominadores diferentes e multiplicação permanecem ampliações opcionais; não são apresentadas como sequência obrigatória do bloco 7 de Nielsen."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Whole, equal parts, numerator and denominator",
+          "pt": "Todo, partes iguais, numerador e denominador"
+        },
+        "routes": [
+          "g4-fraction-branches",
+          "g4-fraction-of-number"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Practical fractions and equivalence",
+          "pt": "Frações práticas e equivalência"
+        },
+        "routes": [
+          "g4-fractions-like-denominators",
+          "g4-fractions-equivalence-observe",
+          "g4-jarman-same-ribbon-new-parts"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Remainders as units or fractional parts",
+          "pt": "Restos como unidades ou partes fracionárias"
+        },
+        "routes": [
+          "g4-division-remainder-meaning",
+          "g4-remainder-as-fraction"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Optional later extension: beyond this source block",
+          "pt": "Ampliação posterior opcional: além deste bloco da fonte"
+        },
+        "routes": [
+          "g4-fractions-common-denominator",
+          "g4-fractions-multiply-meaning"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G5-B1",
+    "grade": 5,
+    "title": {
+      "en": "Block 1 · A readiness review",
+      "pt": "Bloco 1 · Revisão de prontidão"
+    },
+    "when": {
+      "en": "One math week within the geography block",
+      "pt": "Uma semana matemática no bloco de geografia"
+    },
+    "pages": "21–22,27–35",
+    "why": {
+      "en": "Find gaps before new fraction work and keep progress humane. Existing knowledge is a resource for new lessons.",
+      "pt": "Encontrar lacunas antes de novas frações e manter ritmo humano. O conhecimento existente apoia as novas aulas."
+    },
+    "how": {
+      "en": "Review tables, time, money, whole-to-parts, equivalent fractions, multiplication, checking and division with fractional remainders.",
+      "pt": "Revisar tabuadas, tempo, dinheiro, todo às partes, frações equivalentes, multiplicação, conferência e divisão com restos fracionários."
+    },
+    "online": {
+      "en": "Choose a small sample from the existing routes and note what the learner can explain. Use the methods book as a legitimate reference; only reteach a topic if the sample reveals a need.",
+      "pt": "Escolha pequena amostra das rotas existentes e registre o que se consegue explicar. Use o caderno de métodos como consulta legítima; reensine apenas se a amostra mostrar necessidade."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Tables, time and money",
+          "pt": "Tabuadas, tempo e dinheiro"
+        },
+        "routes": [
+          "g2-times-table-patterns",
+          "N3-01",
+          "g2-money-change"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Equivalent fractions and whole-to-parts",
+          "pt": "Equivalência e todo às partes"
+        },
+        "routes": [
+          "g5-fractions-equivalent-visual",
+          "g4-fraction-of-number"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Multiplication, division and inverse checks",
+          "pt": "Multiplicação, divisão e conferências inversas"
+        },
+        "routes": [
+          "N4-02",
+          "g5-division-place-value-shortcut",
+          "g4-remainder-as-fraction"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G5-B2",
+    "grade": 5,
+    "title": {
+      "en": "Block 2 · Four operations with fractions",
+      "pt": "Bloco 2 · Quatro operações com frações"
+    },
+    "when": {
+      "en": "Three weeks",
+      "pt": "Três semanas"
+    },
+    "pages": "21–22,48–57",
+    "why": {
+      "en": "Fractions become useful in shopping, sharing and building. Visual understanding comes before a shorter method, and facts support efficient calculation.",
+      "pt": "Frações são úteis em compras, partilha e construção. Compreensão visual precede método curto; fatos conhecidos apoiam eficiência."
+    },
+    "how": {
+      "en": "Reduce via common factors; review like denominators and mixed/improper forms. Make denominators match, compare, multiply then cancel, divide and review.",
+      "pt": "Reduzir por fatores comuns; revisar denominadores iguais e formas mistas/impróprias. Igualar denominadores, comparar, multiplicar e simplificar, dividir e revisar."
+    },
+    "online": {
+      "en": "The existing ten-lesson Fraction Path already provides this progression, including a concrete fraction-division bridge. Reuse its exact routes; add a method-card and next-day recall rather than duplicate fraction exercises.",
+      "pt": "O caminho existente de dez aulas já oferece a progressão, inclusive ponte concreta para dividir frações. Reutilize suas rotas; acrescente cartão de método e retomada no dia seguinte em vez de duplicar exercícios."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Equivalence, reducing and like denominators",
+          "pt": "Equivalência, redução e denominadores iguais"
+        },
+        "routes": [
+          "g5-fractions-equivalent-visual",
+          "g5-fractions-reduce-gcf",
+          "g5-fractions-common-denominator"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Improper and mixed forms",
+          "pt": "Formas impróprias e mistas"
+        },
+        "routes": [
+          "g5-fractions-improper-to-mixed",
+          "g5-fractions-mixed-to-improper"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Unlike denominators and comparison",
+          "pt": "Denominadores diferentes e comparação"
+        },
+        "routes": [
+          "g5-fractions-unlike-denominators",
+          "g5-fractions-compare"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Multiplication, cancellation, division and review",
+          "pt": "Multiplicação, simplificação, divisão e revisão"
+        },
+        "routes": [
+          "g5-fractions-multiply-cancel",
+          "g5-fraction-division-sharing",
+          "g5-fractions-divide-reciprocal",
+          "g5-fractions-path-review"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G5-B5",
+    "grade": 5,
+    "title": {
+      "en": "Block 5 · Freehand forms to compass work",
+      "pt": "Bloco 5 · Das formas livres ao compasso"
+    },
+    "when": {
+      "en": "Four weeks",
+      "pt": "Quatro semanas"
+    },
+    "pages": "21,24,114–135",
+    "why": {
+      "en": "Experience and draw forms before precise instrument construction. Terms belong to the learner’s own labelled drawing rather than a memorised list.",
+      "pt": "Vivenciar e desenhar formas antes da construção precisa. Termos pertencem ao desenho identificado da criança, não a uma lista decorada."
+    },
+    "how": {
+      "en": "Review forms, make string and freehand circles, nest squares, label circle relations, explore angles, triangles and quadrilaterals, then compass triangles, hexagons and dodecagons.",
+      "pt": "Revisar formas, fazer círculos com barbante e à mão livre, encaixar quadrados, identificar relações da circunferência, explorar ângulos, triângulos e quadriláteros e depois construções, hexágonos e dodecágonos."
+    },
+    "online": {
+      "en": "Reuse the recently enriched geometry lessons and plans. Add the twelve-sector bridge and an explicit circle/tangent investigation. Source Grade 5 instrument placement is offered as a readiness route, while existing Grade 6 labels and activity keys remain intact.",
+      "pt": "Reutilize aulas e planos de geometria recentemente ampliados. Acrescente a ponte de doze setores e uma investigação explícita de circunferência/tangente. A entrada de instrumentos no 5º ano da fonte é rota por prontidão; rótulos e chaves existentes do 6º permanecem."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Forms, string circles and freehand circles",
+          "pt": "Formas, círculos com barbante e à mão livre"
+        },
+        "routes": [
+          "G5-01",
+          "G5-03",
+          "G5-04"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Nested/offset squares and symmetry",
+          "pt": "Quadrados encaixados/deslocados e simetria"
+        },
+        "routes": [
+          "P5-03",
+          "G5-02",
+          "P5-02"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Vocabulary, concentric circles, ellipse and tangent",
+          "pt": "Vocabulário, circunferências concêntricas, elipse e tangente"
+        },
+        "routes": [
+          "g5-freehand-circle-diameter",
+          "P4-01",
+          "N5-03"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Angles, triangles and quadrilaterals",
+          "pt": "Ângulos, triângulos e quadriláteros"
+        },
+        "routes": [
+          "G6-11",
+          "P4-02",
+          "P4-03",
+          "G6-10"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Compass, sixfold forms, twelvefold extension",
+          "pt": "Compasso, seis partes e ampliação para doze"
+        },
+        "routes": [
+          "G6-02",
+          "G6-03",
+          "G6-04",
+          "N5-01"
+        ]
+      }
+    ],
+    "note": {
+      "en": "The supplied image assets and companion videos for these Nielsen books are missing. Original diagrams are used; exact source artwork is not reconstructed.",
+      "pt": "Faltam os arquivos de imagens e vídeos acompanhantes destes livros de Nielsen. Usamos diagramas originais; a arte exata da fonte não foi reconstruída."
+    },
+    "verified": true
+  },
+  {
+    "id": "G5-B7",
+    "grade": 5,
+    "title": {
+      "en": "Block 7 · Decimals in useful situations",
+      "pt": "Bloco 7 · Decimais em situações úteis"
+    },
+    "when": {
+      "en": "Four weeks in the overview; three detailed weeks",
+      "pt": "Quatro semanas na visão geral; três semanas detalhadas"
+    },
+    "pages": "21,25,150–159",
+    "why": {
+      "en": "Connect common fractions to decimal place value using money and measurement, then practise modestly and apply to daily needs.",
+      "pt": "Ligar frações comuns a valor decimal por dinheiro e medidas; depois praticar moderadamente e aplicar às necessidades diárias."
+    },
+    "how": {
+      "en": "Introduce decimals, convert fractions and discuss rounding, add/subtract, multiply, divide, review measures and convert systems, then practical review.",
+      "pt": "Introduzir decimais, converter frações e discutir arredondamento, somar/subtrair, multiplicar, dividir, revisar medidas e converter sistemas, depois revisão prática."
+    },
+    "online": {
+      "en": "Reuse existing decimal models and operations. Use repeating-decimal work as an optional supported preview from Grade 6; distinguish exact from rounded values. The new ruler lesson fills the customary-to-metric gap. Money examples use reais.",
+      "pt": "Reutilize modelos decimais e operações. Use dízimas como antecipação opcional e apoiada do 6º ano; distinga exato e arredondado. A nova aula de réguas preenche a conversão entre sistemas. Exemplos monetários usam reais."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Money, place value and fraction conversion",
+          "pt": "Dinheiro, valor posicional e conversão de frações"
+        },
+        "routes": [
+          "g5-decimal-hundredths-money",
+          "g5-fraction-decimal-quarter",
+          "g5-fraction-decimal-weave"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Addition, subtraction and multiplication",
+          "pt": "Adição, subtração e multiplicação"
+        },
+        "routes": [
+          "g5-decimal-join-lengths",
+          "g5-decimal-ribbon-remainder",
+          "g5-decimal-price-length"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Division and optional decimal continuation",
+          "pt": "Divisão e continuação decimal opcional"
+        },
+        "routes": [
+          "g5-decimal-count-pieces",
+          "g6-division-decimal-quotient",
+          "g6-division-repeating-pattern"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Measures, conversions and practical review",
+          "pt": "Medidas, conversões e revisão prática"
+        },
+        "routes": [
+          "g5-metric-centimeters",
+          "N5-02",
+          "g5-jarman-one-first"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G6-PENDING",
+    "grade": 6,
+    "title": {
+      "en": "Grade 6 · Source still needed",
+      "pt": "6º ano · Fonte ainda necessária"
+    },
+    "when": {
+      "en": "Existing course routes; source sequence unverified",
+      "pt": "Rotas existentes; sequência da fonte não verificada"
+    },
+    "pages": "1 (cover only)",
+    "why": {
+      "en": "The uploaded Grade 6 file contains a single cover page. It provides no math blocks, rationale or teaching sequence to map.",
+      "pt": "O arquivo enviado do 6º ano contém só uma capa. Não oferece blocos matemáticos, justificativa nem sequência para mapear."
+    },
+    "how": {
+      "en": "No detailed Grade 6 Nielsen method is inferred from this cover or from another author’s material.",
+      "pt": "Nenhum método detalhado de Nielsen para o 6º ano é inferido desta capa ou de material de outro autor."
+    },
+    "online": {
+      "en": "Use the existing decimal, percentage, business and construction paths as a clearly labelled interim route. Replace this source gap only after reviewing the full volume.",
+      "pt": "Use os caminhos existentes de decimais, porcentagens, negócios e construções como rota provisória claramente identificada. Substitua esta lacuna só após revisar o volume completo."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Existing arithmetic foundations",
+          "pt": "Fundamentos aritméticos existentes"
+        },
+        "routes": [
+          "g6-decimal-place-system",
+          "g6-competency-fraction-decimal-bridge",
+          "g6-percent-hundred-grid"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Existing practical business math",
+          "pt": "Matemática comercial prática existente"
+        },
+        "routes": [
+          "g6-cost-price-profit",
+          "g6-simple-interest",
+          "g6-budget-challenge"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Existing construction readiness",
+          "pt": "Prontidão de construção existente"
+        },
+        "routes": [
+          "G6-06",
+          "G6-07",
+          "G6-08",
+          "P6-01",
+          "P6-02"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": false
+  },
+  {
+    "id": "G7-GEO",
+    "grade": 7,
+    "title": {
+      "en": "Geometry · Reasons behind constructions",
+      "pt": "Geometria · Razões das construções"
+    },
+    "when": {
+      "en": "Three weeks in the supplied guide",
+      "pt": "Três semanas no guia fornecido"
+    },
+    "pages": "17–20,55–72",
+    "why": {
+      "en": "Move from constructions and visible area to written relationships and reasons. The learner should have real prior compass experience.",
+      "pt": "Passar de construções e área visível a relações escritas e razões. É preciso experiência prévia real com o compasso."
+    },
+    "how": {
+      "en": "Review exact angles, angle relationships, copies and bisectors; investigate area and shear, construct triangles and pentagons, study golden proportion and Pythagorean area, then forms in nature.",
+      "pt": "Revisar ângulos exatos, relações angulares, cópias e bissetrizes; investigar área e deformação, construir triângulos e pentágonos, estudar proporção áurea e área pitagórica, depois formas na natureza."
+    },
+    "online": {
+      "en": "Reuse existing proof and construction lessons in this order; add the sixteen-point art investigation. Require a prediction and explanation before numerical answers. Correct unclear angle conditions and distinguish a special example from a general proof.",
+      "pt": "Reutilize aulas existentes de demonstração e construção nesta ordem; acrescente investigação artística de dezesseis pontos. Peça previsão e explicação antes de respostas numéricas. Corrija condições angulares vagas e distinga exemplo especial de demonstração geral."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Exact 30°,45°,60°,90°; angle relationships",
+          "pt": "Ângulos exatos de 30°,45°,60°,90° e relações"
+        },
+        "routes": [
+          "G6-03",
+          "G6-07",
+          "G6-08",
+          "P5-02"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Copying and bisecting",
+          "pt": "Cópias e bissecções"
+        },
+        "routes": [
+          "G6-06",
+          "G6-08",
+          "P6-01"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Area, shear and formulas",
+          "pt": "Área, deformação e fórmulas"
+        },
+        "routes": [
+          "G6-14",
+          "g7-jarman-shear-area",
+          "P7-02"
+        ]
+      },
+      {
+        "topic": {
+          "en": "SSS, SAS with included angle, ASA with two given angles",
+          "pt": "LLL, LAL com ângulo compreendido, ALA com dois ângulos dados"
+        },
+        "routes": [
+          "G6-10",
+          "P6-03"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Pentagon and golden proportion",
+          "pt": "Pentágono e proporção áurea"
+        },
+        "routes": [
+          "G8-07",
+          "G7-15"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Pythagorean area and reasoning",
+          "pt": "Área pitagórica e raciocínio"
+        },
+        "routes": [
+          "P5-04",
+          "G7-08",
+          "G7-09",
+          "g7-pythagoras-area-proof"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Circle patterns and natural observations",
+          "pt": "Padrões circulares e observações naturais"
+        },
+        "routes": [
+          "N7-01",
+          "G6-03"
+        ]
+      }
+    ],
+    "note": {
+      "en": "The guide’s non-geometry math program is not provided; page 20 explicitly refers families to separate recommendations. Missing companion diagrams/videos limit exact visual reconstruction. Parthenon/golden-ratio claims are not treated as established history.",
+      "pt": "O programa matemático além da geometria não é fornecido; a página 20 remete a recomendações separadas. A falta de diagramas/vídeos limita a reconstrução visual exata. Alegações sobre Partenon e proporção áurea não são tratadas como história comprovada."
+    },
+    "verified": true
+  },
+  {
+    "id": "G7-PRACTICE",
+    "grade": 7,
+    "title": {
+      "en": "Continuity outside geometry",
+      "pt": "Continuidade fora da geometria"
+    },
+    "when": {
+      "en": "About 60 minutes weekly outside math blocks; adapt to need",
+      "pt": "Cerca de 60 minutos semanais fora dos blocos; adapte à necessidade"
+    },
+    "pages": "17–20,78",
+    "why": {
+      "en": "Avoid overload while maintaining known skills. The guide recommends regular practice outside mathematics main lessons rather than a second full daily lesson.",
+      "pt": "Evitar sobrecarga mantendo habilidades conhecidas. O guia recomenda prática regular fora das lições principais de matemática, não outra aula completa todo dia."
+    },
+    "how": {
+      "en": "Prepare examples, work at the learner’s pace and keep a methods book. The curriculum chart names broader pre-algebra; it does not supply its daily lessons.",
+      "pt": "Preparar exemplos, respeitar o ritmo e manter caderno de métodos. O quadro curricular nomeia pré-álgebra mais ampla; não fornece suas aulas diárias."
+    },
+    "online": {
+      "en": "Use the site’s existing arithmetic, signed-number, ratio and equation lessons as a separate adaptation. For four school days, 60 ÷ 4 gives 15 minutes; these are planning suggestions, not mastery or screen-time requirements.",
+      "pt": "Use aulas existentes de aritmética, sinais, razão e equação como adaptação separada. Em quatro dias escolares, 60 ÷ 4 dá 15 minutos; são sugestões de planejamento, não requisitos de domínio ou tempo de tela."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Existing arithmetic and number review",
+          "pt": "Revisão existente de aritmética e números"
+        },
+        "routes": [
+          "g7-divisibility-check",
+          "g7-fraction-common-denominator",
+          "g7-decimal-division-shift"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Existing ratio, signed-number and equation routes",
+          "pt": "Rotas existentes de razão, sinais e equação"
+        },
+        "routes": [
+          "g7-ratios-meaning",
+          "g7-signed-cross-zero",
+          "g7-equation-balance"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G8-ARITH",
+    "grade": 8,
+    "title": {
+      "en": "Math outline · Practical number and equations",
+      "pt": "Esboço matemático · Números práticos e equações"
+    },
+    "when": {
+      "en": "Ten combined math/geometry weeks in the appendix; split is not specified",
+      "pt": "Dez semanas conjuntas no apêndice; divisão não especificada"
+    },
+    "pages": "4–5,15,17–18",
+    "why": {
+      "en": "Build independence and connect equations to meaningful quantities. This is a planning outline, not a supplied daily math course.",
+      "pt": "Desenvolver autonomia e ligar equações a grandezas com sentido. É um esboço de planejamento, não um curso diário fornecido."
+    },
+    "how": {
+      "en": "The guide names practical mathematics, percentages, equations, number bases and geometric drawing; the appendix also names sets and solids. Its standards column has broader expectations.",
+      "pt": "O guia nomeia matemática prática, porcentagens, equações, bases numéricas e desenho geométrico; o apêndice também nomeia conjuntos e sólidos. A coluna de padrões traz expectativas mais amplas."
+    },
+    "online": {
+      "en": "The order below is our original implementation: recall practical percentages, compare bases, classify sets, then apply equation and function routes. Reuse known topics rather than restarting full courses.",
+      "pt": "A ordem abaixo é nossa implementação original: retomar porcentagens práticas, comparar bases, classificar conjuntos e aplicar rotas de equações e funções. Reutilize assuntos conhecidos em vez de reiniciar cursos inteiros."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Practical percent and proportional reasoning",
+          "pt": "Porcentagens práticas e raciocínio proporcional"
+        },
+        "routes": [
+          "g8-percent-growth",
+          "g8-proportions-capstone"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Number bases beyond binary",
+          "pt": "Bases numéricas além da binária"
+        },
+        "routes": [
+          "g8-binary-place-value",
+          "N8-02"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Set rules, overlap and union",
+          "pt": "Regras de conjuntos, interseção e união"
+        },
+        "routes": [
+          "N8-01"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Equations, functions and systems in context",
+          "pt": "Equações, funções e sistemas em contexto"
+        },
+        "routes": [
+          "g7-equation-balance",
+          "g8-proportions-equation",
+          "g8-proportions-not-proportional",
+          "g8-systems-two-purchases"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Existing standards connections: notation, irrational numbers and graph reasoning",
+          "pt": "Conexões existentes dos padrões: notação, irracionais e gráficos"
+        },
+        "routes": [
+          "g8-scientific-notation",
+          "g7-competency-irrational-diagonal",
+          "g8-exponent-laws",
+          "g8-proportions-read-graph",
+          "g8-proportions-compare-slopes"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  },
+  {
+    "id": "G8-GEO",
+    "grade": 8,
+    "title": {
+      "en": "Math outline · Draw, reason and measure space",
+      "pt": "Esboço matemático · Desenhe, raciocine e meça o espaço"
+    },
+    "when": {
+      "en": "Within the same ten-week math/geometry allocation",
+      "pt": "Dentro das mesmas dez semanas de matemática/geometria"
+    },
+    "pages": "15,17–18",
+    "why": {
+      "en": "Connect equations with length, area, surfaces, spatial models and loci. Use models to make a reason visible before formal calculation.",
+      "pt": "Ligar equações a comprimento, área, superfícies, modelos espaciais e lugares geométricos. Usar modelos para tornar razões visíveis antes do cálculo formal."
+    },
+    "how": {
+      "en": "The appendix references equations applied to measurement and loci, and lists 3D/solid geometry. The standards column mentions probability and volume expectations separately.",
+      "pt": "O apêndice referencia equações aplicadas a medidas e lugares geométricos e lista geometria espacial. A coluna de padrões menciona separadamente probabilidade e expectativas de volume."
+    },
+    "online": {
+      "en": "Reuse the existing solid, locus, view and volume plans. The probability and sphere-volume lessons are optional standards expansions, labelled as such. The outline does not specify an exact daily sequence or a particular manipulative.",
+      "pt": "Reutilize planos existentes de sólidos, lugares geométricos, vistas e volumes. As aulas de probabilidade e volume de esfera são ampliações opcionais dos padrões, identificadas assim. O esboço não especifica sequência diária exata nem material específico."
+    },
+    "sequence": [
+      {
+        "topic": {
+          "en": "Length, area and surface reasoning",
+          "pt": "Raciocínio de comprimento, área e superfície"
+        },
+        "routes": [
+          "g8-pythagorean-hypotenuse",
+          "g8-competency-trapezoid-area",
+          "g8-competency-cylinder-surface"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Solids, nets and measured views",
+          "pt": "Sólidos, planificações e vistas medidas"
+        },
+        "routes": [
+          "G8-03",
+          "G8-04",
+          "P8-05",
+          "g8-box-volume-density"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Loci and construction reasoning",
+          "pt": "Lugares geométricos e razões de construção"
+        },
+        "routes": [
+          "g8-locus-equal-distance",
+          "P8-03",
+          "P8-04",
+          "P8-07"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Volume applications",
+          "pt": "Aplicações de volume"
+        },
+        "routes": [
+          "g8-cylinder-volume",
+          "P8-06",
+          "N8-04"
+        ]
+      },
+      {
+        "topic": {
+          "en": "Optional standards expansion: statistics and chance",
+          "pt": "Ampliação opcional dos padrões: estatística e acaso"
+        },
+        "routes": [
+          "g8-data-typical-value",
+          "N8-03"
+        ]
+      }
+    ],
+    "note": {
+      "en": "Source order is preserved; repeat a session when the learner needs it.",
+      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+    },
+    "verified": true
+  }
+]
