@@ -58,7 +58,7 @@
     const height = 145 + index * 64;
     const text = (x,y,value,css='') => [...String(value)].map((digit,i,all)=>`<text x="${x-(all.length-1-i)*cell}" y="${y}" class="${css}" text-anchor="end">${esc(digit)}</text>`).join('');
     const line = (x1,y1,x2,y2,css='') => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="${css}"/>`;
-    let image = '', visibleQuotient = '';
+    let image = '', visibleQuotient = '', colourKey = [];
     if (lang === 'pt') {
       image += line(divider,27,divider,96) + line(divider,62,width-12,62) + text(divider+14+String(trace.reducedDivisor).length*cell,51,trace.reducedDivisor);
     } else {
@@ -84,21 +84,29 @@
         if (brought) {
           const nextEnd=end+cell;
           image += text(nextEnd,remainderY,stage.nextPartial,'division-current');
-          image += line(nextEnd-7,61,nextEnd-7,remainderY-23,'division-arrow');
-          image += `<path d="M ${nextEnd-11} ${remainderY-29} l 4 7 l 4 -7" class="division-arrow"/>`;
+          const colour = `bring-digit-${j % 5}`;
+          image += text(nextEnd,53,stage.nextDigit,colour) + text(nextEnd,remainderY,stage.nextDigit,colour);
+          image += line(nextEnd-7,61,nextEnd-7,remainderY-23,`division-arrow ${colour}`);
+          image += `<path d="M ${nextEnd-11} ${remainderY-29} l 4 7 l 4 -7" class="division-arrow ${colour}"/>`;
+          colourKey.push(`<li class="${colour}">${j+1}. ${t(`Bring down ${stage.nextDigit} → ${stage.nextPartial}`, `Baixe ${stage.nextDigit} → ${stage.nextPartial}`)}</li>`);
         } else image += text(end,remainderY,stage.remainder,'division-current');
       }
       if (current && !complete && spec.phase === 'subtract' && !reveal) image += text(end,remainderY,'?','division-pending');
       if (current && !complete && spec.phase === 'bring' && !reveal) {
         image += text(end+cell,remainderY,'?','division-pending');
-        image += `<rect x="${end+3}" y="34" width="${cell}" height="26" rx="4" class="division-active"/>` + text(end+cell,53,stage.nextDigit,'division-current');
+        image += `<rect x="${end+3}" y="34" width="${cell}" height="26" rx="4" class="division-active"/>` + text(end+cell,53,stage.nextDigit,`bring-digit-${j % 5}`);
+        colourKey.push(`<li class="bring-digit-${j % 5}">${j+1}. ${t(`Next: bring down ${stage.nextDigit}`, `A seguir: baixe ${stage.nextDigit}`)}</li>`);
       }
     }
     if (lang === 'pt') image += text(divider+14+(visibleQuotient.length+(!complete&&spec.phase==='quotient'&&!reveal?1:0))*cell,90,visibleQuotient+(!complete&&spec.phase==='quotient'&&!reveal?'?':''),'division-quotient');
     const reduction = trace.reducedDividend !== spec.dividend
       ? `<p>${t('Divide both numbers by the same power of ten; the quotient stays the same.','Divida os dois números pela mesma potência de dez; o quociente permanece igual.')}</p><p class="equation">${spec.dividend} ÷ ${spec.divisor} = ${trace.reducedDividend} ÷ ${trace.reducedDivisor}</p>` : '';
     const description = t(`Written long division: ${trace.reducedDividend} divided by ${trace.reducedDivisor}. Quotient digits shown: ${visibleQuotient || 'none yet'}. The current question appears below the drawing.`, `Divisão armada: ${trace.reducedDividend} dividido por ${trace.reducedDivisor}. Algarismos do quociente mostrados: ${visibleQuotient || 'nenhum ainda'}. A pergunta atual aparece abaixo do desenho.`);
-    return `<figure class="written-division"><figcaption>${t('Written long division','Divisão armada')}</figcaption>${reduction}<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(description)}" xmlns="http://www.w3.org/2000/svg"><g>${image}</g></svg><p>${t('Keep digits in their place-value columns. The arrows show digits brought down.','Mantenha os algarismos em suas colunas de valor posicional. As setas mostram os algarismos baixados.')}</p></figure>`;
+    return `<figure class="written-division"><figcaption>${t('Written long division','Divisão armada')}</figcaption>${reduction}<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(description)}" xmlns="http://www.w3.org/2000/svg"><g>${image}</g></svg><p>${t('Follow the matching colour: the digit at the top, its arrow, and the same digit brought down below. The numbered key also identifies each move.','Siga a mesma cor: o algarismo em cima, sua seta e o mesmo algarismo baixado embaixo. A legenda numerada também identifica cada movimento.')}</p>${colourKey.length?`<ul class="division-key">${colourKey.join('')}</ul>`:''}${divisionReview(lang,trace)}</figure>`;
+  }
+  function divisionReview(lang, trace) {
+    const t = (en,pt) => lang === 'pt' ? pt : en;
+    return `<details class="division-refresher"><summary>${t('How long division works: divide, multiply, subtract, bring down','Como funciona a divisão longa: dividir, multiplicar, subtrair, baixar')}</summary><p>${t(`The dividend is the number being divided (${trace.dividend}); the divisor is the group size (${trace.divisor}). The quotient counts the groups; the remainder is what is left.`, `O dividendo é o número que estamos dividindo (${trace.dividend}); o divisor é o tamanho de cada grupo (${trace.divisor}). O quociente conta os grupos; o resto é o que sobra.`)}</p><ol><li>${t('Divide: starting from the left, take enough digits to reach the divisor. Choose the largest quotient digit whose product does not exceed the current part.','Divida: começando pela esquerda, use algarismos suficientes para alcançar o divisor. Escolha o maior algarismo do quociente cujo produto não ultrapasse a parte atual.')}</li><li>${t('Multiply: multiply that quotient digit by the divisor. Write the product underneath, with units aligned.','Multiplique: multiplique esse algarismo do quociente pelo divisor. Escreva o produto embaixo, alinhando as unidades.')}</li><li>${t('Subtract: remove the groups you have counted. The remainder must be smaller than the divisor.','Subtraia: retire os grupos que você já contou. O resto deve ser menor que o divisor.')}</li><li>${t('Bring down: regroup the remainder into the next smaller place-value unit, then add the next digit. Numerically, this is remainder × 10 + next digit. For example, 2 tens become 20 ones; bringing down 3 ones makes 23 ones.','Baixe: transforme o resto em unidades da próxima ordem e acrescente o próximo algarismo. Numericamente: resto × 10 + próximo algarismo. Por exemplo, 2 dezenas viram 20 unidades; baixar mais 3 unidades forma 23 unidades.')}</li><li>${t('Repeat. If the new part is smaller than the divisor, write 0 in that quotient position. A zero remainder does not mean you can stop while digits remain to be brought down.','Repita. Se a nova parte for menor que o divisor, escreva 0 nessa posição do quociente. Ter resto zero não significa que você pode parar enquanto houver algarismos para baixar.')}</li><li>${t('Check: quotient × divisor + remainder must equal the original dividend. These problems all finish with remainder zero.','Confira: quociente × divisor + resto deve ser igual ao dividendo original. Todos estes problemas terminam com resto zero.')}</li></ol><p><a class="division-review-link" href="../index.html#practice:g5-division-two-digit-divisor" target="_blank" rel="noopener">${t('Revise long division with a two-digit divisor','Revisar divisão longa com divisor de dois algarismos')}</a> ${t('(opens in another tab so you can keep this work here).','(abre em outra aba para manter esta resolução aqui).')}</p></details>`;
   }
   // Positional long division, retaining zero digits in the quotient.
   function division(dividend, divisor, lang) {

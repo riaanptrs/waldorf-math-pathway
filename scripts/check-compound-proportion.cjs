@@ -89,7 +89,8 @@ assert.deepEqual(core.divisionTrace(460800,240).stages.map(s=>[s.partial,s.quoti
     assert.equal(await page.locator('.guide').count(),0,'restart restores answer-first flow');
 
     // Real browser submissions through every question in both languages.
-    for (const lang of ['en','pt']) for (const p of items) {
+    const browserItems = process.argv.includes('--colours') ? [data.practice[14]] : items;
+    for (const lang of ['en','pt']) for (const p of browserItems) {
       await page.goto(url+'#'+p.id);
       await page.selectOption('#compound-language',lang);
       await page.locator('[data-action="restart"]').click();
@@ -111,6 +112,21 @@ assert.deepEqual(core.divisionTrace(460800,240).stages.map(s=>[s.partial,s.quoti
         assert.match(await page.locator('#step-feedback').innerText(),lang==='pt'?/confere/:/checks out/,p.id+' step '+i);
         assert.equal(await page.locator('.explanation').count(),1);
         if(p.id==='practice-15' && s.division?.phase==='complete') {
+          assert.equal(await page.locator('#division-board .division-key li').count(),3);
+          const colours = [];
+          for(const [move,digit] of ['0','8','0'].entries()) {
+            const glyphs = page.locator(`#division-board svg text.bring-digit-${move}`);
+            assert.deepEqual(await glyphs.allTextContents(),[digit,digit],'source and destination digits match');
+            const fill = await glyphs.first().evaluate(el=>getComputedStyle(el).fill);
+            const stroke = await page.locator(`#division-board svg line.bring-digit-${move}`).evaluate(el=>getComputedStyle(el).stroke);
+            assert.equal(fill,stroke,'digit and arrow share a colour'); colours.push(fill);
+          }
+          assert.equal(new Set(colours).size,3,'three moves have distinct colours');
+          await page.locator('#division-board .division-refresher summary').click();
+          assert.match(await page.locator('#division-board .division-refresher').innerText(),/× 10/);
+          assert.equal(await page.locator('#division-board .division-review-link').getAttribute('href'),'../index.html#practice:g5-division-two-digit-divisor');
+          assert.equal(await page.locator('#division-board .division-review-link').getAttribute('target'),'_blank');
+          assert.equal(await page.locator('.division-revision a').getAttribute('href'),'../index.html#practice:g5-division-two-digit-divisor');
           await page.locator('#division-board').screenshot({path:`/tmp/written-division-${lang}.png`});
           await page.setViewportSize({width:320,height:900});
           assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),'written division fits 320px');
@@ -142,13 +158,13 @@ assert.deepEqual(core.divisionTrace(460800,240).stages.map(s=>[s.partial,s.quoti
     await page.screenshot({path:'/tmp/compound-proportion-mobile.png',fullPage:true});
     const offline=await browser.newContext({javaScriptEnabled:false});
     const fallback=await offline.newPage(); await fallback.goto(url);
-    assert.equal(await fallback.locator('noscript details').count(),18);
-    await fallback.locator('noscript details').last().locator('summary').click();
-    assert.match(await fallback.locator('noscript details').last().innerText(),/460800/);
+    assert.equal(await fallback.locator('noscript section > details').count(),18);
+    await fallback.locator('noscript section > details').last().locator(':scope > summary').click();
+    assert.match(await fallback.locator('noscript section > details').last().innerText(),/460800/);
     await offline.close();
     await page.goto(url+'#practice-15');await page.reload();
     assert.equal(await page.locator('.guide').count(),0,'reload clears responses');
     assert.deepEqual(errors,[]);
-    console.log('Passed: 18 independently checked answers; all guided submissions in both languages; answer-first gating, optional help, hints, assisted steps, language/navigation retention, stale feedback, reset, zero digits in division, no-script solutions and 320–1280px layouts.');
+    console.log('Passed: 18 independently checked answers; guided submissions for '+browserItems.length+' activities in both languages; matching digit/arrow colours and revision links; answer-first gating, optional help, hints, assisted steps, language/navigation retention, stale feedback, reset, zero digits in division, no-script solutions and 320–1280px layouts.');
   } finally {if(browser) await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error);process.exitCode=1;});

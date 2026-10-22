@@ -44,6 +44,15 @@ input[type=radio] { flex-shrink: 0; width: 1.2rem; height: 1.2rem; }
 .written-division .division-current { fill: #1a6148; font-weight: 700; }
 .written-division .division-pending { fill: #875018; }
 .written-division .division-arrow { stroke: #926119; stroke-dasharray: 3 2; }
+.bring-digit-0 { --bring-colour: #1d5b99; }
+.bring-digit-1 { --bring-colour: #803ea0; }
+.bring-digit-2 { --bring-colour: #9a4a0f; }
+.bring-digit-3 { --bring-colour: #00646c; }
+.bring-digit-4 { --bring-colour: #9d3469; }
+.written-division text[class*="bring-digit-"] { fill: var(--bring-colour); font-weight: 700; }
+.written-division .division-arrow[class*="bring-digit-"] { stroke: var(--bring-colour); }
+.division-key { list-style: none; padding-left: 0; }
+.division-key li { color: var(--bring-colour); border-left: 4px solid var(--bring-colour); padding: .3rem .7rem; margin: .4rem 0; font-weight: 600; }
 details { margin: 1rem 0; }
 summary { cursor: pointer; min-height: 44px; padding: .4rem 0; font-weight: 600; }
 .history li, .solution li { margin-bottom: 1.5rem; }
