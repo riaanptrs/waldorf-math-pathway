@@ -9,6 +9,14 @@ const expected = [360,4,5,1200,1800,480,900,600,180,6,12,15,10,10,5,10,5,1920];
 assert.equal(data.examples.length,3); assert.equal(data.practice.length,15);
 for (const [i,p] of items.entries()) {
   assert.equal(p.answer,expected[i],p.id);
+  const cal = core.calculation(p), trace = core.divisionTrace(cal.cross,cal.numerator);
+  assert.equal(trace.quotient,expected[i],p.id+' written quotient');
+  assert.equal(trace.stages.at(-1).remainder,0,p.id+' exact division');
+  for(const stage of trace.stages) {
+    assert.equal(stage.product+stage.remainder,stage.partial);
+    assert(stage.remainder>=0 && stage.remainder<trace.reducedDivisor);
+    if(stage.nextDigit!==null) assert.equal(stage.nextPartial,10*stage.remainder+stage.nextDigit);
+  }
   assert.equal(p.columns.filter(c=>c.after===null).length,1);
   // A constant output per total combined working time must hold in both rows.
   const rate = row => {
@@ -32,6 +40,7 @@ assert.equal(core.check('1920 tonnes',{kind:'number',answer:1920}),'invalid');
 const last = core.calculation(data.practice[14]);
 assert.deepEqual([last.numerator,last.denominator,last.cross],[240,960,460800]);
 assert(core.division(460800,240,'en').some(s=>s.includes('Write 0 in the quotient')));
+assert.deepEqual(core.divisionTrace(460800,240).stages.map(s=>[s.partial,s.quotientDigit,s.product,s.remainder]),[[46,1,24,22],[220,9,216,4],[48,2,48,0],[0,0,0,0]]);
 
 (async()=>{
   const root=path.resolve(__dirname,'..');
@@ -90,11 +99,23 @@ assert(core.division(460800,240,'en').some(s=>s.includes('Write 0 in the quotien
         await page.locator('[data-action="help"]').click();
       }
       for(const [i,s] of core.steps(p,lang).entries()) {
+        if(s.division) {
+          assert.equal(await page.locator('#division-board svg').count(),1,'written calculation visible before answering');
+          if(p.id==='practice-15' && s.division.index===3 && s.division.phase==='quotient') {
+            assert(!(await page.locator('#division-board svg').getAttribute('aria-label')).includes('1920'),'last quotient zero is not revealed prematurely');
+          }
+        }
         if(s.kind==='choice') await page.locator(`input[type=radio][value="${s.answer}"]`).check();
         else await page.locator('#step-value').fill(String(s.answer));
         await page.locator('#step-form button').click();
         assert.match(await page.locator('#step-feedback').innerText(),lang==='pt'?/confere/:/checks out/,p.id+' step '+i);
         assert.equal(await page.locator('.explanation').count(),1);
+        if(p.id==='practice-15' && s.division?.phase==='complete') {
+          await page.locator('#division-board').screenshot({path:`/tmp/written-division-${lang}.png`});
+          await page.setViewportSize({width:320,height:900});
+          assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),'written division fits 320px');
+          await page.setViewportSize({width:1280,height:900});
+        }
         await page.locator('[data-action="next"]').click();
       }
       assert.equal(await page.locator('#step-form').count(),0);

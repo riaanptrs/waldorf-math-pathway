@@ -26,6 +26,80 @@
     let product = values[0];
     return values.slice(1).map(n => { const line = `${product} × ${n} = ${product * n}`; product *= n; return line; });
   }
+  function divisionTrace(dividend, divisor) {
+    let a = dividend, b = divisor;
+    while (a > 0 && a % 10 === 0 && b % 10 === 0) { a /= 10; b /= 10; }
+    let partial = 0, started = false, quotient = '';
+    const digits = String(a).split('').map(Number), stages = [];
+    digits.forEach((digit, digitIndex) => {
+      partial = partial * 10 + digit;
+      if (!started && partial < b) return;
+      started = true;
+      const quotientDigit = Math.floor(partial / b), product = quotientDigit * b, remainder = partial - product;
+      quotient += quotientDigit;
+      const nextDigit = digits[digitIndex + 1];
+      stages.push({digitIndex, partial, quotientDigit, product, remainder, quotient,
+        nextDigit: nextDigit ?? null, nextPartial: nextDigit === undefined ? null : remainder * 10 + nextDigit});
+      partial = remainder;
+    });
+    return {dividend, divisor, reducedDividend:a, reducedDivisor:b, stages, quotient:Number(quotient)};
+  }
+  // A place-aligned written calculation: English bracket or Portuguese chave.
+  // Only work already completed (or explicitly explained) is drawn.
+  function writtenDivision(spec, lang, reveal = false) {
+    if (!spec) return '';
+    const t = (en, pt) => lang === 'pt' ? pt : en;
+    const trace = divisionTrace(spec.dividend, spec.divisor), {stages} = trace;
+    const complete = spec.phase === 'complete', index = complete ? stages.length - 1 : spec.index;
+    const digits = String(trace.reducedDividend), cell = 22;
+    const left = lang === 'pt' ? 28 : String(trace.reducedDivisor).length * cell + 28;
+    const divider = left + digits.length * cell + 14;
+    const width = lang === 'pt' ? divider + Math.max(String(trace.reducedDivisor).length, String(trace.quotient).length) * cell + 35 : left + digits.length * cell + 24;
+    const height = 145 + index * 64;
+    const text = (x,y,value,css='') => [...String(value)].map((digit,i,all)=>`<text x="${x-(all.length-1-i)*cell}" y="${y}" class="${css}" text-anchor="end">${esc(digit)}</text>`).join('');
+    const line = (x1,y1,x2,y2,css='') => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="${css}"/>`;
+    let image = '', visibleQuotient = '';
+    if (lang === 'pt') {
+      image += line(divider,27,divider,96) + line(divider,62,width-12,62) + text(divider+14+String(trace.reducedDivisor).length*cell,51,trace.reducedDivisor);
+    } else {
+      image += text(left-15,53,trace.reducedDivisor) + line(left-10,31,left-10,60) + line(left-10,31,left+digits.length*cell+3,31);
+    }
+    [...digits].forEach((digit,i)=> { image += text(left+i*cell+cell,53,digit); });
+    const s = stages[index];
+    if (index === 0) image = `<rect x="${left-3}" y="34" width="${(s.digitIndex+1)*cell+6}" height="26" rx="4" class="division-active"/>` + image;
+    for (let j = 0; j <= index; j++) {
+      const stage = stages[j], current = j === index;
+      const digitShown = !current || complete || spec.phase !== 'quotient' || reveal;
+      const productShown = !current || complete || ['subtract','bring'].includes(spec.phase) || spec.phase === 'product' && reveal;
+      const remainderShown = !current || complete || spec.phase === 'bring' || spec.phase === 'subtract' && reveal;
+      const brought = stage.nextDigit !== null && (!current || complete || spec.phase === 'bring' && reveal);
+      const end = left + (stage.digitIndex+1)*cell, productY = 81+j*64, remainderY = 115+j*64;
+      if (digitShown) visibleQuotient += stage.quotientDigit;
+      if (lang !== 'pt') image += text(end,23,digitShown?stage.quotientDigit:'?',digitShown?'division-quotient':'division-pending');
+      if (productShown) {
+        image += text(end-String(stage.product).length*cell-6,productY,'−') + text(end,productY,stage.product);
+        image += line(end-Math.max(String(stage.partial).length,String(stage.product).length)*cell-8,productY+7,end+3,productY+7);
+      }
+      if (remainderShown) {
+        if (brought) {
+          const nextEnd=end+cell;
+          image += text(nextEnd,remainderY,stage.nextPartial,'division-current');
+          image += line(nextEnd-7,61,nextEnd-7,remainderY-23,'division-arrow');
+          image += `<path d="M ${nextEnd-11} ${remainderY-29} l 4 7 l 4 -7" class="division-arrow"/>`;
+        } else image += text(end,remainderY,stage.remainder,'division-current');
+      }
+      if (current && !complete && spec.phase === 'subtract' && !reveal) image += text(end,remainderY,'?','division-pending');
+      if (current && !complete && spec.phase === 'bring' && !reveal) {
+        image += text(end+cell,remainderY,'?','division-pending');
+        image += `<rect x="${end+3}" y="34" width="${cell}" height="26" rx="4" class="division-active"/>` + text(end+cell,53,stage.nextDigit,'division-current');
+      }
+    }
+    if (lang === 'pt') image += text(divider+14+(visibleQuotient.length+(!complete&&spec.phase==='quotient'&&!reveal?1:0))*cell,90,visibleQuotient+(!complete&&spec.phase==='quotient'&&!reveal?'?':''),'division-quotient');
+    const reduction = trace.reducedDividend !== spec.dividend
+      ? `<p>${t('Divide both numbers by the same power of ten; the quotient stays the same.','Divida os dois números pela mesma potência de dez; o quociente permanece igual.')}</p><p class="equation">${spec.dividend} ÷ ${spec.divisor} = ${trace.reducedDividend} ÷ ${trace.reducedDivisor}</p>` : '';
+    const description = t(`Written long division: ${trace.reducedDividend} divided by ${trace.reducedDivisor}. Quotient digits shown: ${visibleQuotient || 'none yet'}. The current question appears below the drawing.`, `Divisão armada: ${trace.reducedDividend} dividido por ${trace.reducedDivisor}. Algarismos do quociente mostrados: ${visibleQuotient || 'nenhum ainda'}. A pergunta atual aparece abaixo do desenho.`);
+    return `<figure class="written-division"><figcaption>${t('Written long division','Divisão armada')}</figcaption>${reduction}<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(description)}" xmlns="http://www.w3.org/2000/svg"><g>${image}</g></svg><p>${t('Keep digits in their place-value columns. The arrows show digits brought down.','Mantenha os algarismos em suas colunas de valor posicional. As setas mostram os algarismos baixados.')}</p></figure>`;
+  }
   // Positional long division, retaining zero digits in the quotient.
   function division(dividend, divisor, lang) {
     const t = (en, pt) => lang === 'pt' ? pt : en;
@@ -95,7 +169,28 @@
       t('What number is multiplying x? Division by that same number undoes the multiplication.', 'Qual número está multiplicando x? Dividir por esse mesmo número desfaz a multiplicação.'),
       t(`Divide both sides by ${n}. Since ${n}x ÷ ${n} = x, we obtain x = ${cross}/${n}.`, `Divida os dois lados por ${n}. Como ${n}x ÷ ${n} = x, obtemos x = ${cross}/${n}.`),
       [`x = ${cross} ÷ ${n}`], n);
-    add(t(`Finish the division: what is ${cross} ÷ ${n}?`, `Termine a divisão: quanto é ${cross} ÷ ${n}?`),
+    const trace = divisionTrace(cross,n);
+    const divisionStep = (index,phase,...args) => { add(...args); out[out.length-1].division = {dividend:cross,divisor:n,index,phase}; };
+    trace.stages.forEach((stage,index) => {
+      const b = trace.reducedDivisor;
+      divisionStep(index,'quotient',t(`Look at ${stage.partial} in the written division. How many times does ${b} fit without going over? Enter ONE quotient digit.`, `Observe ${stage.partial} na divisão armada. Quantas vezes ${b} cabe sem ultrapassar? Digite UM algarismo do quociente.`),
+        t(`Find a multiple of ${b} no greater than ${stage.partial}. The next multiple must be too large. If the partial dividend is smaller than the divisor, write zero.`, `Procure um múltiplo de ${b} que não ultrapasse ${stage.partial}. O múltiplo seguinte deve ser maior. Se o dividendo parcial for menor que o divisor, escreva zero.`),
+        t(`Write ${stage.quotientDigit} in the next quotient position. Do not omit this position, even when its digit is zero.`, `Escreva ${stage.quotientDigit} na próxima posição do quociente. Não omita essa posição, mesmo quando seu algarismo for zero.`),
+        [`${b} × ${stage.quotientDigit} = ${stage.product} ≤ ${stage.partial}`, `${b} × ${stage.quotientDigit+1} = ${b*(stage.quotientDigit+1)} > ${stage.partial}`], stage.quotientDigit);
+      divisionStep(index,'product',t(`Multiply the quotient digit by the divisor: what is ${stage.quotientDigit} × ${b}?`, `Multiplique o algarismo do quociente pelo divisor: quanto é ${stage.quotientDigit} × ${b}?`),
+        t('This product is written directly under the partial dividend, aligned by units.','Esse produto é escrito logo abaixo do dividendo parcial, alinhado pelas unidades.'),
+        t(`Write ${stage.product} underneath ${stage.partial}. Now we can subtract.`, `Escreva ${stage.product} embaixo de ${stage.partial}. Agora podemos subtrair.`),
+        [`${stage.quotientDigit} × ${b} = ${stage.product}`],stage.product);
+      divisionStep(index,'subtract',t(`Subtract in the written calculation: what is ${stage.partial} − ${stage.product}?`, `Subtraia na conta armada: quanto é ${stage.partial} − ${stage.product}?`),
+        t('Subtract the product from the partial dividend. The remainder must be smaller than the divisor.','Subtraia o produto do dividendo parcial. O resto deve ser menor que o divisor.'),
+        t(`The remainder is ${stage.remainder}. It is smaller than ${b}.`, `O resto é ${stage.remainder}. Ele é menor que ${b}.`),
+        [`${stage.partial} − ${stage.product} = ${stage.remainder}`],stage.remainder);
+      if (stage.nextDigit !== null) divisionStep(index,'bring',t(`Bring down the next digit, ${stage.nextDigit}, beside the remainder ${stage.remainder}. What number does this form?`, `Baixe o próximo algarismo, ${stage.nextDigit}, ao lado do resto ${stage.remainder}. Qual número se forma?`),
+        t('The remainder shifts one place to the left: multiply it by ten, then add the digit brought down.','O resto muda uma posição para a esquerda: multiplique-o por dez e some o algarismo baixado.'),
+        t(`Bringing down ${stage.nextDigit} forms the next partial dividend, ${stage.nextPartial}. Follow the arrow in the drawing.`, `Baixar ${stage.nextDigit} forma o próximo dividendo parcial, ${stage.nextPartial}. Siga a seta no desenho.`),
+        [`${stage.remainder} × 10 + ${stage.nextDigit} = ${stage.nextPartial}`],stage.nextPartial);
+    });
+    divisionStep(trace.stages.length-1,'complete',t(`Read the whole quotient from the written division: what is ${cross} ÷ ${n}?`, `Leia o quociente completo na divisão armada: quanto é ${cross} ÷ ${n}?`),
       t('Divide using your notebook. You may divide both numbers by a common factor first. Keep zero digits in the quotient.', 'Divida no caderno. Você pode dividir os dois números por um fator comum primeiro. Mantenha os zeros do quociente.'),
       t(`The division gives ${p.answer}. The unit is ${label(u).toLowerCase()}.`, `A divisão resulta em ${p.answer}. A unidade é ${label(u).toLowerCase()}.`),
       division(cross, n, lang), p.answer);
@@ -105,7 +200,7 @@
       [`${p.answer} × ${n} = ${cross}`, `${u.before}/${p.answer} = ${n}/${d}`], cross);
     return out;
   }
-  const api = { esc, parseNumber, check, calculation, steps, division };
+  const api = { esc, parseNumber, check, calculation, steps, division, divisionTrace, writtenDivision };
   if (typeof module !== 'undefined') module.exports = api;
   else root.CompoundCore = api;
 })(typeof window === 'undefined' ? globalThis : window);

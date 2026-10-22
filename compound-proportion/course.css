@@ -34,6 +34,16 @@ input[type=radio] { flex-shrink: 0; width: 1.2rem; height: 1.2rem; }
 .hint, .explanation { border-left: 4px solid #8fae85; padding: .5rem 1rem; margin: 1rem 0; background: #f1f5e9; }
 .hint { border-color: #c4a56d; background: #fcf6e7; }
 .equation { font-family: ui-monospace, monospace; white-space: normal; overflow-wrap: anywhere; padding: .45rem .7rem; border-radius: .35rem; background: #edf1e8; }
+.written-division { margin: 1rem 0; padding: 1rem; border: 1px solid #c4d1bd; border-radius: .6rem; background: #fffdf6; }
+.written-division figcaption { font-weight: 700; }
+.written-division svg { display: block; width: 100%; max-width: 420px; height: auto; margin: .75rem auto; }
+.written-division text { fill: #263d37; font: 20px ui-monospace, monospace; }
+.written-division line, .written-division path { stroke: #263d37; stroke-width: 1.5; fill: none; }
+.written-division .division-active { fill: #f5df9e; }
+.written-division .division-quotient { fill: #1a6148; font-weight: 700; }
+.written-division .division-current { fill: #1a6148; font-weight: 700; }
+.written-division .division-pending { fill: #875018; }
+.written-division .division-arrow { stroke: #926119; stroke-dasharray: 3 2; }
 details { margin: 1rem 0; }
 summary { cursor: pointer; min-height: 44px; padding: .4rem 0; font-weight: 600; }
 .history li, .solution li { margin-bottom: 1.5rem; }

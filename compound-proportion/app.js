@@ -41,6 +41,7 @@
         document.getElementById('step-feedback').textContent = '';
         main.querySelector('.explanation')?.remove();
         main.querySelector('[data-action="next"]')?.remove();
+        if (q.division) document.getElementById('division-board').innerHTML = core.writtenDivision(q.division,lang,false);
       }
       stepForm.addEventListener('input', change);
       stepForm.addEventListener('submit', event => {
