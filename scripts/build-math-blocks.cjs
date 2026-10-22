@@ -3,6 +3,7 @@ const root=path.resolve(__dirname,'..'),dir=path.join(root,'math-blocks');
 const {lessons:catalogue,lessonTranslations}=require('./load-catalogue.cjs')(),{lessons:geometry}=require('../geometry/authoring.cjs'),{plans}=require('../geometry/plans/authoring.cjs');
 const blocks=require('../math-blocks/blocks.json'),lessons=require('../math-blocks/lessons.json'),sources=require('../math-blocks/sources.json');
 const routes={};
+routes['G7-COMPOUND']={href:'../compound-proportion/index.html',title:{en:'Compound Proportion · 3 examples and 15 problems',pt:'Regra de Três Composta · 3 exemplos e 15 problemas'},type:{en:'Original Grade 7 unit',pt:'Unidade original do 7º ano'}};
 for(const l of catalogue)routes[l.id]={href:'../index.html#practice:'+l.id,title:{en:l.title,pt:lessonTranslations[l.id]?.title||l.title},type:{en:'Existing practice',pt:'Prática existente'}};
 for(const l of geometry)routes[l.id]={href:'../geometry/lessons/'+l.id+'.html',title:l.title,type:{en:'Existing geometry',pt:'Geometria existente'}};
 for(const l of plans)routes[l.id]={href:'../geometry/plans/'+l.id+'.html',title:l.title,type:{en:'Existing plan',pt:'Plano existente'}};

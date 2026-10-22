@@ -1487,6 +1487,7 @@ function renderExercise(lesson) {
       ${renderExtraPractice(displayLesson)}
     </details>
     ${renderFacilitatorCard(displayLesson)}
+    ${lesson.grade === "Grade 7" ? `<p class="compound-proportion-link"><a href="compound-proportion/index.html">${language === "pt" ? "Após variação direta/inversa e equações simples: Regra de Três Composta · 3 exemplos guiados e 15 problemas" : "After direct/inverse change and simple equations: Compound Proportion · 3 guided examples and 15 problems"}</a></p>` : ""}
   `;
 
   window.bindGeometryDiscovery?.(body);

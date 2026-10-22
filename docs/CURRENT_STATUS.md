@@ -2,6 +2,13 @@
 
 Last updated: 2026-10-22.
 
+## Grade 7 compound proportion
+
+- Added `compound-proportion/index.html`, linked from Grade 7 activities and the Grade 7 math-block route after direct/inverse change and simple equations. Three original teaching examples precede the fifteen agreed English/Portuguese problems.
+- Practice asks for an answer first. Incorrect answers offer optional help; correct answers can also explore the method. The guide asks one question at a time, checks each response, offers hints and current-step explanations, and distinguishes a revealed step from independent work. The learner's method is preserved: known/x, multiply comparison fractions, cross-multiply, divide and check.
+- Language changes and navigation retain the current page's working; reload clears responses. No learner-progress or cloud-catalogue change. Portuguese written solutions remain available without JavaScript. This is an original course adaptation, not a verified Nielsen lesson prescription.
+- Build: `node scripts/build-compound-proportion.cjs`. `check-compound-proportion.cjs` verifies 18 independent answers and all question submissions in both languages with Chromium, plus optional help, hints, language/navigation retention, edited-answer feedback, reset, no-script solutions and layouts from 320 to 1280px. Existing block, learning-sequence, lesson-clarity and curriculum audits pass.
+
 ## Nielsen math-block pathway
 
 - Added a source-based Grade 1–8 map with 21 block routes and 30 original bilingual supplement lessons (90 practice questions), linking existing topics instead of duplicating the 227-lesson catalogue. Entry: `math-blocks/index.html`.

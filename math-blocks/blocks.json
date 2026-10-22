@@ -1707,11 +1707,22 @@
           "g7-signed-cross-zero",
           "g7-equation-balance"
         ]
+      },
+      {
+        "topic": {
+          "en": "After direct/inverse change and simple equations: compound proportion",
+          "pt": "Após variação direta/inversa e equações simples: regra de três composta"
+        },
+        "routes": [
+          "g7-ratios-direct",
+          "g7-ratios-inverse",
+          "G7-COMPOUND"
+        ]
       }
     ],
     "note": {
-      "en": "Source order is preserved; repeat a session when the learner needs it.",
-      "pt": "A ordem da fonte é preservada; repita uma sessão conforme a necessidade."
+      "en": "The compound-proportion unit is an original Grade 7 adaptation after direct/inverse change and simple equations, not a prescribed lesson in the supplied Nielsen guide. Teach new ideas before using them for familiar-skill practice.",
+      "pt": "A unidade de regra de três composta é uma adaptação original para o 7º ano, após variação direta/inversa e equações simples; não é uma aula prescrita no guia fornecido de Nielsen. Ensine as ideias novas antes de usá-las como prática conhecida."
     },
     "verified": true
   },
