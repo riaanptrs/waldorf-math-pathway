@@ -3,6 +3,7 @@ const path = require('node:path'), http = require('node:http'), fs = require('no
 const { chromium } = require('playwright');
 const data = require('../compound-proportion/authoring.cjs');
 const core = require('../compound-proportion/core.js');
+const revision = require('../compound-proportion/revision.js');
 const items = [...data.examples, ...data.practice];
 // Agreed answers, calculated independently from the original scenarios.
 const expected = [360,4,5,1200,1800,480,900,600,180,6,12,15,10,10,5,10,5,1920];
@@ -41,6 +42,9 @@ const last = core.calculation(data.practice[14]);
 assert.deepEqual([last.numerator,last.denominator,last.cross],[240,960,460800]);
 assert(core.division(460800,240,'en').some(s=>s.includes('Write 0 in the quotient')));
 assert.deepEqual(core.divisionTrace(460800,240).stages.map(s=>[s.partial,s.quotientDigit,s.product,s.remainder]),[[46,1,24,22],[220,9,216,4],[48,2,48,0],[0,0,0,0]]);
+assert.deepEqual(core.divisionTrace(7000,66,2).stages.map(s=>[s.partial,s.quotientDigit,s.product,s.remainder]),[[70,1,66,4],[40,0,0,40],[400,6,396,4],[40,0,0,40],[400,6,396,4]]);
+assert.equal(66*106+4,7000);
+assert.equal(revision.questions('en').length,revision.questions('pt').length);
 
 (async()=>{
   const root=path.resolve(__dirname,'..');
@@ -126,7 +130,7 @@ assert.deepEqual(core.divisionTrace(460800,240).stages.map(s=>[s.partial,s.quoti
           assert.match(await page.locator('#division-board .division-refresher').innerText(),/× 10/);
           assert.equal(await page.locator('#division-board .division-review-link').getAttribute('href'),'../index.html#practice:g5-division-two-digit-divisor');
           assert.equal(await page.locator('#division-board .division-review-link').getAttribute('target'),'_blank');
-          assert.equal(await page.locator('.division-revision a').getAttribute('href'),'../index.html#practice:g5-division-two-digit-divisor');
+          assert.equal(await page.locator('.division-revision a').getAttribute('href'),'long-division.html');
           await page.locator('#division-board').screenshot({path:`/tmp/written-division-${lang}.png`});
           await page.setViewportSize({width:320,height:900});
           assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),'written division fits 320px');
@@ -162,6 +166,38 @@ assert.deepEqual(core.divisionTrace(460800,240).stages.map(s=>[s.partial,s.quoti
     await fallback.locator('noscript section > details').last().locator(':scope > summary').click();
     assert.match(await fallback.locator('noscript section > details').last().innerText(),/460800/);
     await offline.close();
+    for(const lang of ['en','pt']) {
+      await page.goto(url.replace('index.html','long-division.html'));
+      await page.selectOption('#compound-language',lang);
+      await page.locator('#revision-value').fill('0');
+      await page.locator('#revision-form button').click();
+      assert.equal(await page.locator('[data-revision="next"]').count(),0);
+      await page.locator('[data-revision="hint"]').click();
+      assert.equal(await page.locator('.hint').count(),1);
+      assert(!(await page.locator('article > .written-division svg').getAttribute('aria-label')).includes('106'));
+      for(const [i,q] of revision.questions(lang).entries()) {
+        if(q.kind==='choice') await page.locator(`input[name=revision-value][value="${q.answer}"]`).check();
+        else await page.locator('#revision-value').fill(String(q.answer));
+        await page.locator('#revision-form button').click();
+        assert.match(await page.locator('#revision-feedback').innerText(),lang==='pt'?/confere/:/checks out/,'revision step '+i);
+        if(q.board.index===2 && q.board.phase==='subtract' && q.kind==='number') {
+          await page.locator('article > .written-division').screenshot({path:`/tmp/7000-integer-${lang}.png`});
+          assert((await page.locator('article > .written-division svg').getAttribute('aria-label')).includes('106'));
+        }
+        if(q.board.phase==='complete') {
+          assert.equal(await page.locator('article > .written-division .division-key li').count(),4);
+          assert.match(await page.locator('.explanation').innerText(),lang==='pt'?/repete/:/repeats/);
+        }
+        await page.locator('[data-revision="next"]').click();
+      }
+      assert.equal(await page.locator('#revision-form').count(),0);
+      assert.equal(await page.locator('article > .exact-result .repeating').innerText(),'06');
+      assert.match(await page.locator('article > .exact-result').innerText(),lang==='pt'?/106,060606/:/106\.060606/);
+      await page.locator('article > .written-division').screenshot({path:`/tmp/7000-decimal-${lang}.png`});
+      await page.setViewportSize({width:320,height:900});
+      assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),'repeating decimal revision fits mobile');
+      await page.setViewportSize({width:1280,height:900});
+    }
     await page.goto(url+'#practice-15');await page.reload();
     assert.equal(await page.locator('.guide').count(),0,'reload clears responses');
     assert.deepEqual(errors,[]);

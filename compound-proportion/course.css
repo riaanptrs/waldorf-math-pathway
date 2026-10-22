@@ -53,6 +53,8 @@ input[type=radio] { flex-shrink: 0; width: 1.2rem; height: 1.2rem; }
 .written-division .division-arrow[class*="bring-digit-"] { stroke: var(--bring-colour); }
 .division-key { list-style: none; padding-left: 0; }
 .division-key li { color: var(--bring-colour); border-left: 4px solid var(--bring-colour); padding: .3rem .7rem; margin: .4rem 0; font-weight: 600; }
+.repeating { text-decoration: overline; text-decoration-thickness: 2px; }
+.exact-result { font-size: clamp(1rem, 3vw, 1.4rem); font-weight: 700; overflow-wrap: anywhere; }
 details { margin: 1rem 0; }
 summary { cursor: pointer; min-height: 44px; padding: .4rem 0; font-weight: 600; }
 .history li, .solution li { margin-bottom: 1.5rem; }
