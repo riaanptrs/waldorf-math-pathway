@@ -87,6 +87,6 @@ catalogue, translations and practice data compare identically with the prior
 commit. Syntax and whitespace checks pass.
 
 Browser-control tools are unavailable, so browser layout and rendered print
-output are not claimed as verified. Work is saved locally; the prior request for
-explicit publication approval remains pending. This attachment-only follow-up
-is not treated as permission to push to the shared publishing branch.
+output are not claimed as verified. The attachment-only follow-up did not authorize publication. The user
+subsequently explicitly approved publishing the complete pathway to GitHub on
+22 October 2026; deployment verification is reported in the publishing chat.

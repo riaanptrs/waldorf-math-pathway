@@ -140,9 +140,8 @@ snapshot comparison verifies preservation of the current 227-lesson catalogue.
 
 Publication uses the existing GitHub Pages repository; its deployment result is
 reported in the chat. Grade 6 now has full source coverage; Grade 7/8 outline limits remain explicit.
-The complete pathway is committed locally and publication is awaiting explicit
-user approval after the earlier automatic-review rejection. No deployment of
-this pathway is claimed.
+The complete pathway was explicitly approved for publication to GitHub on
+22 October 2026. Deployment verification is reported in the publishing chat.
 
 For the Grade 6 source replacement, track-numbering discrepancy and detailed
 new lesson map, see [the Grade 6 follow-up](NIELSEN_GRADE6_FOLLOWUP_2026-10-21.md).
